@@ -639,8 +639,14 @@ body.gingerbread .main_visual img {
 }
 
 .video_area .info h3.tit {
+    width: 100%;
+    overflow: hidden;
     color: #fff;
     font-weight: normal;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
 }
 
 .video_area .info .etc {
@@ -722,7 +728,6 @@ body.gingerbread .main_visual img {
     font-weight: normal;
     color: #000;
     word-break: normal;
-    word-break: keep-all;
     white-space: normal;
     overflow: hidden;
     -o-text-overflow: ellipsis;
@@ -732,7 +737,7 @@ body.gingerbread .main_visual img {
 }
 
 .scroller .swiper-wrapper .swiper-slide a h3.tit .subject {
-        /*display: block;*/;
+    display: block;
 }
 
 .scroller a .info {
