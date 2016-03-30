@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>아모레퍼시픽 | 뷰티스퀘어 | 기본모드 </title>
+	<link rel="stylesheet" type="text/css" href="/publish/html/com/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="/publish/html/com/css/beautysquare.css"/>
+	<link rel="stylesheet" type="text/css" href="/publish/html/com/css/plugins/swiper.css"/>
+	<script src="/publish/html/com/js/jquery-1.11.2.min.js"></script>
+	<script src="/publish/html/com/js/jquery.easing.1.3.js"></script>
+	<script src="/publish/html/com/js/cm.beautysquare.ui.js"></script>
+</head>
+<body>
+	<!-- 웹뷰 헤더 : S -->
+	<!-- <header class="wb">
+		<img src="/publish/img/dummy/wb_header_sub.png" alt="웹뷰 헤더">
+	</header> -->
+	<!--// 웹뷰 헤더 : E -->
+
+	<div id="wrap">
+		
+		<!-- 메인비주얼 : S -->
+		<div class="swiper-container main_visual">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="/publish/img/main/slide01.jpg" alt="">
+				</div>
+				<div class="swiper-slide">
+					<img src="/publish/img/main/slide01.jpg" alt="">
+				</div>
+				<div class="swiper-slide">
+					<img src="/publish/img/main/slide01.jpg" alt="">
+				</div>
+				<div class="swiper-slide">
+					<img src="/publish/img/main/slide01.jpg" alt="">
+				</div>
+				<div class="swiper-slide">
+					<img src="/publish/img/main/slide01.jpg" alt="">
+				</div>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+		<!--// 메인비주얼 : E -->
+
+		<div id="container">
+
+			<!-- 핫이슈 : S -->
+			<div class="section">
+				<h2 class="tit">
+					<span>핫이슈</span>
+					<a href="javascript:;" class="all_view"><span>전체보기</span></a>
+				</h2>
+				<div class="video_area">
+					<img src="/publish/img/dummy/video_thumb.jpg" alt="전지현">
+					<a href="javascript:;" class="info">
+						<h3 class="tit">셀 에센스 어떻게 바뀌었나요</h3>
+						<span class="etc">
+							<span class="view_cnt">10,658</span>
+							<span class="like_cnt">23</span>
+						</span>
+					</a>
+				</div>
+			</div>
+			<!--// 핫이슈 : E -->
+			
+			<!-- 최신제품정보 : S -->
+			<div class="section">
+				<h2 class="tit">
+					<span>최신 제품정보</span>
+					<a href="javascript:;" class="all_view"><span>전체보기</span></a>
+				</h2>
+				<div class="swiper-container scroller">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod01.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<strong class="tag">헤라</strong>
+										<span class="subject">화이트 프로그램 바이오 제닉이펙터</span>
+									</h3>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod02.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<strong class="tag">설화수</strong>
+										<span class="subject">자정미백 에센스</span>
+									</h3>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod01.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<strong class="tag">헤라</strong>
+										<span class="subject">화이트 프로그램 바이오 제닉이펙터</span>
+									</h3>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod02.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<strong class="tag">설화수</strong>
+										<span class="subject">자정미백 에센스</span>
+									</h3>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod01.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<strong class="tag">헤라</strong>
+										<span class="subject">화이트 프로그램 바이오 제닉이펙터</span>
+									</h3>
+								</div>
+							</a>
+						</div>
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			<!--// 최신제품정보 : E -->
+
+			<!-- 나만의 세일즈노하우 : S -->
+			<div class="section">
+				<h2 class="tit">
+					<span>나만의 세일즈노하우</span>
+					<a href="javascript:;" class="all_view"><span>전체보기</span></a>
+				</h2>
+				<ul class="latest_list shadow">
+					<li><a href="javascript:;">아이디어의 날개 달고 훨훨 날아보실래요?</a></li>
+					<li><a href="javascript:;">이종사촌에 오촌조카까지 우리는 아모레 카운셀러가족입니다.</a></li>
+					<li><a href="javascript:;">비로소, 진정한 미의 전도사가 되다</a></li>
+					<li><a href="javascript:;">메이크업으로 제 2의 전성기를 꿈꿔요!</a></li>
+				</ul>
+			</div>
+			<!--// 나만의 세일즈노하우 : E -->
+
+			<!-- 카운셀러 세일즈노트 : S -->
+			<div class="section">
+				<h2 class="tit">
+					<span>카운셀러 세일즈노트</span>
+					<a href="javascript:;" class="all_view"><span>전체보기</span></a>
+				</h2>
+				<div class="swiper-container scroller type02">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod03.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">셀 에센스 어떻게 바뀌었나요? 알려주세요~</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod04.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">어떻게 바뀌었나요?</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod03.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">셀 에센스 어떻게 바뀌었나요? 알려주세요~</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod04.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">어떻게 바뀌었나요?</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/prod03.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">셀 에센스 어떻게 바뀌었나요? 알려주세요~</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// 카운셀러 세일즈노트 : E -->
+
+			<!-- 라이프 스퀘어 : S -->
+			<div class="section">
+				<h2 class="tit">
+					<span>라이프 스퀘어</span>
+					<a href="javascript:;" class="all_view"><span>전체보기</span></a>
+				</h2>
+				<div class="swiper-container scroller type03">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/life_thumb01.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">피부와 숙면에 좋은 요가를 가르쳐 드립니다~</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/life_thumb02.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">숙면을 방해하는 잠자리 습관</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/life_thumb01.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">피부와 숙면에 좋은 요가를 가르쳐 드립니다~</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/life_thumb02.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">숙면을 방해하는 잠자리 습관</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="javascript:;" class="shadow">
+								<span class="thumb"><img src="/publish/img/dummy/life_thumb01.jpg" alt=""></span>
+								<div class="info">
+									<h3 class="tit">
+										<span class="subject">피부와 숙면에 좋은 요가를 가르쳐 드립니다~</span>
+									</h3>
+									<span class="etc">
+										<span class="view_cnt">10,658</span>
+										<span class="like_cnt">23</span>
+									</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// 라이프 스퀘어 : E -->
+
+			<!-- 칭찬합시다 : S -->
+			<div class="section">
+				<h2 class="tit">
+					<span>칭찬합시다</span>
+					<a href="javascript:;" class="all_view"><span>전체보기</span></a>
+				</h2>
+				<ul class="thumb_txt_list shadow">
+					<li>
+						<span class="thumb">
+							<img src="/publish/img/dummy/user01.jpg" alt="유저 이름">
+						</span>
+						<div class="txt">
+							<strong class="subject">북부팀 홍길동 팀장님!</strong>
+							<p class="cont">어제 우리 마두특약점(일산에 올해 새로오신 북부팀 홍길동 팀장님이 한턱 쏘셧는데 무리하신건 아닌지 모르겟습니다. 앞으로도 종종 이런자리를 했으면 합니다. 모두들 화이팅!!</p>
+							<span class="info">
+								<span class="user_name">전지현</span>
+								<span class="official_title">카운셀러</span>
+							</span>
+						</div>
+					</li>
+					<li>
+						<span class="thumb">
+							<img src="/publish/img/dummy/user02.jpg" alt="유저 이름">
+						</span>
+						<div class="txt">
+							<strong class="subject">북부팀 홍길동 팀장님!</strong>
+							<p class="cont">어제 우리 마두특약점(일산에 올해 새로오신 북부팀 홍길동 팀장님이 한턱 쏘셧는데 무리하신건 아닌지 모르겟습니다. 앞으로도 종종 이런자리를 했으면 합니다. 모두들 화이팅!!</p>
+							<span class="info">
+								<span class="user_name">전지현</span>
+								<span class="official_title">카운셀러</span>
+							</span>
+						</div>
+					</li>
+					<li>
+						<span class="thumb">
+							<img src="/publish/img/dummy/user03.jpg" alt="유저 이름">
+						</span>
+						<div class="txt">
+							<strong class="subject">북부팀 홍길동 팀장님!</strong>
+							<p class="cont">어제 우리 마두특약점(일산에 올해 새로오신 북부팀 홍길동 팀장님이 한턱 쏘셧는데 무리하신건 아닌지 모르겟습니다. 앞으로도 종종 이런자리를 했으면 합니다. 모두들 화이팅!!</p>
+							<span class="info">
+								<span class="user_name">전지현</span>
+								<span class="official_title">카운셀러</span>
+							</span>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+			<!--// 칭찬합시다 : E -->
+
+		</div>
+
+	</div>
+
+</body>
+</html>
