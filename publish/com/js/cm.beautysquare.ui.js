@@ -19,6 +19,14 @@ $(function(){
 	$(window).on('load', function(){
 
 		//document 높이 부여
+		var $tabsSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide');
+		for ( var i=1; i<$tabsSlide.length; i++ ) {//data-swiper-slide-index
+			if( $tabsSlide.eq(i).attr('data-swiper-slide-index') !== 0 ) {
+				$('.tabs > .swiper-wrapper').find('>.swiper-slide').eq(i).height(
+					document.documentElement.clientHeight - $('#gnb').height()
+				);
+			}
+		}
 		// $('body, html').height( $('#wrap').outerHeight() );
 
 		//컨텐츠 로드 완료
@@ -66,7 +74,7 @@ $(function(){
 			});
 		}
 
-		var setSlideHeight = function( swipe ) {
+		var setSlideHeight = function( swipeIndex ) {
 			var $activeSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide.swiper-slide-active');
 			$('.swiper-container.tabs').css({
 				// height: ,
@@ -102,7 +110,14 @@ $(function(){
 		var tabsDiff = null,						// 페이지를 swipe한 거리
 			menuLength = $('#gnb ul li').length,	// 매뉴 갰수
 			speedAll = 300,							// 스와이프 관련 스피드 (전체)
-			tabsMoveCtrl = true;
+			tabsMoveCtrl = true,
+			swiperLoadPages = [
+				'hotissue_list.html',
+				'product_info_list.html',
+				'sales_tip_list.html',
+				'praise_list.html',
+				'life_list.html'
+			];
 
 		//swiper 플러그인 옵션 ( 메인비주얼, 라이프스퀘어, 최신제품정보, 카운셀러 세일즈노트 )
 		var swiperOptions = {
@@ -120,8 +135,30 @@ $(function(){
 					if ( idx <= 0 ) idx = menuLength;
 					
 					gnbScroll.scrollToElement( doc[qs]( '#gnb li:nth-child(' + idx + ')'), speedAll, true, null );
-
 					moveBarAni( idx );
+
+					if ( (idx-1) !== 0 ) {
+						console.log(idx);
+						$.ajax({
+							url: '/publish/html/0' + idx + '/' + swiperLoadPages[idx],
+							success: function(data) {
+								var _data = $(data),
+									$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
+									ht = 0;
+
+								console.log(ht);
+								if ( !$wrapper.find('[data-swiper-slide-index=' + (idx-1) + '] .container').hasClass('loaded') ) {
+									$wrapper.find('[data-swiper-slide-index=' + (idx-1) + '] .container').append( _data ).addClass('loaded');
+									ht = $wrapper.find('[data-swiper-slide-index=' + (idx-1) + '] .container').outerHeight(false);
+									$wrapper.find('[data-swiper-slide-index=' + (idx-1) + ']').height(ht);
+									$wrapper.height(ht);
+								}
+							},
+							error: {
+
+							}
+						});
+					}
 				},
 				onTouchMove : function( swiper ) {
 					console.log('tabs move', swiper);
