@@ -112,6 +112,7 @@ $(function(){
 			speedAll = 300,							// 스와이프 관련 스피드 (전체)
 			tabsMoveCtrl = true,
 			swiperLoadPages = [
+				'',
 				'hotissue_list.html',
 				'product_info_list.html',
 				'sales_tip_list.html',
