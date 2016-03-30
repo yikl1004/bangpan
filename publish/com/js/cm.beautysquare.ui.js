@@ -68,24 +68,9 @@ $(function(){
 
 		var setSlideHeight = function( swipe ) {
 			var $activeSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide.swiper-slide-active');
-			if ( ginger() ) {
-				var heightTarget = $activeSlide.find('.container').outerHeight();
-				if ( $activeSlide.find('.main_visual').length > 0 ) {
-					heightTarget +=  $activeSlide.find('.main_visual').outerHeight();
-				}
-				setTimeout(function(){
-					$('.tabs > .swiper-wrapper > .swiper-slide-active')
-					.add( $('.tabs > .swiper-wrapper') ).css({
-						height: heightTarget,
-						'overflow-y': 'hidden'
-					});
-				}, 50);
-			} else {
-				$('#wrap').css({
-					height: $activeSlide.outerHeight() + $('#gnbWrap').height(),
-					'overflow-y': 'hidden'
-				});
-			}
+			$('.swiper-container.tabs').css({
+				// height: ,
+			});
 		};
 
 		var moveBarAni = function( num ) {

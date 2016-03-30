@@ -290,6 +290,10 @@ ul.hori_btns li a .count {
     background: #ececec;
 }
 
+.container.home {
+    padding-top: 0;
+}
+
 #container.reply_write {
     margin-bottom: 57px;
 }
@@ -562,6 +566,11 @@ h2.tit {
 }
 
 /* MAIN VISUAL */
+.main_visual.swiper-container {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
 .main_visual .swiper-pagination {
     bottom: 17px;
     text-align: center;
