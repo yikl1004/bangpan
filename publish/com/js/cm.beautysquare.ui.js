@@ -141,7 +141,7 @@ $(function(){
 					if ( (idx-1) !== 0 ) {
 						console.log(idx);
 						$.ajax({
-							url: '/publish/html/0' + idx + '/' + swiperLoadPages[idx],
+							url: '/bangpan/publish/html/0' + idx + '/' + swiperLoadPages[idx],
 							success: function(data) {
 								var _data = $(data),
 									$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
