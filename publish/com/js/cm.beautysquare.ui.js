@@ -93,24 +93,30 @@ $(function(){
 		};
 
 		var tabsSwiperCtrl = {
-			lock: function() {
-				if ( tabsSwiper ) {
-					tabsMoveCtrl = false;
-					tabsSwiper.lockSwipes();
+				lock: function() {
+					if ( tabsSwiper ) {
+						tabsMoveCtrl = false;
+						tabsSwiper.lockSwipes();
+					}
+				},
+				unlock: function () {
+					if ( tabsSwiper ) {
+						tabsMoveCtrl = true;
+						tabsSwiper.unlockSwipes();
+					}
 				}
-			},
-			unlock: function () {
-				if ( tabsSwiper ) {
-					tabsMoveCtrl = true;
-					tabsSwiper.unlockSwipes();
-				}
-			}
+			};
+
+		// 네이티브 컨트롤 ( 메뉴이동 )
+		window.tabsSwiperFunc = function ( index ) {
+			$('#gnb a:eq(' + index + ')').trigger('click');
 		};
 
 		var tabsDiff = null,						// 페이지를 swipe한 거리
 			menuLength = $('#gnb ul li').length,	// 매뉴 갰수
 			speedAll = 300,							// 스와이프 관련 스피드 (전체)
 			tabsMoveCtrl = true,
+			tabsSlideStr = '.swiper-container.tabs > .swiper-wrapper > '
 			swiperLoadPages = [
 				'hotissue_list.html',
 				'product_info_list.html',
@@ -140,17 +146,18 @@ $(function(){
 					if ( (idx-1) !== 0 ) {
 						console.log(idx);
 						$.ajax({
-							url: '/publish/html/0' + idx + '/' + swiperLoadPages[idx],
+							url: '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
 							success: function(data) {
 								var _data = $(data),
 									$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
-									ht = 0;
+									ht = 0,
+									dataSlideIndexStr = '[data-swiper-slide-index=' + (idx-1) + ']';
 
 								console.log(ht);
-								if ( !$wrapper.find('[data-swiper-slide-index=' + (idx-1) + '] .container').hasClass('loaded') ) {
-									$wrapper.find('[data-swiper-slide-index=' + (idx-1) + '] .container').append( _data ).addClass('loaded');
-									ht = $wrapper.find('[data-swiper-slide-index=' + (idx-1) + '] .container').outerHeight(false);
-									$wrapper.find('[data-swiper-slide-index=' + (idx-1) + ']').height(ht);
+								if ( !$wrapper.find( dataSlideIndexStr + ' .container').hasClass('loaded') ) {
+									$wrapper.find( dataSlideIndexStr + ' .container').append( _data ).addClass('loaded');
+									ht = $wrapper.find( dataSlideIndexStr + ' .container').outerHeight(false);
+									$wrapper.find( dataSlideIndexStr ).height(ht);
 									$wrapper.height(ht);
 								}
 							},
