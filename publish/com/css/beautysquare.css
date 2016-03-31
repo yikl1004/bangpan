@@ -656,6 +656,7 @@ body.gingerbread .main_visual img {
     text-overflow: ellipsis;
     white-space: nowrap;
     word-wrap: normal;
+    -webkit-line-clamp: 1;
 }
 
 .video_area .info .etc {
