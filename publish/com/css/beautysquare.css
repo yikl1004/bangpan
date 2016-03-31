@@ -192,7 +192,7 @@ img {
     padding-left: 21px;
     background-image: url("/bangpan/publish/img/ico/ico_eye.png");
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: left top;
     -webkit-background-size: 17px 12px;
     -moz-background-size: 17px 12px;
     -o-background-size: 17px 12px;
@@ -655,7 +655,7 @@ body.gingerbread .main_visual img {
     font-weight: normal;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
-    word-wrap: normal;
+    word-wrap: break-word;
     -webkit-line-clamp: 1;
 }
 
