@@ -373,7 +373,7 @@ h2.tit {
 /* TAG */
 .tag {
     display: inline-block;
-    padding: 0 5px;
+    padding: 2px 5px 0;
     line-height: 1.4em;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
