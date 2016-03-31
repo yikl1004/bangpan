@@ -198,7 +198,7 @@ $(function(){
 		        paginationClickable: false,
 		        longSwipeRatio: 0.1,
 		        onSlideChangeStart: function () {  },
-		        onTransitionStart: function () { console.log(tabsSwiperCtrl);tabsSwiperCtrl.lock(); },
+		        onTransitionStart: function () { tabsSwiperCtrl.lock(); },
 		        onTouchMove: function () { tabsSwiperCtrl.lock(); },
 		        onTouchStart: function () { tabsSwiperCtrl.lock(); },
 		        onTransitionEnd: function () { tabsSwiperCtrl.unlock(); },
@@ -252,6 +252,7 @@ $(function(){
 		// 스와이프 페이지
 		if ( $('.tabs').length > 0 )
 			tabsSwiper = new Swiper('.tabs', swiperOptions.tabs);
+		console.log(tabsSwiper);
 
 		//메인 비주얼
 		if ( $('.main_visual').length >= 1 )

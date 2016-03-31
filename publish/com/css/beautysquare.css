@@ -330,7 +330,7 @@ body.sub .section h2.tit .all_view {
 }
 
 .tit span {
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 .tit .cnt {
@@ -815,6 +815,12 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     word-wrap: normal;
 }
 
+.latest_list li a:before {
+    content: '- ';
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
 /* 썸네일 + 텍스트 (칭찬합시다) */
 .thumb_txt_list li {
     position: relative;
@@ -871,12 +877,12 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-color: #666;
     display: inline-block;
     margin: 0 5px 0 3px;
-    vertical-align: 0px;
+    vertical-align: -2px;
 }
 
 .thumb_txt_list li .thumb {
-    width: 46px;
-    height: 46px;
+    width: 49px;
+    height: 49px;
     display: block;
     float: left;
 }
@@ -1012,20 +1018,11 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .photo_list a h3.tit {
-    height: 1.301em;
     display: block;
     font-size: 0.929em;
     line-height: 1.4;
     font-weight: normal;
     color: #000;
-    word-break: normal;
-    word-break: keep-all;
-    white-space: normal;
-    overflow: hidden;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    white-space: nowrap;
 }
 
 .photo_list a h3.tit .subject {
@@ -1079,7 +1076,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .img_list ul li a .thumb {
-    width: 36%;
+    width: 41%;
     display: block;
 }
 
