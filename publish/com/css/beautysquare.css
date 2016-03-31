@@ -655,7 +655,6 @@ body.gingerbread .main_visual img {
     font-weight: normal;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
-    white-space: nowrap;
     word-wrap: normal;
     -webkit-line-clamp: 1;
 }
