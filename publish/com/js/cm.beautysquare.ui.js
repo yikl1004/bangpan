@@ -9,7 +9,8 @@ $(function(){
 		_ua = navigator.userAgent.indexOf('Android 2.3'),
 		ginger = function () {
 			return (_ua !== -1) ? true : false;
-		};
+		},
+		devDir = '/bangpan';
 	/*
 	축약
 	doc[qs]  ===   document.querySelector
@@ -146,7 +147,7 @@ $(function(){
 					if ( (idx-1) !== 0 ) {
 						console.log(idx);
 						$.ajax({
-							url: '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
+							url: devDir + '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
 							success: function(data) {
 								var _data = $(data),
 									$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
