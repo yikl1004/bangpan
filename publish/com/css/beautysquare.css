@@ -648,6 +648,7 @@ body.gingerbread .main_visual img {
 }
 
 .video_area .info h3.tit {
+    display: block;
     overflow: hidden;
     color: #fff;
     font-weight: normal;

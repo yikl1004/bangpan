@@ -11,6 +11,7 @@ $(function(){
 			return (_ua !== -1) ? true : false;
 		},
 		devDir = '/bangpan';
+		// devDir = '';
 	/*
 	축약
 	doc[qs]  ===   document.querySelector
