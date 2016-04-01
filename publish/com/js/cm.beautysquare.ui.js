@@ -10,8 +10,9 @@ $(function(){
 		ginger = function () {
 			return (_ua !== -1) ? true : false;
 		},
-		devDir = '/bangpan';
-		// devDir = '';
+		// devDir = '/bangpan';
+		devDir = '';
+
 	/*
 	축약
 	doc[qs]  ===   document.querySelector
@@ -141,6 +142,8 @@ $(function(){
 
 					if ( idx > menuLength ) idx = 1;
 					if ( idx <= 0 ) idx = menuLength;
+
+					$('html, body').scrollTop(0);
 					
 					gnbScroll.scrollToElement( doc[qs]( '#gnb li:nth-child(' + idx + ')'), speedAll, true, null );
 					moveBarAni( idx );
