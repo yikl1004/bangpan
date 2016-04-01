@@ -10,8 +10,8 @@ $(function(){
 		ginger = function () {
 			return (_ua !== -1) ? true : false;
 		},
-		// devDir = '/bangpan';
-		devDir = '';
+		devDir = '/bangpan';
+		// devDir = '';
 
 	/*
 	축약
