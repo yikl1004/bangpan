@@ -197,7 +197,7 @@ img {
 
 .etc .read_cnt {
     padding-left: 21px;
-    background-image: url("bangpan/publish/img/ico/ico_eye.png");
+    background-image: url("/bangpan/publish/img/ico/ico_eye.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 17px 12px;
@@ -208,7 +208,7 @@ img {
 
 .etc .like_cnt {
     padding-left: 17px;
-    background-image: url("bangpan/publish/img/ico/ico_heart.png");
+    background-image: url("/bangpan/publish/img/ico/ico_heart.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 13px 11px;
@@ -218,12 +218,12 @@ img {
 }
 
 .etc .like_cnt.active {
-    background-image: url("bangpan/publish/img/ico/ico_heart_red.png");
+    background-image: url("/bangpan/publish/img/ico/ico_heart_red.png");
 }
 
 .etc .reply_cnt {
     padding-left: 17px;
-    background-image: url("bangpan/publish/img/ico/ico_speach_balloon.png");
+    background-image: url("/bangpan/publish/img/ico/ico_speach_balloon.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 12px 12px;
@@ -273,7 +273,7 @@ ul.hori_btns li a .count {
     width: 100%;
     height: 3px;
     display: block;
-    background-image: url("bangpan/publish/img/com/webview_shadow.png");
+    background-image: url("/bangpan/publish/img/com/webview_shadow.png");
     background-repeat: repeat-x;
     background-position: 0 0;
     -webkit-background-size: 1px 3px;
@@ -363,7 +363,7 @@ body.sub .section h2.tit .all_view {
     height: 19px;
     vertical-align: middle;
     margin-left: 4px;
-    background-image: url("bangpan/publish/img/ico/ico_arrow_r.png");
+    background-image: url("/bangpan/publish/img/ico/ico_arrow_r.png");
     background-repeat: no-repeat;
     background-position: 100% 3px;
     -webkit-background-size: 7px 12px;
@@ -468,7 +468,7 @@ h2.tit {
 }
 
 .grade.g1 {
-    background-image: url("bangpan/publish/img/com/grade_01.png");
+    background-image: url("/bangpan/publish/img/com/grade_01.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #9669ae;
@@ -479,7 +479,7 @@ h2.tit {
 }
 
 .grade.g2 {
-    background-image: url("bangpan/publish/img/com/grade_02.png");
+    background-image: url("/bangpan/publish/img/com/grade_02.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #eb6ca7;
@@ -490,7 +490,7 @@ h2.tit {
 }
 
 .grade.g3 {
-    background-image: url("bangpan/publish/img/com/grade_03.png");
+    background-image: url("/bangpan/publish/img/com/grade_03.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #b7cd5b;
@@ -501,7 +501,7 @@ h2.tit {
 }
 
 .grade.g4 {
-    background-image: url("bangpan/publish/img/com/grade_04.png");
+    background-image: url("/bangpan/publish/img/com/grade_04.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #ccc;
@@ -512,7 +512,7 @@ h2.tit {
 }
 
 .grade.g5 {
-    background-image: url("bangpan/publish/img/com/grade_05.png");
+    background-image: url("/bangpan/publish/img/com/grade_05.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #52c1db;
@@ -523,7 +523,7 @@ h2.tit {
 }
 
 .grade.g6 {
-    background-image: url("bangpan/publish/img/com/grade_06.png");
+    background-image: url("/bangpan/publish/img/com/grade_06.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #ffbe21;
@@ -668,7 +668,7 @@ body.gingerbread .main_visual img {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("bangpan/publish/img/ico/ico_play.png");
+    background-image: url("/bangpan/publish/img/ico/ico_play.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: rgba(0, 0, 0, 0.6);
@@ -1036,7 +1036,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    background-image: url("bangpan/publish/img/com/select_arrow.png");
+    background-image: url("/bangpan/publish/img/com/select_arrow.png");
     background-repeat: no-repeat;
     background-position: 96% 50%;
     -webkit-background-size: 12px 7px;
@@ -1239,7 +1239,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     width: 12px;
     height: 7px;
     margin-top: -1px;
-    background-image: url("bangpan/publish/img/ico/ico_dir_down.png");
+    background-image: url("/bangpan/publish/img/ico/ico_dir_down.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     -webkit-background-size: 12px 7px;
@@ -1259,7 +1259,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     width: 10px;
     height: 13px;
     margin-top: -3px;
-    background-image: url("bangpan/publish/img/ico/ico_arrow_up.png");
+    background-image: url("/bangpan/publish/img/ico/ico_arrow_up.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     -webkit-background-size: 10px 13px;
@@ -1286,7 +1286,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .view_head.brand.hera {
-    background-image: url("bangpan/publish/img/com/brand_hera.png");
+    background-image: url("/bangpan/publish/img/com/brand_hera.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     -webkit-background-size: 103px 14px;
@@ -1391,7 +1391,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_content .cnt_bookmark_area .read_cnt {
     padding-left: 30px;
-    background-image: url("bangpan/publish/img/ico//ico_eye_view.png");
+    background-image: url("/bangpan/publish/img/ico//ico_eye_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 24px 16px;
@@ -1402,7 +1402,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_content .cnt_bookmark_area .like_cnt {
     padding-left: 23px;
-    background-image: url("bangpan/publish/img/ico//ico_heart_view.png");
+    background-image: url("/bangpan/publish/img/ico//ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 17px 15px;
@@ -1413,7 +1413,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_content .cnt_bookmark_area .bookmark {
     padding-left: 26px;
-    background-image: url("bangpan/publish/img/ico//ico_star_view.png");
+    background-image: url("/bangpan/publish/img/ico//ico_star_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 20px 19px;
@@ -1488,7 +1488,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .sns .talk:before {
-    background-image: url("bangpan/publish/img/ico//ico_kakaotalk.png");
+    background-image: url("/bangpan/publish/img/ico//ico_kakaotalk.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 21px 21px;
@@ -1498,7 +1498,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .sns .story:before {
-    background-image: url("bangpan/publish/img/ico//ico_kakaostory.png");
+    background-image: url("/bangpan/publish/img/ico//ico_kakaostory.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 21px 21px;
@@ -1578,7 +1578,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("bangpan/publish/img/com/user_thumb_mask.png");
+    background-image: url("/bangpan/publish/img/com/user_thumb_mask.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     -webkit-background-size: 40px 40px;
@@ -1645,7 +1645,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     top: 0;
     right: 0;
     z-index: 10;
-    background-image: url("bangpan/publish/img/ico/ico_heart_view.png");
+    background-image: url("/bangpan/publish/img/ico/ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: right top;
     -webkit-background-size: 17px 15px;
@@ -1666,7 +1666,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .reply_list li .user_info .update_time.today {
     padding-left: 18px;
-    background-image: url("bangpan/publish/img/ico/ico_clock.png");
+    background-image: url("/bangpan/publish/img/ico/ico_clock.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 13px 13px;
@@ -1810,7 +1810,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     font-size: 0.786em;
     color: #999;
     padding-left: 18px;
-    background-image: url("bangpan/publish/img/ico/ico_clock.png");
+    background-image: url("/bangpan/publish/img/ico/ico_clock.png");
     background-repeat: no-repeat;
     background-position: left center;
     -webkit-background-size: 12px 12px;
@@ -1905,7 +1905,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .fb_type .etc_btns a.reply {
-    background-image: url("bangpan/publish/img/ico/ico_reply_big.png");
+    background-image: url("/bangpan/publish/img/ico/ico_reply_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: 14px 17px;
@@ -1915,7 +1915,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .fb_type .etc_btns a.bookmark {
-    background-image: url("bangpan/publish/img/ico/ico_star_big.png");
+    background-image: url("/bangpan/publish/img/ico/ico_star_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: 18px 17px;
@@ -1925,11 +1925,11 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .fb_type .etc_btns a.bookmark.active {
-    background-image: url("bangpan/publish/img/ico/ico_star_big_active.png");
+    background-image: url("/bangpan/publish/img/ico/ico_star_big_active.png");
 }
 
 .fb_type .etc_btns a.like {
-    background-image: url("bangpan/publish/img/ico/ico_heart_big.png");
+    background-image: url("/bangpan/publish/img/ico/ico_heart_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: 16px 17px;
@@ -1939,5 +1939,5 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .fb_type .etc_btns a.like.active {
-    background-image: url("bangpan/publish/img/ico/ico_heart_big_active.png");
+    background-image: url("/bangpan/publish/img/ico/ico_heart_big_active.png");
 }
