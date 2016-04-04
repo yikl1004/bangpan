@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- 메뉴리스트 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+
+<script type="text/javascript" src="../../com/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+<script type="text/javascript" src="../../com/js/menuList.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+
+
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+	<a href="#wgHeader">주 메뉴 바로가기</a>
+    <a href="#wgContainer">본문 내용 바로가기</a>
+</div>
+<hr />
+<div id="wrapGuide">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr />
+    <div id="wgContainer" class="layout2 clfix">
+    	<!-- LNB s --><script type="text/javascript">LeftMenu01();lnb_menu('1','1');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">메뉴리스트</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            <div id="g_container" class="wgDsc">
+            	<div class="section cordView">
+                    
+                    <div class="dscBox type01">
+                        <ul class="lstDsc">
+                            <li><strong class="pointBk">구분</strong> : <strong class="pointGy02">ⓣ</strong> - TAB | <strong class="pointGy02">ⓟ</strong> - POPUP | <strong class="pointGy02">ⓛ</strong> - LAYER</li>
+                            <li><strong class="pointBk">CHECK</strong> : <strong class="pointGy02">ⓥ</strong> - validate | <strong class="pointGy02">ⓒ</strong> - cross browing | <strong class="pointGy02">ⓦ</strong> - WAH</li>
+                            <li><strong class="pointBk">완료여부</strong> : 미완료 N | 완료 N. (* 완료된 값을 통해 자동으로 공정률 계산)</li>
+                            <li><strong class="pointBk">진행표시</strong> : <span class="txt_ing">초록-작업중</span> | <span class="txt_ok">빨강-완료일/검수일</span> | <span class="txt_mod">파랑-수정일/검수일</span></li>
+                        </ul>
+                    </div>
+                </div><!--// section div -->
+                
+            	<div class="section">
+                    <h2 class="gtit">1. 작업공정률 <strong class="pointGn02 totalNum">[0%]</strong></h2>
+                </div>
+                
+                <!-- D: 작업공정률 테이블은 자동 반영되므로 수정금지  -->
+            	<table class="guideTbl01 thLeft green rowtbl">
+                    <colgroup>
+                    	<col style="width:15%;">
+                    	<col style="width:10%;">
+                        <col style="width:15%;">
+                    	<col style="width:10%;">
+                        <col style="width:15%;">
+                    	<col style="width:10%;">
+                        <col style="width:15%;">
+                    	<col style="width:10%;">
+                    </colgroup>
+                    <tbody>
+                    </tbody>
+                </table>
+                    
+            	
+                <div class="section">
+                    <h2 class="gtit">
+                    	2. PROJECT NAME / CATEGORY NAME
+                        <fieldset class="muSort">
+                            <legend>메뉴리스트 정렬선택</legend>
+                            <input type="radio" name="muSort" id="muSort1" checked><label for="muSort1">전체</label>
+                            <input type="radio" name="muSort" id="muSort2"><label for="muSort2">완료목록</label>
+                            <input type="radio" name="muSort" id="muSort3"><label for="muSort3">미완료목록</label>
+                        </fieldset>
+                    </h2>
+                </div>
+                <div id="g_content">
+                  
+                  <table id="focus" class="guideTbl01 blue">
+                    <colgroup>
+                    <col width="3%" />
+                    <col width="10%" />
+                    <col width="10%" />
+                    <col width="7%" />
+                    <col width="7%" />
+                    <col width="5%" />
+                    <col width="5%" />
+                    <col width="7%" />
+                    <col width="6%" />
+                    <col width="6%" />
+					<col width="7%" />
+                    <col width="*%" />
+                    <col width="5%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">NUM</th>
+                        <th scope="col">1Depth</th>
+                        <th scope="col">2Depth</th>
+                        <th scope="col">3Depth</th>
+                        <th scope="col">4Depth</th>
+                        <th scope="col">5Depth</th>
+                        <th scope="col">구분</th>
+                        <th scope="col">CHECK</th>
+                        <th scope="col">완료여부</th>
+                        <th scope="col">완료일자</th>
+                        <th scope="col">수정일자</th>
+                        <th scope="col">비고</th>
+                        <th scope="col">LINK</th>
+                      </tr>
+                    </thead>
+                    <!--  1depth 구분은 tbody로 함 -->
+
+                    <!--  1depth가 1SET 임 -->
+                     <tbody>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02">메인</td>
+                        <td class="itemtit03">기본모드</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/index_detail.html" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02">기타 &amp; 공통</td>
+                        <td class="itemtit03">공지사항</td>
+                        <td>목록</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02">기타 &amp; 공통</td>
+                        <td class="itemtit03"></td>
+                        <td>상세</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02">기타 &amp; 공통</td>
+                        <td class="itemtit03">검색</td>
+                        <td>검색 결과</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02">기타 &amp; 공통</td>
+                        <td class="itemtit03">로딩중</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/00/loading.html" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02">기타 &amp; 공통</td>
+                        <td class="itemtit03">앱 다운로드</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02">기타 &amp; 공통</td>
+                        <td class="itemtit03">에러페이지</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02">기타 &amp; 공통</td>
+                        <td class="itemtit03">댓글</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/05/life_reply_write.html" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+       				  <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">라이프</td>
+                        <td class="itemtit03">목록</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/index_detail.html#tab/5" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">라이프</td>
+                        <td class="itemtit03">상세</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/05/life_view.html" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                    </tbody>
+					<tbody>
+       				  <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">뷰티뉴스</td>
+                        <td class="itemtit03">목록</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/index_detail.html#tab/1" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">뷰티뉴스</td>
+                        <td class="itemtit03">상세</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/01/beautynews_view.html" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                    </tbody>
+					<tbody>
+       				  <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">세일즈 팁</td>
+                        <td class="itemtit03">BEST 노하우</td>
+                        <td>목록</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/index_detail.html#tab/3" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+       				  <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">세일즈 팁</td>
+                        <td class="itemtit03"></td>
+                        <td>상세</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/03/sales_tip_view_bestknowhow.html" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">세일즈 팁</td>
+                        <td class="itemtit03">노하우 공유</td>
+                        <td>목록</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/index_detail.html#tab/3/2" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">세일즈 팁</td>
+                        <td class="itemtit03"></td>
+                        <td>상세</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/03/sales_tip_view_knowhowshare.html" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                    </tbody>
+					<tbody>
+       				  <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">제품도서관</td>
+                        <td class="itemtit03">목록</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC">ⓛ</td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/index_detail.html#tab/2" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+       				  <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">제품도서관</td>
+                        <td class="itemtit03">상세</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/02/product_info_view.html" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">카운셀러 톡</td>
+                        <td class="itemtit03">칭찬합시다</td>
+                        <td>목록</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/index_detail.html#tab/4" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">카운셀러 톡</td>
+                        <td class="itemtit03">궁금해요</td>
+                        <td>목록</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/index_detail.html#tab/4/2" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">카운셀러 톡</td>
+                        <td class="itemtit03">공통</td>
+                        <td>상세</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">Y</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="/publish/html/04/praise_view.html" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">이벤트</td>
+                        <td class="itemtit03">진행중인 이벤트</td>
+                        <td>목록</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">이벤트</td>
+                        <td class="itemtit03">진행중인 이벤트</td>
+                        <td>상세</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">이벤트</td>
+                        <td class="itemtit03">종료된 이벤트</td>
+                        <td>목록</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">이벤트</td>
+                        <td class="itemtit03">종료된 이벤트</td>
+                        <td>상세</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">마이페이지</td>
+                        <td class="itemtit03">나의 정보</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">마이페이지</td>
+                        <td class="itemtit03">나의 정보</td>
+                        <td>회원등급 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC">ⓛ</td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">마이페이지</td>
+                        <td class="itemtit03">포인트 내역</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">마이페이지</td>
+                        <td class="itemtit03"></td>
+                        <td>포인트 제도 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC">ⓛ</td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">마이페이지</td>
+                        <td class="itemtit03">나의 게시글</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">마이페이지</td>
+                        <td class="itemtit03">나의 보관함</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">&nbsp;</th>
+                        <td class="itemtit02 fst">마이페이지</td>
+                        <td class="itemtit03">나의 교육일정</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="alC"></td>
+                        <td class="alC">ⓥⓒⓦ</td>
+                        <td class="alC">N</td>
+                        <td class="alC txt_ok">완료일자/작업자이니셜</td>
+                        <td class="alC txt_mod">04.04 / C.MK</td>
+                        <td>&nbsp;</td>
+                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#focus').tableHover();
+
+                        $('a').each(function(){
+                            $(this).attr('href', "http://yikl1004.github.io/bangpan" + $(this).attr('href'));
+                        });
+                    });
+                  </script>
+                  <script type="text/javascript">
+				  	function toggleed(trEle){
+						//alert(trEle.parentElement.rows)
+						var rows = trEle.parentElement.rows;
+						for(i = 0; i < rows.length; i++){
+							if(rows[i] == trEle){
+								trEle.style.backgroundColor = "#ffebeb"
+							}else{
+								rows[i].style.backgroundColor = ""
+							 }
+						   }
+						}
+                  </script>
+                  <script type="text/javascript">
+						var st1 = new SortableTable(document.getElementById("focus"), ["Number" ,"String","String", "String", "String", "String"]);
+						$(function(){
+							var tds = $("#focus tbody  th:first-child");
+							for(var i=0; i < tds.length; i++) {
+								$(tds[i]).html(i+1);
+							}
+						});
+						$('#focus thead th').click(function(){
+							//alert("a");
+							var tds = $("#focus tbody  th:first-child");
+							for(var i=0; i < tds.length; i++) {
+								//alert(tds[i].firstChild.nodeValue);
+								$(tds[i]).html(i+1);
+							}
+						});
+					</script>
+              </div>
+              <!--// g_content div -->
+              </div>
+              <!--// g_container div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>

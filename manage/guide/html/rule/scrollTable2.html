@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- 테이블가이드 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+<style type="text/css">
+table {font-size:16px; border-collapse:separate;border-spacing:0}
+table.tbl-layout2{width:100%;border-top:4px solid #686970;border-bottom:1px solid #686970}
+table.tbl-layout2 td{white-space: nowrap;padding:12px 18px;text-align:left;background-color:#fafbfc;border-top:1px solid #e0e1e3}
+table.tbl-layout2 tr:first-child td{border-top:0}
+.scroll-fixed-wrap{padding-left:192px;overflow:hidden}
+.scroll-fixed{overflow:hidden;}
+.scroll-fixed{float:left;width:192px;margin-left:-192px}
+.scroll-fixed ~ .tbl-scroll2{border-top-width:0;border-bottom-width:0; overflow-x:scroll}
+.scroll-fixed ~ .tbl-scroll2 table{min-width:100%;border-top:4px solid #686970;border-bottom:1px solid #686970}
+body.safari .scroll-fixed ~ .tbl-scroll2 table{width:100% !important;}
+.scroll-fixed ~ .tbl-scroll2 tr:first-child th, .scroll-fixed ~ .tbl-scroll2 tr:first-child td{border-top-width:0}
+.blind{position:absolute;top:0;left:0;width:0 !important;height:0 !important;padding:0 !important;margin:0;overflow:hidden;font-size:0 !important;line-height:0 !important}
+table.tbl-type2 tr.txt th, table.tbl-type2 tr.txt td{padding:12px 18px}
+table.tbl-type2.tfoot{border-bottom-width:0}
+table.tbl-type2.tfoot tfoot th, table.tbl-type2.tfoot tfoot td{background-color:transparent;border:1px solid #2768c3;border-top-width:1px}
+table.tbl-type2.tfoot tfoot th{border-right-width:0}
+table.tbl-type2.tfoot tfoot td{border-left-width:0}
+table.tbl-type2.layout td:first-child{border-left-width:0}
+table.tbl-type2 td.no-b-desc{border-left-width:0;font-size:14px;}
+table.tbl-type2 td.no-b-desc .input-area{padding-bottom:30px;}
+table.tbl-type2 td{padding:10px 18px;border-left:1px solid #e0e1e3}
+table.tbl-type2 th, table.tbl-type2 td{height:22px;border-top:1px solid #e0e1e3;text-align:left;font-weight:normal}
+table.tbl-type2 tbody:first-child tr:first-child th, table.tbl-type2 tbody:first-child tr:first-child td{border-top-width:0}
+table.tbl-type2 tbody tr:first-child th, table.tbl-type2 tbody tr:first-child td{border-top:1px solid #686970}
+</style>
+<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	
+	$('.tbl-type2').css('width',$('.scroll-fixed').width() * $('.tbl-type2 tr:first-child td').length)
+	$('.scroll-fixed-wrap').parent().css('max-width',$('.scroll-fixed').width()+($('.scroll-fixed').width() * $('.tbl-type2 tr:first-child td').length))
+	
+});
+</script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+
+
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+    <a href="#skipContent">본문 내용 바로가기</a>
+</div>
+<hr>
+<div id="wrapGuide" style=" min-width: 0;">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr>
+    <div id="wgContainer" class="layout2 clfix" style=" min-width: 0;">
+    	<!-- LNB s --><script type="text/javascript">LeftMenuRULE();lnb_menu('5','1');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">서식가이드</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            
+            <div id="skipContent" class="wgDsc">
+            	<!-- 여기서부터 내용 s -->
+                
+                    
+                <div class="section cordView">
+                	<h2 class="gtit">3. 스크롤 테이블</h2>
+                	<h3 class="gtit">■ scope-col 작성 예</h3>
+                    <div class="dscBox type03">
+
+
+<!-- 테이블 마크업 시작 -->
+			<div style="width:100%; ">
+				<div class="scroll-fixed-wrap">
+					<div class="scroll-fixed">
+						<table class="tbl-layout2" data-name="table-title2"><!-- 좌,우 테이비블 각각 date-name/data-target 1:1 매칭 -->
+							<tbody><tr style="height: 46px;">
+								<td>종목명</td>
+							</tr>
+							<tr style="height: 47px;">
+								<td>청약코드</td>
+							</tr>
+							<tr style="height: 47px;">
+								<td>시장구분</td>
+							</tr>
+							<tr style="height: 47px;">
+								<td>액면가</td>
+							</tr>
+						</tbody></table>
+					</div>
+					<div class="tbl-scroll2" tabindex="0" >
+						<table class="tbl-type2 rows" data-role="common-table-scroll-sync" data-target="table-title2" data-direction="VERTICAL">		<!-- width : 종목명 데이타 셀 하나당 192px -->
+						<caption>
+							<strong>공모주종목조회 상세</strong>
+						<p style="overflow: hidden;">종목명,청약코드,시장구분,액면가로 구성된 표입니다.</p></caption>
+						<colgroup>
+							<col />
+							
+						</colgroup>
+							<tbody><tr class="txt" style="height: 46px;">
+								<th scope="row" class="blind">종목명</th>
+								<td class="c">씨디아이홀딩스일반1</td>
+								<td class="c">씨디아이홀딩스일반2</td>
+								<td class="c">씨디아이홀딩스일반3</td>
+								<td class="c">씨디아이홀딩스일반4</td>
+								<td class="c">씨디아이홀딩스일반5</td>
+							</tr>
+							<tr class="txt" style="height: 47px;">
+								<th scope="row" class="blind">청약코드</th>
+								<td class="c">qqqqq</td>
+								<td class="c">qqq</td>
+								<td class="c"></td>
+								<td class="c"></td>
+								<td class="c"></td>
+							</tr>
+							<tr class="txt" style="height: 47px;">
+								<th scope="row" class="blind">시장구분</th>
+								<td class="c"></td>
+								<td class="c">씨디아이홀딩스</td>
+								<td class="c"></td>
+								<td class="c"></td>
+								<td class="c"></td>
+							</tr>
+							<tr class="txt" style="height: 47px;">
+								<th scope="row" class="blind">액면가</th>
+								<td class="r"></td>
+								<td class="r">1,000,000</td>
+								<td class="r"></td>
+								<td class="r"></td>
+								<td class="r"></td>
+							</tr>
+						</tbody></table>
+					</div>
+				</div>
+			</div>
+<!-- 테이블 마크업 종료 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <pre class="brush: html;">
+&lt;table>
+    &lt;caption>데이터테이블:scope-col&lt;/caption>
+    &lt;colgroup>
+        &lt;col style="width:20%">
+    &lt;/colgroup>
+    &lt;thead>
+        &lt;tr>
+            &lt;th scope="col">scope=col&lt;/th>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+        &lt;tr>
+            &lt;td>&nbsp;&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+</pre>
+                    </div>
+                    
+
+                </div><!--// section div -->
+                               
+                <!-- 여기서부터 내용 e -->
+            </div><!--// wgDsc div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>

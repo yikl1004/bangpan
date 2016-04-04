@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="Author" content="www.lottehotel.com" />
+	<title> Layer Pop ＆ Layer | LOTTE HOTEL </title>
+	<link rel="stylesheet" type="text/css" href="../../../com/css/cm.import.ko.css" />
+	<link rel="stylesheet" type="text/css" href="../../../com/css/global.css" />
+	<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../../com/js/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../com/js/cm.jQuery.design.js"></script>
+	<script type="text/javascript" src="../../../com/js/cm.jQuery.thumbSlide.js"></script>
+    <script type="text/javascript" src="../../../com/js/cm.jQuery.ui.js"></script>
+    <style type="text/css">
+	body {background:#d1cece;}
+	#global {background:#d1cece; margin-bottom:100px; padding:20px;}
+	#popWrap.laypop .popImg span {min-height:300px;}
+	.popImg span {display:inline-block; width:100%; height:100%; background:#f5f5f5;}
+	#popWrap.laypop .popBody {background:#FFFFE1;}	
+	#popWrap.layVer .popBody {background:#FFFFE1;}
+	#popWrap.layHor .popBody {background:#FFFFE1;}
+
+	#popWrap.laypop.type2 .popImg span{width:auto; height:auto; min-height:0; background-color:transparent; }
+	#popWrap.laypop.type2 .select_area .img_map{position:absolute; z-index:5; left:40px; bottom:0; width:16px; height:25px; background:url(/front/img/com/bg_point_area.png) left top no-repeat;}
+	#popWrap.laypop.type2 .select_area .img_map em {display:block; overflow:hidden; height:0; width:0; margin:0; padding:0;}
+	#popWrap.laypop.type2 .select_area.arrL .img_map{left:0; bottom:0;}
+	#popWrap.laypop.type2 .select_area.open .img_map{background-position:-80px top;}
+
+
+</style>
+
+</head>
+
+<body>
+	<div class="skip_nav">
+		<a href="#lp_container">본문으로 바로가기</a>
+	</div><!-- //skip_nav -->
+    <div id="global">
+		<hr />
+        <!-- D/P 본 주석은 작업전달을 위한 내용으로 참고후 삭제바람
+        	 Layer Popup 일 경우 class="laypop" 사용.
+             페이지내 레이어로 표현되는 경우 가로형 레이어 class="layHor" 사용.
+             페이지내 레이어로 표현되는 경우 세로형 레이어 class="layVer" 사용.
+         -->
+        <strong style="display:block; margin:30px 0 10px; font-size:20px;">레이어팝업 - 기본형</strong>
+        <div id="popWrap" class="laypop" style="width:700px;">
+            <div id="popHeader">
+                <h1 class="popTit">Layer Popup 타이틀</h1>
+            </div><!--// popHeader div -->
+            <hr />
+            
+            <div class="popContainer">
+                <div class="popImg"><span>이미지 영역</span></div><!--// popImg div -->
+                <div class="popBody">
+                    <div class="dep02Sec">
+                        <h2 class="tit2dep tit">2dep Tit</h2>
+                        <div class="dep03Sec">
+                            <h3 class="tit3dep">3dep Tit</h3>
+                            <div class="txt_dsc">텍스트박스</div>
+                        </div>
+                        <div class="btn_mult alC">
+                            <a href="#" class="btn_set btn_stA"><span>예약하기</span></a> <a href="#" class="btn_set btn_stB"><span>사이트 바로가기</span></a> <a href="#" class="btn_set btn_stC"><span>GO</span></a> <a href="#" class="btn_set btn_stD"><span>사이트 바로가기</span></a>
+                        </div> <!-- //btn_area -->
+                    </div>
+                </div><!--// popBody div -->
+            </div><!--// popContainer div -->
+            <hr />
+            <a href="#" class="btnClose"><span class="hide">창닫기</span></a>
+            
+        </div><!--// popWrap div -->
+        
+        <!-- Page Layer horizontal Type s -->
+        <!-- D/P 본 주석은 작업을 위한 참고용이므로 확인 후 삭제바람
+        	 레이어 가로형으로 뜨는 경우 class="layHor"
+             스크롤 영역이 필요할 경우 <div class="scollSec"></div>를 해당 영역에 맞게 선별적 사용.
+         -->
+        <strong style="display:block; margin:30px 0 10px; font-size:20px;">레이어 - 가로형</strong>
+        <div id="popWrap" class="layHor" style="width:600px;">
+        	<div class="scollSec">
+                <div id="popHeader">
+                    <h1 class="popTit">Layer 가로형 타이틀<br />Layer 타이틀</h1>
+                </div><!--// popHeader div -->
+                <hr />
+                
+                <div class="popContainer">
+                    <div class="popImg"><span>이미지 영역</span></div><!--// popImg div -->
+                    <div class="popBody">
+                        <div class="dep02Sec">
+                            <dl class="tourInfoLst">
+                            	<dt>관광지명</dt>
+                            	<dd>노을공원</dd>
+                            	<dt>분류</dt>
+                            	<dd>테마공원/자연절경</dd>
+                            	<dt>주소</dt>
+                            	<dd>서울특별시 마포구 상암동 ○○○○ ○○○○○○</dd>
+                            	<dt>연락처</dt>
+                            	<dd>02-1234-1234</dd>
+                            </dl>
+                            <div class="txt_dsc">서울에서 가장 아름다운 저녁 노을을 볼수 있는 곳 '노을공원'<br />노을 공원은 서울에서 가장 아름다운 저녁노을을 볼 수 있는 문화예술 공원으로 조각작품, 전망데크 등과 더불어 넓은 잔디밭에서 시민들이 여유로움을 즐길 수 있습니다.</div>
+                        </div>
+                    </div><!--// popBody div -->
+                </div><!--// popContainer div -->
+                <hr />
+                <a href="#" class="btnClose"><span class="hide">창닫기</span></a>
+            </div><!--// scroolSec div -->
+        </div><!--// popWrap div -->
+        <!--// Page Layer horizontal Type e -->
+        
+        <!-- Page Layer vertical Type s -->
+        <!-- D/P 본 주석은 작업을 위한 참고용이므로 확인 후 삭제바람
+        	 레이어 세로형으로 뜨는 경우 class="layVer"
+        	 Find Hotel 레이어를 뛰울때 findHotel_info 클래스 추가 및 레이어팝업 사이즈는 291px
+         -->
+        <strong style="display:block; margin:30px 0 10px; font-size:20px;">레이어 - 세로형 : FIND HOTEL LAYER | 리스트 포함하지 않는 경우</strong>
+        <div id="popWrap" class="layVer findHotel_info" style="width:261px;">
+            <div id="popHeader">
+                <h1 class="popTit">LOTTE HOTEL SEOUL<br />SAIGON</h1>
+            </div><!--// popHeader div -->
+            <hr />
+            
+            <div class="popContainer">
+                <div class="popImg"><span>이미지 영역</span></div><!--// popImg div -->
+                <div class="popBody">
+                    <div class="dep02Sec">
+                        <div class="txt_dsc">Tel. 82-2-771-1000<br />30, Eulji-Ro, Jung-Gu, Seoul, Korea<br />100-721 C.P.O.BOX 3500
+                        </div>
+                        <div class="linkBtn">
+                        	<a href="#" target="_blank">Visit Website</a>
+                            <a href="#">Make a Reservation</a>
+                        </div>
+                    </div>
+                </div><!--// popBody div -->
+            </div><!--// popContainer div -->
+            <hr />
+            <a href="#" class="btnClose"><span class="hide">창닫기</span></a>
+            
+        </div><!--// popWrap div -->
+        <!--// Page Layer vertical Type e -->
+        
+        
+        
+        <!-- Page Layer vertical Type s -->
+        <!-- D/P 본 주석은 작업을 위한 참고용이므로 확인 후 삭제바람
+        	 Find Hotel 레이어를 뛰울때 리스트를 포함하고 있으면 lst 클래스 추가 및 레이어팝업 사이즈는 472px
+         -->
+        <strong style="display:block; margin:30px 0 10px; font-size:20px;">레이어 - 세로형 : FIND HOTEL LAYER | 리스트 포함일경우</strong>
+        <div id="popWrap" class="layVer findHotel_info lst" style="width:261px;">
+            <div class="findHotelLnb">
+                <dl class="findHotelLst">
+                    <dt>Korea<br/><span>14 Chains</span></dt>
+                    <dd>
+                        <ul class="fhLnb">
+                            <li><a href="#" class="on">Seoul</a></li>
+                            <li><a href="#">World</a></li>
+                            <li><a href="#">Ulsan</a></li>
+                            <li><a href="#">Busan</a></li>
+                            <li><a href="#">Jeju</a></li>
+                            <li><a href="#">Mapo City</a></li>
+                            <li><a href="#">Gimpo airport city *</a></li>
+                        </ul>
+                    </dd>
+                    <dd>
+                        <div class="count_paging">
+                            <a href="#" class="btn_prev"><span class="hide">이전</span></a>
+                            <span class="nowCount">01</span>
+                            <span class="totalCount">10</span>
+                            <a href="#" class="btn_next"><span class="hide">다음</span></a>
+                        </div> <!-- //count_paging -->
+
+                    </dd>
+                </dl>
+            </div><!--// findHotelLnb div -->
+            <hr />
+            <div id="popHeader">
+                <h1 class="popTit">LOTTE HOTEL SEOUL<br />LOTTE HOTEL</h1>
+            </div><!--// popHeader div -->
+            <hr />
+            
+            <div class="popContainer">
+                <div class="popImg"><span>이미지 영역</span></div><!--// popImg div -->
+                <div class="popBody">
+                    <div class="dep02Sec">                    
+                        <div class="txt_dsc">
+                        	<span class="telNum">Tel. 82-2-771-1000</span>
+                            <span class="addressInfo">30, Eulji-Ro, Jung-Gu, Seoul, Korea<br />100-721 C.P.O.BOX 3500</span>
+                        </div>
+                        <div class="linkBtn">
+                        	<span>* Comming on Oct, 2013</span>
+                        </div>
+                    </div>
+                </div><!--// popBody div -->
+            </div><!--// popContainer div -->
+            <hr />
+            <a href="#" class="btnClose"><span class="hide">창닫기</span></a>
+            
+        </div><!--// popWrap div -->
+        <!--// Page Layer vertical Type e -->
+        
+
+		<strong style="display:block; margin:30px 0 10px; font-size:20px;">레이어 - type2</strong>
+		<div id="popWrap" class="laypop type2 findHotel_map" style="width:960px;">
+			<div id="popHeader">
+				<h1 class="popTit">Find a Hotel</h1>
+				<ul class="titR_lst">
+					<!-- D/P 활성화시 on처리 -->
+					<li class="on"><a href="#" class="ico_exmap"><span >Find a Hotel 지도로보기</span></a></li>
+					<li><a href="#" class="ico_exlist"><span>Find a Hotel 리스트로보기</span></a></li>
+				</ul>
+			</div><!--// popHeader div -->
+			<hr />
+			
+			<div class="popContainer">
+				<h2 class="hide">지도로보기</h2>
+				<div class="popImg"><span class="hide">오픈과 오픈예정을 표시한 지도영역</span>
+					
+					<!-- P : open[아이콘] : 붙을때 em 텍스트수정 / arrL[검정 화살표방향] /  -->
+					<!-- select_area position -->
+					<div class="select_area open">
+						<a href="#"><strong>Korea<span>(14)</span></strong></a>
+						<span class="img_map"><em>오픈</em></span>
+					</div>
+					<div class="select_area" style="left:309px; top:219px;">
+						<a href="#"><strong>Korea<span>(14)</span></strong></a>
+						<span class="img_map"><em>오픈예정</em></span>
+					</div>
+					<div class="select_area arrL" style="left:418px; top:284px;">
+						<a href="#"><strong>Myanmar<span>(1)</span></strong></a>
+						<span class="img_map"><em>오픈예정</em></span>
+					</div>
+					<div class="select_area open arrL" style="left:570px; top:241px;">
+						<a href="#"><strong>Japan<span>(1)</span></strong></a>
+						<span class="img_map"><em>오픈</em></span>
+					</div>
+					<!-- //select_area position -->
+
+				</div><!--// popImg div -->
+			</div><!--// popContainer div -->
+			<hr />
+			<a href="#" class="btnClose"><span class="hide">창닫기</span></a>
+			
+		</div><!--// popWrap div -->
+
+
+		<strong style="display:block; margin:30px 0 10px; font-size:20px;">레이어 - find A hotel 팝업형</strong>
+
+		<div id="popWrap" class="laypop type2 hotel_mInfo_lst" style="width:960px;">
+			<div id="popHeader">
+				<h1 class="popTit">Find a Hotel</h1>
+				<ul class="titR_lst">
+					<!-- D/P 활성화시 on처리 -->
+					<li class="on"><a href="#" class="ico_exmap"><span >Find a Hotel 지도로보기</span></a></li>
+					<li><a href="#" class="ico_exlist"><span>Find a Hotel 리스트로보기</span></a></li>
+				</ul>
+			</div><!--// popHeader div -->
+			<hr />
+
+			<div class="popContainer">
+				<!-- hotel_mInfo_lst -->
+				<span class="txt_dsc">지역명 클릭 시 해당 체인사이트로 이동합니다.</span>
+				<div class="split col2">
+					<div class="colSec">
+						<dl class="left">
+							<dt>Korea(14)</dt>
+							<dd class="split col2">
+								<div class="colSec">
+									<a href="#" title="Lotte Hotel 서울사이트 새창열림" target="_blank">Seoul</a> 
+									<a href="#" title="Lotte Hotel 울산사이트 새창열림" target="_blank">Ulsan</a>
+									<a href="#" title="Lotte Hotel 제주사이트 새창열림" target="_blank">Jeju</a>
+									<a href="#" title="Lotte City Hotel 김포사이트 새창열림" target="_blank">Gimpo Airport City</a>
+									<a href="#" title="Lotte City Hotel 제주 사이트 새창열림" target="_blank">Jeju City</a>
+								</div>
+								<div class="colSec">
+									<a href="#" title="Lotte Hotel 글로벌사이트 새창열림" target="_blank">World</a>
+									<a href="#" title="Lotte Hotel 부산사이트 새창열림" target="_blank">Busan</a>
+									<a href="#" title="Lotte City Hotel 마포사이트 새창열림" target="_blank">Mapo City</a>
+									<a href="#" title="Lotte City Hotel 대전사이트 새창열림" target="_blank">Daejeon City</a>
+								</div>
+							</dd>
+							<dt>USA(1)</dt>
+							<dd><a href="#" title="Lotte Hotel Guam 사이트 새창열림" target="_blank">Guam</a></dd>
+						</dl>
+					</div><!--// colSec div -->
+					<div class="colSec">                                    
+						<dl>
+							<dt>Russia(1)</dt>
+							<dd><a href="#" title="Lotte Hotel Moscow사이트 새창열림" target="_blank">Moscow</a></dd>
+							<dt>Japan(1)</dt>
+							<dd><a href="#" title="Lotte City Hotel Kinshicho사이트 새창열림" target="_blank">Kinshicho City</a></dd>
+							<dt>Vietnam(2)</dt>
+							<dd>
+								<a href="#" title="Lotte Hotel Legend Saigon사이트 새창열림" target="_blank">Legend Saigon</a>
+								<span class="../../coming">Hanoi - Coming soon</span>
+							</dd>
+						</dl>
+					</div><!--// colSec div -->
+				</div><!--// split2col div -->
+				<div class="count_paging">
+					<a href="#" class="btn_prev"><span class="hide">이전</span></a>
+					<span class="nowCount">01</span>
+					<span class="totalCount">02</span>
+					<a href="#" class="btn_next"><span class="hide">다음</span></a>
+				</div><!-- //count_paging end -->
+				<!-- //hotel_mInfo_lst -->
+			</div><!--// popContainer div -->
+			<hr />
+			<a href="#" class="btnClose"><span class="hide">창닫기</span></a>
+		</div><!--// popWrap div -->
+
+	<strong style="display:block; margin:30px 0 10px; font-size:20px;">윈도우팝업 type1</strong>
+	<div id="popWrap" class="winpop1" style="width:810px;">
+			<div id="popHeader">
+				<h1 class="popTit">인쇄 미리보기</h1>
+			</div><!--// popHeader div -->
+			<hr>
+			
+			<div class="popContainer">
+				<div class="popBody">
+					<div class="txt_dsc ls">
+						<strong>[SUPERIOR]</strong> 본 페이지를 인쇄합니다.
+					</div><!-- //txt_dsc -->
+					<div class="articleArea">
+						<iframe name="ibody" src="/front/html/ko/chain/hotel/accommodation/layerPopup_print_cont.html" width="100%" height="460" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" title="[DB처리]"></iframe>
+					</div>
+					<!-- btn_area -->
+					<div class="btn_mult alC med">
+						<a href="#" class="btn_set btn_stA" title="DB처리"><span>인쇄하기</span></a>
+						<a href="#" class="btn_set btn_stB" title="DB처리"><span>취소</span></a>
+					</div>
+					<!-- //btn_area -->
+				</div><!-- //popBody -->
+			</div><!--// popContainer div -->
+		</div>
+
+
+	<strong style="display:block; margin:30px 0 10px; font-size:20px;">윈도우팝업 type2</strong>
+	<div id="popWrap" class="winpop2 virtualT" style="width:850px;">
+		<div id="popHeader">
+			<h1 class="popTit">SUPERIOR, STANDARD</h1>
+		</div><!--// popHeader div -->
+		<hr />
+		
+		<div class="popContainer">
+			<div class="popImg">
+				<!-- virtual tour  영역 -->
+				virtual tour  영역(850*430)
+				<!--// virtual tour  영역 -->
+			</div><!-- //popImg -->		
+			<div class="popBody">
+				 <div class="view split col2">
+					<dl class="colSec">
+						<dt>LOTTE HOTEL SEOUL, KOREA </dt>
+						<dd>                                    
+							<div class="txt_dsc">
+								100-721 서울특별시 중구 을지로 30 <br />
+								TEL : 02-771-1000 / FAX : 02-752-3758
+							</div><!--// txt_Dsc -->
+						</dd>
+					</dl><!--// colSec div -->
+					<div class="colSec btn_mult alR">
+						<div class="ico_set">
+							<a href="#" class="btn_set btn_stA ico_info" title="DB 처리"><span>체인정보</span></a>
+							<a href="#" class="btn_set btn_stB ico_go" title="DB 처리"><span>사이트 바로가기</span></a>
+						</div><!-- //colSec div -->
+						<div class="ico_img txt">
+							<a href="http://get.adobe.com/flashplayer/" class="ico_downS" title="Adobe Flash Player 다운로드사이트 새창 열림" target="_blank">FLASH PLAYER DOWNLOAD</a>
+						</div>
+					</div>
+				</div><!-- //split -->
+			</div><!--// popBody div -->
+		</div><!--// popContainer div -->
+		<hr />
+	</div><!-- //winpop -->
+
+    </div><!--// global div -->
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- 테이블가이드 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+
+<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+    <a href="#skipContent">본문 내용 바로가기</a>
+</div>
+<hr>
+<div id="wrapGuide">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr>
+    <div id="wgContainer" class="layout2 clfix">
+    	<!-- LNB s --><script type="text/javascript">LeftMenuRULE();lnb_menu('5','1');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">서식가이드</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            
+            <div id="skipContent" class="wgDsc">
+            	<!-- 여기서부터 내용 s -->
+                <div class="section cordView">
+                	<h2 class="gtit">1. 데이터 테이블과 배치용(레이아웃용) 테이블</h2>
+                    <h3 class="gtit">■ 데이터 테이블</h3>
+                    <div class="dscBox type01">
+                        <ul class="lstDsc">
+                            <li>table Mark up에 <strong>thead, th를 포함</strong>하고 있는 경우 무조건 데이터테이블로 간주</li>
+                            <li>데이터 테이블일 경우 Mark up 작성 순서(필수) : <strong>table[summary]>caption>colgroup>thead>tfoot>tbody</strong>
+                                <pre class="brush: html;">
+&lt;table summary="데이터 테이블 구조에 대한 내용">&lt;!-- 데이터 테이블일 경우 summary 작성 필수. html5에서는 summary 속성 사용하지 않음 -->
+	&lt;caption>데이터 테이블 구조&lt;/caption>&lt;!-- 데이터 테이블일 경우 caption 작성 필수. -->
+    &lt;colgroup>&lt;/colgroup>
+    &lt;col>
+    &lt;thead>&lt;!-- thead, th의 유무에 따라 데이터 테이블과 배치용 테이블을 구분 -->
+        &lt;tr>
+            &lt;th scope="col">&lt;/th>&lt;!-- thead, th의 유무에 따라 데이터 테이블과 배치용 테이블을 구분 -->
+            &lt;td>&lt;/td>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tfoot>
+        &lt;tr>
+            &lt;th scope="row">&lt;/th>&lt;!-- thead, th의 유무에 따라 데이터 테이블과 배치용 테이블을 구분 -->
+            &lt;td>&lt;/td>
+        &lt;/tr>
+    &lt;/tfoot>
+    &lt;tbody>
+        &lt;tr>
+            &lt;th scope="row">&lt;/th>&lt;!-- thead, th의 유무에 따라 데이터 테이블과 배치용 테이블을 구분 -->
+            &lt;td>&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+</pre>
+                            </li>
+                            <li>데이터 테이블일 경우 summary, caption의 속성 사용 필수. <strong>html5에서는 summary 제외.</strong>
+                            	<ul>
+                            		<li><strong class="pointBl">XHTML, HTML4</strong>
+                                    <pre class="brush: html;">
+&lt;table summary="XHTML, HTML4 데이터 테이블 구조에 대한 내용">
+	&lt;caption>XHTML, HTML4 데이터 테이블 구조&lt;/caption>
+    ...
+&lt;/table>
+</pre>
+                                    </li>
+                            		<li><strong class="pointBl">HTML5</strong>
+                                    <pre class="brush: html;">
+&lt;table>
+	&lt;caption>
+    &lt;strong>HTML5 데이터 테이블 구조&lt;/strong>
+    &lt;p>HTML5 데이터 테이블 구조에 대한 내용&lt;/p>
+    &lt;/caption>
+    ...
+&lt;/table>
+</pre>
+                                    </li>
+                            	</ul>
+                            </li>
+                            <li>&lt;col&gt;,&lt;th&gt;,&lt;td&gt; 내 width 직접 기입 지양. 인라인 스타일로 기입.</li>
+                        </ul>
+                    </div>
+                    
+                </div><!--// section div -->
+                    
+                <div class="section cordView">
+                	<h2 class="gtit">2. scope, id/headers 작성 예</h2>
+                	<h3 class="gtit">■ scope-col 작성 예</h3>
+                    <div class="dscBox type01">
+                    <table class="guideTbl01 gray">
+                    	<caption>데이터테이블:scope-col 작성 예</caption>
+                        <colgroup>
+                        	<col style="width:20%" span="5">
+                        </colgroup>
+                    	<thead>
+                    		<tr>
+                    			<th scope="col">scope=col</th>
+                    			<th scope="col">scope=col</th>
+                    			<th scope="col">scope=col</th>
+                    			<th scope="col">scope=col</th>
+                    			<th scope="col">scope=col</th>
+                    		</tr>
+                    	</thead>
+                    	<tbody>
+                    		<tr>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    		</tr>
+                    	</tbody>
+                    </table>
+                    <pre class="brush: html;">
+&lt;table>
+    &lt;caption>데이터테이블:scope-col&lt;/caption>
+    &lt;colgroup>
+        &lt;col style="width:20%">
+    &lt;/colgroup>
+    &lt;thead>
+        &lt;tr>
+            &lt;th scope="col">scope=col&lt;/th>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+        &lt;tr>
+            &lt;td>&nbsp;&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+</pre>
+                    </div>
+                    
+                    <h3 class="gtit">■ scope-row 작성 예</h3>
+                    <div class="dscBox type01">
+                    <table class="guideTbl01 gray">
+                    	<caption>데이터테이블:scope-row 작성 예</caption>
+                        <colgroup>
+                        	<col style="width:20%" span="5">
+                        </colgroup>
+                    	<tbody>
+                    		<tr>
+                    			<th scope="row">scope=row</th>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    		</tr>
+                            <tr>
+                    			<th scope="row">scope=row</th>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    			<td>&nbsp;</td>
+                    		</tr>
+                    	</tbody>
+                    </table>
+                    <pre class="brush: html;">
+&lt;table>
+    &lt;caption>데이터테이블:scope-row&lt;/caption>
+    &lt;colgroup>
+        &lt;col style="width:20%" span="5">
+    &lt;/colgroup>
+    &lt;tbody>
+        &lt;tr>
+        	&lt;th scope="row">scope=row&lt;/th>
+            &lt;td>&nbsp;&lt;/td>
+            &lt;td>&nbsp;&lt;/td>
+            &lt;td>&nbsp;&lt;/td>
+            &lt;td>&nbsp;&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+</pre>
+                    </div>
+                    
+                    
+                    
+                    <h3 class="gtit">■ id/headers 작성 예</h3>
+                    <div class="dscBox type01">
+                    <table class="guideTbl01 gray">
+                    	<caption>데이터테이블:id/headers 작성 예</caption>
+                        <colgroup>
+                        	<col style="width:20%" span="5">
+                        </colgroup>
+                    	<thead>
+                    		<tr>
+                    			<th scope="col" colspan="2" rowspan="2" id="exc1">id=exc1</th>
+                    			<th scope="col" colspan="2" id="exc2">id=exc2</th>
+                    			<th scope="col" rowspan="2" id="exc3">id=exc3</th>
+                    		</tr>
+                            <tr>
+                    			<th scope="col" id="exc4">id=exc4</th>
+                    			<th scope="col" id="exc5">id=exc5</th>
+                    		</tr>
+                    	</thead>
+                    	<tbody>
+                    		<tr>
+                    			<th scope="row" id="exr1">id=exr1</th>
+                    			<th scope="row" id="exr2">id=exr2</th>
+                    			<td headers="exc2 exc4 exr1 exr2">headers=exc2 exc4 exr1 exr2</td>
+                    			<td headers="exc2 exc5 exr1 exr2">headers=exc2 exc5 exr1 exr2</td>
+                    			<td headers="exc3 exc6 exr1 exr2">headers=exc3 exr1 exr2</td>
+                    		</tr>
+                            <tr>
+                    			<th scope="row" colspan="2" id="exr3">id=exr3</th>
+                    			<td headers="exc2 exc4 exr3">headers=exc2 exc4 exr3</td>
+                    			<td headers="exc2 exc5 exr3">headers=exc2 exc5 exr3</td>
+                    			<td headers="exc3 exr3">headers=exc3 exr3</td>
+                    		</tr>
+                    	</tbody>
+                    </table>
+                    <pre class="brush: html;">
+&lt;table>
+    &lt;caption>데이터테이블:id/headers 작성 예&lt;/caption>
+    &lt;colgroup>
+        &lt;col style="width:20%" span="5">
+    &lt;/colgroup>
+    &lt;thead>
+        &lt;tr>
+            &lt;th scope="col" colspan="2" rowspan="2" id="exc1">id=exc1&lt;/th>
+            &lt;th scope="col" colspan="2" id="exc2">id=exc2&lt;/th>
+            &lt;th scope="col" rowspan="2" id="exc3">id=exc3&lt;/th>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th scope="col" id="exc4">id=exc4&lt;/th>
+            &lt;th scope="col" id="exc5">id=exc5&lt;/th>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+        &lt;tr>
+            &lt;th scope="row" id="exr1">id=exr1&lt;/th>
+            &lt;th scope="row" id="exr2">id=exr2&lt;/th>
+            &lt;td headers="exc2 exc4 exr1 exr2">headers=exc2 exc4 exr1 exr2&lt;/td>
+            &lt;td headers="exc2 exc5 exr1 exr2">headers=exc2 exc5 exr1 exr2&lt;/td>
+            &lt;td headers="exc3 exc6 exr1 exr2">headers=exc3 exr1 exr2&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th scope="row" colspan="2" id="exr3">id=exr3&lt;/th>
+            &lt;td headers="exc2 exc4 exr3">headers=exc2 exc4 exr3&lt;/td>
+            &lt;td headers="exc2 exc5 exr3">headers=exc2 exc5 exr3&lt;/td>
+            &lt;td headers="exc3 exr3">headers=exc3 exr3&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+</pre>
+                    </div>
+                </div><!--// section div -->
+                               
+                <!-- 여기서부터 내용 e -->
+            </div><!--// wgDsc div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>

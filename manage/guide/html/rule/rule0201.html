@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- 레이아웃 기본구조 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+<script type="text/javascript" src="../../com/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../../com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+	<a href="#wgHeader">주 메뉴 바로가기</a>
+    <a href="#wgContainer">본문 내용 바로가기</a>
+</div>
+<hr>
+<div id="wrapGuide">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr>
+    <div id="wgContainer" class="layout2 clfix">
+    	<!-- LNB s --><script type="text/javascript">LeftMenuRULE();lnb_menu('2','1');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">레이아웃 기본구조</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            
+            <div class="wgDsc">
+            	<!-- 여기서부터 내용 s -->
+                    
+                <div class="section">
+                	<h2 class="gtit">MAIN</h2>
+                    <p class="lstDsc"><strong> LAYOUT 3단 구조(HEADER + CONTAINER + FOOTER)</strong> : width:100%(min-width:1000px), CENTER 정렬</p>
+                    <div class="tempGrid gridMain">
+                    	<div class="gridDsc">
+                            <div class="gridID"><span><strong>#wrap.main</strong></span>
+                                <div class="gridBox">
+                                	<div class="gridDsc">&nbsp;
+                                    	<div class="gridID"><span><strong>#header</strong></span></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="gridBox gridContainer">
+                                	<div class="gridDsc">&nbsp;
+                                    	<div class="gridID"><span><strong>#container</strong></span>
+                                        
+                                        	<div class="gridBox bg1 gridVisual">
+                                                <div class="gridDsc">&nbsp;
+                                                    <div class="gridID"><span><strong>#visual</strong></span></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="gridBox bg1 gridContents">
+                                                <div class="gridDsc">&nbsp;
+                                                    <div class="gridID"><span><strong>#contents</strong></span></div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="gridBox">
+                                	<div class="gridDsc">&nbsp;
+                                    	<div class="gridID"><span><strong>#footer</strong></span></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="gtit">SUB - TYPE.1</h2>
+                    <p class="lstDsc"><strong>SUB LAYOUT 2단(LEFT + CONTENTS)</strong> : 왼쪽메뉴 있음</p>
+                    
+                    <div class="tempGrid gridSub subType01">
+                    	<div class="gridDsc">
+                            <div class="gridID"><span><strong>#wrap.sublnb.categoryName</strong> : LNB 있는 경우 - sublnb, ㅣLNB 없는 경우 - sub | 카테고리 분류별 클래스 추가됨</span>
+                                <div class="gridBox optyGrid">
+                                	<div class="gridDsc">&nbsp;
+                                    	<div class="gridID"><span><strong>#header</strong></span></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="gridBox gridContainer">
+                                	<div class="gridDsc">&nbsp;
+                                    	<div class="gridID"><span><strong>#container</strong></span>
+                                        	<div class="clfix">
+                                                <div class="gridBox bg2 gridLnb">
+                                                    <div class="gridDsc">&nbsp;
+                                                        <div class="gridID"><span><strong>#lnb</strong></span></div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="gridBox bg2 gridContents">
+                                                    <div class="gridDsc">&nbsp;
+                                                        <div class="gridID"><span><strong>#contents</strong></span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="gridBox optyGrid">
+                                	<div class="gridDsc">&nbsp;
+                                    	<div class="gridID"><span><strong>#footer</strong></span></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div><!--// section div -->
+                               
+                <!-- 여기서부터 내용 e -->
+            </div><!--// wgDsc div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="Author" content="www.lottehotel.com" />
+	<title>Calendar | LOTTE HOTEL </title>
+	<link rel="stylesheet" type="text/css" href="../../../com/css/cm.import.ko.css" />
+	<link rel="stylesheet" type="text/css" href="../../../com/css/chain.css" />
+	<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../../../com/js/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="../../../com/js/cm.jQuery.design.js"></script>
+	<script type="text/javascript" src="../../../com/js/cm.jQuery.ui.js"></script>
+</head>
+<body>
+<div id="popWrap" class="laypop layVer box_calendar" style="width:229px;">
+	<h1 class="hide">Calendar</h1>
+	<hr />
+	
+	<div class="popContainer">
+		<div class="wrap">
+			<div class="wrap_cal">
+				<div class="month_cal">
+					2013. <strong>12</strong>
+				</div>
+				<div class="lstCal">
+					<span>Selected days</span>	
+				</div>
+				<table class="tbl_calendar" summary="예약 달력 정보">					
+					<caption>예약달력</caption>
+					<colgroup>
+						<col width="15%" />
+						<col width="14%" />	
+						<col width="14%" />
+						<col width="14%" />
+						<col width="14%" />
+						<col width="14%" />
+						<col width="15%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Su</th>
+							<th scope="col">Mo</th>
+							<th scope="col">Tu</th>
+							<th scope="col">We</th>
+							<th scope="col">Th</th>
+							<th scope="col">Fr</th>
+							<th scope="col">Sa</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<!-- D: 당일 이전의 날짜는 span태그와 off클래스를 사용함
+									 당일 포함 이후의 날짜는 a태그를 사용함
+
+									 ex. 오늘날짜가 9일이고 선택 전 체크인 화면의 경우)
+										 1~8일 까지는 선택 불가능함 <span class="off">1</span> 마크업 사용
+										 9~31일 까지는 선택 가능함 <a href="#">9</a> 마크업 사용함
+										 9일은 "오늘 날짜" 타이틀 넣어줌 <a href="#" title="오늘 날짜">9</a>
+
+										 19일을 체크인으로 클릭한 경우 체크인 화면)
+										 19일은 "Check In" 타이틀과 체크인활성화 class="on"을 넣어줌 <a href="#" title="Check In" class="on">19</a>
+
+										 19일을 체크인으로 클릭하였을 때 체크아웃 화면)
+										 19일은 선택 불가능함 <span class="off">19</span> 마크업 사용
+										 24일을 Check Out으로 선택할 경우 "Check Out" 타이틀과 체크아웃활성화 class="on" 넣어줌 <a href="#" title="Check Out" class="on">24</a>								 
+								-->
+							<td><span class="off">1</span></td>
+							<td><span class="off">2</span></td>
+							<td><span class="off">3</span></td>
+							<td><span class="off">4</span></td>
+							<td><span class="off">5</span></td>
+							<td><span class="off">6</span></td>
+							<td><span class="off">7</span></td>
+						</tr>
+						<tr>
+							<td><span class="off">8</span></td>
+							<td>
+								<!-- D: 현재 날짜는 a태그에 오늘 날짜 타이틀 추가함 -->
+								<a href="#" title="오늘 날짜">9</a>
+							</td>
+							<td><a href="#">10</a></td>
+							<td><a href="#">11</a></td>
+							<td><a href="#">12</a></td>
+							<td><a href="#">13</a></td>
+							<td><a href="#">14</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">15</a></td>
+							<td><a href="#">16</a></td>
+							<td><a href="#">17</a></td>
+							<td><a href="#">18</a></td>
+							<td>
+								<!-- D: 체크인으로 19일을 선택시 a태그에 Check In 타이틀과 class="on" 추가 -->
+								<a href="#" title="Check In" class="on">19</a>								
+							</td>
+							<td><a href="#">20</a></td>
+							<td><a href="#">21</a></td>
+						</tr>
+						<tr>
+						    <td><a href="#">22</a></td>
+							<td><a href="#">23</a></td>
+							<td>
+								<!-- D: 체크아웃으로 24일을 선택시 a태그에 Check Out 타이틀과 class="on" 추가 -->
+								<a href="#" title="Check Out" class="on">24</a>
+							</td>
+							<td><a href="#">25</a></td>
+							<td><a href="#">26</a></td>
+							<td><a href="#">27</a></td>
+							<td><a href="#">28</a></td>
+						</tr>
+						<tr>
+						    <td><a href="#">29</a></td>
+							<td><a href="#">30</a></td>
+							<td><a href="#">31</a></td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>	
+					</tbody>
+				</table>
+			</div><!-- //wrap_calendar -->	
+			<a href="#" class="btn prev"><span class="hide">이전달 달력 보기</span></a>
+			<a href="#" class="btn next"><span class="hide">다음달 달력 보기</span></a>
+		</div><!-- //wrap -->
+	</div><!--// popContainer div -->
+	<hr />
+	<a href="#" class="btnClose"><span class="hide">창닫기</span></a>
+</div><!-- //laypop -->
+</body>
+</html>

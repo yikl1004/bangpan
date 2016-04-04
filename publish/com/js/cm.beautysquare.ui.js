@@ -19,6 +19,24 @@ $(function(){
 	doc[qsa]  ===   document.querySelectorAll
 	*/
 
+	// 이미지로드 jquery prototype
+	$.fn.imagesLoaded = function () {
+	    var $imgs = this.find('img[src!=""]');
+	    if (!$imgs.length) {return $.Deferred().resolve().promise();}
+
+	    var dfds = [];  
+		
+		$imgs.each(function(){
+			var dfd = $.Deferred();
+				dfds.push(dfd);
+			var img = new Image();
+				img.onload = function(){dfd.resolve();}
+				img.onerror = function(){dfd.resolve();}
+				img.src = this.src;
+		});
+	    return $.when.apply($,dfds);
+	}
+
 	$(window).on('load', function(){
 
 		//document 높이 부여
@@ -121,10 +139,12 @@ $(function(){
 			tabsMoveCtrl = true,
 			tabsSlideStr = '.swiper-container.tabs > .swiper-wrapper > '
 			swiperLoadPages = [
-				'hotissue_list.html',
+				'beautynews_list.html',
 				'product_info_list.html',
-				'sales_tip_list.html',
+				'sales_tip_list_bestknowhow.html',
+				// 'sales_tip_list_knowhowshare.html',
 				'praise_list.html',
+				// 'wonder_list.html',
 				'life_list.html'
 			];
 
@@ -148,26 +168,39 @@ $(function(){
 					gnbScroll.scrollToElement( doc[qs]( '#gnb li:nth-child(' + idx + ')'), speedAll, true, null );
 					moveBarAni( idx );
 
-					if ( (idx-1) !== 0 ) {
-						console.log(idx);
+					if ( (idx-1) !== 0 && !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded') ) {
+						var	_hashURLs = location.hash.split('/');
+							 _url = function() {
+								if ( _hashURLs[1] == 3 ) {
+									if ( _hashURLs[2] == 2 ) {
+										return devDir + '/publish/html/0' + (idx-1) + '/sales_tip_list_knowhowshare.html';
+									}
+								} else if ( _hashURLs[1] == 4 ) {
+									if ( _hashURLs[2] == 2 ) {
+										return devDir + '/publish/html/0' + (idx-1) + '/wonder_list.html';
+									}
+								}
+								return devDir + '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2];	
+							};
+							console.log(_url());
 						$.ajax({
-							url: devDir + '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
+							// url: devDir + '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
+							url: _url(),
 							success: function(data) {
 								var _data = $(data),
 									$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
 									ht = 0,
 									dataSlideIndexStr = '[data-swiper-slide-index=' + (idx-1) + ']';
 
-								console.log(ht);
-								if ( !$wrapper.find( dataSlideIndexStr + ' .container').hasClass('loaded') ) {
-									$wrapper.find( dataSlideIndexStr + ' .container').append( _data ).addClass('loaded');
+								$wrapper.find( dataSlideIndexStr + ' .container').html( _data ).imagesLoaded().then(function(){
+									$wrapper.find( dataSlideIndexStr + ' .container').addClass('loaded');
 									ht = $wrapper.find( dataSlideIndexStr + ' .container').outerHeight(false);
 									$wrapper.find( dataSlideIndexStr ).height(ht);
 									$wrapper.height(ht);
-								}
+								});
 							},
-							error: {
-
+							error: function(){
+								alert('ajax call error!!!');
 							}
 						});
 					}
@@ -312,6 +345,27 @@ $(function(){
 				});
 			}
 		};
+
+		//비디오 플레이어
+		var videoPlayer = doc[qs]('#videoPlayer');
+		if ( videoPlayer ) {
+			videoPlayer[qs]('.video').addEventListener('click', function(){
+				if ( $('#videoPlayer').find('.video').hasClass('play') ) {
+					videoPlayer[qs]('video').pause();
+					$('#videoPlayer').find('.video').removeClass('play');
+				} else {
+					videoPlayer[qs]('video').play();
+					$('#videoPlayer').find('.video').addClass('play');
+				}
+			}, false);
+		}
+
+		//홈화면 슬라이드탭 이동( 추후 삭제 요망 )
+		if ( location.hash.indexOf('tab') ) {
+			var _hash = location.hash,
+				pageNumber = parseInt( _hash.split('/')[1] );
+			tabsSwiperFunc( pageNumber );
+		}
 
 	}); // window load
 

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- 컨텐츠가이드 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+
+<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+    <a href="#skipContent">본문 내용 바로가기</a>
+</div>
+<hr>
+<div id="wrapGuide">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr>
+    <div id="wgContainer" class="layout2 clfix">
+    	<!-- LNB s --><script type="text/javascript">LeftMenuRULE();lnb_menu('3','1');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">컨텐츠가이드</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            
+            <div id="skipContent" class="wgDsc">
+            	<!-- 여기서부터 내용 s -->
+                <div class="section cordView">
+                	<h2 class="gtit">1. 페이지타이틀 작성순서</h2>
+                    <p class="lstDsc">HTML문서에는 페이지 타이틀만 삽입. 메뉴뎁스는 개발모듈로 처리함.</p>
+                    <div class="dscBox type01">
+                    <h3 class="gtit">■ 본문(일반) 페이지타이틀 작성</h3>
+                        <pre class="brush: html;">
+&lt;title>페이지 타이틀 | 프로젝트&lt;/title>
+</pre>
+					<h3 class="gtit">■ 본문(글쓰기가 있는 페이지) 페이지타이틀 작성</h3>
+                        <pre class="brush: html;">
+&lt;title>[신청/작성/글쓰기] 페이지 타이틀 | 프로젝트&lt;/title>
+</pre>
+
+					<h3 class="gtit">■ 팝업 페이지타이틀 작성</h3>
+                        <pre class="brush: html;">
+&lt;title>[팝업] 페이지 타이틀 | 프로젝트&lt;/title>
+</pre>
+                    </div>
+                    
+                </div><!--// section div -->
+                    
+                <div class="section cordView">
+                	<h2 class="gtit">2. 대체텍스트</h2>
+                    <div class="dscBox type01">
+                        <ul class="lstDsc">
+                        	<li><strong>&lt;img>, &lt;area>, &lt;input type="image"></strong> 요소는 반드시 <strong>alt=""</strong> 속성으로 대체 텍스트 제공 필수</li>
+                            <li>이미지+텍스트 링크 또는 비주얼 전경이미지와 같이 디자인 요소에 국한된 이미지의 경우 <strong>alt="" 빈값으로 처리</strong>
+                            <pre class="brush: html;">
+&lt;img src="bg1.gif" alt="">
+&lt;a href="#" title="새창 띄움">&lt;img src="logo.gif" alt=""> 개인정보보호(ePRIVACY)우수사이트&lt;/a>
+</pre>
+                            </li>
+                            <li>대체 텍스트가 길거나 대체 컨텐츠 마크업이 필요한 경우, <strong class="pointGn">class="hide" 혹은 :before(모바일 국한)</strong> 속성으로 처리. <span class="pointPK">(style="display:none", "visibility:hidden" longdesc 속성 사용 불가)</span></li>
+                            <li>새창/팝업/설치파일/다운로드/동의 등 <strong>링크 부연설명</strong> : <span class="pointPK">title속성으로 대체텍스트 제공</span>
+                            <pre class="brush: html;">
+&lt;a href="#" title="새창 띄움">...&lt;a>
+&lt;span>자동이체 약관동의&lt;/span> &lt;label for="ok">&lt;input type="checkbox" name="" id="ok" value="" checked="" title="자동이체 약관동의">동의&lt;/label> 
+</pre>
+                            </li>
+                            <li>&lt;input type="text"> : &lt;label> 미적용 시 title 속성 필수
+                            <pre class="brush: html;">
+&lt;input type="text" name="" value="" size="" title="이름">
+</pre>
+                            </li>
+                            <li>select 요소, textarea 요소 : title 속성 필수
+                            <pre class="brush: html;">
+&lt;select title="생년월일 년도 선택">
+&lt;textarea cols="" rows="" title="내용"> 
+</pre>
+                            </li>
+                            <li>아이프레임 : title 속성 필수. 아이프레임의 용도를 설명하거나 개발구현을 위한 빈프레임일 경우에도 아래와 같이 title 속성을 제공해야 한다.
+                            <pre class="brush: html;">
+&lt;iframe title="최근 공지사항 게시물">
+&lt;iframe title="Blank Frame / 빈프레임">
+</pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--// section div -->
+                
+                <div class="section cordView">
+                	<h2 class="gtit">3. a 태그 사용시 주의사항</h2>
+                    <div class="dscBox type01">
+                        <ul class="lstDsc">
+                            <li>새창 또는 사용자가 요구하지 않는 기능(레이어팝업, 인쇄옵션 등)을 포함하는 a 태그에는 반드시 <strong>target="_blank" 및 title="xxx 페이지 새창으로 열림" 표시 필수</strong>
+                            <pre class="brush: html;">
+&lt;a href="pop.html" target="_blank" title="새창열림">...&lt;/a>
+&lt;a href="layer.html" title="레이어팝업열림">...&lt;/a>
+&lt;a href="print.html" target="_blank" title="인쇄옵션열림">...&lt;/a>
+</pre>
+                            </li>
+                            <li>id 값 꼬는 javascript 값으로 이동할 경우 클릭시 다른곳으로 포커스가 이동하지 않도록 포커스 유지 처리가 되야 함
+                            <pre class="brush: html;">
+&lt;a href="#tabMenu" onclick="return false;">...&lt;/a>
+&lt;a href="#" onclick="javascript:password('view', '86','qna');return false;">...&lt;/a>
+</pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--// section div -->
+                               
+                <!-- 여기서부터 내용 e -->
+            </div><!--// wgDsc div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>

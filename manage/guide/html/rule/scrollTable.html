@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- 테이블가이드 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+<style type="text/css">
+/* .grid {height: 300px;width: 900px;}
+
+ */
+
+.scrollTable {position: relative;width:700px;height:100%;overflow: hidden;background:#fff;}
+.header-wrapper {width:683px;overflow:hidden;}
+.header-wrapper table {position: relative;top: 0;width: auto;background-color: white;z-index: 1;}
+.header-wrapper table td{text-align:center;}
+.footer-wrapper {width:683px;overflow:hidden;}
+.footer-wrapper table {position: relative;top: 0;width: auto;background-color: white;z-index: 1;}
+.footer-wrapper table td{text-align:center;}
+
+
+.row-wrapper {position: relative;top: 0;height: 100%;width: 100%; max-height: 300px;max-width: 700px;box-sizing: border-box;overflow: auto;background-color: #fff;}
+
+.row-wrapper table.guideTbl01, .footer-wrapper table.guideTbl01{ margin-top:0;  background: #fff;border-top: 0px;}
+
+.row-wrapper table.guideTbl01 thead, .row-wrapper table.guideTbl01 tfoot{position:absolute;}
+
+
+th, td {width: 100px;min-width: 100px;max-width: 100px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+</style>
+<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$headerDiv = $('.header-wrapper > table');
+	$footerDiv = $('.footer-wrapper > table');
+	$rowDiv = $('.row-wrapper');
+	$rowDiv.scroll(function(e) {
+		$headerDiv.css({
+			left: -$rowDiv[0].scrollLeft + 'px'
+		});
+		$footerDiv.css({
+			left: -$rowDiv[0].scrollLeft + 'px'
+		});
+	});
+	
+	
+
+
+	/* sort Table */
+	
+   
+   $('table.sortable').each(function() {
+    // var $table = $(this);
+     var $table = $('table.sortable')
+	 var $table2 = $('table.sortable2')
+	 
+     $('td', $table).each(function(column) {
+       var $header = $(this).children('a');
+       if ($header.is('.sorting')) {
+         $header.addClass('clickable').click(function() {
+			
+			var sortDirection = 1;
+           if ($header.is('.sorted-asc')) {
+             sortDirection = -1;
+           }
+			//변수 삽입 
+			 
+			 
+           var rows = $table2.find('tbody > tr').get();
+
+			function isNumber(s) {
+			  s += ''; // 문자열로 변환
+			  s = s.replace(/^\s*|\s*$/g, ''); // 좌우 공백 제거
+			  if (s == '' || isNaN(s)) return s;
+			  return Number(s);
+			}
+			
+           rows.sort(function(a, b) {
+             var keyA = isNumber($(a).children('td').eq(column).text()
+               .toUpperCase());
+			 
+             var keyB = isNumber($(b).children('td').eq(column).text()
+               .toUpperCase());
+             if (keyA < keyB) return -sortDirection;
+             if (keyA > keyB) return sortDirection;
+             return 0;
+           });
+		   
+		  
+           $.each(rows, function(index, row) {
+             $table2.children('tbody').append(row);
+           });
+		
+		$table.find('td a').removeClass('sorted-asc').removeClass('sorted-desc');
+           if (sortDirection == 1) {
+             $header.addClass('sorted-asc');
+           }
+           else {
+             $header.addClass('sorted-desc');
+           }
+		   
+		   
+           
+         });
+       }
+     });
+   });
+	
+});
+</script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+
+
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+    <a href="#skipContent">본문 내용 바로가기</a>
+</div>
+<hr>
+<div id="wrapGuide">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr>
+    <div id="wgContainer" class="layout2 clfix">
+    	<!-- LNB s --><script type="text/javascript">LeftMenuRULE();lnb_menu('5','1');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">서식가이드</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            
+            <div id="skipContent" class="wgDsc">
+            	<!-- 여기서부터 내용 s -->
+                
+                    
+                <div class="section cordView">
+                	<h2 class="gtit">3. 스크롤 테이블</h2>
+                	<h3 class="gtit">■ scope-col 작성 예</h3>
+                    <div class="dscBox type03">
+
+
+
+
+<div class="scrollTable" data-role="scrollTable">
+	<div class="header-wrapper">
+		<table class="guideTbl01 gray sortable">
+		<colgroup>
+				<col style="width:10%" span="11">
+		</colgroup>
+			<tr>
+				<td><a href="#" class="sorting down" title="내림차순으로 정렬">청약구분</a></td>
+				<td>청약일</td>
+				<td><a href="#" class="sorting down" title="내림차순으로 정렬">청약코드</a></td>
+				<td>청약수량</td>
+				<td>환불계좌</td>
+				<td>배정수량</td>
+				<td>환불금액(원)</td>
+				<td>취소구분</td>
+				<td>대출금액(원)</td>
+				<td>관리점</td>
+				<td scope="col"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="row-wrapper" tabindex="0">
+		<table class="guideTbl01 gray sortable2">
+		<caption>
+			<strong>청약/배정내역 상세</strong>
+		<p style="overflow: hidden;">청약구분,청약일,청약코드,청약수량,환불계좌,배정수량,환불금액(원),취소구분,대출금액(원),관리점, 선택버튼으로 구성된 표입니다.</p></caption>
+		<colgroup>
+			<col style="width:10%" span="11">
+		</colgroup>
+			<thead class="hide">
+				<tr>
+					<th scope="col">청약구분</th>
+					<th scope="col">청약일</th>
+					<th scope="col">청약코드</th>
+					<th scope="col">청약수량</th>
+					<th scope="col">환불계좌</th>
+					<th scope="col">배정수량</th>
+					<th scope="col">환불금액(원)</th>
+					<th scope="col">취소구분</th>
+					<th scope="col">대출금액(원)</th>
+					<th scope="col">관리점</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tfoot class="hide">
+				<tr>
+					<th scope="row">합계</th>
+					<td class="r">1</td>
+					<td class="r">3993</td>
+					<td class="r">50</td>
+					<td class="r">-54</td>
+					<td class="r">-54</td>
+					<td class="r">-54</td>
+					<td class="r">-54</td>
+					<td class="r">-54</td>
+					<td class="r">-54</td>
+					<td class="r">-54</td>
+					
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>2013-12-12</td>
+					<td>aaa000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>2013-12-12</td>
+					<td>aaa001</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>2013-12-12</td>
+					<td>aba000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>2013-12-12</td>
+					<td>caa000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>2013-12-12</td>
+					<td>ada000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>2013-12-12</td>
+					<td>eaa000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>2013-12-12</td>
+					<td>aafa000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>2013-12-12</td>
+					<td>aaa000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>2013-12-12</td>
+					<td>aaa000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>2013-12-12</td>
+					<td>aaa000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>2013-12-12</td>
+					<td>aaa000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>2013-12-12</td>
+					<td>aaa000</td>
+					<td class="r">100</td>
+					<td>111-1111-1111</td>
+					<td class="r">1,234</td>
+					<td class="r">500,000</td>
+					<td>N</td>
+					<td class="r">9,100,000</td>
+					<td>abc</td>
+					<td>
+						<a href="#" class="btn3">선택</a>						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="footer-wrapper">
+		<table class="guideTbl01 gray">
+				<colgroup>
+					<col style="width:10%" span="11">
+				</colgroup>
+					<tbody>
+						<tr>
+							<td>합계</td>
+							<td class="r">1</td>
+							<td class="r">3993</td>
+							<td class="r"><strong>50</strong></td>
+							<td class="r"><strong>-54</strong></td>
+							<td class="r"><strong>-54</strong></td>
+							<td class="r"><strong>-54</strong></td>
+							<td class="r"><strong>-54</strong></td>
+							<td class="r"><strong>-54</strong></td>
+							<td class="r"><strong>-54</strong></td>
+							<td class="r"><strong>-54</strong></td>
+							
+						</tr>
+					</tbody>
+		</table>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <pre class="brush: html;">
+&lt;table>
+    &lt;caption>데이터테이블:scope-col&lt;/caption>
+    &lt;colgroup>
+        &lt;col style="width:20%">
+    &lt;/colgroup>
+    &lt;thead>
+        &lt;tr>
+            &lt;th scope="col">scope=col&lt;/th>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+        &lt;tr>
+            &lt;td>&nbsp;&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+</pre>
+                    </div>
+                    
+
+                </div><!--// section div -->
+                               
+                <!-- 여기서부터 내용 e -->
+            </div><!--// wgDsc div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>

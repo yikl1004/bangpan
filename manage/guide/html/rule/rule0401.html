@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- 서식가이드 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+
+<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+    <a href="#skipContent">본문 내용 바로가기</a>
+</div>
+<hr>
+<div id="wrapGuide">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr>
+    <div id="wgContainer" class="layout2 clfix">
+    	<!-- LNB s --><script type="text/javascript">LeftMenuRULE();lnb_menu('4','1');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">서식가이드</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            
+            <div id="skipContent" class="wgDsc">
+            	<!-- 여기서부터 내용 s -->
+                <div class="section cordView">
+                	<h2 class="gtit">FORM</h2>
+                    <h3 class="gtit">■ form 요소를 포함하고 있는 경우 연관있는 입력문에 대해 그룹핑</h3>
+                    <div class="dscBox type01">
+                        <ul class="lstDsc">
+                            <li><strong>예시 1)</strong>
+                            	<fieldset class="guideEx">
+                            		<legend>입력폼 그룹핑 예제1</legend>
+                            		<label for="guideExSel"></label>
+                            		<select name="" id="guideExSel">
+                            			<option value="">제목</option>
+                            		</select>
+                            		<a href="#" class="guideBtn">검색</a>
+                            	</fieldset>
+                                <pre class="brush: html;">
+&lt;fieldset>
+    &lt;legend>입력폼 그룹핑 예제1&lt;/legend>
+    &lt;label for="exSel">&lt;/label>
+    &lt;select name="sample" id="exSel">
+        &lt;option value="">제목&lt;/option>
+    &lt;/select>
+    &lt;a href="#" class="guideBtn">검색&lt;/a>
+&lt;/fieldset>
+</pre>
+                            </li>
+                            <li><strong>예시 2)</strong>
+                            	<fieldset class="guideEx">
+                            		<legend>입력폼 그룹핑 예제2</legend>                            		
+                            		<input type="radio" name="gender" id="exMan" checked><label for="exMan">남자</label>
+                                    <input type="radio" name="gender" id="exWoman"><label for="exWoman">여자</label>
+                            	</fieldset>
+                                <fieldset class="guideEx">
+                            		<legend>입력폼 그룹핑 예제3</legend>                            		
+                            		<input type="checkbox" name="age" id="age10" checked><label for="age10">10대</label>
+                                    <input type="checkbox" name="age" id="age20"><label for="age20">20대</label>
+                                    <input type="checkbox" name="age" id="age30"><label for="age30">30대</label>
+                                    <input type="checkbox" name="age" id="age40"><label for="age40">40대</label>
+                            	</fieldset>
+                                <pre class="brush: html;">
+&lt;fieldset class="guideEx">
+    &lt;legend>입력폼 그룹핑 예제2&lt;/legend>                            		
+    &lt;input type="radio" name="gender" id="exMan" checked>&lt;label for="exMan">남자&lt;/label>
+    &lt;input type="radio" name="gender" id="exWoman">&lt;label for="exWoman">여자&lt;/label>
+&lt;/fieldset>
+
+&lt;fieldset class="guideEx">
+    &lt;legend>입력폼 그룹핑 예제3&lt;/legend>                            		
+    &lt;input type="checkbox" name="age" id="age10" checked>&lt;label for="age10">10대&lt;/label>
+    &lt;input type="checkbox" name="age" id="age20">&lt;label for="age20">20대&lt;/label>
+    &lt;input type="checkbox" name="age" id="age30">&lt;label for="age30">30대&lt;/label>
+    &lt;input type="checkbox" name="age" id="age40">&lt;label for="age40">40대&lt;/label>
+&lt;/fieldset>
+</pre>
+                        </ul>
+                    </div>
+                    
+                </div><!--// section div -->
+                    
+                <div class="section cordView">
+                	<h3 class="gtit">■ 입력폼 속성 정의 순서</h3>
+                    <div class="dscBox type01">
+                    <ul class="lstDsc">
+                            <li><strong>텍스트 박스</strong>
+                                <pre class="brush: html;">
+&lt;input type="text" name="" value="" title="" class="" style="">
+</pre>
+                            </li>
+                            <li><strong>이미지/버튼</strong>
+                                <pre class="brush: html;">
+&lt;input type="image" name="" src="" alt="" class="">
+</pre>
+                            </li>
+                            <li><strong>radio/checkbox</strong>
+                                <pre class="brush: html;">
+&lt;input type="radio" name="" id="" value="" class="" checked>
+</pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--// section div -->
+                
+                <div class="section cordView">
+                	<h3 class="gtit">■ <label> : radio, checkbox와 1:1 구성 필수<strong>(ID설정 필수)</strong></h3>
+                    <div class="dscBox type01">
+                    <p class="lstDsc">label은 명시적으로 사용.</p>
+                    <pre class="brush: html;">
+&lt;input type="checkbox" name="" id="ok" value="" checked=""> &lt;label for="ok">동의&lt;/label> 
+</pre>
+                    </div>
+                </div><!--// section div -->
+                
+                <div class="section cordView">
+                	<h3 class="gtit">■ overflow:scroll/overflow:auto 적용시 <strong>tabindex="0" 적용</strong></h3>
+                    <div class="dscBox type01">
+                    <ul class="lstDsc">
+                    	<li>약관 또는 레이아웃 반영을 위해 엘리먼트에 <strong>overflow:scroll/overflow:auto 적용시 tabindex="0" 적용</strong>하도록 한다.
+                        	<ul>
+		                    	<li><strong class="pointBl">CSS</strong>
+                                <pre class="brush: css;">
+div.agreeBox {background:#f7f7f7; padding:10px; height:60px; border:1px #ddd solid; overflow-y:scroll;}
+</pre>
+                                </li>
+                                <li><strong class="pointGn">HTML</strong>
+                                <pre class="brush: html;">
+&lt;div class="agreeBox" tabindex="0">
+내용...
+&lt;/div>
+</pre>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    </div>
+                </div><!--// section div -->
+                               
+                <!-- 여기서부터 내용 e -->
+            </div><!--// wgDsc div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- HTML5, XHTML 작성가이드 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+
+<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+	<a href="#wgHeader">주 메뉴 바로가기</a>
+    <a href="#wgContainer">본문 내용 바로가기</a>
+</div>
+<hr>
+<div id="wrapGuide">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr>
+    <div id="wgContainer" class="layout2 clfix">
+    	<!-- LNB s --><script type="text/javascript">LeftMenuRULE();lnb_menu('1','2');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">HTML5, XHTML 문서작성시 주의사항</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            
+            <div class="wgDsc">
+            	<!-- 여기서부터 내용 s -->   
+                <div class="section cordView">
+                	<h2 class="gtit">1.HTML5 신규속성 및 폐지속성</h2>
+                    <h3 class="gtit">■ 신규속성</h3>
+                    <p class="lstDsc">하위 브라우저와의 호환성이 고려될 경우, 신규 속성의 사용은 제한함</p>
+                    <table class="guideTbl01 green" summary="구분, 태그, 기능, 구조, input, 신규용도로 구성된 표">
+                    	<caption>HTML5 신규속성</caption>
+                    	<colgroup>
+                    		<col style="width:10%;">
+                    		<col style="width:10%;">
+                    		<col style="width:30%;">
+                            <col style="width:10%;">
+                    		<col style="width:10%;">
+                    		<col style="width:30%;">
+                    	</colgroup>
+                    	<thead>
+                    		<tr>
+                    			<th scope="col">구분</th>
+                    			<th scope="col">태그</th>
+                    			<th scope="col">기능</th>
+                    			<th scope="col">구분</th>
+                    			<th scope="col">태그</th>
+                    			<th scope="col">기능</th>
+                    		</tr>
+                    	</thead>
+                    	<tbody>
+                    		<tr>
+                    			<th scope="row" rowspan="9">구조</th>
+                    			<td><strong>section</strong></td>
+                    			<td>문서의 섹션을 의미하며 h1, h2, h3, h4, h5, h6 요소와 함께 문서의 구조를 기술</td>
+                    			<th scope="row" rowspan="18">신규용도</th>
+                    			<td><strong>video, audio</strong></td>
+                    			<td>멀티미디어 콘텐츠를 사용하기위한 요소이고 API를 제공하여 콘텐츠를 제어</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>article</strong></td>
+                    			<td>블로그 글이나 신문 기사와 같이 독립적인 문서를 의미</td>
+                    			<td><strong>source</strong></td>
+                    			<td>video, audio 요소에서 사용할 미디어 파일을 기술</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>aside</strong></td>
+                    			<td>본문페이지와 연관이 작은 추가적인 콘텐츠를 의미</td>
+                    			<td><strong>track</strong></td>
+                    			<td>video 요소의 텍스트 트랙</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>hgroup</strong></td>
+                    			<td>본문페이지와 연관이 작은 추가적인 콘텐츠를 의미</td>
+                    			<td><strong>embed</strong></td>
+                    			<td>플러그인 콘텐츠</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>header</strong></td>
+                    			<td>소개나 네비게이션 영역</td>
+                    			<td><strong>mark</strong></td>
+                    			<td>참조를 위한 표시</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>footer</strong></td>
+                    			<td>섹션의 푸터를 의미하며 저자나 저작권등의 정보를 표시</td>
+                    			<td><strong>time</strong></td>
+                    			<td>날짜나 시간을 표시</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>nav</strong></td>
+                    			<td>네비게이션을 위한 섹션</td>
+                    			<td><strong>data</strong></td>
+                    			<td>기계가 읽어들이는 데이터를 표시(WHATWG HTML).</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>figure</strong></td>
+                    			<td>본문에서 참조할 수 있는 독립적인 사진과 같은 콘텐츠를 의미</td>
+                    			<td><strong>dialog</strong></td>
+                    			<td>다이얼로그를 표시(WHATWG HTML).</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>figcaption</strong></td>
+                    			<td>figure 요소의 캡션을 제공(선택사항)</td>
+                    			<td><strong>ruby, rt, rp</strong></td>
+                    			<td>루비 표현을 위해 사용</td>
+                    		</tr>
+                            <tr>
+                    			<th scope="row" rowspan="9">input</th>
+                    			<td><strong>tel</strong></td>
+                    			<td>전화번호</td>
+                    			<td><strong>bdi</strong></td>
+                    			<td>좌에서 우, 우에서 좌로 기술되는 언어를 표기할 때 사용</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>search</strong></td>
+                    			<td>검색</td>
+                    			<td><strong>wbr</strong></td>
+                    			<td>개행을 할 수 있다는 표시를 할 때 사용</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>url</strong></td>
+                    			<td>웹 주소</td>
+                    			<td><strong>canvas</strong></td>
+                    			<td>비트맵 그래픽을 표현</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>email</strong></td>
+                    			<td>이메일</td>
+                    			<td><strong>command</strong></td>
+                    			<td>사용자 수행 명령을 기술</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>datetime</strong></td>
+                    			<td>날짜 및 시간</td>
+                    			<td><strong>details</strong></td>
+                    			<td>사용자의 인터랙션에 의해서 보여지는 추가적인 정보 표시</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>date, month, week, time</strong></td>
+                    			<td>날짜, 달, 주, 시간</td>
+                    			<td><strong>summary</strong></td>
+                    			<td>detail 요소의 요약을 제공</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>datetime-local</strong></td>
+                    			<td>로컬 시간</td>
+                    			<td><strong>datalist</strong></td>
+                    			<td>input 요소의 list 속성으로 연결해서 콤보박스를 표현</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>number, color</strong></td>
+                    			<td>숫자, 색상</td>
+                    			<td><strong>keygen</strong></td>
+                    			<td>생성된 키 쌍</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>range</strong></td>
+                    			<td>범위</td>
+                    			<td><strong>output</strong></td>
+                    			<td>출력내용을 표현</td>
+                    		</tr>
+                    	</tbody>
+                    </table>
+                    <h3 class="gtit">■ 폐지속성</h3>
+                    <table class="guideTbl01 green" summary="속성, 요소로 구성된 표">
+                    	<caption>HTML5 폐지 속성</caption>
+                    	<colgroup>
+                    		<col style="width:15%;">
+                    		<col style="width:35%;">
+                            <col style="width:15%;">
+                    		<col style="width:35%;">
+                    	</colgroup>
+                    	<thead>
+                    		<tr>
+                    			<th scope="col">속성</th>
+                    			<th scope="col">요소</th>
+                    			<th scope="col">속성</th>
+                    			<th scope="col">요소</th>
+                    		</tr>
+                    	</thead>
+                    	<tbody>
+                    		<tr>
+                    			<td><strong>rev, charset</strong></td>
+                    			<td>link, a 요소</td>
+                    			<td><strong>shape, coords</strong></td>
+                    			<td>a 요소</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>longdesc</strong></td>
+                    			<td>img, iframe 요소</td>
+                    			<td><strong>target</strong></td>
+                    			<td>link 요소</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>nohref</strong></td>
+                    			<td>area 요소</td>
+                    			<td><strong>profile</strong></td>
+                    			<td>head 요소</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>nohref</strong></td>
+                    			<td>area 요소</td>
+                    			<td><strong>profile</strong></td>
+                    			<td>head 요소</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>version</strong></td>
+                    			<td>html 요소</td>
+                    			<td><strong>name</strong></td>
+                    			<td> img 요소. id 요소로 대체</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>scheme</strong></td>
+                    			<td>meta 요소</td>
+                    			<td><strong>archive, classid, codebase, codetype, declare, standby</strong></td>
+                    			<td>object 요소</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>valuetype, type</strong></td>
+                    			<td>param 요소</td>
+                    			<td><strong>axis, abbr</strong></td>
+                    			<td>td, th 요소</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>scope</strong></td>
+                    			<td>td 요소</td>
+                    			<td><strong>summary</strong></td>
+                    			<td>table 요소</td>
+                    		</tr>
+                    	</tbody>
+                        <tbody>
+                            <tr>
+                    			<td><strong>align</strong></td>
+                    			<td>caption, iframe, img, input, object, legend, table, hr, div, h1, h2, h3, h4, h5, h6, p, col, colgroup, tbody, td, tfoot, th, thead, tr 요소에서 폐지</td>
+                    			<td><strong>alink, link, text, vlink</strong></td>
+                    			<td>body 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>background</strong></td>
+                    			<td>body 요소에서 폐지</td>
+                    			<td><strong>bgcolor</strong></td>
+                    			<td>table, tr, td, th, body 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>border</strong></td>
+                    			<td>object 요소에서 폐지</td>
+                    			<td><strong>cellpadding, cellspacing</strong></td>
+                    			<td>table 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>char, charoff</strong></td>
+                    			<td>col, colgroup, tbody, td, tfoot, th, thead, tr 요소에서 폐지</td>
+                    			<td><strong>clear</strong></td>
+                    			<td>br 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>compact</strong></td>
+                    			<td>dl, menu, ol, ul 요소에서 폐지</td>
+                    			<td><strong>frame</strong></td>
+                    			<td>table 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>frameborder</strong></td>
+                    			<td>iframe 요소에서 폐지</td>
+                    			<td><strong>height</strong></td>
+                    			<td>td, th 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>hspace, vspace</strong></td>
+                    			<td>img, object 요소에서 폐지</td>
+                    			<td><strong>marginheight, marginwidth</strong></td>
+                    			<td>iframe 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>noshade</strong></td>
+                    			<td>hr 요소에서 폐지</td>
+                    			<td><strong>nowrap</strong></td>
+                    			<td>td, th 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>rules</strong></td>
+                    			<td>table 요소에서 폐지</td>
+                    			<td><strong>scrolling</strong></td>
+                    			<td>iframe 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>size</strong></td>
+                    			<td>hr 요소에서 폐지</td>
+                    			<td><strong>type</strong></td>
+                    			<td>li, ul 요소에서 폐지</td>
+                    		</tr>
+                            <tr>
+                    			<td><strong>valign</strong></td>
+                    			<td>col, colgroup, tbody, td, tfoot, th, thead, tr 요소에서 폐지</td>
+                    			<td><strong>width</strong></td>
+                    			<td>hr, table, td, th, col, colgroup, pre 요소에서 폐지</td>
+                    		</tr>
+                    	</tbody>
+                    </table>
+                  </div>
+                             
+                <div class="section cordView">
+                	<h2 class="gtit">2. XHTML 문서 작성시 주의사항</h2>
+                    <div class="dscBox type01">
+                        <ul class="lstDsc">
+                            <li>DTD를 제외한 모든 엘리먼트와 애트리뷰트는 소문자로 작성한다.<br>
+                            	<strong class="pointGn">잘못된 사용 ex) 〈<strong>P C</strong>lass=""〉〈/<strong>P</strong>〉, 〈a href="" <strong>onClick</strong>="" <strong>onMouseOver</strong>=""〉</strong>
+                            </li>
+                            <li>애트리뷰트값은 큰따옴표("")로 묶는다.<br>
+                            	<strong class="pointGn">잘못된 사용 ex) 〈img src=<strong>‘</strong>test.gif<strong>’</strong> width=<strong>‘</strong>150<strong>’</strong> height=<strong>’</strong>25<strong>’</strong> alt=<strong>‘</strong>테스트<strong>’</strong>〉</strong>
+                            </li>
+                            <li><strong>entity 코드 사용 필수</strong> <a href="http://www.w3schools.com/charsets/ref_html_entities_4.asp" target="_blank">http://www.w3schools.com/charsets/ref_html_entities_4.asp 참고</a><br>
+                            	<strong class="pointGn">잘못된 사용 ex) href=“board<strong>＆</strong>num=1” →  board<strong>＆amp;</strong>num=1</strong>
+                            </li>
+                            <li>html 페이지내에 자바스크립트 사용시 html 태그를 포함하고 있는 경우 <strong>//〈![CDATA[ , //]]〉</strong> 사용 필수.<br>
+                            <pre class="brush: js;">
+&lt;script type="text/javascript">
+	//<![CDATA[
+	        $('.msg1').before('<a href="test.html"&gt;링크<\/a>');
+	//]]>
+&lt;/script>
+</pre></li>
+                            <li>DTD XHTML 1.0을 사용중이므로 반드시 종료태그를 선언한다.<br>
+                            	<strong class="pointGn">주의해야할 종료태그 앨리먼트 : area, br, col, frame, hr, img, input, link, meta, param</strong></li>
+                            <li>의미있는 객체를 구분하기 위하여 코드 그룹간 1줄씩 빈 줄을 만드는 것은 허용한다. 단, <strong>빈 줄의 간격은 1줄을 초과하지 않는다.</strong></li>
+                        </ul>
+                    </div>
+                </div><!--// section div -->
+                               
+                <!-- 여기서부터 내용 e -->
+            </div><!--// wgDsc div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>

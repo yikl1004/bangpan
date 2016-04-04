@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- MOBILE 가이드 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+
+<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+	<a href="#wgHeader">주 메뉴 바로가기</a>
+    <a href="#wgContainer">본문 내용 바로가기</a>
+</div>
+<hr>
+<div id="wrapGuide">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr>
+    <div id="wgContainer" class="layout2 clfix">
+    	<!-- LNB s --><script type="text/javascript">LeftMenuRULE();lnb_menu('1','3');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">MOBILE 가이드</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            
+            <div class="wgDsc">
+            	<!-- 여기서부터 내용 s -->                
+                <div class="section cordView">
+                	<div class="section cordView">
+                	<h2 class="gtit">1. 기본가이드</h2>
+                    <div class="dscBox type01">
+                    	<h3 class="gtit">■ 작업 해상도</h3>
+                    	<p class="lstDsc">화면모드는 1080px 고해상도 psd를 기준으로 한다.(배경 일부는 용량 최적화를 위해 640으로 작업)</p>
+                        <h3 class="gtit">■ 크로스브라우징</h3>
+                        <ul class="lstDsc">
+                        	<li>안드로이드 폰(갤럭시3이상(갤럭시3,4,5), 노트2이상(노트2,노트3,노트4))과 아이폰4(아이폰4,4s,5)이상 기종에서 잘 보일수 있는 코딩을 기본으로 한다.</li>
+                            <li><strong>작업후 validator 필수체크</strong>
+                            	<ul>
+                            		<li><strong>HTML5</strong> : <a href="http://html5.validator.nu" target="_blank">http://html5.validator.nu</a></li>
+                            		<li>Chrome, Firefox 부가기능 이용</li>
+                            	</ul>
+                            </li>
+                        </ul>
+                        <h3 class="gtit">■ DTD / language TYPE / Encoding 선언</h3>
+                        <pre class="brush: js; html-script: true">
+&lt;!DOCTYPE html>
+&lt;html lang="ko">
+&lt;head>
+&lt;meta charset="utf-8">
+</pre>
+                        <h3 class="gtit">■ 웹접근성(WHA)</h3>
+                    		<ul class="lstDsc">
+                    		  <li><strong>한국형 웹 콘텐츠 접근성 지침 2.0을 기준</strong>으로 하되, 준수가이드 범위는 <a href="wah/wahGuide.html">WHA 가이드라인 참고</a></li>
+                    		  <li>작업후 웹접근성 준수확인 <a href="http://openwax.miya.pe.kr" target="_blank">OpenWAX</a> 사용하여 정성적 평가(<a href="https://addons.mozilla.org/ko/firefox/addon/html-validator/?src=search" target="_blank">파이어폭스</a>/<a href="https://chrome.google.com/webstore/detail/html-validator/cgndfbhngibokieehnjhbjkkhbfmhojo?hl=ko" target="_blank">구글</a>설치 추천)</li>
+                              <li>키보드 동작관련 및 스크린리더 테스트는 IOS에서 지원하는 VOICE OVER로 테스트
+                              	  <ul>
+                              	  	<li>VOICE OVER 테스트시 IR로 적용하는 <strong>text-indent:-9999;</strong>, <strong>left:-9999;/top:-9999;</strong> 등이 사용되는 경우 정상적 인식이 어려움.</li>
+                              	  	<li>VOICE OVER의 원활한 IR 인식을 위해 <strong>:before</strong> 를 적용할 것을 권장.
+                                     <pre class="brush: css; html-css: true">
+a.on:before {
+    content:"선택됨";
+}
+</pre>
+                                    </li>
+                              	  </ul>
+                              </li>
+                    		</ul>
+                    </div>
+                </div><!--// section div -->
+                
+                	<h2 class="gtit">2. 모바일 계산식<a href="calculator_m.exe" class="guideBtn" target="_blank">간편계산유틸</a></h2>                    
+                    <div class="dscBox type01">
+                    	<h3 class="gtit">■ px에서 em값 계산법</h3>
+                        <ul class="lstDsc">
+                        	<li>기준 디바이스 선택<br>
+                            	<a href="http://troy.labs.daum.net" target="_blank">http://troy.labs.daum.net</a> 각 디바이스 해당하는 디바이스 해상도를 알 수 있다.
+                            </li>
+                            <li>기본 베이스 폰트 설정 : ex) 16px를 1em으로 할 경우<br>
+                            	<pre class="brush: css; html-css: true">
+body {font-size:16px;}
+div {font-size:1em;} /* body에서 상속된 기준값으로 div의 1em은 16px */
+div.section {font-size:.75em} /* body에서 상속된 기준값으로 div의 .75em은 12px */
+div.section p {font-size:1em} /* 상위 엘리먼트인 div.section의 기준값을 상속받아 div.section 내의 p의 1em은 12px */
+</pre>
+                            </li>
+                            <li>비율값 구하기
+                            	<ul>
+                            		<li>1080/360 = 3 : PSD와 기준 디바이스의 행상도 비율은 <strong>3배</strong></li>
+                            		<li>640/360 = 2 : PSD와 기준 디바이스의 행상도 비율은 <strong>2배</strong></li>
+                            	</ul>
+                            </li>
+                            <li>실제 px값을 em으로 변환 : ex) 398px → em 으로 변환
+	                            <ul>
+                               		<li>398/3 = 132.666… 실제 해상도를 디바이스 비율(예시.1080 기준)로 나눈다.</li>
+                               		<li>나눈 것을 다시 기본 베이스 폰트 사이즈 16으로 나누면 해상도에 따른 em단위가 나온다.</li>
+                               		<li>em단위 <strong>3자리이하는 버림</strong>으로 통일한다.</li>
+                               	</ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--// section div -->
+                               
+                <!-- 여기서부터 내용 e -->
+            </div><!--// wgDsc div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>

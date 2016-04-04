@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>- 주석사용 | Publishing Guide -</title>
+<link rel="stylesheet" type="text/css" href="../../com/css/guide.css">
+
+<script type="text/javascript" src="../../../com/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../../com/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../com/js/d_menu.js"></script>
+<script type="text/javascript" src="../../com/js/d_jquery.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body>
+
+<div title="스킵메뉴" class="skipMenu">
+	<a href="#wgHeader">주 메뉴 바로가기</a>
+    <a href="#wgContainer">본문 내용 바로가기</a>
+</div>
+<hr />
+<div id="wrapGuide">
+	<!-- HEADER s --><script type="text/javascript">TopArea();gnbBox_init(1);</script><!-- HEADER e //-->
+    <hr />
+    <div id="wgContainer" class="layout2 clfix">
+    	<!-- LNB s --><script type="text/javascript">LeftMenuRULE();lnb_menu('1','4');</script><!-- LNB e //-->
+        <div id="wgContent" class="clfix">
+        	<div class="titArea">
+            	<h1 class="gtit">주석사용</h1>
+                <!--<p><script type="text/javascript">map.print(1,1,1);</script></p> -->
+            </div>
+            
+            <div class="wgDsc">
+            	<!-- 여기서부터 내용 s -->
+                
+                <div class="section cordView">
+                	<h2 class="gtit">1. CSS 내 주석</h2>
+                    <h3 class="gtit">■ CSS 페이지 기본주석</h3>
+                    <div class="dscBox type01">
+                    <pre class="brush: css; html-css: true">
+/****************************************/
+/*	Name : PROJECT NAME                    : 프로젝트명(내용고정)
+/*	PART : RESET STYLE                     : 해당메뉴 표시 (ex.메인의 경우 MAIN STYLE)
+/*	Version : 1.0                          : 내용고정
+/*	Author : 홍길동						 : 최초 작성자
+/*	MODIFY : 김수정, 이수정, 박수정		     : CSS 파일 작업참여 구성원
+/****************************************/
+</pre>
+                    </div>
+                    
+                    <h3 class="gtit">■ CSS 페이지내 수정/삭제시 주석</h3>
+                    <p class="lstDsc">기존 소스 수정/삭제시 원본내용은 주석으로 백업처리</p>
+                    <div class="dscBox type01">
+                    <pre class="brush: css; html-css: true">
+/* body {color:#fff; margin:0; padding:0;}
+2015.01.01(수정/삭제일자) | 홍길동(수정/삭제자) | 디자인 변경으로 인한 기존 칼라값 변경(수정/삭제사유) */
+body {color:#000; margin:0; padding:0;}
+</pre>
+                    </div>
+                </div>
+                
+                <div class="section cordView">                    
+                    <h2 class="gtit">2. HTML 내 주석</h2>
+                    <h3 class="gtit">■ 마크업을 위한 주석사용</h3>
+                    <div class="dscBox type01">
+                    <pre class="brush: html; html-css: true">
+&lt;!-- 예제 안내 시작 -->
+&lt;div id="test">
+	&lt;div class="testDsc">예제안내&lt;/div>&lt;!--// div testDsc end -->
+&lt;/div>&lt;!--// div test end -->
+&lt;!--// 예제 안내 끝 -->
+</pre>
+                    </div>
+                    
+                    <h3 class="gtit">■ 개발이나 퍼블리셔에게 내용 전달을 위한 주석사용</h3>
+                    <p class="lstDsc"><strong>D</strong> : developer, <strong>P</strong> : publisher</p>
+                    <div class="dscBox type01">
+                    <pre class="brush: html; html-css: true">
+&lt;!-- D : 본 주석은 개발자를 위한 주석으로 개발 참고 후 삭제바랍니다.
+		 개발에 전달해야되는 내용을 상세히 기재
+         ex) 첫번째 li에 클래스 first 추가 -> &lt;li class="first">
+-->
+&lt;ul>
+	&lt;li class="first">첫번째 리스트&lt;/li>
+    &lt;li>두번째 리스트&lt;/li>
+    &lt;li>세번째 리스트&lt;/li>
+&lt;/ul>
+</pre>
+                    <pre class="brush: html; html-css: true">
+&lt;!-- P : 본 주석은 퍼블리셔를 위한 주석으로 코딩작업 참고 후 삭제바랍니다.
+		 퍼블리셔들에게 전달할 내용을 상세히 기재
+         ex) 공통 샘플링 dl요소 확인 -> cm.common.css LINE.25 참고바람
+-->
+</pre>
+                    </div>
+                </div><!--// section div -->
+                               
+                <!-- 여기서부터 내용 e -->
+            </div><!--// wgDsc div -->
+        </div><!--// wgContent div -->
+        
+    </div><!--// wgContainer div  -->
+    
+</div><!--// wrapGuide div -->
+</body>
+</html>
