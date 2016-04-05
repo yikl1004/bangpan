@@ -1,6 +1,24 @@
 
 $(function(){
 
+	//
+	var devJson = function(){
+		var _data = null;
+		$.ajax({
+			url: '../../git.json', dataType: 'json', async: false,
+			success: function( data ){
+				_data = data.devDir.replace(/[']/gi, "");
+				console.log(_data);
+			},
+			error: function(){ }
+		});
+		if ( typeof _data === 'string' && _data.length > 0 )
+			return _data;
+		else
+			return '';
+	};
+	console.log(devJson());
+
 	var BS = {};
 
 	var doc = document,
@@ -10,8 +28,8 @@ $(function(){
 		ginger = function () {
 			return (_ua !== -1) ? true : false;
 		},
-		devDir = '/bangpan';
-		// devDir = '';
+		// devDir = '/bangpan';
+		devDir = '';
 
 	/*
 	축약
@@ -288,7 +306,6 @@ $(function(){
 		// 스와이프 페이지
 		if ( $('.tabs').length > 0 )
 			tabsSwiper = new Swiper('.tabs', swiperOptions.tabs);
-		console.log(tabsSwiper);
 
 		//메인 비주얼
 		if ( $('.main_visual').length >= 1 )
@@ -359,6 +376,12 @@ $(function(){
 				}
 			}, false);
 		}
+
+		//버튼 활성화
+		$('a.bookmark').on('click', function(){
+			console.log('aa');
+			$(this).addClass('active');
+		});
 
 		//홈화면 슬라이드탭 이동( 추후 삭제 요망 )
 		if ( location.hash.indexOf('tab') ) {

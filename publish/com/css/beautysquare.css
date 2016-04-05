@@ -401,8 +401,11 @@ h2.tit {
   /* 브랜드 */;
 }
 
+.tag.new, .tag.best {
+    padding-top: 0;
+}
+
 .tag.new {
-    line-height: 1.091em;
     font-size: 0.786em;
     font-weight: bold;
     background: #f96365;
@@ -532,12 +535,13 @@ h2.tit {
     width: auto;
     vertical-align: top;
     font-size: 0.714em;
-    line-height: 1.9;
+    line-height: 19px;
     color: #fff;
-    padding: 0 10px 0 21px;
+    padding: 1px 10px 0 21px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
+    min-height: 19px;
 }
 
 .grade.g1 {
@@ -1267,7 +1271,6 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .img_list ul li a .info .tags {
     display: block;
-    height: 14px;
 }
 
 .img_list ul li a .title {
@@ -1640,7 +1643,6 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     -ms-grid-row-align: center;
     align-items: center;
     margin-left: 7px;
-    margin-top: 3px;
     line-height: 1em;
 }
 
@@ -1800,7 +1802,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     vertical-align: middle;
     width: 1px;
     height: 14px;
-    margin: 0 6px 0 2px;
+    margin: -2px 6px 0 2px;
     background: #999;
 }
 
