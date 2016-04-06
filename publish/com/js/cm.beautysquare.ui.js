@@ -3,21 +3,29 @@ $(function(){
 
 	//
 	var devJson = function(){
-		var _data = null;
-		$.ajax({
-			url: '../../git.json', dataType: 'json', async: false,
-			success: function( data ){
-				_data = data.devDir.replace(/[']/gi, "");
-				console.log(_data);
-			},
-			error: function(){ }
-		});
-		if ( typeof _data === 'string' && _data.length > 0 )
-			return _data;
-		else
-			return '';
+		var _data = null,
+			_url = location.href.match('bangpan') ? '/bangpan' : '';
+
+		return _url;
+
+		// $.ajax({
+		// 	url: _url + '/publish/git.json',
+		// 	dataType: 'json',
+		// 	async: false,
+		// 	success: function( data ){
+		// 		_data = data.devDir.replace(/[']/gi, "");
+		// 		console.log(_data);
+		// 	},
+		// 	error: function(){ }
+		// });
+		// if ( typeof _data === 'string' && _data.length > 0 )
+		// 	return _data;
+		// else
+		// 	return '';
 	};
 	console.log(devJson());
+
+	
 
 	var BS = {};
 
