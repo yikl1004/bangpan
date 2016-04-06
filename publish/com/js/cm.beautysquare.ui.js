@@ -7,7 +7,6 @@ $(function(){
 			_url = location.href.match('bangpan') ? '/bangpan' : '';
 
 		return _url;
-
 		// $.ajax({
 		// 	url: _url + '/publish/git.json',
 		// 	dataType: 'json',
@@ -23,7 +22,6 @@ $(function(){
 		// else
 		// 	return '';
 	};
-	console.log(devJson());
 
 	
 
@@ -36,8 +34,7 @@ $(function(){
 		ginger = function () {
 			return (_ua !== -1) ? true : false;
 		},
-		// devDir = '/bangpan';
-		devDir = '';
+		devDir = devJson();
 
 	/*
 	축약
