@@ -14,37 +14,37 @@
         <link rel="stylesheet" type="text/css" href="/bangpan/publish/com/css/beautysquare.css">
         <link rel="stylesheet" type="text/css" href="/bangpan/publish/com/css/plugins/swiper.css"> </head>
 
-    <body>
+    <body class="font_size_3">
         <div class="loading">
             <span class="loader"></span>
         </div>
+        <div id="gnbWrap">
+            <div id="gnb">
+                <ul>
+                    <li>
+                        <a href="javascript:;">HOME</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">뷰티뉴스</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">제품도서관</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">세일즈팁</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">카운셀러톡</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">라이프</a>
+                    </li>
+                </ul>
+                <span class="move_bar"></span>
+            </div>
+        </div>
         <div id="wrap">
             <!-- 네비게이션-->
-            <div id="gnbWrap">
-                <div id="gnb">
-                    <ul>
-                        <li>
-                            <a href="javascript:;">HOME</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">뷰티뉴스</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">제품도서관</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">세일즈팁</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">카운셀러톡</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">라이프</a>
-                        </li>
-                    </ul>
-                    <span class="move_bar"></span>
-                </div>
-            </div>
             <div class="swiper-container tabs">
                 <div class="swiper-wrapper">
                     <!-- HOME : S-->
@@ -462,6 +462,29 @@
                     <!--// 라이프 : E-->
                 </div>
             </div>
+        </div>
+        <div class="floating_util">
+            <div class="sort">
+                <select name="" class="fu_sort st1">
+                    <option value="">모든 글</option>
+                    <option value="">일반</option>
+                    <option value="">동영상</option>
+                </select>
+                <select name="" class="fu_sort st2">
+                    <option value="">최신순</option>
+                    <option value="">조회순</option>
+                    <option value="">좋아요순</option>
+                </select>
+            </div>
+            <a href="toapp:appviewchange:modechange" class="mode_change active">간편모드</a>
+            <span class="font_sizing">
+                <a href="javascript:;" class="down">
+                    <span>가 -</span>
+                </a>
+                <a href="javascript:;" class="up">
+                    <span>가 +</span>
+                </a>
+            </span>
         </div>
         <!-- ui script load-->
         <script type="text/javascript" src="/bangpan/publish/com/js/jquery-1.11.2.min.js"></script>

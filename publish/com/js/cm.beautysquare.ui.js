@@ -58,12 +58,15 @@ $(function(){
 	$(window).on('load', function(){
 
 		//document 높이 부여
-		var $tabsSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide');
+		var $tabsSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide'),
+			tabSlideHeight = document.documentElement.clientHeight - $('#gnb').height();
 		for ( var i=1; i<$tabsSlide.length; i++ ) {//data-swiper-slide-index
 			if( $tabsSlide.eq(i).attr('data-swiper-slide-index') !== 0 ) {
-				$('.tabs > .swiper-wrapper').find('>.swiper-slide').eq(i).height(
-					document.documentElement.clientHeight - $('#gnb').height()
-				);
+				$('.tabs > .swiper-wrapper').find('>.swiper-slide').eq(i).css({
+					height: tabSlideHeight
+				}).find('> .container').css({
+					minHeight: tabSlideHeight
+				});
 			}
 		}
 		// $('body, html').height( $('#wrap').outerHeight() );
@@ -221,10 +224,20 @@ $(function(){
 									$wrapper.height(ht);
 								});
 							},
-							error: function(){
-								alert('ajax call error!!!');
+							error: function(xhr, status, error){
+								alert( status );
+								console.log(xhr, status, error);
 							}
 						});
+					}
+					
+					//플로팅 컨텐츠 변경
+					if ( idx == 1 ) {
+						$('.floating_util .mode_change').addClass('active');
+						$('.floating_util .sort').removeClass('active');
+					} else {
+						$('.floating_util .mode_change').removeClass('active');
+						$('.floating_util .sort').addClass('active');
 					}
 				},
 				onTouchMove : function( swiper ) {
@@ -385,6 +398,32 @@ $(function(){
 		$('a.bookmark').on('click', function(){
 			console.log('aa');
 			$(this).addClass('active');
+		});
+
+		//폰트사이즈 조정
+		$('.font_sizing a').on('click', function( event ){
+			event.preventDefault();
+			var cl = $('body').get(0).classList,
+				re_cl = null;
+			if ( $(this).hasClass('up') ) {
+				for(var i=0; i<cl.length; i++) {
+					if (cl[i].match('font_size_')) {
+						re_cl = parseInt(cl[i].replace('font_size_', '')) + 1;
+						if ( re_cl <= 5 ) {
+							$('body').removeClass(cl[0]).addClass('font_size_' + re_cl);
+						}
+					}
+				}
+			} else if ( $(this).hasClass('down') ) {
+				for(var i=0; i<cl.length; i++) {
+					if (cl[i].match('font_size_')) {
+						re_cl = parseInt(cl[i].replace('font_size_', '')) - 1;
+						if ( re_cl >= 1 ) {
+							$('body').removeClass(cl[0]).addClass('font_size_' + re_cl);
+						}
+					}
+				}
+			}
 		});
 
 		//홈화면 슬라이드탭 이동( 추후 삭제 요망 )
