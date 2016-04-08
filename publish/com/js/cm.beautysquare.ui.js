@@ -57,7 +57,7 @@ $(function(){
 
 	$(window).on('load', function(){
 
-		//document 높이 부여
+		// document 높이 부여 - 메인
 		var $tabsSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide'),
 			tabSlideHeight = document.documentElement.clientHeight - $('#gnb').height();
 		for ( var i=1; i<$tabsSlide.length; i++ ) {//data-swiper-slide-index
@@ -69,7 +69,9 @@ $(function(){
 				});
 			}
 		}
-		// $('body, html').height( $('#wrap').outerHeight() );
+		// document 높이 부여 - 서브
+		if (_qs('body.sub #container'))
+			_qs('body.sub #container').style.minHeight = document.documentElement.clientHeight+'px';
 
 		//컨텐츠 로드 완료
 		$('#wrap').addClass('loaded');
