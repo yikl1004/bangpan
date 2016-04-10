@@ -164,8 +164,8 @@ $(function(){
 			swiperLoadPages = [
 				'beautynews_list.html',
 				'product_info_list.html',
-				'sales_tip_list_bestknowhow.html',
-				// 'sales_tip_list_knowhowshare.html',
+				// 'sales_tip_list_bestknowhow.html',
+				'sales_tip_list_knowhowshare.html',
 				'praise_list.html',
 				// 'wonder_list.html',
 				'life_list.html'

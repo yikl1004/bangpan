@@ -173,6 +173,31 @@ img {
     font-weight: normal;
 }
 
+.btn_event {
+    display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    padding: 11px 0 7px 0;
+    background: #677caf;
+    color: #fff;
+    font-size: 1.143em;
+    margin-bottom: 20px;
+}
+
 /* 카운팅 ( view, read, like ) */
 .etc {
     line-height: 1.2;
@@ -289,7 +314,7 @@ ul.hori_btns li a .count {
 }
 
 /* 그림자 */
-.shadow, .main_visual, .video_area, .scroller .swiper-wrapper .swiper-slide a, .latest_list, .thumb_txt_list, .tab, .select_menu, .photo_list a, .img_list ul li, .more_and_top, .view_page .util_btns a, .editor_content, .reply_list li, .reply_more, .fb_type, .notice_list li {
+.shadow, .main_visual, .video_area, .scroller .swiper-wrapper .swiper-slide a, .latest_list, .thumb_txt_list, .tab, .select_menu, .photo_list a, .img_list ul li, .more_and_top, .view_page.notice .view_content, .view_page .util_btns a, .editor_content, .reply_list li, .reply_more, .fb_type, .notice_list li, .poll_list li .question {
     border-bottom: 1px solid #cecece;
 }
 
@@ -493,32 +518,32 @@ h2.tit {
     background: #6936b2;
 }
 
-.tag.event .g1 {
+.tag.event.g1 {
     /* 여왕등급 이상 */
     background: #9669ae;
 }
 
-.tag.event .g2 {
+.tag.event.g2 {
     /* 여신등급 이상 */
     background: #eb6ca7;
 }
 
-.tag.event .g3 {
+.tag.event.g3 {
     /* 미인등급 이상 */
     background: #b7cd5b;
 }
 
-.tag.event .g4 {
+.tag.event.g4 {
     /* 쌩얼등급 이상 */
     background: #ccc;
 }
 
-.tag.event .g5 {
+.tag.event.g5 {
     /* 공주등급 이상 */
     background: #52c1db;
 }
 
-.tag.event .g6 {
+.tag.event.g6 {
     /* 뷰티스타등급 이상 */
     background: #ffbe21;
 }
@@ -651,6 +676,19 @@ h2.tit {
     background-size: 13px 13px;
 }
 
+/* 추가 메세지 */
+p.msg {
+    margin-top: 5px;
+    margin-bottom: 12px;
+    font-size: 0.786em;
+    color: #999;
+}
+
+p.msg.red {
+    font-size: 1em;
+    color: #f96365;
+}
+
 /***********************
 	기본모드 - 메인
 ************************/
@@ -658,18 +696,12 @@ h2.tit {
 #gnbWrap {
     width: 100%;
     height: 2.286em;
-    max-width: 414px;
     overflow: hidden;
     background: #677caf;
     position: fixed;
-    left: 50%;
+    left: 0;
     top: 0;
     z-index: 9999;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
 }
 
 #gnbWrap .move_bar {
@@ -1263,9 +1295,12 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     line-height: 1.2;
 }
 
-.img_list ul li a .etc {
+.img_list ul li a .etc, .img_list ul li a .term {
     display: block;
     margin-top: 8px;
+}
+
+.img_list ul li a .etc {
     color: #b1b1b1;
 }
 
@@ -1277,6 +1312,11 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .img_list ul li a .etc span:first-child {
     margin-left: 0;
+}
+
+.img_list ul li a .term {
+    font-size: 0.786em;
+    color: #666;
 }
 
 .img_list.type02 ul li {
@@ -1377,6 +1417,11 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background: #fff;
 }
 
+.view_page.notice .view_head {
+    font-size: 1em;
+    font-weight: normal;
+}
+
 .view_page.notice .view_content {
     padding-bottom: 14px;
 }
@@ -1387,6 +1432,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     font-size: 1.214em;
     border-bottom: 1px solid #ececec;
     font-weight: bold;
+    color: #000;
 }
 
 .view_page .view_head.brand {
@@ -1406,13 +1452,12 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 .view_page .view_head span {
     width: 100%;
     display: block;
-    color: #333;
 }
 
 .view_page .view_head .date {
     font-weight: normal;
     color: #666;
-    font-size: 0.647em;
+    font-size: 0.786em;
 }
 
 .view_page > .user_info {
@@ -1831,6 +1876,14 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     font-size: 0.929em;
 }
 
+.reply_list li .txt .answer {
+    display: block;
+}
+
+.reply_list li .txt .answer .title {
+    color: #677caf;
+}
+
 .reply_more {
     display: block;
     height: 30px;
@@ -2122,14 +2175,9 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 /* 플로팅 버튼 */
 .floating_util {
     position: fixed;
-    left: 50%;
+    left: 0;
     bottom: 0;
     z-index: 9999;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -2149,7 +2197,6 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
-    max-width: 414px;
     height: 3.429em;
     background: rgba(88, 88, 88, 0.96);
 }
@@ -2297,4 +2344,51 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     margin-top: 5px;
     font-size: 0.786em;
     color: #666;
+}
+
+/* 설문조사 리스트 */
+.poll_list li {
+    margin-top: 13px;
+}
+
+.poll_list li:first-child {
+    margin-top: 0;
+}
+
+.poll_list li .question {
+    background: #fff;
+    padding: 15px 10px;
+}
+
+.poll_list li .question label {
+    display: block;
+}
+
+.poll_list li .question input[type=text] {
+    width: 100%;
+    margin-top: 7px;
+    background: #f6f6f6;
+    border: 1px solid #e5e5e5;
+}
+
+/* 당첨자 발표 테이블 */
+table.wins_list {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table.wins_list thead tr th {
+    font-size: 1em;
+    text-align: left;
+}
+
+table.wins_list tbody tr td {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:nth-of-type(3):before, table.wins_list tbody tr td:nth-of-type(4):before {
+    content: '│';
+    display: inline-block;
+    float: left;
 }

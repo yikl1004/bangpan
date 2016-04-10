@@ -448,62 +448,62 @@
                       <tr>
                         <th scope="row">&nbsp;</th>
                         <td class="itemtit02 fst">이벤트</td>
-                        <td class="itemtit03">진행중인 이벤트</td>
-                        <td>목록</td>
+                        <td class="itemtit03">목록</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td class="alC"></td>
                         <td class="alC">ⓥⓒⓦ</td>
-                        <td class="alC">N</td>
+                        <td class="alC">Y</td>
                         <td class="alC txt_ok">완료일자/작업자이니셜</td>
                         <td class="alC txt_mod">04.04 / C.MK</td>
                         <td>&nbsp;</td>
-                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                        <td class="alC"><a href="/publish/html/00/event_list.html" target="_blank" data-role="link">페이지이동</a></td>
                       </tr>
                       <tr>
                         <th scope="row">&nbsp;</th>
                         <td class="itemtit02 fst">이벤트</td>
-                        <td class="itemtit03">진행중인 이벤트</td>
-                        <td>상세</td>
+                        <td class="itemtit03">상세</td>
+                        <td>당첨자 발표</td>
                         <td></td>
                         <td></td>
                         <td class="alC"></td>
                         <td class="alC">ⓥⓒⓦ</td>
-                        <td class="alC">N</td>
+                        <td class="alC">Y</td>
                         <td class="alC txt_ok">완료일자/작업자이니셜</td>
                         <td class="alC txt_mod">04.04 / C.MK</td>
                         <td>&nbsp;</td>
-                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                        <td class="alC"><a href="/publish/html/00/event_view_winlist.html" target="_blank" data-role="link">페이지이동</a></td>
                       </tr>
                       <tr>
                         <th scope="row">&nbsp;</th>
                         <td class="itemtit02 fst">이벤트</td>
-                        <td class="itemtit03">종료된 이벤트</td>
-                        <td>목록</td>
+                        <td class="itemtit03">상세</td>
+                        <td>설문</td>
                         <td></td>
                         <td></td>
                         <td class="alC"></td>
                         <td class="alC">ⓥⓒⓦ</td>
-                        <td class="alC">N</td>
+                        <td class="alC">Y</td>
                         <td class="alC txt_ok">완료일자/작업자이니셜</td>
                         <td class="alC txt_mod">04.04 / C.MK</td>
                         <td>&nbsp;</td>
-                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                        <td class="alC"><a href="/publish/html/00/event_view_poll.html" target="_blank" data-role="link">페이지이동</a></td>
                       </tr>
                       <tr>
                         <th scope="row">&nbsp;</th>
                         <td class="itemtit02 fst">이벤트</td>
-                        <td class="itemtit03">종료된 이벤트</td>
-                        <td>상세</td>
+                        <td class="itemtit03">상세</td>
+                        <td>일반</td>
                         <td></td>
                         <td></td>
                         <td class="alC"></td>
                         <td class="alC">ⓥⓒⓦ</td>
-                        <td class="alC">N</td>
+                        <td class="alC">Y</td>
                         <td class="alC txt_ok">완료일자/작업자이니셜</td>
                         <td class="alC txt_mod">04.04 / C.MK</td>
                         <td>&nbsp;</td>
-                        <td class="alC"><a href="#" target="_blank" data-role="link">페이지이동</a></td>
+                        <td class="alC"><a href="/publish/html/00/event_view.html" target="_blank" data-role="link">페이지이동</a></td>
                       </tr>
                     </tbody>
                     <tbody>
@@ -618,9 +618,12 @@
                     $(document).ready(function() {
                         $('#focus').tableHover();
 
-                        $('a').each(function(){
-                            $(this).attr('href', "http://yikl1004.github.io/bangpan" + $(this).attr('href'));
-                        });
+                        // 깃허브 업로드 용
+                        if ( location.href.match('/bangpan') ) {
+                            $('a').each(function(){
+                                $(this).attr('href', "http://yikl1004.github.io/bangpan" + $(this).attr('href'));
+                            });
+                        }
                     });
                   </script>
                   <script type="text/javascript">
