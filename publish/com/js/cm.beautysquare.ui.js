@@ -1,5 +1,24 @@
-
+var pageIdxStr = '.swiper-container.tabs > .swiper-wrapper .swiper-slide-active',
+	pageContent = '>.container';
 $(function(){
+
+	// 이미지로드 jquery prototype
+	$.fn.imagesLoaded = function () {
+	    var $imgs = this.find('img[src!=""]');
+	    if (!$imgs.length) {return $.Deferred().resolve().promise();}
+
+	    var dfds = [];
+		
+		$imgs.each(function(){
+			var dfd = $.Deferred();
+				dfds.push(dfd);
+			var img = new Image();
+				img.onload = function(){dfd.resolve();}
+				img.onerror = function(){dfd.resolve();}
+				img.src = this.src;
+		});
+	    return $.when.apply($,dfds);
+	};
 
 	// 퍼블리싱 테스트 용
 	var devJson = location.href.match('bangpan') ? '/bangpan' : '';
@@ -16,6 +35,50 @@ $(function(){
 		}
 		if ( isIOS ) return 'ios';
 		if ( !isAndroid && !isIOS ) return 'etc';
+	};
+
+	window.writeBtn = {
+		active: function ( idx ) {
+			this.changeKlass();
+			if ( idx == 5 || idx == 4 ) {
+				var activeSlide = '.swiper-container.tabs > .swiper-wrapper > [data-swiper-slide-index=' + (idx-1) + ']',
+					tabIdx = $(activeSlide).find('.tab li.active').index();
+				$(activeSlide).imagesLoaded().then(function(){
+					if ( idx == 5 && tabIdx == 0 ) {	//칭찬합시다
+						$('body').addClass( 'praise' );
+					} else if ( idx == 5 && tabIdx == 1 ) {		//궁금해요
+						$('body').addClass( 'wonder' );
+					} else if ( idx == 4 && tabIdx == 1 ) {		//노하우 공유
+						$('body').addClass( 'knowhowshare' );
+					}
+				});
+			}
+		},
+		custom: function( menu ){
+			this.changeKlass();
+			$('body').addClass(menu);
+		},
+		changeKlass: function(){
+			var klass = ['knowhowshare', 'praise', 'wonder'];
+			$.each(klass, function( idx, item ){
+				$('body').removeClass( item );
+			});
+		}
+	};
+
+	window.setSlideHeight = function(  ) {
+		var swiperWrapper = '.swiper-container.tabs > .swiper-wrapper',
+			activeSlideStr = swiperWrapper + ' > .swiper-slide-active > .container';
+		$( activeSlideStr ).imagesLoaded().then(function(){
+			$( swiperWrapper ).height( $( activeSlideStr ).outerHeight() );
+		});
+	};
+
+	window.tabActive = function(){
+		$('.tab li a').off('click')
+		.on('click', function(){
+			$(this).parent().addClass('active').siblings().removeClass('active');
+		});
 	};
 
 	var BS = {};
@@ -37,23 +100,6 @@ $(function(){
 	doc[qsa]  ===   document.querySelectorAll
 	*/
 
-	// 이미지로드 jquery prototype
-	$.fn.imagesLoaded = function () {
-	    var $imgs = this.find('img[src!=""]');
-	    if (!$imgs.length) {return $.Deferred().resolve().promise();}
-
-	    var dfds = [];  
-		
-		$imgs.each(function(){
-			var dfd = $.Deferred();
-				dfds.push(dfd);
-			var img = new Image();
-				img.onload = function(){dfd.resolve();}
-				img.onerror = function(){dfd.resolve();}
-				img.src = this.src;
-		});
-	    return $.when.apply($,dfds);
-	}
 
 	$(window).on('load', function(){
 
@@ -63,9 +109,9 @@ $(function(){
 		for ( var i=1; i<$tabsSlide.length; i++ ) {//data-swiper-slide-index
 			if( $tabsSlide.eq(i).attr('data-swiper-slide-index') !== 0 ) {
 				$('.tabs > .swiper-wrapper').find('>.swiper-slide').eq(i).css({
-					height: tabSlideHeight
+					// height: tabSlideHeight
 				}).find('> .container').css({
-					minHeight: tabSlideHeight
+					// minHeight: tabSlideHeight
 				});
 			}
 		}
@@ -117,13 +163,6 @@ $(function(){
 				maxScrollX: doc.documentElement.clientWidth - gnbWidth
 			});
 		}
-
-		var setSlideHeight = function( swipeIndex ) {
-			var $activeSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide.swiper-slide-active');
-			$('.swiper-container.tabs').css({
-				// height: ,
-			});
-		};
 
 		var moveBarAni = function( num ) {
 			var target = $('#gnb li:nth-child(' + num + ')'),
@@ -182,6 +221,7 @@ $(function(){
 				},
 				onTransitionEnd: function( swiper ){
 					var idx = swiper.activeIndex;
+					window.tabSlideIdx = idx;
 
 					if ( idx > menuLength ) idx = 1;
 					if ( idx <= 0 ) idx = menuLength;
@@ -221,17 +261,20 @@ $(function(){
 
 								$wrapper.find( dataSlideIndexStr + ' .container').html( _data ).imagesLoaded().then(function(){
 									$wrapper.find( dataSlideIndexStr + ' .container').addClass('loaded');
-									ht = $wrapper.find( dataSlideIndexStr + ' .container').outerHeight(false);
-									$wrapper.find( dataSlideIndexStr ).height(ht);
-									$wrapper.height(ht);
+									setSlideHeight();
 								});
 							},
+							async: false,
 							error: function(xhr, status, error){
 								alert( status );
 								console.log(xhr, status, error);
 							}
 						});
+
 					}
+
+					setSlideHeight();
+					writeBtn.active( idx );
 					
 					//플로팅 컨텐츠 변경
 					if ( idx == 1 ) {
@@ -243,7 +286,7 @@ $(function(){
 					}
 				},
 				onTouchMove : function( swiper ) {
-					console.log('tabs move', swiper);
+					// console.log('tabs move', swiper);
 					if ( tabsDiff !== swiper.touches.diff && tabsMoveCtrl ) {
 						var idx = swiper.activeIndex,
 							diff = swiper.touches.diff;
@@ -258,7 +301,7 @@ $(function(){
 					}
 				},
 				onTouchStart: function(swiper){
-					console.log('tabs start', swiper);
+					// console.log('tabs start', swiper);
 					tabsDiff = swiper.touches.diff;
 				}
 			},
@@ -434,6 +477,9 @@ $(function(){
 				pageNumber = parseInt( _hash.split('/')[1] );
 			tabsSwiperFunc( pageNumber );
 		}
+
+		//탭 활성화
+		tabActive();
 
 	}); // window load
 

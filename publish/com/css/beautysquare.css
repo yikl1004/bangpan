@@ -112,7 +112,7 @@
     transition: opacity 300ms ease;
 }
 
-.clear, .tit:after, .thumb_txt_list li:after, .tab:after, .img_list ul li a:after, .fb_type .user_info:after {
+.clear, .tit:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .archive .archive_list li .action:after {
     content: '';
     display: block;
     clear: both;
@@ -125,6 +125,18 @@ body.sub {
 body.sub #wrap {
     padding-top: 0;
     margin-bottom: 0;
+}
+
+body.praise .btn_write.praise {
+    display: block;
+}
+
+body.wonder .btn_write.wonder {
+    display: block;
+}
+
+body.knowhowshare .btn_write.knowhowshare {
+    display: block;
 }
 
 img {
@@ -165,10 +177,11 @@ img {
     display: inline-block;
     float: right;
     line-height: 1.429em;
+    text-indent: 0;
     padding: 0 11px;
     border: 1px solid #ddd;
     background: #f4f4f4;
-    color: #333;
+    color: #000;
     font-size: 0.868em;
     font-weight: normal;
 }
@@ -196,6 +209,26 @@ img {
     color: #fff;
     font-size: 1.143em;
     margin-bottom: 20px;
+}
+
+.btn_write {
+    position: fixed;
+    right: 0.714em;
+    bottom: 4.214em;
+    z-index: 9999;
+    display: none;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    border-radius: 26px;
+    background: #f96365;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.22);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.22);
 }
 
 /* 카운팅 ( view, read, like ) */
@@ -227,6 +260,7 @@ img {
     background-image: url("/bangpan/publish/img/ico/ico_eye.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 17px 12px;
     -moz-background-size: 17px 12px;
     -o-background-size: 17px 12px;
@@ -238,6 +272,7 @@ img {
     background-image: url("/bangpan/publish/img/ico/ico_heart.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 13px 11px;
     -moz-background-size: 13px 11px;
     -o-background-size: 13px 11px;
@@ -253,6 +288,7 @@ img {
     background-image: url("/bangpan/publish/img/ico/ico_speach_balloon.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 12px 12px;
     -moz-background-size: 12px 12px;
     -o-background-size: 12px 12px;
@@ -303,6 +339,7 @@ ul.hori_btns li a .count {
     background-image: url("/bangpan/publish/img/com/webview_shadow.png");
     background-repeat: repeat-x;
     background-position: 0 0;
+    background-color: transparent;
     -webkit-background-size: 1px 3px;
     -moz-background-size: 1px 3px;
     -o-background-size: 1px 3px;
@@ -314,7 +351,7 @@ ul.hori_btns li a .count {
 }
 
 /* 그림자 */
-.shadow, .main_visual, .video_area, .scroller .swiper-wrapper .swiper-slide a, .latest_list, .thumb_txt_list, .tab, .select_menu, .photo_list a, .img_list ul li, .more_and_top, .view_page.notice .view_content, .view_page .util_btns a, .editor_content, .reply_list li, .reply_more, .fb_type, .notice_list li, .poll_list li .question {
+.shadow, .main_visual, .video_area, .scroller .swiper-wrapper .swiper-slide a, .latest_list, .thumb_txt_list, .tab, .select_menu, .photo_list a, .img_list ul li, .more_and_top, .view_page.notice .view_content, .view_page .util_btns a, .editor_content, .reply_list li, .reply_more, .fb_type, .notice_list li, .poll_list li .question, .mypage .my_info, .mypage .point_list li, table, .current_point, .mypage_list .saving_list li, .archive .archive_list li {
     border-bottom: 1px solid #cecece;
 }
 
@@ -346,6 +383,10 @@ ul.hori_btns li a .count {
 
 .section:first-child {
     margin-top: 0;
+}
+
+body.sub .search .section {
+    margin-top: 17px;
 }
 
 body.sub .section {
@@ -381,41 +422,60 @@ body.sub .section h2.tit .all_view {
 
 .tit .all_view {
     height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 0.154em;
     font-size: 0.765em;
-    line-height: 1.4;
+    line-height: 1.462em;
     float: right;
     font-weight: normal;
 }
 
 .tit .all_view span {
+    display: inherit;
+    margin-top: 0.142em;
     vertical-align: middle;
+    text-indent: 0;
 }
 
 .tit .all_view:after {
     content: '';
-    display: inline-block;
-    width: 10px;
-    height: 19px;
+    display: inherit;
+    width: 0.5em;
+    height: 0.857em;
     vertical-align: middle;
     margin-left: 4px;
     background-image: url("/bangpan/publish/img/ico/ico_arrow_r.png");
     background-repeat: no-repeat;
-    background-position: 100% 3px;
-    -webkit-background-size: 7px 12px;
-    -moz-background-size: 7px 12px;
-    -o-background-size: 7px 12px;
-    background-size: 7px 12px;
+    background-position: right center;
+    background-color: transparent;
+    -webkit-background-size: 0.5em 0.857em;
+    -moz-background-size: 0.5em 0.857em;
+    -o-background-size: 0.5em 0.857em;
+    background-size: 0.5em 0.857em;
 }
 
 h2.tit {
-    text-indent: 6px;
-    margin-bottom: 10px;
+    text-indent: 0.375em;
+    margin-bottom: 5px;
 }
 
 /* TAG */
 .tag {
     display: inline-block;
-    padding: 2px 5px 0;
+    padding: 0.2em 5px 0;
+    margin-left: 3px;
     line-height: 1.4em;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
@@ -425,6 +485,10 @@ h2.tit {
     vertical-align: top;
   /* 기본 TAG 및 카테고리 */
   /* 브랜드 */;
+}
+
+.tag:first-child {
+    margin-left: 0;
 }
 
 .tag.new, .tag.best {
@@ -553,8 +617,8 @@ h2.tit {
     display: inline-block;
     width: auto;
     vertical-align: top;
-    font-size: 0.714em;
-    line-height: 19px;
+    font-size: 0.786em;
+    line-height: 1.727em;
     color: #fff;
     padding: 1px 10px 0 21px;
     -webkit-border-radius: 15px;
@@ -648,6 +712,7 @@ h2.tit {
     background-image: url("/bangpan/publish/img/com/user_thumb_mask.png");
     background-repeat: no-repeat;
     background-position: 0 0;
+    background-color: transparent;
     -webkit-background-size: 40px 40px;
     -moz-background-size: 40px 40px;
     -o-background-size: 40px 40px;
@@ -670,6 +735,7 @@ h2.tit {
     background-image: url("/bangpan/publish/img/ico/ico_clock.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 13px 13px;
     -moz-background-size: 13px 13px;
     -o-background-size: 13px 13px;
@@ -687,6 +753,24 @@ p.msg {
 p.msg.red {
     font-size: 1em;
     color: #f96365;
+}
+
+/* 일반 설명 텍스트 */
+p.normal_txt {
+    font-size: 0.929em;
+    color: #666;
+}
+
+p.normal_txt.c {
+    text-align: center;
+}
+
+p.normal_txt.l {
+    text-align: left;
+}
+
+p.normal_txt.r {
+    text-align: right;
 }
 
 /***********************
@@ -1064,13 +1148,10 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .thumb_txt_list li .txt .info .official_title:before {
-    content: '';
-    width: 1px;
-    height: 11px;
-    background-color: #666;
-    display: inline-block;
-    margin: 0 5px 0 3px;
-    vertical-align: -2px;
+    content: '|';
+    display: inline;
+    margin-left: 3px;
+    margin-right: 5px;
 }
 
 .thumb_txt_list li .thumb {
@@ -1161,7 +1242,6 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 /* 셀렉트 메뉴 */
 .select_menu {
     width: 100%;
-    background: #fff;
     text-indent: 1.071em;
     font-size: 1.071em;
     color: #333;
@@ -1175,6 +1255,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/com/select_arrow.png");
     background-repeat: no-repeat;
     background-position: 96% 50%;
+    background-color: #fff;
     -webkit-background-size: 12px 7px;
     -moz-background-size: 12px 7px;
     -o-background-size: 12px 7px;
@@ -1285,11 +1366,15 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .img_list ul li a .info .tags {
-    display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .img_list ul li a .title {
-    margin-top: 5px;
+    margin-top: 9px;
     color: #000;
     font-size: 1em;
     line-height: 1.2;
@@ -1297,7 +1382,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .img_list ul li a .etc, .img_list ul li a .term {
     display: block;
-    margin-top: 8px;
+    margin-top: 6px;
 }
 
 .img_list ul li a .etc {
@@ -1386,6 +1471,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_dir_down.png");
     background-repeat: no-repeat;
     background-position: 0 0;
+    background-color: transparent;
     -webkit-background-size: 12px 7px;
     -moz-background-size: 12px 7px;
     -o-background-size: 12px 7px;
@@ -1406,6 +1492,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_arrow_up.png");
     background-repeat: no-repeat;
     background-position: 0 0;
+    background-color: transparent;
     -webkit-background-size: 10px 13px;
     -moz-background-size: 10px 13px;
     -o-background-size: 10px 13px;
@@ -1443,6 +1530,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/com/brand_hera.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    background-color: transparent;
     -webkit-background-size: 103px 14px;
     -moz-background-size: 103px 14px;
     -o-background-size: 103px 14px;
@@ -1590,6 +1678,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico//ico_eye_view.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 24px 16px;
     -moz-background-size: 24px 16px;
     -o-background-size: 24px 16px;
@@ -1601,6 +1690,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico//ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 17px 15px;
     -moz-background-size: 17px 15px;
     -o-background-size: 17px 15px;
@@ -1612,6 +1702,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico//ico_star_view.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 20px 19px;
     -moz-background-size: 20px 19px;
     -o-background-size: 20px 19px;
@@ -1697,6 +1788,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_kakaotalk.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 21px 21px;
     -moz-background-size: 21px 21px;
     -o-background-size: 21px 21px;
@@ -1707,6 +1799,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_kakaostory.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 21px 21px;
     -moz-background-size: 21px 21px;
     -o-background-size: 21px 21px;
@@ -1717,6 +1810,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_trashcan.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 19px 19px;
     -moz-background-size: 19px 19px;
     -o-background-size: 19px 19px;
@@ -1727,6 +1821,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_pencil.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 19px 19px;
     -moz-background-size: 19px 19px;
     -o-background-size: 19px 19px;
@@ -1857,6 +1952,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: right top;
+    background-color: transparent;
     -webkit-background-size: 17px 15px;
     -moz-background-size: 17px 15px;
     -o-background-size: 17px 15px;
@@ -2136,6 +2232,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_reply_big.png");
     background-repeat: no-repeat;
     background-position: center center;
+    background-color: transparent;
     -webkit-background-size: 14px 17px;
     -moz-background-size: 14px 17px;
     -o-background-size: 14px 17px;
@@ -2147,6 +2244,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_star_big.png");
     background-repeat: no-repeat;
     background-position: center center;
+    background-color: transparent;
     -webkit-background-size: 18px 17px;
     -moz-background-size: 18px 17px;
     -o-background-size: 18px 17px;
@@ -2162,6 +2260,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_heart_big.png");
     background-repeat: no-repeat;
     background-position: center center;
+    background-color: transparent;
     -webkit-background-size: 16px 17px;
     -moz-background-size: 16px 17px;
     -o-background-size: 16px 17px;
@@ -2218,12 +2317,17 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     margin-left: 2.143em;
 }
 
+.floating_util .sort select.fu_sort:active, .floating_util .sort select.fu_sort:focus {
+    outline: none;
+}
+
 .floating_util .sort select.fu_sort:nth-of-type(1) {
     padding-right: 16px;
     margin-left: 0;
     background-image: url("/bangpan/publish/img/ico/ico_funnel.png");
     background-repeat: no-repeat;
     background-position: right center;
+    background-color: transparent;
     -webkit-background-size: 11px 12px;
     -moz-background-size: 11px 12px;
     -o-background-size: 11px 12px;
@@ -2235,6 +2339,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico/ico_sort.png");
     background-repeat: no-repeat;
     background-position: right center;
+    background-color: transparent;
     -webkit-background-size: 13px 13px;
     -moz-background-size: 13px 13px;
     -o-background-size: 13px 13px;
@@ -2268,6 +2373,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-image: url("/bangpan/publish/img/ico//ico_change.png");
     background-repeat: no-repeat;
     background-position: left center;
+    background-color: transparent;
     -webkit-background-size: 13px 14px;
     -moz-background-size: 13px 14px;
     -o-background-size: 13px 14px;
@@ -2391,4 +2497,623 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
     content: '│';
     display: inline-block;
     float: left;
+}
+
+/* 마이페이지 */
+.mypage .my_info {
+    position: relative;
+    padding: 15px 10px 19px;
+    background: #fff;
+    text-align: center;
+}
+
+.mypage .my_info .btn_grade_guide {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: 10;
+    display: inline-block;
+    padding: 0 10px;
+    color: #666;
+    font-size: 0.786em;
+    line-height: 1.727em;
+    border: 1px solid #ccc;
+    background: #ececec;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+}
+
+.mypage .my_info .my_photo {
+    width: 103px;
+    height: 103px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mypage .my_info .my_photo img {
+    width: 100%;
+    margin: 1px;
+}
+
+.mypage .my_info .my_photo .edit {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #f96365;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+    background-image: url("/bangpan/publish/img/ico/ico_edit.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    -webkit-background-size: 25px 25px;
+    -moz-background-size: 25px 25px;
+    -o-background-size: 25px 25px;
+    background-size: 25px 25px;
+    position: absolute;
+    top: 15px;
+    right: -6px;
+    z-index: 30;
+}
+
+.mypage .my_info .my_photo:after {
+    content: '';
+    display: block;
+    width: 105px;
+    height: 105px;
+    background-image: url("/bangpan/publish/img/com/myphoto_mask.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    -webkit-background-size: 105px 105px;
+    -moz-background-size: 105px 105px;
+    -o-background-size: 105px 105px;
+    background-size: 105px 105px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
+}
+
+.mypage .my_info .grade {
+    position: relative;
+    z-index: 30;
+    margin-top: -0.863em;
+}
+
+.mypage .my_info .user_name {
+    display: block;
+    text-align: center;
+    font-size: 1.429em;
+}
+
+.mypage .my_info .info {
+    font-size: 0.929em;
+    color: #828282;
+}
+
+.mypage .my_info .info .branch:before {
+    content: '|';
+    display: inline;
+    margin-left: 5px;
+    margin-right: 7px;
+}
+
+.mypage .point_list li {
+    position: relative;
+    margin-top: 5px;
+    background: #fff;
+}
+
+.mypage .point_list li:first-child {
+    margin-top: 0;
+}
+
+.mypage .point_list li.current a .subject .point {
+    top: 31px;
+    font-size: 1.467em;
+}
+
+.mypage .point_list li a {
+    display: block;
+    padding: 18px 15px 17px;
+}
+
+.mypage .point_list li a .subject {
+    display: block;
+    font-size: 1.071em;
+    color: #000;
+    font-weight: normal;
+}
+
+.mypage .point_list li a .subject .point {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    color: #f96365;
+    font-size: 1.133em;
+}
+
+.mypage .point_list li a .cont {
+    font-size: 0.786em;
+}
+
+.mypage .point_list li a .cont em {
+    font-style: normal;
+    color: #677caf;
+}
+
+/* 테이블 기본 스타일 */
+ul.tab + table {
+    margin-top: 10px;
+}
+
+table {
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+table th, table td {
+    padding: 9px 10px 7px;
+    background: #fff;
+    border-bottom: 1px solid #ececec;
+    font-size: 0.929em;
+    line-height: 1.3;
+    text-align: left;
+}
+
+table tr:first-child th, table tr:first-child td {
+    border-top: 1px solid #677caf;
+}
+
+table tr:last-child th, table tr:last-child td {
+    border-bottom: 1px solid #cecece;
+}
+
+table th {
+    font-weight: normal;
+}
+
+table td {
+    padding-left: 10px;
+    border-left: 1px solid #ececec;
+}
+
+table td p strong {
+    color: #f96365;
+}
+
+table td p.warn {
+    font-size: 0.846em;
+    color: #f96365;
+}
+
+table + p.msg {
+    color: #666;
+}
+
+/* 등급안내 */
+table.grade_guide {
+    margin-top: 15px;
+}
+
+table.grade_guide th {
+    padding: 10px 0 5px;
+    text-align: center;
+}
+
+table.grade_guide th .grade {
+    display: inline-block;
+    width: 58px;
+    height: 58px;
+    padding: 0;
+}
+
+table.grade_guide th .grade.g1 {
+    background-image: url("/bangpan/publish/img/com/gradeGuide_g1.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-color: transparent;
+    -webkit-background-size: 58px 58px;
+    -moz-background-size: 58px 58px;
+    -o-background-size: 58px 58px;
+    background-size: 58px 58px;
+}
+
+table.grade_guide th .grade.g2 {
+    background-image: url("/bangpan/publish/img/com/gradeGuide_g2.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-color: transparent;
+    -webkit-background-size: 58px 58px;
+    -moz-background-size: 58px 58px;
+    -o-background-size: 58px 58px;
+    background-size: 58px 58px;
+}
+
+table.grade_guide th .grade.g3 {
+    background-image: url("/bangpan/publish/img/com/gradeGuide_g3.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-color: transparent;
+    -webkit-background-size: 58px 58px;
+    -moz-background-size: 58px 58px;
+    -o-background-size: 58px 58px;
+    background-size: 58px 58px;
+}
+
+table.grade_guide th .grade.g4 {
+    background-image: url("/bangpan/publish/img/com/gradeGuide_g4.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-color: transparent;
+    -webkit-background-size: 58px 58px;
+    -moz-background-size: 58px 58px;
+    -o-background-size: 58px 58px;
+    background-size: 58px 58px;
+}
+
+table.grade_guide th .grade.g5 {
+    background-image: url("/bangpan/publish/img/com/gradeGuide_g5.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-color: transparent;
+    -webkit-background-size: 58px 58px;
+    -moz-background-size: 58px 58px;
+    -o-background-size: 58px 58px;
+    background-size: 58px 58px;
+}
+
+table.grade_guide th .grade.g6 {
+    background-image: url("/bangpan/publish/img/com/gradeGuide_g6.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-color: transparent;
+    -webkit-background-size: 58px 58px;
+    -moz-background-size: 58px 58px;
+    -o-background-size: 58px 58px;
+    background-size: 58px 58px;
+}
+
+table.grade_guide th p {
+    margin-top: 3px;
+}
+
+table.grade_guide td {
+    padding-left: 17px;
+}
+
+table.grade_guide td p strong {
+    color: #f96365;
+}
+
+/* 포인트 내역 */
+.current_point {
+    position: relative;
+    padding: 19px 20px 17px 25px;
+    background: #fff;
+}
+
+.current_point .subject {
+    font-weight: normal;
+    font-size: 1.071em;
+    color: #000;
+}
+
+.current_point .subject .point {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    z-index: 10;
+    font-size: 1.333em;
+    color: #f96365;
+}
+
+.mypage_list .btn_normal {
+    font-size: 0.929em;
+}
+
+.mypage_list .date {
+    padding-left: 0.385em;
+    font-size: 0.929em;
+}
+
+.mypage_list .saving_list {
+    margin-top: 7px;
+}
+
+.mypage_list .saving_list li {
+    position: relative;
+    padding: 14px 10px 12px 15px;
+    margin-top: 5px;
+    background: #fff;
+}
+
+.mypage_list .saving_list li:first-child {
+    margin-top: 0;
+}
+
+.mypage_list .saving_list li .subject {
+    display: block;
+    font-weight: normal;
+    font-size: 1.071em;
+    color: #000;
+}
+
+.mypage_list .saving_list li .subject .point {
+    position: absolute;
+    right: 10px;
+    bottom: 13px;
+    z-index: 10;
+    font-size: 1.200em;
+}
+
+.mypage_list .saving_list li .subject .point:after {
+    content: 'P';
+    display: inline;
+}
+
+.mypage_list .saving_list li .subject .point.plus {
+    color: #677caf;
+}
+
+.mypage_list .saving_list li .subject .point.plus:before {
+    content: '+';
+    display: inline;
+}
+
+.mypage_list .saving_list li .subject .point.minus {
+    color: #f96365;
+}
+
+.mypage_list .saving_list li .subject .point.minus:before {
+    content: '-';
+    display: inline;
+}
+
+.mypage_list .saving_list li .saving_date {
+    font-size: 0.786em;
+    color: #666;
+}
+
+.mypage_list .saving_list li .edu_cont {
+    margin-top: 0.154em;
+    font-size: 0.929em;
+    line-height: 1.154em;
+}
+
+.mypage_list .saving_list li .edu_cont span {
+    display: block;
+}
+
+/* 나의 보관함 */
+.archive .archive_list li {
+    margin-top: 10px;
+    background: #fff;
+}
+
+.archive .archive_list li:first-child {
+    margin-top: 0;
+}
+
+.archive .archive_list li .action {
+    padding: 10px;
+    line-height: 0;
+    border-bottom: 1px solid #ececec;
+}
+
+.archive .archive_list li .action input[type=checkbox]:checked + label {
+    background-image: url("/bangpan/publish/img/ico/ico_checked.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #677caf;
+    -webkit-background-size: 15px 15px;
+    -moz-background-size: 15px 15px;
+    -o-background-size: 15px 15px;
+    background-size: 15px 15px;
+}
+
+.archive .archive_list li .action label {
+    float: left;
+    display: block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #677caf;
+    background: #fff;
+}
+
+.archive .archive_list li .action .delete {
+    float: right;
+    display: block;
+    padding: 0 5px;
+    font-size: 0.857em;
+    line-height: 15px;
+}
+
+.archive .archive_list li .item {
+    /*****************/
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    /*****************/;
+}
+
+.archive .archive_list li .item .thumb {
+    width: 35%;
+    min-width: 97px;
+    display: block;
+    padding: 5px;
+}
+
+.archive .archive_list li .item .info {
+    padding: 8px 13px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.archive .archive_list li .item .info .tags {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.archive .archive_list li .item .path {
+    font-size: 0.857em;
+    color: #677caf;
+}
+
+.archive .archive_list li .item .title {
+    color: #000;
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+.archive .archive_list li .item .etc {
+    display: block;
+    margin-top: 5px;
+}
+
+.archive .archive_list li .item .etc {
+    color: #b1b1b1;
+}
+
+.archive .archive_list li .item .etc span {
+    display: inline-block;
+    height: 12px;
+    margin-left: 9px;
+}
+
+.archive .archive_list li .item .etc span:first-child {
+    margin-left: 0;
+}
+
+.archive .archive_list li .item .term {
+    font-size: 0.786em;
+    color: #666;
+}
+
+/* 검색결과 */
+.search h2.tit {
+    font-weight: normal;
+}
+
+.search h2.tit .cnt {
+    font-weight: bold;
+}
+
+.search .photo_list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.search .photo_list > a {
+    width: 49.111%;
+}
+
+.search .photo_list > a:nth-of-type(2n) {
+    margin-left: 1.778%;
+}
+
+.search .photo_list > a h3.tit {
+    margin-bottom: 0;
+    display: block;
+    font-size: 1em;
+    display: -webkit-box;
+    line-height: 1.143em;
+    word-wrap: break-word;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* 다운로드 페이지 */
+.app_download .app_info {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #677caf;
+    padding: 22px 1.429em 20px;
+}
+
+.app_download .app_info .icon {
+    width: 5.357em;
+    height: 5.357em;
+}
+
+.app_download .app_info .icon img {
+    width: 100%;
+}
+
+.app_download .app_info .txt {
+    color: #fff;
+    margin-left: 0.929em;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.app_download .app_info .txt .name {
+    font-size: 1.214em;
+    line-height: 1;
+    margin-bottom: 5px;
+    letter-spacing: -0.002em;
+}
+
+.app_download .app_info .txt .company {
+    font-size: 0.857em;
+    opacity: 0.7;
 }
