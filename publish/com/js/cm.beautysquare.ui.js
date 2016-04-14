@@ -195,6 +195,9 @@ $(function(){
 			$('#gnb a:eq(' + index + ')').trigger('click');
 		};
 
+		//페이지 인덱스 저장
+		window.tabSlideIdx = 1;
+
 		var tabsDiff = null,						// 페이지를 swipe한 거리
 			menuLength = $('#gnb ul li').length,	// 매뉴 갰수
 			speedAll = 300,							// 스와이프 관련 스피드 (전체)
@@ -221,12 +224,15 @@ $(function(){
 				},
 				onTransitionEnd: function( swiper ){
 					var idx = swiper.activeIndex;
-					window.tabSlideIdx = idx;
 
 					if ( idx > menuLength ) idx = 1;
 					if ( idx <= 0 ) idx = menuLength;
 
-					$('html, body').scrollTop(0);
+					if ( tabSlideIdx !== idx ) {
+						$('html, body').scrollTop(0);
+					}
+
+					window.tabSlideIdx = idx;
 					
 					gnbScroll.scrollToElement( _qs( '#gnb li:nth-child(' + idx + ')'), speedAll, true, null );
 					moveBarAni( idx );
@@ -441,7 +447,6 @@ $(function(){
 
 		//버튼 활성화
 		$('a.bookmark').on('click', function(){
-			console.log('aa');
 			$(this).addClass('active');
 		});
 
@@ -449,26 +454,22 @@ $(function(){
 		$('.font_sizing a').on('click', function( event ){
 			event.preventDefault();
 			var cl = $('body').get(0).classList,
-				re_cl = null;
-			if ( $(this).hasClass('up') ) {
-				for(var i=0; i<cl.length; i++) {
-					if (cl[i].match('font_size_')) {
-						re_cl = parseInt(cl[i].replace('font_size_', '')) + 1;
-						if ( re_cl <= 5 ) {
-							$('body').removeClass(cl[0]).addClass('font_size_' + re_cl);
-						}
-					}
-				}
-			} else if ( $(this).hasClass('down') ) {
-				for(var i=0; i<cl.length; i++) {
-					if (cl[i].match('font_size_')) {
-						re_cl = parseInt(cl[i].replace('font_size_', '')) - 1;
-						if ( re_cl >= 1 ) {
-							$('body').removeClass(cl[0]).addClass('font_size_' + re_cl);
-						}
+				$this = $(this),
+				re_cl = null,
+				cond = null,
+				increase = 0;
+
+			for(var i=0; i<cl.length; i++) {
+				if (cl[i].match('font_size_')) {
+					increase = $this.hasClass('up') ? 1 : -1;
+					re_cl = parseInt(cl[i].replace('font_size_', '')) + increase;
+					cond = $this.hasClass('up') ? (re_cl <= 5) : (re_cl >= 1);
+					if ( cond ) {
+						$('body').removeClass(cl[i]).addClass('font_size_' + re_cl);
 					}
 				}
 			}
+			setSlideHeight();
 		});
 
 		//홈화면 슬라이드탭 이동( 추후 삭제 요망 )
@@ -480,6 +481,31 @@ $(function(){
 
 		//탭 활성화
 		tabActive();
+
+		//다운로드 페이지 스와이프
+		if ( $('.swiper-container.app_guide').length > 0 ) {
+			var swiper = new Swiper('.swiper-container.app_guide', {
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				loop: true
+			});
+		}
+
+		// 아코디언
+		$('.accordian .acc_toggle').on('click', function(){
+			$parents = $(this).parents('.accordian');
+			$parents.hasClass('active') ? $parents.removeClass('active') : $parents.addClass('active');
+		});
+
+		//더보기, 맨위로 감추기
+		window.moreAndTopHide = function(){
+			$('.more_and_top').css({
+				display: 'none'
+			});
+			setSlideHeight();
+		};
 
 	}); // window load
 

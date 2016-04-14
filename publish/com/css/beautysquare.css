@@ -233,9 +233,7 @@ img {
 
 /* 카운팅 ( view, read, like ) */
 .etc {
-    line-height: 1.2;
-    height: 0.858em;
-    overflow: hidden;
+    line-height: 1.333em;
 }
 
 .etc.r {
@@ -257,7 +255,7 @@ img {
 
 .etc .read_cnt {
     padding-left: 21px;
-    background-image: url("/bangpan/publish/img/ico/ico_eye.png");
+    background-image: url("/publish/img/ico/ico_eye.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -269,7 +267,7 @@ img {
 
 .etc .like_cnt {
     padding-left: 17px;
-    background-image: url("/bangpan/publish/img/ico/ico_heart.png");
+    background-image: url("/publish/img/ico/ico_heart.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -280,12 +278,12 @@ img {
 }
 
 .etc .like_cnt.active {
-    background-image: url("/bangpan/publish/img/ico/ico_heart_red.png");
+    background-image: url("/publish/img/ico/ico_heart_red.png");
 }
 
 .etc .reply_cnt {
     padding-left: 17px;
-    background-image: url("/bangpan/publish/img/ico/ico_speach_balloon.png");
+    background-image: url("/publish/img/ico/ico_speach_balloon.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -336,7 +334,7 @@ ul.hori_btns li a .count {
     width: 100%;
     height: 3px;
     display: block;
-    background-image: url("/bangpan/publish/img/com/webview_shadow.png");
+    background-image: url("/publish/img/com/webview_shadow.png");
     background-repeat: repeat-x;
     background-position: 0 0;
     background-color: transparent;
@@ -351,7 +349,7 @@ ul.hori_btns li a .count {
 }
 
 /* 그림자 */
-.shadow, .main_visual, .video_area, .scroller .swiper-wrapper .swiper-slide a, .latest_list, .thumb_txt_list, .tab, .select_menu, .photo_list a, .img_list ul li, .more_and_top, .view_page.notice .view_content, .view_page .util_btns a, .editor_content, .reply_list li, .reply_more, .fb_type, .notice_list li, .poll_list li .question, .mypage .my_info, .mypage .point_list li, table, .current_point, .mypage_list .saving_list li, .archive .archive_list li {
+.shadow, .main_visual, .video_area, .scroller .swiper-wrapper .swiper-slide a, .latest_list, .thumb_txt_list, .tab, .select_menu, .photo_list a, .img_list ul li, .more_and_top, .view_page.notice .view_content, .view_page .util_btns a, .editor_content, .reply_list li, .reply_more, .fb_type, .notice_list li, .poll_list li .question, .mypage .my_info, .mypage .point_list li, table, .current_point, .mypage_list .saving_list li, .archive .archive_list li, .app_download .accordian .acc_toggle, .app_download .accordian .acc_content .guide_list li {
     border-bottom: 1px solid #cecece;
 }
 
@@ -456,7 +454,7 @@ body.sub .section h2.tit .all_view {
     height: 0.857em;
     vertical-align: middle;
     margin-left: 4px;
-    background-image: url("/bangpan/publish/img/ico/ico_arrow_r.png");
+    background-image: url("/publish/img/ico/ico_arrow_r.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -629,7 +627,7 @@ h2.tit {
 
 .grade.g1 {
     /* 여왕 */
-    background-image: url("/bangpan/publish/img/com/grade_01.png");
+    background-image: url("/publish/img/com/grade_01.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #9669ae;
@@ -641,7 +639,7 @@ h2.tit {
 
 .grade.g2 {
     /* 여신 */
-    background-image: url("/bangpan/publish/img/com/grade_02.png");
+    background-image: url("/publish/img/com/grade_02.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #eb6ca7;
@@ -653,7 +651,7 @@ h2.tit {
 
 .grade.g3 {
     /* 미인 */
-    background-image: url("/bangpan/publish/img/com/grade_03.png");
+    background-image: url("/publish/img/com/grade_03.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #b7cd5b;
@@ -665,7 +663,7 @@ h2.tit {
 
 .grade.g4 {
     /* 쌩얼 */
-    background-image: url("/bangpan/publish/img/com/grade_04.png");
+    background-image: url("/publish/img/com/grade_04.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #ccc;
@@ -677,7 +675,7 @@ h2.tit {
 
 .grade.g5 {
     /* 공주 */
-    background-image: url("/bangpan/publish/img/com/grade_05.png");
+    background-image: url("/publish/img/com/grade_05.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #52c1db;
@@ -689,7 +687,7 @@ h2.tit {
 
 .grade.g6 {
     /* 뷰티스타 */
-    background-image: url("/bangpan/publish/img/com/grade_06.png");
+    background-image: url("/publish/img/com/grade_06.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #ffbe21;
@@ -709,7 +707,7 @@ h2.tit {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("/bangpan/publish/img/com/user_thumb_mask.png");
+    background-image: url("/publish/img/com/user_thumb_mask.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
@@ -732,7 +730,7 @@ h2.tit {
 
 .update_time.today {
     padding-left: 18px;
-    background-image: url("/bangpan/publish/img/ico/ico_clock.png");
+    background-image: url("/publish/img/ico/ico_clock.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -883,7 +881,7 @@ body.gingerbread .main_visual img {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("/bangpan/publish/img/ico/ico_play.png");
+    background-image: url("/publish/img/ico/ico_play.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: rgba(0, 0, 0, 0.6);
@@ -1252,7 +1250,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    background-image: url("/bangpan/publish/img/com/select_arrow.png");
+    background-image: url("/publish/img/com/select_arrow.png");
     background-repeat: no-repeat;
     background-position: 96% 50%;
     background-color: #fff;
@@ -1468,7 +1466,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     width: 12px;
     height: 7px;
     margin-top: -1px;
-    background-image: url("/bangpan/publish/img/ico/ico_dir_down.png");
+    background-image: url("/publish/img/ico/ico_dir_down.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
@@ -1489,7 +1487,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     width: 10px;
     height: 13px;
     margin-top: -3px;
-    background-image: url("/bangpan/publish/img/ico/ico_arrow_up.png");
+    background-image: url("/publish/img/ico/ico_arrow_up.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
@@ -1527,7 +1525,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .view_head.brand.hera {
-    background-image: url("/bangpan/publish/img/com/brand_hera.png");
+    background-image: url("/publish/img/com/brand_hera.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-color: transparent;
@@ -1675,7 +1673,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_content .cnt_bookmark_area .read_cnt {
     padding-left: 30px;
-    background-image: url("/bangpan/publish/img/ico//ico_eye_view.png");
+    background-image: url("/publish/img/ico//ico_eye_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1687,7 +1685,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_content .cnt_bookmark_area .like_cnt {
     padding-left: 23px;
-    background-image: url("/bangpan/publish/img/ico//ico_heart_view.png");
+    background-image: url("/publish/img/ico//ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1699,7 +1697,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_content .cnt_bookmark_area .bookmark {
     padding-left: 26px;
-    background-image: url("/bangpan/publish/img/ico//ico_star_view.png");
+    background-image: url("/publish/img/ico//ico_star_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1785,7 +1783,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .util_btns .talk:before {
-    background-image: url("/bangpan/publish/img/ico/ico_kakaotalk.png");
+    background-image: url("/publish/img/ico/ico_kakaotalk.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1796,7 +1794,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .util_btns .story:before {
-    background-image: url("/bangpan/publish/img/ico/ico_kakaostory.png");
+    background-image: url("/publish/img/ico/ico_kakaostory.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1807,7 +1805,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .util_btns .delete:before {
-    background-image: url("/bangpan/publish/img/ico/ico_trashcan.png");
+    background-image: url("/publish/img/ico/ico_trashcan.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1818,7 +1816,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .util_btns .modify:before {
-    background-image: url("/bangpan/publish/img/ico/ico_pencil.png");
+    background-image: url("/publish/img/ico/ico_pencil.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1949,7 +1947,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     top: 0;
     right: 0;
     z-index: 10;
-    background-image: url("/bangpan/publish/img/ico/ico_heart_view.png");
+    background-image: url("/publish/img/ico/ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: right top;
     background-color: transparent;
@@ -2230,7 +2228,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .fb_type .etc_btns a.reply:before {
     width: 14px;
-    background-image: url("/bangpan/publish/img/ico/ico_reply_big.png");
+    background-image: url("/publish/img/ico/ico_reply_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2242,7 +2240,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .fb_type .etc_btns a.bookmark:before {
     width: 18px;
-    background-image: url("/bangpan/publish/img/ico/ico_star_big.png");
+    background-image: url("/publish/img/ico/ico_star_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2253,12 +2251,12 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .fb_type .etc_btns a.bookmark.active:before {
-    background-image: url("/bangpan/publish/img/ico/ico_star_big_active.png");
+    background-image: url("/publish/img/ico/ico_star_big_active.png");
 }
 
 .fb_type .etc_btns a.like:before {
     width: 16px;
-    background-image: url("/bangpan/publish/img/ico/ico_heart_big.png");
+    background-image: url("/publish/img/ico/ico_heart_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2269,7 +2267,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .fb_type .etc_btns a.like.active:before {
-    background-image: url("/bangpan/publish/img/ico/ico_heart_big_active.png");
+    background-image: url("/publish/img/ico/ico_heart_big_active.png");
 }
 
 /* 플로팅 버튼 */
@@ -2325,7 +2323,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 .floating_util .sort select.fu_sort:nth-of-type(1) {
     padding-right: 16px;
     margin-left: 0;
-    background-image: url("/bangpan/publish/img/ico/ico_funnel.png");
+    background-image: url("/publish/img/ico/ico_funnel.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -2337,7 +2335,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .floating_util .sort select.fu_sort:nth-of-type(2) {
     padding-right: 19px;
-    background-image: url("/bangpan/publish/img/ico/ico_sort.png");
+    background-image: url("/publish/img/ico/ico_sort.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -2371,7 +2369,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     width: 13px;
     height: 14px;
     margin-left: 0.286em;
-    background-image: url("/bangpan/publish/img/ico//ico_change.png");
+    background-image: url("/publish/img/ico//ico_change.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -2545,7 +2543,7 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
     -webkit-border-radius: 13px;
     -moz-border-radius: 13px;
     border-radius: 13px;
-    background-image: url("/bangpan/publish/img/ico/ico_edit.png");
+    background-image: url("/publish/img/ico/ico_edit.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2564,7 +2562,7 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
     display: block;
     width: 105px;
     height: 105px;
-    background-image: url("/bangpan/publish/img/com/myphoto_mask.png");
+    background-image: url("/publish/img/com/myphoto_mask.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2714,7 +2712,7 @@ table.grade_guide th .grade {
 }
 
 table.grade_guide th .grade.g1 {
-    background-image: url("/bangpan/publish/img/com/gradeGuide_g1.png");
+    background-image: url("/publish/img/com/gradeGuide_g1.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2725,7 +2723,7 @@ table.grade_guide th .grade.g1 {
 }
 
 table.grade_guide th .grade.g2 {
-    background-image: url("/bangpan/publish/img/com/gradeGuide_g2.png");
+    background-image: url("/publish/img/com/gradeGuide_g2.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2736,7 +2734,7 @@ table.grade_guide th .grade.g2 {
 }
 
 table.grade_guide th .grade.g3 {
-    background-image: url("/bangpan/publish/img/com/gradeGuide_g3.png");
+    background-image: url("/publish/img/com/gradeGuide_g3.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2747,7 +2745,7 @@ table.grade_guide th .grade.g3 {
 }
 
 table.grade_guide th .grade.g4 {
-    background-image: url("/bangpan/publish/img/com/gradeGuide_g4.png");
+    background-image: url("/publish/img/com/gradeGuide_g4.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2758,7 +2756,7 @@ table.grade_guide th .grade.g4 {
 }
 
 table.grade_guide th .grade.g5 {
-    background-image: url("/bangpan/publish/img/com/gradeGuide_g5.png");
+    background-image: url("/publish/img/com/gradeGuide_g5.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2769,7 +2767,7 @@ table.grade_guide th .grade.g5 {
 }
 
 table.grade_guide th .grade.g6 {
-    background-image: url("/bangpan/publish/img/com/gradeGuide_g6.png");
+    background-image: url("/publish/img/com/gradeGuide_g6.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2907,7 +2905,7 @@ table.grade_guide td p strong {
 }
 
 .archive .archive_list li .action input[type=checkbox]:checked + label {
-    background-image: url("/bangpan/publish/img/ico/ico_checked.png");
+    background-image: url("/publish/img/ico/ico_checked.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: #677caf;
@@ -3135,4 +3133,183 @@ table.grade_guide td p strong {
     -webkit-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.app_download .accordian.active .acc_content {
+    display: block;
+}
+
+.app_download .accordian.active .acc_toggle:after {
+    background-image: url("/publish/img/ico/ico_arrow_stick_up.png");
+}
+
+.app_download .accordian .acc_toggle {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 9px 15px 4px;
+    background: #fff;
+    color: #333;
+    font-size: 1.071em;
+}
+
+.app_download .accordian .acc_toggle:after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 10px;
+    background-image: url("/publish/img/ico/ico_arrow_stick_down.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    -webkit-background-size: 16px 10px;
+    -moz-background-size: 16px 10px;
+    -o-background-size: 16px 10px;
+    background-size: 16px 10px;
+}
+
+.app_download .accordian .acc_content {
+    margin-top: 3px;
+    display: none;
+}
+
+.app_download .accordian .acc_content .guide_list li {
+    padding: 13px 15px;
+    border-bottom: 1px solid #ececec;
+    background: #fff;
+}
+
+.app_download .accordian .acc_content .guide_list li h3 {
+    font-size: 1em;
+    color: #000;
+}
+
+.app_download .accordian .acc_content .guide_list li p {
+    margin-top: 11px;
+    font-size: 0.929em;
+    line-height: 1.231em;
+    color: #999;
+}
+
+.app_download .accordian .acc_content .guide_list li p:nth-of-type(1) {
+    margin-top: 5px;
+}
+
+.app_download .accordian .acc_content .guide_list li p.ps {
+    font-size: 0.846em;
+}
+
+.app_download .accordian .acc_content .guide_list li p .blue {
+    color: #677caf;
+}
+
+.app_download .accordian .acc_content .guide_list li p .red {
+    color: #f96365;
+}
+
+.app_download .cs {
+    margin: 15px 20px;
+    line-height: 1;
+    background-image: url("/publish/img/com/ico_call.png");
+    background-repeat: no-repeat;
+    background-position: right 5px;
+    background-color: transparent;
+    -webkit-background-size: 17px 29px;
+    -moz-background-size: 17px 29px;
+    -o-background-size: 17px 29px;
+    background-size: 17px 29px;
+}
+
+.app_download .cs > a {
+    display: block;
+}
+
+.app_download .cs h2 {
+    color: #333;
+    font-size: 1em;
+}
+
+.app_download .cs .number {
+    margin: 3px 0;
+    color: #333;
+    font-size: 1.214em;
+}
+
+.app_download .cs .office_hour {
+    color: #666;
+    font-size: 0.786em;
+}
+
+.swiper-container.app_guide .swiper-slide {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.swiper-container.app_guide .swiper-slide h2.guide_title {
+    font-size: 1.429em;
+    color: #333;
+}
+
+.swiper-container.app_guide .swiper-slide h2.guide_title strong {
+    color: #587acd;
+}
+
+.swiper-container.app_guide .swiper-slide .txt {
+    margin-top: 3px;
+    font-size: 0.929em;
+    line-height: 1.231em;
+}
+
+.swiper-container.app_guide .swiper-slide .img_wrap {
+    margin-top: 10px;
+}
+
+.swiper-container.app_guide .swiper-button-prev, .swiper-container.app_guide .swiper-button-next {
+    width: 29px;
+    height: 29px;
+    top: 60%;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-position: center center;
+    -webkit-background-size: 29px 29px;
+    -moz-background-size: 29px 29px;
+    -o-background-size: 29px 29px;
+    background-size: 29px 29px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.swiper-container.app_guide .swiper-button-prev {
+    background-image: url("/publish/img/com/swiper_arrow_l.png");
+}
+
+.swiper-container.app_guide .swiper-button-next {
+    background-image: url("/publish/img/com/swiper_arrow_r.png");
+}
+
+.swiper-container.app_guide .swiper-pagination-bullets {
+    bottom: 4px;
+}
+
+.swiper-container.app_guide .swiper-pagination-bullets .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
 }
