@@ -100,8 +100,8 @@ $(function(){
 	doc[qsa]  ===   document.querySelectorAll
 	*/
 
-
-	$(window).on('load', function(){
+	//window load : S
+	//$(window).on('load', function(){
 
 		// document 높이 부여 - 메인
 		var $tabsSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide'),
@@ -507,6 +507,6 @@ $(function(){
 			setSlideHeight();
 		};
 
-	}); // window load
+	//}); // window load : E
 
 }); // jquery functiuon
