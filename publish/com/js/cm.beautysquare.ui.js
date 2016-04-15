@@ -21,7 +21,7 @@ $(function(){
 	};
 
 	// 퍼블리싱 테스트 용
-	//var devJson = location.href.match('bangpan') ? '/bangpan' : '';
+	var devJson = location.href.match('bangpan') ? '/bangpan' : '';
 
 	//모바일 UA
 	window.ua = ua = navigator.userAgent;
