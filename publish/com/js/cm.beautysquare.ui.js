@@ -21,7 +21,7 @@ $(function(){
 	};
 
 	// 퍼블리싱 테스트 용
-	var devJson = location.href.match('bangpan') ? '/bangpan' : '';
+	//var devJson = location.href.match('bangpan') ? '/bangpan' : '';
 
 	//모바일 UA
 	window.ua = ua = navigator.userAgent;
@@ -101,7 +101,7 @@ $(function(){
 	*/
 
 	//window load : S
-	//$(window).on('load', function(){
+	$(window).on('load', function(){
 
 		// document 높이 부여 - 메인
 		var $tabsSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide'),
@@ -240,20 +240,20 @@ $(function(){
 					if ( (idx-1) !== 0 && !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded') ) {
 
 						// 퍼블리싱 테스트 용 : S
-						var	_hashURLs = location.hash.split('/');
-							 _url = function() {
-								if ( _hashURLs[1] == 3 ) {
-									if ( _hashURLs[2] == 2 ) {
-										return '/publish/html/0' + (idx-1) + '/sales_tip_list_knowhowshare.html';
-									}
-								} else if ( _hashURLs[1] == 4 ) {
-									if ( _hashURLs[2] == 2 ) {
-										return '/publish/html/0' + (idx-1) + '/wonder_list.html';
-									}
-								}
-								return '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2];
-							};
-							console.log(_url());
+						// var	_hashURLs = location.hash.split('/');
+						// 	 _url = function() {
+						// 		if ( _hashURLs[1] == 3 ) {
+						// 			if ( _hashURLs[2] == 2 ) {
+						// 				return '/publish/html/0' + (idx-1) + '/sales_tip_list_knowhowshare.html';
+						// 			}
+						// 		} else if ( _hashURLs[1] == 4 ) {
+						// 			if ( _hashURLs[2] == 2 ) {
+						// 				return '/publish/html/0' + (idx-1) + '/wonder_list.html';
+						// 			}
+						// 		}
+						// 		return '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2];
+						// 	};
+						// 	console.log(_url());
 						// 퍼블리싱 테스트 용 : E
 
 						$.ajax({
@@ -507,6 +507,6 @@ $(function(){
 			setSlideHeight();
 		};
 
-	//}); // window load : E
+	}); // window load : E
 
 }); // jquery functiuon
