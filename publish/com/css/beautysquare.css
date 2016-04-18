@@ -399,6 +399,16 @@ body.sub .section h2.tit .all_view {
     font-size: 0.867em;
 }
 
+/* DIMMED 처리 */
+.dimm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 /* TITLE DEPTH */
 .tit {
     font-size: 1.214em;
@@ -1820,7 +1830,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     content: '';
     display: inline-block;
     width: 21px;
-    height: 21px;
+    height: 100%;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -moz-box-align: center;
@@ -1830,6 +1840,8 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .util_btns a span {
+    display: block;
+    height: 100%;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -moz-box-align: center;
@@ -1837,7 +1849,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     -ms-grid-row-align: center;
     align-items: center;
     margin-left: 7px;
-    line-height: 1em;
+    line-height: 40px;
 }
 
 .view_page .util_btns .delete, .view_page .util_btns .modify {
@@ -1914,7 +1926,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .reply_list li.admin .user_info .thumb {
-    background: #677caf;
+    background-color: #677caf;
 }
 
 .reply_list li.admin .user_info .info {
@@ -3432,4 +3444,54 @@ table.grade_guide td p strong {
     display: block;
     background-color: rgba(134, 134, 134, 0.9);
     background-image: url("/bangpan/publish/img/ico/ico_star_alert.png");
+}
+
+/* 알림창 ( alert, confirm ) */
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+    background-color: #fff;
+    width: 72%;
+    margin-left: -36%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.alert .content {
+    padding: 15px;
+    text-align: center;
+}
+
+.alert .content.single_line {
+    padding-top: 42px;
+    padding-bottom: 42px;
+}
+
+.alert .btns {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.alert .btns a {
+    width: 100%;
+    padding: 10px 0 8px;
+    text-align: center;
+    font-size: 1.071em;
+}
+
+.alert .btns .cancel {
+    background-color: #efefef;
+    color: #868686;
+}
+
+.alert .btns .ok {
+    background-color: #677caf;
+    color: #fff;
 }
