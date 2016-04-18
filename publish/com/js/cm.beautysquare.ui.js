@@ -37,6 +37,49 @@ $(function(){
 		if ( !isAndroid && !isIOS ) return 'etc';
 	};
 
+	// window.gcd2 = function (x, y) {
+	// 	while (y != 0) {
+	// 		var z = x % y;
+	// 		x = y;
+	// 		y = z;
+	// 	}
+	// 	return x;
+	// };
+	// window.gg = function(x,y){
+	// 	var gcd = gcd2(x,y);
+	// 	return console.log( (x/gcd) + ' : ' + (y/gcd) );
+	// };
+
+	/*
+	이미지 비율 계산기 (소수점 이하는 반올림 됩니다.)
+	pixelRatio(
+		direction: 'x' or 'y',		//string
+		num: 320 (알고있는 수)		//number
+		originalSize: '16:8.5'		//string
+	);
+	*/
+	window.pixelRatio = function ( originalSize, num, direction ) {
+
+		var gcd = function (x, y) {
+			while (y != 0) {
+				var z = x % y;
+				x = y;
+				y = z;
+			}
+			return x;
+		};
+
+		var width = Number( originalSize.split(':')[0] ),
+			height = Number( originalSize.split(':')[1] ),
+			GCD = gcd( width, height ),
+			ratioX = width / GCD,
+			ratioY = height / GCD;
+
+		if ( direction === 'y' ) return Math.round( ( ratioY * num ) / ratioX );
+		else if ( direction === 'x' ) return Math.round( ( ratioX * num ) / ratioY );
+
+	};
+
 	window.writeBtn = {
 		active: function ( idx ) {
 			this.changeKlass();
@@ -60,9 +103,7 @@ $(function(){
 		},
 		changeKlass: function(){
 			var klass = ['knowhowshare', 'praise', 'wonder'];
-			$.each(klass, function( idx, item ){
-				$('body').removeClass( item );
-			});
+			$('body').removeClass( klass.join(" ") );
 		}
 	};
 
@@ -101,7 +142,27 @@ $(function(){
 	*/
 
 	//window load : S
-	$(window).on('load', function(){
+	// $(window).on('load', function(){
+
+		// //메인 비주얼 이미지 높이 부여
+		// $('.swiper-container.main_visual img').css({
+		// 	height: pixelRatio({xLength: document.documentElement.clientWidth, direction: 'height', ratio: '960:510' })
+		// });
+
+		// //scroller.type01 높이 부여
+		// $('.scroller.type01 img').css({
+		// 	height: pixelRatio({xLength: $('.scroller.type01 .swiper-wrapper .swiper-slide').width(), direction: 'height', ratio: '1:1' })
+		// });
+
+		//에러 이미지
+		function imgError() {
+			$('img').each(function(){
+				$(this).on('error', function(){
+					$(this).get(0).src = '/publish/img/com/error.gif';
+				});
+			});
+		}
+		imgError();
 
 		// document 높이 부여 - 메인
 		var $tabsSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide'),
@@ -240,20 +301,20 @@ $(function(){
 					if ( (idx-1) !== 0 && !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded') ) {
 
 						// 퍼블리싱 테스트 용 : S
-						// var	_hashURLs = location.hash.split('/');
-						// 	 _url = function() {
-						// 		if ( _hashURLs[1] == 3 ) {
-						// 			if ( _hashURLs[2] == 2 ) {
-						// 				return '/publish/html/0' + (idx-1) + '/sales_tip_list_knowhowshare.html';
-						// 			}
-						// 		} else if ( _hashURLs[1] == 4 ) {
-						// 			if ( _hashURLs[2] == 2 ) {
-						// 				return '/publish/html/0' + (idx-1) + '/wonder_list.html';
-						// 			}
-						// 		}
-						// 		return '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2];
-						// 	};
-						// 	console.log(_url());
+						var	_hashURLs = location.hash.split('/');
+							 _url = function() {
+								if ( _hashURLs[1] == 3 ) {
+									if ( _hashURLs[2] == 2 ) {
+										return '/publish/html/0' + (idx-1) + '/sales_tip_list_knowhowshare.html';
+									}
+								} else if ( _hashURLs[1] == 4 ) {
+									if ( _hashURLs[2] == 2 ) {
+										return '/publish/html/0' + (idx-1) + '/wonder_list.html';
+									}
+								}
+								return '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2];
+							};
+							console.log(_url());
 						// 퍼블리싱 테스트 용 : E
 
 						$.ajax({
@@ -269,6 +330,18 @@ $(function(){
 									$wrapper.find( dataSlideIndexStr + ' .container').addClass('loaded');
 									setSlideHeight();
 								});
+
+								imgError();
+
+								if ( idx == 2 ) {
+									$('.photo_list img').css({
+										height: pixelRatio({ xLength: $('.photo_list img').width(), direction: 'height', ratio: '15:7' })
+									});
+								} else if ( idx == 6 ) {
+									$('.img_list.type02 img').css({
+										height: pixelRatio({ xLength: $('.img_list.type02 img').width(), direction: 'height', ratio: '339:246' })
+									});
+								}
 							},
 							async: false,
 							error: function(xhr, status, error){
@@ -376,8 +449,10 @@ $(function(){
 			tabsSwiper = new Swiper('.tabs', swiperOptions.tabs);
 
 		//메인 비주얼
-		if ( $('.main_visual').length >= 1 )
-			mainVisual = new Swiper('.main_visual', swiperOptions.mainVisual);
+		$('.main_visual').imagesLoaded().then(function(){
+			if ( $('.main_visual').length >= 1 )
+				mainVisual = new Swiper('.main_visual', swiperOptions.mainVisual);
+		});
 
 		//스와이프 리스트( 최신제품정보 )
 		if ( $('.scroller.type01').length >= 1 )
@@ -507,6 +582,30 @@ $(function(){
 			setSlideHeight();
 		};
 
-	}); // window load : E
+		//디자인 된 알림창
+		$.customAlert = function( cond ){
+			console.log(this);
+			var like = '<div class="custom_alert like_success"><span>좋아요 성공!</span></div>',
+				bookmark_y = '<div class="custom_alert bookmark_success"><span>보관함 담기<br>성공!</span></div>',
+				bookmark_n = '<div class="custom_alert bookmark_cancel"><span>보관함 담기<br>취소!</span></div>';
+			switch ( cond ) {
+				case 'like': $('body').append( like );
+				break;
+				case 'bookmark_y': $('body').append( bookmark_y );
+				break;
+				case 'bookmark_n': $('body').append( bookmark_n );
+				break;
+			}
+
+			var timer = setTimeout(function(){
+				$('.custom_alert')
+				.css({ opacity: 0 })
+				.on('transitionend', function(){
+					$(this).remove();
+				});
+			}, 1000);
+		};
+
+	//}); // window load : E
 
 }); // jquery functiuon

@@ -474,7 +474,7 @@ h2.tit {
     display: inline-block;
     padding: 0.2em 5px 0;
     margin-left: 3px;
-    line-height: 1.4em;
+    line-height: 1.2em;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     border-radius: 9px;
@@ -495,6 +495,7 @@ h2.tit {
 
 .tag.new {
     font-size: 0.786em;
+    line-height: 1.273em;
     font-weight: bold;
     background: #f96365;
 }
@@ -581,28 +582,28 @@ h2.tit {
 }
 
 .tag.event.g1 {
-    /* 여왕등급 이상 */
-    background: #9669ae;
-}
-
-.tag.event.g2 {
-    /* 여신등급 이상 */
-    background: #eb6ca7;
-}
-
-.tag.event.g3 {
-    /* 미인등급 이상 */
-    background: #b7cd5b;
-}
-
-.tag.event.g4 {
     /* 쌩얼등급 이상 */
     background: #ccc;
 }
 
-.tag.event.g5 {
+.tag.event.g2 {
+    /* 미녀등급 이상 */
+    background: #b7cd5b;
+}
+
+.tag.event.g3 {
     /* 공주등급 이상 */
     background: #52c1db;
+}
+
+.tag.event.g4 {
+    /* 여왕등급 이상 */
+    background: #9669ae;
+}
+
+.tag.event.g5 {
+    /* 여신등급 이상 */
+    background: #eb6ca7;
 }
 
 .tag.event.g6 {
@@ -698,6 +699,15 @@ h2.tit {
 }
 
 /* 유저이미지 마스크 */
+.thumb {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 .thumb.mask {
     position: relative;
 }
@@ -711,10 +721,10 @@ h2.tit {
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
-    -webkit-background-size: 40px 40px;
-    -moz-background-size: 40px 40px;
-    -o-background-size: 40px 40px;
-    background-size: 40px 40px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     position: absolute;
     left: 0;
     top: 0;
@@ -805,15 +815,26 @@ p.normal_txt.r {
 }
 
 #gnb ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
 }
 
 #gnb ul li {
     display: block;
-    float: left;
     position: relative;
-    white-space: nowrap;
     margin-left: 14px;
 }
 
@@ -904,6 +925,14 @@ body.gingerbread .main_visual img {
     position: relative;
 }
 
+.video_area .thumb {
+    width: 100%;
+}
+
+.video_area .thumb img {
+    width: 100%;
+}
+
 .video_area .info {
     padding: 10px;
     width: 100%;
@@ -972,6 +1001,10 @@ body.gingerbread .main_visual img {
     font-weight: normal;
 }
 
+.scroller.type01 .swiper-wrapper .swiper-slide a .thumb {
+    height: 180px;
+}
+
 .scroller .swiper-wrapper .swiper-slide {
     width: 180px;
 }
@@ -983,12 +1016,14 @@ body.gingerbread .main_visual img {
 
 .scroller .swiper-wrapper .swiper-slide a .thumb {
     width: 100%;
+    height: 130px;
     display: block;
     background-color: #fff;
 }
 
 .scroller .swiper-wrapper .swiper-slide a .thumb img {
     width: 100%;
+    height: 100%;
     display: block;
 }
 
@@ -1354,8 +1389,12 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     display: block;
 }
 
+.img_list ul li a .thumb img {
+    width: 100%;
+}
+
 .img_list ul li a .info {
-    padding: 12px 15px;
+    padding: 12px 15px 11px;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -moz-box-flex: 1;
@@ -1385,11 +1424,12 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .img_list ul li a .etc {
     color: #b1b1b1;
+    line-height: 0;
 }
 
 .img_list ul li a .etc span {
     display: inline-block;
-    height: 12px;
+    line-height: 1.333em;
     margin-left: 9px;
 }
 
@@ -1522,17 +1562,44 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_head.brand {
     height: 40px;
+    background-position: 50% 50%;
+    -webkit-background-size: 209px 40px;
+    -moz-background-size: 209px 40px;
+    -o-background-size: 209px 40px;
+    background-size: 209px 40px;
+    background-repeat: no-repeat;
+}
+
+.view_page .view_head.brand.sulwhasoo {
+    background-image: url("/bangpan/publish/img/com/brand/brand_sulwhasoo.png");
+}
+
+.view_page .view_head.brand.primera {
+    background-image: url("/bangpan/publish/img/com/brand/brand_primera.png");
+}
+
+.view_page .view_head.brand.vb {
+    background-image: url("/bangpan/publish/img/com/brand/brand_vb.png");
+}
+
+.view_page .view_head.brand.illi {
+    background-image: url("/bangpan/publish/img/com/brand/brand_illi.png");
+}
+
+.view_page .view_head.brand.boncho {
+    background-image: url("/bangpan/publish/img/com/brand/brand_boncho.png");
 }
 
 .view_page .view_head.brand.hera {
-    background-image: url("/bangpan/publish/img/com/brand_hera.png");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-color: transparent;
-    -webkit-background-size: 103px 14px;
-    -moz-background-size: 103px 14px;
-    -o-background-size: 103px 14px;
-    background-size: 103px 14px;
+    background-image: url("/bangpan/publish/img/com/brand/brand_hera.png");
+}
+
+.view_page .view_head.brand.ryo {
+    background-image: url("/bangpan/publish/img/com/brand/brand_ryo.png");
+}
+
+.view_page .view_head.brand.lolitalempika {
+    background-image: url("/bangpan/publish/img/com/brand/brand_lolitalempika.png");
 }
 
 .view_page .view_head span {
@@ -2048,6 +2115,8 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 .fb_type .user_info .thumb {
     display: block;
     width: 43px;
+    height: 43px;
+    overflow: hidden;
     float: left;
 }
 
@@ -2058,10 +2127,10 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 .fb_type .user_info .thumb.mask:after {
     width: 43px;
     height: 43px;
-    -webkit-background-size: 43px 43px;
-    -moz-background-size: 43px 43px;
-    -o-background-size: 43px 43px;
-    background-size: 43px 43px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .fb_type .user_info .info {
@@ -3312,4 +3381,55 @@ table.grade_guide td p strong {
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
+}
+
+/* 좋아요 성공, 보관함담기 성공, 취소 */
+.custom_alert {
+    display: none;
+    width: 8.857em;
+    height: 8.857em;
+    margin-top: -4.428em;
+    margin-left: -4.428em;
+    padding-top: 5.071em;
+    -webkit-border-radius: 4.428em;
+    -moz-border-radius: 4.428em;
+    border-radius: 4.428em;
+    color: #fff;
+    font-size: 1.214em;
+    line-height: 1.429em;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 99999;
+    background-position: center 0.7em;
+    -webkit-background-size: 4.071em 3.857em;
+    -moz-background-size: 4.071em 3.857em;
+    -o-background-size: 4.071em 3.857em;
+    background-size: 4.071em 3.857em;
+    background-repeat: no-repeat;
+    -webkit-transition: opacity 500ms ease;
+    -moz-transition: opacity 500ms ease;
+    -o-transition: opacity 500ms ease;
+    transition: opacity 500ms ease;
+    opacity: 1;
+}
+
+.custom_alert.like_success {
+    display: block;
+    background-position: center 0.7em;
+    background-color: rgba(249, 99, 101, 0.9);
+    background-image: url("/bangpan/publish/img/ico/ico_heart_alert.png");
+}
+
+.custom_alert.bookmark_success {
+    display: block;
+    background-color: rgba(248, 183, 63, 0.9);
+    background-image: url("/bangpan/publish/img/ico/ico_star_alert.png");
+}
+
+.custom_alert.bookmark_cancel {
+    display: block;
+    background-color: rgba(134, 134, 134, 0.9);
+    background-image: url("/bangpan/publish/img/ico/ico_star_alert.png");
 }
