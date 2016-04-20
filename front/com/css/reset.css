@@ -1,0 +1,395 @@
+@charset "UTF-8";
+/* reset */
+html {
+    width: 100%;
+}
+
+.spoqa {
+    font-family: 'Spoqa Han Sans', HelveticaNeue-Light, AppleSDGothicNeo-Light, sans-serif;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button {
+    margin: 0;
+    padding: 0;
+}
+
+header, footer, aside, address, section, div, h1, h2, h3, h4, h5, h6, strong, input, select, textarea {
+    font-weight: normal;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+strong {
+    font-weight: bold;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, a {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body, input, select, div, textarea, table, button {
+    color: #666666;
+    -webkit-text-size-adjust: none;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    color: #333;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    max-width: 414px;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: #f4f4f4;
+    font-size: 15px;
+    font-family: 'Spoqa Han Sans', HelveticaNeue-Light, AppleSDGothicNeo-Light, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-x: hidden;
+    letter-spacing: normal;
+}
+
+/* 디바이스 별 폰트사이즈 */
+@media screen and (max-width: 320px) {
+    body {
+        font-size: 14px;
+    }
+
+    body.font_size_1 #wrap {
+        font-size: 12px;
+    }
+
+    body.font_size_2 #wrap {
+        font-size: 13px;
+    }
+
+    body.font_size_4 #wrap {
+        font-size: 15px;
+    }
+
+    body.font_size_5 #wrap {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    body {
+        font-size: 15px;
+    }
+
+    body.font_size_1 #wrap {
+        font-size: 13px;
+    }
+
+    body.font_size_2 #wrap {
+        font-size: 14px;
+    }
+
+    body.font_size_4 #wrap {
+        font-size: 16px;
+    }
+
+    body.font_size_5 #wrap {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 414px) {
+    body {
+        font-size: 16px;
+    }
+
+    body.font_size_1 #wrap {
+        font-size: 14px;
+    }
+
+    body.font_size_2 #wrap {
+        font-size: 15px;
+    }
+
+    body.font_size_4 #wrap {
+        font-size: 17px;
+    }
+
+    body.font_size_5 #wrap {
+        font-size: 18px;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+a, button, select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+.low input, .notlow input {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+input {
+    height: 37px;
+    line-height: 37px;
+    padding-left: 10px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border: none;
+    /* opacity:0.01; */
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    border: none;
+}
+
+input[type="file"] {
+    width: 98%;
+    border: none;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    -webkit-appearance: none;
+}
+
+table {
+    width: 100%;
+    border: 0;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+legend {
+    display: none;
+}
+
+img, fieldset, button {
+    vertical-align: middle;
+    border: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+em, address, i {
+    font-style: normal;
+}
+
+input, textarea, button {
+    line-height: 1.2;
+    vertical-align: middle;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #585858;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: none;
+    /* color:#444; */;
+}
+
+select {
+    vertical-align: middle;
+    color: #b3a8a5;
+    border: 0 none;
+    background: none;
+    color: #333;
+}
+
+.gin .wrap_select:after, .low .wrap_select:after {
+    content: "▼";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: -6px;
+    color: #333;
+}
+
+.hide {
+    display: block;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.txt_break {
+    word-wrap: break-word !important;
+}
+
+.txt_nowrap {
+    white-space: nowrap;
+}
+
+/* 줄바꿈 없음 */
+.ls_m01 {
+    letter-spacing: -1px;
+}
+
+.ls_nm {
+    letter-spacing: normal !important;
+}
+
+/* 말줄임 한줄 처리 */
+.txt_dotdot {
+    width: 100%;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* clear class */
+.clear {
+    clear: both !important;
+}
+
+.clear:after {
+    content: '.';
+    display: block;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
+/* ALIGN */
+.alC {
+    text-align: center !important;
+}
+
+.alL {
+    text-align: left !important;
+}
+
+.alR {
+    text-align: right !important;
+}
+
+.alJ {
+    text-align: justify !important;
+}
+
+/* color */
+/* 기본 body 색 666 제목색 333 strong도 */
+.col01 {
+    color: #f15555 !important;
+}
+
+/* 다홍 */
+.col01_02 {
+    color: #f8716e !important;
+}
+
+/* 다홍 */
+.col03 {
+    color: #3c547f !important;
+}
+
+/* 블루 */
+.col02 {
+    color: #f6f3ea !important;
+}
+
+/* 연갈색 */
+/* fixed시 필요 */
+.fx_item {
+    -webkit-backface-visibility: hidden;
+    position: fixed;
+}
+
+.gin .fx_item, .not_fx_item, .gin .not_fx_item {
+    position: static;
+}
+
+/* 진저는 그냥 스태틱 */
+.box_gapfor_color {
+    background-color: #fff;
+}
+
+.apph {
+    height: 88.3px;
+    background-color: #f8f3e2;
+    text-align: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+/* 버튼 */
+.bottom_btns {
+    padding: 0 8px;
+}
+
+.btn_cm {
+    display: block;
+    text-align: center;
+}
+
+.btn_cm.disabled {
+    opacity: 0.5;
+}
+
+.btn_type01 {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 1.214em;
+    background-color: #77a1c9;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn_type02 {
+    height: 28px;
+    line-height: 28px;
+    background-color: #cccccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* 공통 보더 */
+.border_bx {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+/* placeholder 색깔 */
+::-webkit-input-placeholder {
+    color: #868686;
+}
+
+/* IR */
+.ir {
+    display: block;
+    width: 0px;
+    height: 0px;
+    text-indent: 9999em;
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;
+}
