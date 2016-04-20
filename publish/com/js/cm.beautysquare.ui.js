@@ -36,6 +36,8 @@ $(function(){
 		if ( isIOS ) return 'ios';
 		if ( !isAndroid && !isIOS ) return 'etc';
 	};
+	
+	console.log(ua);
 
 	// window.gcd2 = function (x, y) {
 	// 	while (y != 0) {
