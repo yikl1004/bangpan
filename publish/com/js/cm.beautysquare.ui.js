@@ -37,7 +37,7 @@ $(function(){
 		if ( !isAndroid && !isIOS ) return 'etc';
 	};
 	
-	console.log(ua);
+	alert(ua);
 
 	// window.gcd2 = function (x, y) {
 	// 	while (y != 0) {
