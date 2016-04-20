@@ -283,6 +283,7 @@ $(function(){
 				loop: true,
 				autoHeight: true,
 				speed: speedAll,
+				longSwipeRatio: 0.3,
 				onSlideChangeEnd: function(swiper) {
 				},
 				onTransitionEnd: function( swiper ){
