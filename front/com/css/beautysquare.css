@@ -109,6 +109,10 @@ img {
     body.ios #wrap {
         margin-bottom: 100px;
     }
+
+    body.ios .floating_util {
+        bottom: 100px;
+    }
 }
 
 /* 버튼 스타일 */
