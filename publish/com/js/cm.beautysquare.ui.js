@@ -37,7 +37,9 @@ $(function(){
 		if ( !isAndroid && !isIOS ) return 'etc';
 	};
 	
-	alert(ua);
+	for ( var aa in navigator ) {
+		alert(aa + ': ' + navigator[aa]);
+	}
 
 	// window.gcd2 = function (x, y) {
 	// 	while (y != 0) {
