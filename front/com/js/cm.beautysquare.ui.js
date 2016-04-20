@@ -39,8 +39,6 @@ $(function(){
 
 	if ( isDevice() ) $('body').addClass( isDevice() );
 
-	alert(window.devicePixelRatio);
-
 	// window.gcd2 = function (x, y) {
 	// 	while (y != 0) {
 	// 		var z = x % y;
@@ -170,13 +168,17 @@ $(function(){
 
 		// document 높이 부여 - 메인
 		var $tabsSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide'),
-			tabSlideHeight = document.documentElement.clientHeight - $('#gnb').height();
+			tabSlideHeight = document.documentElement.clientHeight;
 		for ( var i=1; i<$tabsSlide.length; i++ ) {//data-swiper-slide-index
 			if( $tabsSlide.eq(i).attr('data-swiper-slide-index') !== 0 ) {
+				$('.swiper-container.tabs > .swiper-wrapper').css({
+					height: tabSlideHeight
+				});
 				$('.tabs > .swiper-wrapper').find('>.swiper-slide').eq(i).css({
 					// height: tabSlideHeight
-				}).find('> .container').css({
-					// minHeight: tabSlideHeight
+				});
+				$('.tabs > .swiper-wrapper').find('>.swiper-slide > .container').css({
+					minHeight: tabSlideHeight
 				});
 			}
 		}
@@ -287,6 +289,10 @@ $(function(){
 				speed: speedAll,
 				longSwipeRatio: 0.3,
 				onSlideChangeEnd: function(swiper) {
+					// ajax 로드 전 높이
+					$('.swiper-container.tabs > .swiper-wrapper').css({
+						height: tabSlideHeight
+					});
 				},
 				onTransitionEnd: function( swiper ){
 					var idx = swiper.activeIndex;
@@ -322,6 +328,9 @@ $(function(){
 							console.log(_url());
 						// 퍼블리싱 테스트 용 : E
 
+						//스와이프 차단
+						tabsSwiperCtrl.lock();
+
 						$.ajax({
 							// url: devDir + '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
 							url: devDir + _url(),
@@ -334,19 +343,45 @@ $(function(){
 								$wrapper.find( dataSlideIndexStr + ' .container').html( _data ).imagesLoaded().then(function(){
 									$wrapper.find( dataSlideIndexStr + ' .container').addClass('loaded');
 									setSlideHeight();
+									//스와이프 차단 해체
+									tabsSwiperCtrl.unlock();
 								});
 
 								imgError();
 
-								if ( idx == 2 ) {
-									$('.photo_list img').css({
-										height: pixelRatio({ xLength: $('.photo_list img').width(), direction: 'height', ratio: '15:7' })
-									});
-								} else if ( idx == 6 ) {
-									$('.img_list.type02 img').css({
-										height: pixelRatio({ xLength: $('.img_list.type02 img').width(), direction: 'height', ratio: '339:246' })
-									});
+								switch ( idx ) {
+									case 2:
+										$(pageIdxStr + ' .photo_list .thumb').css({
+											height: pixelRatio( '900:420', $(pageIdxStr + ' .photo_list .thumb').width(), 'y' )
+										});
+									break;
+									case 3:
+										$(pageIdxStr + ' .img_list.type02 .thumb').css({
+											height: pixelRatio( '290:290', $(pageIdxStr + ' .img_list .thumb').width(), 'y' )
+										});
+									break;
+									case 6: 
+										$(pageIdxStr + ' .img_list.type02 .thumb').css({
+											height: pixelRatio( '339:246', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
+										});
+									break;
 								}
+
+								// if ( idx == 2 ) {
+								// 	// console.log('이미지 리사이징 : ' + $(pageIdxStr + ' .photo_list .thumb').width());
+								// 	$(pageIdxStr + ' .photo_list .thumb').css({
+								// 		height: pixelRatio( '900:420', $(pageIdxStr + ' .photo_list .thumb').width(), 'y' )
+								// 	});
+								// } else if ( idx == 3 ) {
+								// 	$(pageIdxStr + ' .img_list.type02 .thumb').css({
+								// 		height: pixelRatio( '290:290', $(pageIdxStr + ' .img_list .thumb').width(), 'y' )
+								// 	});
+								// } else if ( idx == 6 ) {
+								// 	$(pageIdxStr + ' .img_list.type02 .thumb').css({
+								// 		height: pixelRatio( '339:246', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
+								// 	});
+								// }
+
 							},
 							async: false,
 							error: function(xhr, status, error){
@@ -361,6 +396,7 @@ $(function(){
 					writeBtn.active( idx );
 					
 					//플로팅 컨텐츠 변경
+					console.log(idx);
 					if ( idx == 1 ) {
 						$('.floating_util .mode_change').addClass('active');
 						$('.floating_util .sort').removeClass('active');
