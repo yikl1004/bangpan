@@ -105,7 +105,7 @@ img {
 }
 
 /* 아이폰 4, 4s */
-@media only screen and (min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.5) {
     body.ios #wrap {
         margin-bottom: 100px;
     }
