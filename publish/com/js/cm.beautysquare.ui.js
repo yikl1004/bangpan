@@ -36,10 +36,6 @@ $(function(){
 		if ( isIOS ) return 'ios';
 		if ( !isAndroid && !isIOS ) return 'etc';
 	};
-	
-	for ( var aa in navigator ) {
-		alert(aa + ': ' + navigator[aa]);
-	}
 
 	// window.gcd2 = function (x, y) {
 	// 	while (y != 0) {
