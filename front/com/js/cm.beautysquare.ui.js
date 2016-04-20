@@ -39,6 +39,8 @@ $(function(){
 
 	if ( isDevice() ) $('body').addClass( isDevice() );
 
+	alert(window.devicePixelRatio);
+
 	// window.gcd2 = function (x, y) {
 	// 	while (y != 0) {
 	// 		var z = x % y;
