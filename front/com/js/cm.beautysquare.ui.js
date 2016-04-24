@@ -378,7 +378,7 @@ $(function( event ){
 
 		var tabsDiff = null,						// 페이지를 swipe한 거리
 			menuLength = $('#gnb ul li').length,	// 매뉴 갯수
-			speedAll = 150,							// 스와이프 관련 스피드 (전체)
+			speedAll = 100,							// 스와이프 관련 스피드 (전체)
 			tabsMoveCtrl = true,
 			tabsSlideStr = '.swiper-container.tabs > .swiper-wrapper > '
 			swiperLoadPages = [
@@ -400,19 +400,32 @@ $(function( event ){
 				speed: speedAll,
 				initialSlide: 0,
 				threshold: 25,
-				touchAngle: 18,
+				touchAngle: 20,
+				onSlideNextEnd: function(swiper) {
+					console.log('onSlideNextEnd');
+				},
 				onTouchEnd: function (swiper, event) {
-					// console.log( swiper );
+					var idx = swiper.activeIndex,
+						loadingCheck = !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded');
+					//로딩 노출
+					if ( loadingCheck ) {
+						loadingVisible(true);
+					}
+					console.log('onTouchEnd');
 				},
 				onSlideChangeEnd: function(swiper) {
 					// ajax 로드 전 높이
 					$('.swiper-container.tabs > .swiper-wrapper').css({
 						height: tabSlideHeight
 					});
+					console.log('onSlideChangeEnd');
 				},
 				onTransitionEnd: function( swiper ){
-					// console.log( swiper );
-					var idx = swiper.activeIndex;
+
+					console.log('onTransitionEnd');
+					
+					var idx = swiper.activeIndex,
+						loadingCheck = !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded');
 
 					if ( idx > menuLength ) idx = 1;
 					if ( idx <= 0 ) idx = menuLength;
@@ -428,12 +441,7 @@ $(function( event ){
 
 					imgSetting( idx );
 
-					if ( !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded') ) {
-						//로딩 노출
-						loadingVisible(true);
-					}
-
-					if ( (idx-1) !== 0 && !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded') ) {
+					if ( (idx-1) !== 0 && loadingCheck ) {
 
 						// 퍼블리싱 테스트 용 : S
 						var	_hashURLs = location.hash.split('/');
@@ -478,9 +486,7 @@ $(function( event ){
 								imgError();
 
 								//로딩 노출 삭제
-								var loadingDelete = setTimeout(function(){
-									loadingVisible(false);
-								}, 4000);
+								loadingVisible(false);
 
 							},
 							async: false,
@@ -502,9 +508,7 @@ $(function( event ){
 					floatingChange( idx );
 
 					//로딩 노출 삭제
-					var loadingDelete = setTimeout(function(){
-						loadingVisible(false);
-					}, 4000);
+					loadingVisible(false);
 				},
 				onTouchMove : function( swiper ) {
 					// console.log('tabs move', swiper);
