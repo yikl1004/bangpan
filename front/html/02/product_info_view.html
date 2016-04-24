@@ -37,29 +37,42 @@
                     var video = document.querySelector('#videoPlayer > video');
                     //- var percent = null;
                     var videoLoadCtrl = false;
+                    console.log(video);
                     video.oncanplay = function()
                     {
                         console.log('canplay');
+                        console.log('ready state', video.readyState);
                         videoLoadCtrl = true;
                         console.log(videoLoadCtrl);
                     };
+                    //- video.onloadstart = function(){
+                    //- 	console.log('load start');
+                    //- };
                     video.onplay = function(event)
                     {
                         console.log('play');
                         //- console.log(video.buffered.end(0));
-                        console.log(video.readyState);
-                        console.log(videoLoadCtrl);
+                        console.log('ready State', video.readyState);
+                        console.log('video Load Ctrl', videoLoadCtrl);
                         $(video).parent().addClass('play');
-                        return event.preventDefault();
-                    };
-                    video.onprogress = function()
-                    {
-                        console.log('progress');
-                        console.log(videoLoadCtrl);
+                        console.log('percent', ((video.buffered.end(0) / video.duration) * 100) + '%');
                         if (videoLoadCtrl == true)
                         {
                             $(video).parent().removeClass('play');
                         }
+                    };
+                    video.onprogress = function()
+                    {
+                        //- console.log('progress');
+                        //- console.log(videoLoadCtrl);
+                        if (videoLoadCtrl == true)
+                        {
+                            $(video).parent().removeClass('play');
+                        }
+                    };
+                    video.onloadedmetadata = function()
+                    {
+                        console.log('loaded metadata');
                     };
                     //- var startBuffer = function() {
                     //-     var maxduration = video.duration;
