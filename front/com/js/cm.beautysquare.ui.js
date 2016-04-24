@@ -428,6 +428,11 @@ $(function( event ){
 
 					imgSetting( idx );
 
+					if ( !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded') ) {
+						//로딩 노출
+						loadingVisible(true);
+					}
+
 					if ( (idx-1) !== 0 && !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded') ) {
 
 						// 퍼블리싱 테스트 용 : S
@@ -444,13 +449,11 @@ $(function( event ){
 								}
 								return '/front/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2];
 							};
-							console.log(_url());
+							//console.log(_url());
 						// 퍼블리싱 테스트 용 : E
 
+						//tabs 스와이프 차단
 						tabsSwiperCtrl.lock();
-
-						//로딩 노출
-						loadingVisible(true);
 
 						$.ajax({
 							// url: devDir + '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
@@ -495,6 +498,9 @@ $(function( event ){
 					
 					//플로팅 컨텐츠 변경
 					floatingChange( idx );
+
+					//로딩 노출 삭제
+					loadingVisible(false);
 				},
 				onTouchMove : function( swiper ) {
 					// console.log('tabs move', swiper);
