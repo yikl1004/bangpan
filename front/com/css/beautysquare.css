@@ -869,16 +869,6 @@ p.normal_txt.r {
 }
 
 #gnb ul {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -moz-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
     width: 100%;
     height: 100%;
 }
@@ -887,10 +877,11 @@ p.normal_txt.r {
     display: block;
     position: relative;
     margin-left: 14px;
+    float: left;
 }
 
-#gnb ul li:first-child {
-    margin-left: 0;
+#gnb ul li:last-child {
+    margin-right: 14px;
 }
 
 #gnb ul li a {
