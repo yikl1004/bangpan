@@ -209,6 +209,14 @@ $(function(){
 		}
 	};
 
+	// long tap contextmenu 방지
+	window.oncontextmenu = function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		return false;
+	};
+	oncontextmenu();
+
 
 
 
