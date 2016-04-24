@@ -502,7 +502,9 @@ $(function( event ){
 					floatingChange( idx );
 
 					//로딩 노출 삭제
-					loadingVisible(false);
+					var loadingDelete = setTimeout(function(){
+						loadingVisible(false);
+					}, 4000);
 				},
 				onTouchMove : function( swiper ) {
 					// console.log('tabs move', swiper);
