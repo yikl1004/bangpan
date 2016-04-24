@@ -448,7 +448,7 @@ h2.tit {
     border-radius: 9px;
     font-size: 0.714em;
     color: #fff;
-    vertical-align: top;
+    vertical-align: middle;
   /* 기본 TAG 및 카테고리 */
   /* 상품기능 */
   /* 브랜드 */;
@@ -1364,11 +1364,11 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     display: block;
     background-color: #fff;
     position: relative;
+    overflow: hidden;
 }
 
 .photo_list a .thumb img {
     width: 100%;
-    height: 100%;
     display: block;
 }
 
@@ -1721,6 +1721,13 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     position: relative;
 }
 
+.view_page .video_wrap.yt {
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
 .view_page .video_wrap a.video {
     display: block;
     width: 100%;
@@ -1735,6 +1742,14 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     display: block;
     width: 100%;
     max-width: 100%;
+}
+
+.view_page .video_wrap iframe, .view_page .video_wrap object, .view_page .video_wrap embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .view_page .product_img {
@@ -2288,9 +2303,8 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .fb_type .content .article_img {
-    max-height: 7.857em;
     display: block;
-    max-height: 7.857em;
+    max-height: 15.07em;
     overflow: hidden;
 }
 

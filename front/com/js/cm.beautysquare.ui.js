@@ -103,6 +103,13 @@ $(function( event ){
 			case 2:
 				$(pageIdxStr + ' .photo_list .thumb').css({
 					height: pixelRatio( '900:420', $(pageIdxStr + ' .photo_list .thumb').width(), 'y' )
+				}),
+				$('.photo_list .thumb img').imagesLoaded().then(function(){
+					$('.photo_list .thumb img').each(function(){
+						var pure = $(this).get(0),
+							wrap = $(this).parent();
+						$(this).css({ 'margin-top': -1 * ( (pure.clientHeight-wrap.height() ) / 2 ) });
+					});
 				});
 			break;
 			case 3:
@@ -673,18 +680,18 @@ $(function( event ){
 		};
 
 		//비디오 플레이어
-		var videoPlayer = _qs('#videoPlayer');
-		if ( videoPlayer ) {
-			videoPlayer[qs]('.video').addEventListener('click', function(){
-				if ( $('#videoPlayer').find('.video').hasClass('play') ) {
-					videoPlayer[qs]('video').pause();
-					$('#videoPlayer').find('.video').removeClass('play');
-				} else {
-					videoPlayer[qs]('video').play();
-					$('#videoPlayer').find('.video').addClass('play');
-				}
-			}, false);
-		}
+		// var videoPlayer = _qs('#videoPlayer');
+		// if ( videoPlayer ) {
+		// 	videoPlayer[qs]('.video').addEventListener('click', function(){
+		// 		if ( $('#videoPlayer').find('.video').hasClass('play') ) {
+		// 			videoPlayer[qs]('video').pause();
+		// 			$('#videoPlayer').find('.video').removeClass('play');
+		// 		} else {
+		// 			videoPlayer[qs]('video').play();
+		// 			$('#videoPlayer').find('.video').addClass('play');
+		// 		}
+		// 	}, false);
+		// }
 
 		//버튼 활성화
 		$('a.bookmark').on('click', function(){
@@ -698,16 +705,18 @@ $(function( event ){
 				$this = $(this),
 				re_cl = null,
 				cond = null,
-				increase = 0;
+				increase = $this.hasClass('up') ? 1 : -1;
 
+			console.log('font-size adjust');
 			for(var i=0; i<cl.length; i++) {
 				if (cl[i].match('font_size_')) {
-					increase = $this.hasClass('up') ? 1 : -1;
 					re_cl = parseInt(cl[i].replace('font_size_', '')) + increase;
 					cond = $this.hasClass('up') ? (re_cl <= 5) : (re_cl >= 1);
+					console.log( re_cl );
 					if ( cond ) {
 						$('body').removeClass(cl[i]).addClass('font_size_' + re_cl);
 					}
+					break;
 				}
 			}
 			setSlideHeight();
