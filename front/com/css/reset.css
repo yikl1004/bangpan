@@ -1,5 +1,12 @@
 @charset "UTF-8";
 /* reset */
+/* user selection disable */
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 html {
     width: 100%;
 }
@@ -52,7 +59,6 @@ body {
     line-height: 1.5;
     overflow-x: hidden;
     letter-spacing: normal;
-    -webkit-touch-callout: none !important;
 }
 
 /* 디바이스 별 폰트사이즈 */
@@ -203,7 +209,6 @@ label {
 a {
     text-decoration: none;
     color: #585858;
-    -webkit-user-select: none !important;
 }
 
 a:hover, a:active, a:focus {
