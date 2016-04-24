@@ -211,6 +211,11 @@ $(function( event ){
 
 	// long tap contextmenu 방지
 	window.oncontextmenu = function(event) {
+		if ( event ) {
+			event = event;
+		} else {
+			event = window.event;
+		}
 		event.preventDefault();
 		event.stopPropagation();
 		return false;
