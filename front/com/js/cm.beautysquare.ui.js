@@ -478,7 +478,9 @@ $(function( event ){
 								imgError();
 
 								//로딩 노출 삭제
-								loadingVisible(false);
+								var loadingDelete = setTimeout(function(){
+									loadingVisible(false);
+								}, 4000);
 
 							},
 							async: false,
