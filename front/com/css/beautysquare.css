@@ -1721,6 +1721,25 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     position: relative;
 }
 
+.view_page .video_wrap.play:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("/bangpan/front/img/com/loading_android.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-background-size: 41px 41px;
+    -moz-background-size: 41px 41px;
+    -o-background-size: 41px 41px;
+    background-size: 41px 41px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
+}
+
 .view_page .video_wrap.yt {
     padding-bottom: 56.25%;
     padding-top: 30px;
