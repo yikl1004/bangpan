@@ -407,10 +407,6 @@ $(function( event ){
 				onTouchEnd: function (swiper, event) {
 					var idx = swiper.activeIndex,
 						loadingCheck = !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded');
-					//로딩 노출
-					if ( loadingCheck ) {
-						loadingVisible(true);
-					}
 					console.log('onTouchEnd');
 				},
 				onSlideChangeEnd: function(swiper) {
@@ -440,6 +436,11 @@ $(function( event ){
 					moveBarAni( idx );
 
 					imgSetting( idx );
+
+					//로딩 노출
+					if ( loadingCheck ) {
+						loadingVisible(true);
+					}
 
 					if ( (idx-1) !== 0 && loadingCheck ) {
 

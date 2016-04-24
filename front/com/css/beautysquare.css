@@ -880,8 +880,12 @@ p.normal_txt.r {
     float: left;
 }
 
+#gnb ul li:first-child {
+    margin-left: 4px;
+}
+
 #gnb ul li:last-child {
-    padding-right: 14px;
+    margin-right: 4px;
 }
 
 #gnb ul li a {
@@ -1743,6 +1747,11 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     line-height: 1.4;
     font-size: 14px !important;
     letter-spacing: normal;
+}
+
+.view_page .view_content .in_title {
+    font-size: 1.286em;
+    font-weight: bold;
 }
 
 .view_page .view_content h2.tit {
