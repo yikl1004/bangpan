@@ -322,6 +322,7 @@ $(function( event ){
 
 		// 네비게이션(gnb) iScroll 적용
 		if ( $('#gnbWrap').length > 0 ) {
+			var gnbScroll = null;
 			$(window).on('load', function(){
 				var gnbWidth = 0;
 				for ( var i=0; i<=$('#gnb li').length; i++ )
@@ -332,7 +333,7 @@ $(function( event ){
 				$('#gnb .move_bar').css({
 					width: $('#gnb li').eq(0).outerWidth()
 				});
-				var gnbScroll = new IScroll('#gnbWrap', {
+				gnbScroll = new IScroll('#gnbWrap', {
 					tap: true, scrollX: true, scrollY: false, mouseWheel: true, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
 				});
 			});
