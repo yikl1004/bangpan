@@ -126,7 +126,7 @@ textarea {
 }
 
 a, button, select {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .low input, .notlow input {

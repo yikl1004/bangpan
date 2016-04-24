@@ -89,11 +89,11 @@
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
   align-items: flex-start;
-  -webkit-transition-property: -webkit-transform, height;
+  -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
   -o-transition-property: -o-transform;
   -ms-transition-property: -ms-transform;
-  transition-property: transform, height;
+  transition-property: transform;
 }
 /* a11y */
 .swiper-container .swiper-notification {

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* beautysquare.css */
-.lazy-loader, .loading .loader {
+.lazy-loader {
     height: 46px;
     width: 46px;
     margin: 0px auto;
@@ -19,44 +19,34 @@
     border-radius: 52px;
 }
 
-/* 로딩 애니메이션 */
+/* 로딩 애니메이션 (변경됨 - gif 애니메이션) */
 .loading {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: white;
-    opacity: 1;
     position: fixed;
-    left: 0;
     top: 0;
-    z-index: 4000;
-    -webkit-transition: opacity 300ms ease;
-    -moz-transition: opacity 300ms ease;
-    -o-transition: opacity 300ms ease;
-    transition: opacity 300ms ease;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    opacity: 1;
+    -webkit-transition: opacity 100ms linear;
+    -moz-transition: opacity 100ms linear;
+    -o-transition: opacity 100ms linear;
+    transition: opacity 100ms linear;
+    background-image: url("/bangpan/front/img/com/loading_android.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-background-size: 44px 44px;
+    -moz-background-size: 44px 44px;
+    -o-background-size: 44px 44px;
+    background-size: 44px 44px;
 }
 
 .loading.end {
     opacity: 0;
-    -webkit-transition: opacity 300ms ease;
-    -moz-transition: opacity 300ms ease;
-    -o-transition: opacity 300ms ease;
-    transition: opacity 300ms ease;
-}
-
-.loading .loader {
-    margin-left: -23px;
-    margin-top: -23px;
-    opacity: 1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 10;
-    -webkit-transition: opacity 300ms ease;
-    -moz-transition: opacity 300ms ease;
-    -o-transition: opacity 300ms ease;
-    transition: opacity 300ms ease;
+    -webkit-transition: opacity 100ms linear;
+    -moz-transition: opacity 100ms linear;
+    -o-transition: opacity 100ms linear;
+    transition: opacity 100ms linear;
 }
 
 .clear, .tit:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .archive .archive_list li .action:after {
@@ -86,6 +76,16 @@ body.knowhowshare .btn_write.knowhowshare {
     display: block;
 }
 
+body:after {
+  /* preload 이미지 */
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url("/bangpan/front/img/com/loading_android.gif");
+}
+
 img {
     max-width: 100%;
 }
@@ -102,10 +102,6 @@ img {
 #wrap.loaded {
     opacity: 1;
     z-index: 9000;
-}
-
-#wrap .dimm {
-    position: absolute;
 }
 
 /* 버튼 스타일 */
@@ -206,7 +202,7 @@ img {
 
 .etc .read_cnt {
     padding-left: 21px;
-    background-image: url("/front/img/ico/ico_eye.png");
+    background-image: url("/bangpan/front/img/ico/ico_eye.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -218,7 +214,7 @@ img {
 
 .etc .like_cnt {
     padding-left: 17px;
-    background-image: url("/front/img/ico/ico_heart.png");
+    background-image: url("/bangpan/front/img/ico/ico_heart.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -229,12 +225,12 @@ img {
 }
 
 .etc .like_cnt.active {
-    background-image: url("/front/img/ico/ico_heart_red.png");
+    background-image: url("/bangpan/front/img/ico/ico_heart_red.png");
 }
 
 .etc .reply_cnt {
     padding-left: 17px;
-    background-image: url("/front/img/ico/ico_speach_balloon.png");
+    background-image: url("/bangpan/front/img/ico/ico_speach_balloon.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -285,7 +281,7 @@ ul.hori_btns li a .count {
     width: 100%;
     height: 3px;
     display: block;
-    background-image: url("/front/img/com/webview_shadow.png");
+    background-image: url("/bangpan/front/img/com/webview_shadow.png");
     background-repeat: repeat-x;
     background-position: 0 0;
     background-color: transparent;
@@ -300,7 +296,7 @@ ul.hori_btns li a .count {
 }
 
 /* 그림자 */
-.shadow, .main_visual, .video_area, .scroller .swiper-wrapper .swiper-slide a, .latest_list, .thumb_txt_list, .tab, .select_menu, .photo_list a, .img_list ul li, .more_and_top, .view_page.notice .view_content, .view_page .util_btns a, .editor_content, .reply_list li, .reply_more, .fb_type, .notice_list li, .poll_list li .question, .mypage .my_info, .mypage .point_list li, table, .current_point, .mypage_list .saving_list li, .archive .archive_list li, .app_download .accordian .acc_toggle, .app_download .accordian .acc_content .guide_list li {
+.shadow, .main_visual, .video_area, .scroller .swiper-wrapper .swiper-slide a, .latest_list, .thumb_txt_list, .tab, .select_menu, .photo_list a, .img_list ul li, .more_and_top, .view_page.notice .view_content, .view_page .util_btns a, .editor_content, .reply_list li, .reply_more, .fb_type, .notice_list li, .poll_list li .question, .mypage .my_info, .mypage .point_list li, table, .current_point, .mypage_list .saving_list li, .archive .archive_list li, .error .btn_reload {
     border-bottom: 1px solid #cecece;
 }
 
@@ -324,6 +320,17 @@ ul.hori_btns li a .count {
 
 #container h2.tit:first-child {
     margin-top: 5px;
+}
+
+#container .view_page {
+    margin-top: -20px;
+    margin-left: -3.125%;
+    margin-right: -3.125%;
+}
+
+#container .view_page + .container {
+    margin-left: -3.125%;
+    margin-right: -3.125%;
 }
 
 .section {
@@ -415,7 +422,7 @@ body.sub .section h2.tit .all_view {
     height: 0.857em;
     vertical-align: middle;
     margin-left: 4px;
-    background-image: url("/front/img/ico/ico_arrow_r.png");
+    background-image: url("/bangpan/front/img/ico/ico_arrow_r.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -443,6 +450,7 @@ h2.tit {
     color: #fff;
     vertical-align: top;
   /* 기본 TAG 및 카테고리 */
+  /* 상품기능 */
   /* 브랜드 */;
 }
 
@@ -455,6 +463,7 @@ h2.tit {
 }
 
 .tag.new {
+    /* 새글 */
     font-size: 0.786em;
     line-height: 1.273em;
     font-weight: bold;
@@ -462,47 +471,73 @@ h2.tit {
 }
 
 .tag.best {
+    /* 베스트 */
     background: #639ef9;
 }
 
 .tag.recommand {
+    /* 이달의 추천상품 */
     background: #677caf;
 }
 
 .tag.win {
+    /* 당첨 */
     background: #f96365;
 }
 
 .tag.fillmark {
+    /* 느낌표 */
     background: #677caf;
 }
 
 .tag.selling {
+    /* 판매 */
     background: #36b3b0;
 }
 
 .tag.recruiting {
+    /* 증모 */
     background: #a3b336;
 }
 
 .tag.pioneer {
+    /* 개척 */
     background: #b236b3;
 }
 
 .tag.others {
+    /* 기타 */
     background: #7c7c7c;
 }
 
 .tag.system {
+    /* 제도 */
     background: #3666b3;
 }
 
 .tag.strategy {
+    /* 전략 */
     background: #5c5494;
 }
 
 .tag.product {
+    /* 제품 */
     background: #b43c35;
+}
+
+.tag.whitening {
+    /* 미백 */
+    background: #677caf;
+}
+
+.tag.functional {
+    /* 기능성 */
+    background: #f96365;
+}
+
+.tag.wrinkle {
+    /* 주름 */
+    background: #639ef9;
 }
 
 .tag.brand {
@@ -511,34 +546,42 @@ h2.tit {
 }
 
 .tag.brand.sulwhasoo {
+      /* 설화수 */
     background: #e2b500;
 }
 
 .tag.brand.primera {
+      /* 프리메라 */
     background: #77a543;
 }
 
 .tag.brand.vb {
+      /* 브이비 */
     background: #77a543;
 }
 
 .tag.brand.illi {
+      /* 일리 */
     background: #c12f0b;
 }
 
 .tag.brand.boncho {
+      /* 본초연구 */
     background: #26716e;
 }
 
 .tag.brand.hera {
+      /* 헤라 */
     background: #a543a6;
 }
 
 .tag.brand.ryo {
+      /* 려 */
     background: #a96f15;
 }
 
 .tag.brand.lolitalempika {
+      /* 롤리타렘피카 */
     background: #6936b2;
 }
 
@@ -589,7 +632,7 @@ h2.tit {
 
 .grade.g1 {
     /* 여왕 */
-    background-image: url("/front/img/com/grade_01.png");
+    background-image: url("/bangpan/front/img/com/grade_01.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #9669ae;
@@ -601,7 +644,7 @@ h2.tit {
 
 .grade.g2 {
     /* 여신 */
-    background-image: url("/front/img/com/grade_02.png");
+    background-image: url("/bangpan/front/img/com/grade_02.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #eb6ca7;
@@ -613,7 +656,7 @@ h2.tit {
 
 .grade.g3 {
     /* 미인 */
-    background-image: url("/front/img/com/grade_03.png");
+    background-image: url("/bangpan/front/img/com/grade_03.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #b7cd5b;
@@ -625,7 +668,7 @@ h2.tit {
 
 .grade.g4 {
     /* 쌩얼 */
-    background-image: url("/front/img/com/grade_04.png");
+    background-image: url("/bangpan/front/img/com/grade_04.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #ccc;
@@ -637,7 +680,7 @@ h2.tit {
 
 .grade.g5 {
     /* 공주 */
-    background-image: url("/front/img/com/grade_05.png");
+    background-image: url("/bangpan/front/img/com/grade_05.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #52c1db;
@@ -649,7 +692,7 @@ h2.tit {
 
 .grade.g6 {
     /* 뷰티스타 */
-    background-image: url("/front/img/com/grade_06.png");
+    background-image: url("/bangpan/front/img/com/grade_06.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #ffbe21;
@@ -661,12 +704,14 @@ h2.tit {
 
 /* 유저이미지 마스크 */
 .thumb {
+    position: relative;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-color: #b1b1b1;
 }
 
 .thumb.mask {
@@ -678,7 +723,7 @@ h2.tit {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("/front/img/com/user_thumb_mask.png");
+    background-image: url("/bangpan/front/img/com/user_thumb_mask.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
@@ -689,7 +734,55 @@ h2.tit {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 30;
+}
+
+.thumb .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 20;
+}
+
+.thumb img {
+    position: relative;
+    z-index: 20;
+}
+
+.thumb:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("/bangpan/front/img/com/default_img.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #e2e8f8;
+    -webkit-background-size: 26px 26px;
+    -moz-background-size: 26px 26px;
+    -o-background-size: 26px 26px;
+    background-size: 26px 26px;
+    position: absolute;
+    left: 0;
+    top: 0;
     z-index: 10;
+}
+
+/* 유저 프로필일 경우 */
+.user_info .thumb:before {
+    background-image: url(/bangpan/front/img/com/profile_default_img.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #b2c1ea;
 }
 
 /* 글 작성시간 */
@@ -701,7 +794,7 @@ h2.tit {
 
 .update_time.today {
     padding-left: 18px;
-    background-image: url("/front/img/ico/ico_clock.png");
+    background-image: url("/bangpan/front/img/ico/ico_clock.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -863,7 +956,7 @@ body.gingerbread .main_visual img {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("/front/img/ico/ico_play.png");
+    background-image: url("/bangpan/front/img/ico/ico_play.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: rgba(0, 0, 0, 0.6);
@@ -874,7 +967,7 @@ body.gingerbread .main_visual img {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 10;
+    z-index: 20;
 }
 
 .video.play:after {
@@ -948,7 +1041,7 @@ body.gingerbread .main_visual img {
     position: absolute;
     left: 0;
     bottom: 0;
-    z-index: 10;
+    z-index: 30;
 }
 
 .scroller.type01 .swiper-wrapper .swiper-slide a .info h3.tit {
@@ -996,6 +1089,8 @@ body.gingerbread .main_visual img {
     background-color: #fff;
     padding: 9px 7px;
     margin-top: 1px;
+    position: relative;
+    z-index: 30;
 }
 
 .scroller .swiper-wrapper .swiper-slide a h3.tit {
@@ -1155,6 +1250,15 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     float: left;
 }
 
+.thumb_txt_list li .thumb:before {
+    background-image: url(/bangpan/front/img/com/profile_default_img.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #b2c1ea;
+}
+
 .thumb_txt_list li .thumb img {
     display: block;
 }
@@ -1246,7 +1350,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    background-image: url("/front/img/com/select_arrow.png");
+    background-image: url("/bangpan/front/img/com/select_arrow.png");
     background-repeat: no-repeat;
     background-position: 96% 50%;
     background-color: #fff;
@@ -1469,7 +1573,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     width: 12px;
     height: 7px;
     margin-top: -1px;
-    background-image: url("/front/img/ico/ico_dir_down.png");
+    background-image: url("/bangpan/front/img/ico/ico_dir_down.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
@@ -1490,7 +1594,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     width: 10px;
     height: 13px;
     margin-top: -3px;
-    background-image: url("/front/img/ico/ico_arrow_up.png");
+    background-image: url("/bangpan/front/img/ico/ico_arrow_up.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
@@ -1534,35 +1638,40 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .view_page .view_head.brand.sulwhasoo {
-    background-image: url("/front/img/com/brand/brand_sulwhasoo.png");
+    background-image: url("/bangpan/front/img/com/brand/brand_sulwhasoo.png");
 }
 
 .view_page .view_head.brand.primera {
-    background-image: url("/front/img/com/brand/brand_primera.png");
+    background-image: url("/bangpan/front/img/com/brand/brand_primera.png");
 }
 
 .view_page .view_head.brand.vb {
-    background-image: url("/front/img/com/brand/brand_vb.png");
+    background-image: url("/bangpan/front/img/com/brand/brand_vb.png");
 }
 
 .view_page .view_head.brand.illi {
-    background-image: url("/front/img/com/brand/brand_illi.png");
+    background-image: url("/bangpan/front/img/com/brand/brand_illi.png");
 }
 
 .view_page .view_head.brand.boncho {
-    background-image: url("/front/img/com/brand/brand_boncho.png");
+    background-image: url("/bangpan/front/img/com/brand/brand_boncho.png");
 }
 
 .view_page .view_head.brand.hera {
-    background-image: url("/front/img/com/brand/brand_hera.png");
+    background-image: url("/bangpan/front/img/com/brand/brand_hera.png");
 }
 
 .view_page .view_head.brand.ryo {
-    background-image: url("/front/img/com/brand/brand_ryo.png");
+    background-image: url("/bangpan/front/img/com/brand/brand_ryo.png");
 }
 
 .view_page .view_head.brand.lolitalempika {
-    background-image: url("/front/img/com/brand/brand_lolitalempika.png");
+    background-image: url("/bangpan/front/img/com/brand/brand_lolitalempika.png");
+}
+
+.view_page .view_head.brand.etc {
+    background-image: none;
+    text-align: center;
 }
 
 .view_page .view_head span {
@@ -1585,6 +1694,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 .view_page > .user_info .thumb {
     display: block;
     width: 40px;
+    height: 40px;
     float: left;
 }
 
@@ -1703,7 +1813,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_content .cnt_bookmark_area .read_cnt {
     padding-left: 30px;
-    background-image: url("/front/img/ico//ico_eye_view.png");
+    background-image: url("/bangpan/front/img/ico//ico_eye_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1715,7 +1825,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_content .cnt_bookmark_area .like_cnt {
     padding-left: 23px;
-    background-image: url("/front/img/ico//ico_heart_view.png");
+    background-image: url("/bangpan/front/img/ico//ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1727,7 +1837,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .view_page .view_content .cnt_bookmark_area .bookmark {
     padding-left: 26px;
-    background-image: url("/front/img/ico//ico_star_view.png");
+    background-image: url("/bangpan/front/img/ico//ico_star_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1779,19 +1889,6 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     border-left: 0;
 }
 
-.view_page .util_btns a:before {
-    content: '';
-    display: inline-block;
-    width: 21px;
-    height: 100%;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -ms-grid-row-align: center;
-    align-items: center;
-}
-
 .view_page .util_btns a span {
     display: block;
     height: 100%;
@@ -1801,7 +1898,6 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     -ms-flex-align: center;
     -ms-grid-row-align: center;
     align-items: center;
-    margin-left: 7px;
     line-height: 40px;
 }
 
@@ -1814,8 +1910,9 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     margin-top: 0;
 }
 
-.view_page .util_btns .talk:before {
-    background-image: url("/front/img/ico/ico_kakaotalk.png");
+.view_page .util_btns .talk span {
+    padding-left: 28px;
+    background-image: url("/bangpan/front/img/ico/ico_kakaotalk.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1825,8 +1922,9 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-size: 21px 21px;
 }
 
-.view_page .util_btns .story:before {
-    background-image: url("/front/img/ico/ico_kakaostory.png");
+.view_page .util_btns .story span {
+    padding-left: 28px;
+    background-image: url("/bangpan/front/img/ico/ico_kakaostory.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1836,8 +1934,9 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-size: 21px 21px;
 }
 
-.view_page .util_btns .delete:before {
-    background-image: url("/front/img/ico/ico_trashcan.png");
+.view_page .util_btns .delete span {
+    padding-left: 28px;
+    background-image: url("/bangpan/front/img/ico/ico_trashcan.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1847,8 +1946,9 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-size: 19px 19px;
 }
 
-.view_page .util_btns .modify:before {
-    background-image: url("/front/img/ico/ico_pencil.png");
+.view_page .util_btns .modify span {
+    padding-left: 28px;
+    background-image: url("/bangpan/front/img/ico/ico_pencil.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1859,6 +1959,11 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 /* 에디터 입력 내용 */
+.editor_content {
+    background: #fff;
+    padding: 10px;
+}
+
 /* 댓글 리스트 */
 .reply_list li {
     padding: 11px 10px 13px 13px;
@@ -1878,7 +1983,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     border-left: 3px solid #6c84b7;
 }
 
-.reply_list li.admin .user_info .thumb {
+.reply_list li.admin .user_info .thumb .img {
     background-color: #677caf;
 }
 
@@ -1979,7 +2084,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     top: 0;
     right: 0;
     z-index: 10;
-    background-image: url("/front/img/ico/ico_heart_view.png");
+    background-image: url("/bangpan/front/img/ico/ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: right top;
     background-color: transparent;
@@ -2262,7 +2367,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .fb_type .etc_btns a.reply:before {
     width: 14px;
-    background-image: url("/front/img/ico/ico_reply_big.png");
+    background-image: url("/bangpan/front/img/ico/ico_reply_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2274,7 +2379,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .fb_type .etc_btns a.bookmark:before {
     width: 18px;
-    background-image: url("/front/img/ico/ico_star_big.png");
+    background-image: url("/bangpan/front/img/ico/ico_star_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2285,12 +2390,12 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .fb_type .etc_btns a.bookmark.active:before {
-    background-image: url("/front/img/ico/ico_star_big_active.png");
+    background-image: url("/bangpan/front/img/ico/ico_star_big_active.png");
 }
 
 .fb_type .etc_btns a.like:before {
     width: 16px;
-    background-image: url("/front/img/ico/ico_heart_big.png");
+    background-image: url("/bangpan/front/img/ico/ico_heart_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2301,7 +2406,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .fb_type .etc_btns a.like.active:before {
-    background-image: url("/front/img/ico/ico_heart_big_active.png");
+    background-image: url("/bangpan/front/img/ico/ico_heart_big_active.png");
 }
 
 /* 플로팅 버튼 */
@@ -2344,11 +2449,17 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 .floating_util .sort .fu_sort {
-    display: block;
+    display: inherit;
     -webkit-appearance: none;
     color: #fff;
     font-family: "Spoqa Han Sans", HelveticaNeue-Light, AppleSDGothicNeo-Light, sans-serif;
     margin-left: 2.143em;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
 }
 
 .floating_util .sort .fu_sort:active, .floating_util .sort .fu_sort:focus {
@@ -2358,7 +2469,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 .floating_util .sort .fu_sort:nth-of-type(1) {
     padding-right: 16px;
     margin-left: 0;
-    background-image: url("/front/img/ico/ico_funnel.png");
+    background-image: url("/bangpan/front/img/ico/ico_funnel.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -2370,7 +2481,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .floating_util .sort .fu_sort:nth-of-type(2) {
     padding-right: 19px;
-    background-image: url("/front/img/ico/ico_sort.png");
+    background-image: url("/bangpan/front/img/ico/ico_sort.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -2404,7 +2515,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     width: 13px;
     height: 14px;
     margin-left: 0.286em;
-    background-image: url("/front/img/ico//ico_change.png");
+    background-image: url("/bangpan/front/img/ico//ico_change.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -2442,6 +2553,64 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 
 .floating_util .font_sizing a:first-child {
     border-left: 1px solid #adadad;
+}
+
+/* 플로팅 선택 */
+.fu_select[data-select-type] {
+    display: none;
+    width: 100%;
+    padding: 0 3.125%;
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    z-index: 9900;
+}
+
+.fu_select[data-select-type] a {
+    display: block;
+    padding: 12px 0 10px;
+    font-size: 1.143em;
+    color: #394252;
+    background: #fff;
+    text-align: center;
+}
+
+.fu_select[data-select-type] > a.cancel {
+    margin-top: 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.fu_select[data-select-type] ul li {
+    width: 100%;
+    border-top: 1px solid #a9b8c5;
+}
+
+.fu_select[data-select-type] ul li.active a {
+    background: #cbd4e7;
+}
+
+.fu_select[data-select-type] ul li:first-child {
+    border-top: 0;
+}
+
+.fu_select[data-select-type] ul li:first-child a {
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-right-radius: 4px;
+}
+
+.fu_select[data-select-type] ul li:last-child a {
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-left-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-bottom-right-radius: 4px;
 }
 
 /* 공지사항 - 리스트 */
@@ -2568,6 +2737,8 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
 .mypage .my_info .my_photo img {
     width: 100%;
     margin: 1px;
+    position: relative;
+    z-index: 20;
 }
 
 .mypage .my_info .my_photo .edit {
@@ -2577,7 +2748,7 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
     -webkit-border-radius: 13px;
     -moz-border-radius: 13px;
     border-radius: 13px;
-    background-image: url("/front/img/ico/ico_edit.png");
+    background-image: url("/bangpan/front/img/ico/ico_edit.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: #f96365;
@@ -2588,26 +2759,37 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
     position: absolute;
     top: 15px;
     right: -6px;
-    z-index: 30;
+    z-index: 40;
 }
 
-.mypage .my_info .my_photo:after {
+.mypage .my_info .my_photo:before, .mypage .my_info .my_photo:after {
     content: '';
     display: block;
     width: 105px;
     height: 105px;
-    background-image: url("/front/img/com/myphoto_mask.png");
-    background-repeat: no-repeat;
     background-position: center center;
-    background-color: transparent;
     -webkit-background-size: 105px 105px;
     -moz-background-size: 105px 105px;
     -o-background-size: 105px 105px;
     background-size: 105px 105px;
+}
+
+.mypage .my_info .my_photo:before {
+    background-image: url("/bangpan/front/img/com/profile_default_img.png");
+    background-color: #b2c1ea;
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 20;
+    z-index: 10;
+}
+
+.mypage .my_info .my_photo:after {
+    background-image: url("/bangpan/front/img/com/myphoto_mask.png");
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 30;
 }
 
 .mypage .my_info .grade {
@@ -2746,7 +2928,7 @@ table.grade_guide th .grade {
 }
 
 table.grade_guide th .grade.g1 {
-    background-image: url("/front/img/com/gradeGuide_g1.png");
+    background-image: url("/bangpan/front/img/com/gradeGuide_g1.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2757,7 +2939,7 @@ table.grade_guide th .grade.g1 {
 }
 
 table.grade_guide th .grade.g2 {
-    background-image: url("/front/img/com/gradeGuide_g2.png");
+    background-image: url("/bangpan/front/img/com/gradeGuide_g2.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2768,7 +2950,7 @@ table.grade_guide th .grade.g2 {
 }
 
 table.grade_guide th .grade.g3 {
-    background-image: url("/front/img/com/gradeGuide_g3.png");
+    background-image: url("/bangpan/front/img/com/gradeGuide_g3.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2779,7 +2961,7 @@ table.grade_guide th .grade.g3 {
 }
 
 table.grade_guide th .grade.g4 {
-    background-image: url("/front/img/com/gradeGuide_g4.png");
+    background-image: url("/bangpan/front/img/com/gradeGuide_g4.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2790,7 +2972,7 @@ table.grade_guide th .grade.g4 {
 }
 
 table.grade_guide th .grade.g5 {
-    background-image: url("/front/img/com/gradeGuide_g5.png");
+    background-image: url("/bangpan/front/img/com/gradeGuide_g5.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2801,7 +2983,7 @@ table.grade_guide th .grade.g5 {
 }
 
 table.grade_guide th .grade.g6 {
-    background-image: url("/front/img/com/gradeGuide_g6.png");
+    background-image: url("/bangpan/front/img/com/gradeGuide_g6.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -2939,7 +3121,7 @@ table.grade_guide td p strong {
 }
 
 .archive .archive_list li .action input[type=checkbox]:checked + label {
-    background-image: url("/front/img/ico/ico_checked.png");
+    background-image: url("/bangpan/front/img/ico/ico_checked.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: #677caf;
@@ -3102,6 +3284,10 @@ table.grade_guide td p strong {
 }
 
 /* 다운로드 페이지 */
+.app_download {
+    background-color: #fff;
+}
+
 .app_download .app_info {
     display: -webkit-box;
     display: -webkit-flex;
@@ -3116,7 +3302,7 @@ table.grade_guide td p strong {
     -moz-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background: #677caf;
+    background: #e9e9e9;
     padding: 22px 1.429em 20px;
 }
 
@@ -3130,7 +3316,6 @@ table.grade_guide td p strong {
 }
 
 .app_download .app_info .txt {
-    color: #fff;
     margin-left: 0.929em;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -3142,12 +3327,14 @@ table.grade_guide td p strong {
 .app_download .app_info .txt .name {
     font-size: 1.214em;
     line-height: 1;
+    color: #3d4a69;
     margin-bottom: 5px;
 }
 
 .app_download .app_info .txt .company {
     font-size: 0.857em;
     opacity: 0.7;
+    color: #333;
 }
 
 .app_download .app_info .btn_app_download {
@@ -3162,11 +3349,24 @@ table.grade_guide td p strong {
     -webkit-border-radius: 0.294em;
     -moz-border-radius: 0.294em;
     border-radius: 0.294em;
-    color: #677caf;
+    color: #3d4968;
     background: #fff;
     -webkit-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.12);
     -moz-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.app_download .swiper-container.app_guide .swiper-pagination-bullet {
+    background-color: #dfe3ec;
+}
+
+.app_download .swiper-container.app_guide .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #677caf;
+}
+
+.app_download .accordian {
+    margin-bottom: 30px;
+    margin-top: 12px;
 }
 
 .app_download .accordian.active .acc_content {
@@ -3174,7 +3374,7 @@ table.grade_guide td p strong {
 }
 
 .app_download .accordian.active .acc_toggle:after {
-    background-image: url("/front/img/ico/ico_arrow_stick_up.png");
+    background-image: url("/bangpan/front/img/ico/ico_arrow_stick_up.png");
 }
 
 .app_download .accordian .acc_toggle {
@@ -3200,6 +3400,8 @@ table.grade_guide td p strong {
     background: #fff;
     color: #333;
     font-size: 1.071em;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
 }
 
 .app_download .accordian .acc_toggle:after {
@@ -3207,7 +3409,7 @@ table.grade_guide td p strong {
     display: block;
     width: 16px;
     height: 10px;
-    background-image: url("/front/img/ico/ico_arrow_stick_down.png");
+    background-image: url("/bangpan/front/img/ico/ico_arrow_stick_down.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -3224,7 +3426,6 @@ table.grade_guide td p strong {
 
 .app_download .accordian .acc_content .guide_list li {
     padding: 13px 15px;
-    border-bottom: 1px solid #ececec;
     background: #fff;
 }
 
@@ -3259,7 +3460,7 @@ table.grade_guide td p strong {
 .app_download .cs {
     margin: 15px 20px;
     line-height: 1;
-    background-image: url("/front/img/com/ico_call.png");
+    background-image: url("/bangpan/front/img/com/ico_call.png");
     background-repeat: no-repeat;
     background-position: right 5px;
     background-color: transparent;
@@ -3329,11 +3530,11 @@ table.grade_guide td p strong {
 }
 
 .swiper-container.app_guide .swiper-button-prev {
-    background-image: url("/publish/img/com/swiper_arrow_l.png");
+    background-image: url("/bangpan/front/img/com/swiper_arrow_l.png");
 }
 
 .swiper-container.app_guide .swiper-button-next {
-    background-image: url("/publish/img/com/swiper_arrow_r.png");
+    background-image: url("/bangpan/front/img/com/swiper_arrow_r.png");
 }
 
 .swiper-container.app_guide .swiper-pagination-bullets {
@@ -3384,19 +3585,19 @@ table.grade_guide td p strong {
     display: block;
     background-position: center 0.7em;
     background-color: rgba(249, 99, 101, 0.9);
-    background-image: url("/front/img/ico/ico_heart_alert.png");
+    background-image: url("/bangpan/front/img/ico/ico_heart_alert.png");
 }
 
 .custom_alert.bookmark_success {
     display: block;
     background-color: rgba(248, 183, 63, 0.9);
-    background-image: url("/front/img/ico/ico_star_alert.png");
+    background-image: url("/bangpan/front/img/ico/ico_star_alert.png");
 }
 
 .custom_alert.bookmark_cancel {
     display: block;
     background-color: rgba(134, 134, 134, 0.9);
-    background-image: url("/front/img/ico/ico_star_alert.png");
+    background-image: url("/bangpan/front/img/ico/ico_star_alert.png");
 }
 
 /* 알림창 ( alert, confirm ) */
@@ -3447,4 +3648,49 @@ table.grade_guide td p strong {
 .alert .btns .ok {
     background-color: #677caf;
     color: #fff;
+}
+
+/* data가 없을 경우 */
+.no_data {
+    width: 100%;
+    padding-top: 60px;
+    margin-top: 132px;
+    text-align: center;
+    color: #999;
+    font-size: 0.929em;
+    background-image: url("/bangpan/front/img/ico/ico_fillmark.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: transparent;
+    -webkit-background-size: 40px 40px;
+    -moz-background-size: 40px 40px;
+    -o-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+
+/* 에러페이지 */
+.error {
+    width: 100%;
+    padding-top: 60px;
+    margin-top: 132px;
+    text-align: center;
+    color: #999;
+    font-size: 0.929em;
+    background-image: url("/bangpan/front/img/ico/ico_error.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: transparent;
+    -webkit-background-size: 31px 38px;
+    -moz-background-size: 31px 38px;
+    -o-background-size: 31px 38px;
+    background-size: 31px 38px;
+}
+
+.error .btn_reload {
+    display: inline-block;
+    font-size: 1.071em;
+    color: #6d6d6d;
+    padding: 7px 20px 5px;
+    margin-top: 17px;
+    background-color: #f4f4f4;
 }
