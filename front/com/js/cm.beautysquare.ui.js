@@ -1,6 +1,6 @@
 var pageIdxStr = '.swiper-container.tabs > .swiper-wrapper .swiper-slide-active',
 	pageContent = '>.container';
-$(function(){
+$(function( event ){
 
 	// 이미지로드 jquery prototype
 	$.fn.imagesLoaded = function () {
@@ -215,7 +215,7 @@ $(function(){
 		event.stopPropagation();
 		return false;
 	};
-	oncontextmenu();
+	oncontextmenu( event );
 
 
 
