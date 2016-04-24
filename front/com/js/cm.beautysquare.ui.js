@@ -569,8 +569,10 @@ $(function( event ){
 			scroller03 = null;
 
 		// 스와이프 페이지
-		if ( $('.tabs').length > 0 )
-			tabsSwiper = new Swiper('.tabs', swiperOptions.tabs);
+		$(window).on('load', function(){
+			if ( $('.tabs').length > 0 )
+				tabsSwiper = new Swiper('.tabs', swiperOptions.tabs);
+		});
 
 		//메인 비주얼
 		$(window).on('load', function(){
