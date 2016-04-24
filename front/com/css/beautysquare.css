@@ -881,7 +881,7 @@ p.normal_txt.r {
 }
 
 #gnb ul li:last-child {
-    margin-right: 14px;
+    padding-right: 14px;
 }
 
 #gnb ul li a {
