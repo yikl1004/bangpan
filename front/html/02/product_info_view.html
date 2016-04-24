@@ -55,6 +55,9 @@
                         console.log(video.error);
                         //- startBuffer();
                     };
+                    video.oncanplay = function(e) {
+                        console.log('canplay');
+                    }
                     //- video.onprogress = function(e){
                     //- console.dir(video.buffered);
                     //- 	if(this.networkState == 2){
