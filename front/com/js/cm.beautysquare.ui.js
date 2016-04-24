@@ -195,6 +195,7 @@ $(function( event ){
 			gnbHeight = 0;
 
 		if ( bool ) {
+			tabsSwiperCtrl.lock();
 			if ( $( isMain ).find('> .loading').length > 0 ) return false;
 			
 			$( isMain ).prepend( "<div class='loading' />" );
@@ -205,6 +206,7 @@ $(function( event ){
 			$( isMain ).find('> .loading').addClass('end')
 			.on('transitionend', function(){
 				$(this).remove();
+				tabsSwiperCtrl.unlock();
 			});
 		}
 	};
