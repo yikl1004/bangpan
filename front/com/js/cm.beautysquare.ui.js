@@ -523,7 +523,7 @@ $(function( event ){
 						if ( idx > menuLength ) idx = 1;
 						else if ( idx <= 0 ) idx = menuLength;
 
-						moveBarAni( idx );
+						// moveBarAni( idx );
 					}
 				},
 				onTouchStart: function(swiper){
