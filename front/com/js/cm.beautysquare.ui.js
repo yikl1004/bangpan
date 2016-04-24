@@ -336,6 +336,7 @@ $(function( event ){
 				gnbScroll = new IScroll('#gnbWrap', {
 					tap: true, scrollX: true, scrollY: false, mouseWheel: true, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
 				});
+				$('#gnb').css({width: $('#gnb').outerWidth() + 1});
 			});
 		}
 
