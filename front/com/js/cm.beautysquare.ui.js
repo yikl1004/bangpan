@@ -449,6 +449,9 @@ $(function( event ){
 
 						tabsSwiperCtrl.lock();
 
+						//로딩 노출
+						loadingVisible(true);
+
 						$.ajax({
 							// url: devDir + '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
 							url: devDir + _url(),
@@ -470,6 +473,9 @@ $(function( event ){
 
 								//이미지 error시 엑박 방지
 								imgError();
+
+								//로딩 노출 삭제
+								loadingVisible(false);
 
 							},
 							async: false,
