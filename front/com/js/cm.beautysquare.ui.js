@@ -202,8 +202,8 @@ $(function( event ){
 			gnbHeight = 0;
 
 		if ( bool ) {
-			tabsSwiperCtrl.lock();
 			if ( $( isMain ).find('> .loading').length > 0 ) return false;
+			tabsSwiperCtrl.lock();
 			
 			$( isMain ).prepend( "<div class='loading' />" );
 			$( isMain ).find('> .loading').css({
@@ -781,60 +781,6 @@ $(function( event ){
 			}, 1000);
 		};
 
-		// 앱 알림창 기본
-		$.alert = function ( msg, callback ) {
-
-			if ( $('body > .alert').length > 0 ) {
-				return false;
-			}
-
-			//dimm
-			$('body').append('<div class="dimm"></div>');
-			$('body').find('> .dimm').css({
-				height: window.innerHeight
-			});
-
-			// 알림창
-			var alertStr = '<div class="alert">';
-				alertStr += 	'<div class="content">';
-				alertStr +=			msg;
-				alertStr += 	'</div>';
-				alertStr +=		'<div class="btns">';
-				alertStr +=			'<a class="ok" href="javscrip:;"><span>확인</span></a>';
-				alertStr +=		'</div>';
-				alertStr += '</div>';
-
-			$('body').append( alertStr );
-
-			var contentHeight = parseInt($('body').find('> .alert .content').css('font-size')) * 1.5 * 3;
-
-			if ( $('body').find('> .alert .content').height() <= contentHeight ) {
-				$('body').find('> .alert .content').addClass('single_line');
-			}
-
-			$('body').find('> .alert').css({
-				marginTop: -1 * $('body').find('> .alert').height() / 2
-			});
-
-			$('body').find('> .alert a.ok').on('click', function(){
-				$('body').find('.dimm').remove();
-				$('body').find('.alert').remove();
-				if ( callback && typeof callback === 'function' ) {
-					callback();
-				}
-			});
-		};
-
-		$.confirm = function ( msg, callback ) {
-			$.alert(msg, callback);
-			//$('body').find('> .alert a.ok').off('click');
-			$('body').find('> .alert .btns').prepend('<a class="cancel" href="javscrip:;"><span>취소</span></a>');
-			$('body').find('> .alert a.cancel').on('click', function(){
-				$('body').find('.dimm').remove();
-				$('body').find('.alert').remove();
-			});
-		};
-
 		//플로팅 sort, type 클릭
 		$('.floating_util .sort [data-select-type]').on('click', function(){
 			var type = $(this).data('select-type');
@@ -902,3 +848,58 @@ $(function( event ){
 	//}); // window load : E
 
 }); // jquery functiuon
+
+
+// 앱 알림창 기본
+$.alert = function ( msg, callback ) {
+
+	if ( $('body > .alert').length > 0 ) {
+		return false;
+	}
+
+	//dimm
+	$('body').append('<div class="dimm"></div>');
+	$('body').find('> .dimm').css({
+		height: window.innerHeight
+	});
+
+	// 알림창
+	var alertStr = '<div class="alert">';
+		alertStr += 	'<div class="content">';
+		alertStr +=			msg;
+		alertStr += 	'</div>';
+		alertStr +=		'<div class="btns">';
+		alertStr +=			'<a class="ok" href="javscrip:;"><span>확인</span></a>';
+		alertStr +=		'</div>';
+		alertStr += '</div>';
+
+	$('body').append( alertStr );
+
+	var contentHeight = parseInt($('body').find('> .alert .content').css('font-size')) * 1.5 * 3;
+
+	if ( $('body').find('> .alert .content').height() <= contentHeight ) {
+		$('body').find('> .alert .content').addClass('single_line');
+	}
+
+	$('body').find('> .alert').css({
+		marginTop: -1 * $('body').find('> .alert').height() / 2
+	});
+
+	$('body').find('> .alert a.ok').on('click', function(){
+		$('body').find('.dimm').remove();
+		$('body').find('.alert').remove();
+		if ( callback && typeof callback === 'function' ) {
+			callback();
+		}
+	});
+};
+
+$.confirm = function ( msg, callback ) {
+	$.alert(msg, callback);
+	//$('body').find('> .alert a.ok').off('click');
+	$('body').find('> .alert .btns').prepend('<a class="cancel" href="javscrip:;"><span>취소</span></a>');
+	$('body').find('> .alert a.cancel').on('click', function(){
+		$('body').find('.dimm').remove();
+		$('body').find('.alert').remove();
+	});
+};
