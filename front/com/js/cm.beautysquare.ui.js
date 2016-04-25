@@ -541,8 +541,9 @@ $(function( event ){
 				}
 			},
 			mainVisual: {
-				speed: speedAll,
+				speed: 300,
 				pagination: '.swiper-pagination',
+				autoplay: 4000,
 				loop: true,
 				nested: true,
 				direction: 'horizontal',

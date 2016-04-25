@@ -322,17 +322,6 @@ ul.hori_btns li a .count {
     margin-top: 5px;
 }
 
-#container .view_page {
-    margin-top: -20px;
-    margin-left: -3.125%;
-    margin-right: -3.125%;
-}
-
-#container .view_page + .container {
-    margin-left: -3.125%;
-    margin-right: -3.125%;
-}
-
 .section {
     margin-top: 23px;
 }
