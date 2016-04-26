@@ -44,9 +44,12 @@
                     percentages[0].innerHTML = loaded.toFixed(2);
                     percentages[1].innerHTML = played.toFixed(2);
                 }
-                setTimeout(loop, 50);
+                //- setTimeout(loop, 50);
             }
-            loop();
+            video.onprogress = function()
+            {
+                loop();
+            }
         </script>
     </body>
 
