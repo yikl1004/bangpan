@@ -169,32 +169,32 @@ $(function( event ){
 		switch ( index ) {
 			case 1: 
 				$(pageIdxStr + ' .scroller.type01 .thumb').css({
-					height: pixelRatio( '540:540', $(pageIdxStr + ' .scroller.type01 .thumb').width(), 'y' )
+					maxHeight: pixelRatio( '540:540', $(pageIdxStr + ' .scroller.type01 .thumb').width(), 'y' )
 				}),
 				$(pageIdxStr + ' .scroller.type02 .thumb').css({
-					height: pixelRatio( '540:390', $(pageIdxStr + ' .scroller.type02 .thumb').width(), 'y' )
+					maxHeight: pixelRatio( '540:390', $(pageIdxStr + ' .scroller.type02 .thumb').width(), 'y' )
 				}),
 				$(pageIdxStr + ' .scroller.type03 .thumb').css({
-					height: pixelRatio( '540:390', $(pageIdxStr + ' .scroller.type03 .thumb').width(), 'y' )
+					maxHeight: pixelRatio( '540:390', $(pageIdxStr + ' .scroller.type03 .thumb').width(), 'y' )
 				});
 			case 2:
 				$(pageIdxStr + ' .photo_list .thumb').css({
-					height: pixelRatio( '900:420', $(pageIdxStr + ' .photo_list .thumb').width(), 'y' )
+					maxHeight: pixelRatio( '900:420', $(pageIdxStr + ' .photo_list .thumb').width(), 'y' )
 				}),
 				photoListImgAlgin();
 			break;
 			case 3:
 				$(pageIdxStr + ' .img_list .thumb').css({
-					height: pixelRatio( '290:290', $(pageIdxStr + ' .img_list .thumb').width(), 'y' )
+					maxHeight: pixelRatio( '290:290', $(pageIdxStr + ' .img_list .thumb').width(), 'y' )
 				});
 			break;
 			case 4: 
 				$(pageIdxStr + ' .img_list.type02 .thumb').css({
-					height: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
+					maxHeight: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
 				});
 			case 6: 
 				$(pageIdxStr + ' .img_list.type02 .thumb').css({
-					height: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
+					maxHeight: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
 				});
 			break;
 		}
@@ -489,9 +489,8 @@ $(function( event ){
 				autoHeight: true,
 				speed: speedAll,
 				initialSlide: 0,
-				threshold: 25,
-				touchAngle: 20,
-				hashnav: true,
+				threshold: 15,
+				// touchAngle: 23,
 				onSlideNextEnd: function(swiper) {
 					console.log('onSlideNextEnd');
 					console.log(swiper);
@@ -626,6 +625,7 @@ $(function( event ){
 			mainVisual: {
 				speed: 300,
 				pagination: '.swiper-pagination',
+				autoHeight: true,
 				autoplay: 4000,
 				loop: true,
 				nested: true,
@@ -915,6 +915,12 @@ $(function( event ){
 				$( dimm ).remove();
 				$( floatingUtil ).show();
 			});
+		});
+
+		//체크박스 전체 선택
+		$('input#chkAll').on('click', function(){
+			$('.archive_list').find('.action > input[type=checkbox]').prop(true);
+			console.log('aa');
 		});
 
 

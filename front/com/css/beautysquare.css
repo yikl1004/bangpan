@@ -49,7 +49,7 @@
     transition: opacity 100ms linear;
 }
 
-.clear, .tit:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .archive .total:after, .archive .archive_list li .action:after {
+.clear, .tit:after, #gnb ul:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .archive .total:after, .archive .archive_list li .action:after {
     content: '';
     display: block;
     clear: both;
@@ -620,44 +620,8 @@ h2.tit {
 }
 
 .grade.g1 {
-    /* 여왕 */
-    background-image: url("/bangpan/front/img/com/grade_01.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-color: #9669ae;
-    -webkit-background-size: 19px 19px;
-    -moz-background-size: 19px 19px;
-    -o-background-size: 19px 19px;
-    background-size: 19px 19px;
-}
-
-.grade.g2 {
-    /* 여신 */
-    background-image: url("/bangpan/front/img/com/grade_02.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-color: #eb6ca7;
-    -webkit-background-size: 19px 19px;
-    -moz-background-size: 19px 19px;
-    -o-background-size: 19px 19px;
-    background-size: 19px 19px;
-}
-
-.grade.g3 {
-    /* 미인 */
-    background-image: url("/bangpan/front/img/com/grade_03.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-color: #b7cd5b;
-    -webkit-background-size: 19px 19px;
-    -moz-background-size: 19px 19px;
-    -o-background-size: 19px 19px;
-    background-size: 19px 19px;
-}
-
-.grade.g4 {
     /* 쌩얼 */
-    background-image: url("/bangpan/front/img/com/grade_04.png");
+    background-image: url("/bangpan/front/img/com/grade_01.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #ccc;
@@ -667,12 +631,48 @@ h2.tit {
     background-size: 19px 19px;
 }
 
-.grade.g5 {
+.grade.g2 {
+    /* 미녀 */
+    background-image: url("/bangpan/front/img/com/grade_02.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #b7cd5b;
+    -webkit-background-size: 19px 19px;
+    -moz-background-size: 19px 19px;
+    -o-background-size: 19px 19px;
+    background-size: 19px 19px;
+}
+
+.grade.g3 {
     /* 공주 */
-    background-image: url("/bangpan/front/img/com/grade_05.png");
+    background-image: url("/bangpan/front/img/com/grade_03.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #52c1db;
+    -webkit-background-size: 19px 19px;
+    -moz-background-size: 19px 19px;
+    -o-background-size: 19px 19px;
+    background-size: 19px 19px;
+}
+
+.grade.g4 {
+    /* 여왕 */
+    background-image: url("/bangpan/front/img/com/grade_04.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #9669ae;
+    -webkit-background-size: 19px 19px;
+    -moz-background-size: 19px 19px;
+    -o-background-size: 19px 19px;
+    background-size: 19px 19px;
+}
+
+.grade.g5 {
+    /* 여신 */
+    background-image: url("/bangpan/front/img/com/grade_05.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #eb6ca7;
     -webkit-background-size: 19px 19px;
     -moz-background-size: 19px 19px;
     -o-background-size: 19px 19px;
@@ -830,7 +830,6 @@ p.normal_txt.r {
 /* NAVIGATION - gnb */
 #gnbWrap {
     width: 100%;
-    height: 2.286em;
     overflow: hidden;
     background: #677caf;
     position: fixed;
@@ -852,14 +851,12 @@ p.normal_txt.r {
 
 #gnb {
     width: 1000px;
-    height: 100%;
-    position: absolute;
+    position: relative;
     z-index: 50;
 }
 
 #gnb ul {
     width: 100%;
-    height: 100%;
 }
 
 #gnb ul li {
@@ -880,7 +877,7 @@ p.normal_txt.r {
 #gnb ul li a {
     display: block;
     padding: 9px 5px 7px;
-    font-size: 1em;
+    font-size: 1.143em;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -2012,10 +2009,12 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 .editor_content {
     background: #fff;
     padding: 10px;
+    margin-bottom: 24px;
 }
 
 /* 댓글 리스트 */
-.reply_list {
+body.reply_write .reply_list {
+  /* 댓글 쓰기 페이지 */
     margin-bottom: 58px;
 }
 
