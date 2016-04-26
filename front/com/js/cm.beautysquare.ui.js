@@ -156,6 +156,14 @@ $(function( event ){
 
 	};
 
+	window.photoListImgAlgin = function(){
+		$('.photo_list .thumb img').each(function(){
+			var pure = $(this).get(0),
+				wrap = $(this).parent();
+			$(this).css({ 'margin-top': -1 * ( (pure.clientHeight-wrap.height() ) / 2 ) });
+		});
+	};
+
 	window.imgSetting = function( index ){
 		if ( $('#gnbWrap').length <= 0 ) pageIdxStr = '';
 		switch ( index ) {
@@ -173,22 +181,20 @@ $(function( event ){
 				$(pageIdxStr + ' .photo_list .thumb').css({
 					height: pixelRatio( '900:420', $(pageIdxStr + ' .photo_list .thumb').width(), 'y' )
 				}),
-				$('.photo_list .thumb img').imagesLoaded().then(function(){
-					$('.photo_list .thumb img').each(function(){
-						var pure = $(this).get(0),
-							wrap = $(this).parent();
-						$(this).css({ 'margin-top': -1 * ( (pure.clientHeight-wrap.height() ) / 2 ) });
-					});
-				});
+				photoListImgAlgin();
 			break;
 			case 3:
 				$(pageIdxStr + ' .img_list .thumb').css({
 					height: pixelRatio( '290:290', $(pageIdxStr + ' .img_list .thumb').width(), 'y' )
 				});
 			break;
+			case 4: 
+				$(pageIdxStr + ' .img_list.type02 .thumb').css({
+					height: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
+				});
 			case 6: 
 				$(pageIdxStr + ' .img_list.type02 .thumb').css({
-					height: pixelRatio( '339:246', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
+					height: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
 				});
 			break;
 		}
@@ -377,7 +383,7 @@ $(function( event ){
 					// height: tabSlideHeight
 				});
 				$('.tabs > .swiper-wrapper').find('>.swiper-slide > .container').css({
-					minHeight: tabSlideHeight
+					// minHeight: tabSlideHeight
 				});
 			}
 		}
@@ -468,8 +474,8 @@ $(function( event ){
 			swiperLoadPages = [
 				'beautynews_list.html',
 				'product_info_list.html',
-				// 'sales_tip_list_bestknowhow.html',
-				'sales_tip_list_knowhowshare.html',
+				'sales_tip_list_bestknowhow.html',
+				// 'sales_tip_list_knowhowshare.html',
 				'praise_list.html',
 				// 'wonder_list.html',
 				'life_list.html'
@@ -685,13 +691,13 @@ $(function( event ){
 		});
 
 		//메인 비주얼
-		$(window).on('load', function(){
+		// $(window).on('load', function(){
 			if ( $('.main_visual').length >= 1 ) {
 				$('.main_visual').imagesLoaded().then(function(){
 					mainVisual = new Swiper('.main_visual', swiperOptions.mainVisual);
 				});
 			}
-		});
+		// });
 
 		//스와이프 리스트( 최신제품정보 )
 		if ( $('.scroller.type01').length >= 1 ) {
