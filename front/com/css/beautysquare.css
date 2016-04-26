@@ -1135,23 +1135,6 @@ body.gingerbread .main_visual img {
 }
 
 /* 진저브레드 일 경우 */
-body.gingerbread .scroller .swiper-wrapper .swiper-slide {
-    width: 190px;
-}
-
-body.gingerbread .scroller .swiper-wrapper .swiper-slide a {
-    width: 180px;
-    margin-left: 10px;
-}
-
-body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child {
-    width: 180px;
-}
-
-body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
-    margin-left: 0;
-}
-
 /* 최근게시물 리스트 (나만의 세일즈 노하우) */
 .latest_list {
     background-color: #fff;

@@ -300,54 +300,54 @@ $(function( event ){
 	};
 
 	// long tap contextmenu 방지
-	(function(){
-		var cancel=function(e){
-			if (window.event) {
-				window.event.cancelBubble = true;
-				window.event.returnValue = false;
-			}
-			if (e && e.stopPropagation && e.preventDefault) {
-				e.stopPropagation();
-				e.preventDefault();
-			}
-			return false;
-		};
-		var block=function(e){
-			e = e || window.event;
-			var t=e.srcElement || e.target;
-			var tag=t.tagName;
-			if (e && tag==='HTML' || tag==='INPUT' || tag==='TEXTAREA' || tag==='BUTTON' || tag==='SELECT' || tag==='OPTION' || tag==='EMBED' || tag==='OBJECT') { return; }
-			if (e.type==='keydown' || e.type=='keyup') {
-				// keyboard event : only block ctrl-A, ctrl-a, ctrl-C, ctrl-c, meta-A, meta-a, meta-C, meta-c
-				if ((e.ctrlKey || e.metaKey) && (e.keyCode == 65 || e.keyCode == 97 || e.keyCode == 67 || e.keyCode == 99)) { return cancel(e); }
-			} else if(e.type == "contextmenu"){
-				console.log('무단복사를 막기 위해 마우스 드래그 금지가 설정되어 있습니다');
-				return cancel(e);
-			} else {
-				return cancel(e);
-			}
-		}
-		var addEvent = function(el, type, fn){
-			if (window.addEventListener) {
- 				el.addEventListener(type, fn, false);
-			} else if (window.attachEvent) {
-				el.attachEvent('on' + type, fn);
-			} else {
-				el['on' + type] = fn;
-			}
-		}
-		var addBlockEvent = function(){
-			addEvent(document.body,'keydown',block);
-			addEvent(document.body,'keyup',block);
-			addEvent(document.body,'mouseup',block);
-			addEvent(document.body,'mousedown',block);
-			addEvent(document.body,'dragstart',block);
-			addEvent(document.body,'selectstart',block);
-			addEvent(document.body,'copy',block);
-			addEvent(document.body,'contextmenu', block);
-		};
-		addEvent(window,'load',addBlockEvent);
-	})();
+	// (function(){
+	// 	var cancel=function(e){
+	// 		if (window.event) {
+	// 			window.event.cancelBubble = true;
+	// 			window.event.returnValue = false;
+	// 		}
+	// 		if (e && e.stopPropagation && e.preventDefault) {
+	// 			e.stopPropagation();
+	// 			e.preventDefault();
+	// 		}
+	// 		return false;
+	// 	};
+	// 	var block=function(e){
+	// 		e = e || window.event;
+	// 		var t=e.srcElement || e.target;
+	// 		var tag=t.tagName;
+	// 		if (e && tag==='HTML' || tag==='INPUT' || tag==='TEXTAREA' || tag==='BUTTON' || tag==='SELECT' || tag==='OPTION' || tag==='EMBED' || tag==='OBJECT') { return; }
+	// 		if (e.type==='keydown' || e.type=='keyup') {
+	// 			// keyboard event : only block ctrl-A, ctrl-a, ctrl-C, ctrl-c, meta-A, meta-a, meta-C, meta-c
+	// 			if ((e.ctrlKey || e.metaKey) && (e.keyCode == 65 || e.keyCode == 97 || e.keyCode == 67 || e.keyCode == 99)) { return cancel(e); }
+	// 		} else if(e.type == "contextmenu"){
+	// 			console.log('무단복사를 막기 위해 마우스 드래그 금지가 설정되어 있습니다');
+	// 			return cancel(e);
+	// 		} else {
+	// 			return cancel(e);
+	// 		}
+	// 	}
+	// 	var addEvent = function(el, type, fn){
+	// 		if (window.addEventListener) {
+ // 				el.addEventListener(type, fn, false);
+	// 		} else if (window.attachEvent) {
+	// 			el.attachEvent('on' + type, fn);
+	// 		} else {
+	// 			el['on' + type] = fn;
+	// 		}
+	// 	}
+	// 	var addBlockEvent = function(){
+	// 		addEvent(document.body,'keydown',block);
+	// 		addEvent(document.body,'keyup',block);
+	// 		addEvent(document.body,'mouseup',block);
+	// 		addEvent(document.body,'mousedown',block);
+	// 		addEvent(document.body,'dragstart',block);
+	// 		addEvent(document.body,'selectstart',block);
+	// 		addEvent(document.body,'copy',block);
+	// 		addEvent(document.body,'contextmenu', block);
+	// 	};
+	// 	addEvent(window,'load',addBlockEvent);
+	// })();
 
 
 
@@ -791,12 +791,10 @@ $(function( event ){
 				cond = null,
 				increase = $this.hasClass('up') ? 1 : -1;
 
-			console.log('font-size adjust');
 			for(var i=0; i<cl.length; i++) {
 				if (cl[i].match('font_size_')) {
 					re_cl = parseInt(cl[i].replace('font_size_', '')) + increase;
 					cond = $this.hasClass('up') ? (re_cl <= 5) : (re_cl >= 1);
-					console.log( re_cl );
 					if ( cond ) {
 						$('body').removeClass(cl[i]).addClass('font_size_' + re_cl);
 					}
@@ -843,7 +841,6 @@ $(function( event ){
 
 		//디자인 된 알림창
 		$.customAlert = function( cond ){
-			console.log(this);
 			var like = '<div class="custom_alert like_success"><span>좋아요 성공!</span></div>',
 				bookmark_y = '<div class="custom_alert bookmark_success"><span>보관함 담기<br>성공!</span></div>',
 				bookmark_n = '<div class="custom_alert bookmark_cancel"><span>보관함 담기<br>취소!</span></div>';
@@ -873,8 +870,8 @@ $(function( event ){
 				wrap = '#wrap',
 				dimm = '.dimm',
 				currentText = $.trim( $(selectorStr).attr('data-selected-item') );
-				console.log($(selectorStr));
-				console.log('current selected item : '+currentText);
+				// console.log($(selectorStr));
+				// console.log('current selected item : '+currentText);
 
 			//플로팅 감추기	
 			$('.floating_util').hide();
@@ -920,7 +917,6 @@ $(function( event ){
 		//체크박스 전체 선택
 		$('input#chkAll').on('click', function(){
 			$('.archive_list').find('.action > input[type=checkbox]').prop(true);
-			console.log('aa');
 		});
 
 
