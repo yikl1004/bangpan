@@ -49,7 +49,7 @@
     transition: opacity 100ms linear;
 }
 
-.clear, .tit:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .archive .archive_list li .action:after {
+.clear, .tit:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .archive .total:after, .archive .archive_list li .action:after {
     content: '';
     display: block;
     clear: both;
@@ -961,7 +961,28 @@ body.gingerbread .main_visual img {
 }
 
 .video_area .thumb {
+    display: block;
     width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.video_area .thumb:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-background-size: 41px 41px;
+    -moz-background-size: 41px 41px;
+    -o-background-size: 41px 41px;
+    background-size: 41px 41px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
 }
 
 .video_area .thumb img {
@@ -1819,7 +1840,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     padding: 20px 0;
 }
 
-.view_page .view_content .cnt_bookmark_area a {
+.view_page .view_content .cnt_bookmark_area a, .view_page .view_content .cnt_bookmark_area span {
     display: inline-block;
     margin-left: 17px;
     font-size: 0.786em;
@@ -1827,7 +1848,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     line-height: 1.727em;
 }
 
-.view_page .view_content .cnt_bookmark_area a:first-child {
+.view_page .view_content .cnt_bookmark_area a:first-child, .view_page .view_content .cnt_bookmark_area span:first-child {
     margin-left: 0;
 }
 
@@ -1855,6 +1876,11 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-size: 17px 15px;
 }
 
+.view_page .view_content .cnt_bookmark_area .like_cnt.active {
+    color: #f96365;
+    background-image: url("/bangpan/front/img/ico//ico_heart_view_active.png");
+}
+
 .view_page .view_content .cnt_bookmark_area .bookmark {
     padding-left: 26px;
     background-image: url("/bangpan/front/img/ico//ico_star_view.png");
@@ -1865,6 +1891,10 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     -moz-background-size: 20px 19px;
     -o-background-size: 20px 19px;
     background-size: 20px 19px;
+}
+
+.view_page .view_content .cnt_bookmark_area .bookmark.active {
+    background-image: url("/bangpan/front/img/ico//ico_star_view_active.png");
 }
 
 .view_page .util_btns {
@@ -1985,6 +2015,10 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 }
 
 /* 댓글 리스트 */
+.reply_list {
+    margin-bottom: 58px;
+}
+
 .reply_list li {
     padding: 11px 10px 13px 13px;
     background: #fff;
@@ -2544,13 +2578,18 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     background-size: 13px 14px;
 }
 
-.floating_util .font_sizing {
+/* 폰트사이즈 조정 */
+.font_sizing {
     height: 1.643em;
     margin-left: 0.857em;
-    display: inherit;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 
-.floating_util .font_sizing a {
+.font_sizing a {
     display: inherit;
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -2570,8 +2609,19 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     color: #fff;
 }
 
-.floating_util .font_sizing a:first-child {
+.font_sizing a:first-child {
     border-left: 1px solid #adadad;
+}
+
+.sub .font_sizing {
+    margin-left: 0;
+    margin-top: 15px;
+}
+
+.sub .font_sizing a {
+    font-size: 0.929em;
+    color: #999;
+    border-color: #ccc;
 }
 
 /* 플로팅 선택 */
@@ -2582,7 +2632,7 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
     position: fixed;
     left: 0;
     bottom: 10px;
-    z-index: 9900;
+    z-index: 99999;
 }
 
 .fu_select[data-select-type] a {
@@ -2702,17 +2752,22 @@ body.gingerbread .scroller .swiper-wrapper .swiper-slide:first-child a {
 /* 당첨자 발표 테이블 */
 table.wins_list {
     width: 100%;
+    border: 0;
     table-layout: fixed;
 }
 
 table.wins_list thead tr th {
     font-size: 1em;
     text-align: left;
+    border: 0;
 }
 
 table.wins_list tbody tr td {
+    padding-left: 0;
+    padding-right: 0;
     font-size: 0.8em;
     text-align: center;
+    border: 0;
 }
 
 table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:nth-of-type(3):before, table.wins_list tbody tr td:nth-of-type(4):before {
@@ -3124,6 +3179,48 @@ table.grade_guide td p strong {
 }
 
 /* 나의 보관함 */
+.archive .total {
+    margin-bottom: 7px;
+    font-size: 0.857em;
+}
+
+.archive .total span, .archive .total .btn_normal, .archive .total label {
+    vertical-align: middle;
+}
+
+.archive .total .cnt {
+    color: #f96365;
+}
+
+.archive .total .btn_normal {
+    font-size: 1.083em;
+}
+
+.archive .total label {
+    display: inline-block;
+    margin-left: 7px;
+    margin-right: 5px;
+}
+
+.archive input[type=checkbox]:checked + label {
+    background-image: url("/bangpan/front/img/ico/ico_checked.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #677caf;
+    -webkit-background-size: 15px 15px;
+    -moz-background-size: 15px 15px;
+    -o-background-size: 15px 15px;
+    background-size: 15px 15px;
+}
+
+.archive label {
+    display: block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #677caf;
+    background: transparent;
+}
+
 .archive .archive_list li {
     margin-top: 10px;
     background: #fff;
@@ -3139,24 +3236,8 @@ table.grade_guide td p strong {
     border-bottom: 1px solid #ececec;
 }
 
-.archive .archive_list li .action input[type=checkbox]:checked + label {
-    background-image: url("/bangpan/front/img/ico/ico_checked.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #677caf;
-    -webkit-background-size: 15px 15px;
-    -moz-background-size: 15px 15px;
-    -o-background-size: 15px 15px;
-    background-size: 15px 15px;
-}
-
 .archive .archive_list li .action label {
     float: left;
-    display: block;
-    width: 13px;
-    height: 13px;
-    border: 1px solid #677caf;
-    background: #fff;
 }
 
 .archive .archive_list li .action .delete {
@@ -3188,11 +3269,11 @@ table.grade_guide td p strong {
     -moz-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-    -moz-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     /*****************/;
 }
 
@@ -3200,7 +3281,7 @@ table.grade_guide td p strong {
     width: 35%;
     min-width: 97px;
     display: block;
-    padding: 5px;
+    margin: 5px;
 }
 
 .archive .archive_list li .item .info {
@@ -3712,4 +3793,9 @@ table.grade_guide td p strong {
     padding: 7px 20px 5px;
     margin-top: 17px;
     background-color: #f4f4f4;
+}
+
+/* 심플모드 에서 가져오는 플로팅 감추기 */
+.tabs .simpleMode {
+    display: none;
 }

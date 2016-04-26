@@ -1,5 +1,73 @@
 var pageIdxStr = '.swiper-container.tabs > .swiper-wrapper .swiper-slide-active',
 	pageContent = '>.container';
+
+
+
+// 앱 알림창 기본
+$.alert = function ( msg, callback ) {
+
+	if ( $('body > .alert').length > 0 ) {
+		return false;
+	}
+
+	//dimm
+	$('body').append('<div class="dimm"></div>');
+	$('body').find('> .dimm').css({
+		height: window.innerHeight
+	});
+
+	// 알림창
+	var alertStr = '<div class="alert">';
+		alertStr += 	'<div class="content">';
+		alertStr +=			msg;
+		alertStr += 	'</div>';
+		alertStr +=		'<div class="btns">';
+		alertStr +=			'<a class="ok" href="javscrip:;"><span>확인</span></a>';
+		alertStr +=		'</div>';
+		alertStr += '</div>';
+
+	$('body').append( alertStr );
+
+	var contentHeight = parseInt($('body').find('> .alert .content').css('font-size')) * 1.5 * 3;
+
+	if ( $('body').find('> .alert .content').height() <= contentHeight ) {
+		$('body').find('> .alert .content').addClass('single_line');
+	}
+
+	$('body').find('> .alert').css({
+		marginTop: -1 * $('body').find('> .alert').height() / 2
+	});
+
+	$('body').find('> .alert a.ok').on('click', function(){
+		$('body').find('.dimm').remove();
+		$('body').find('.alert').remove();
+		if ( callback && typeof callback === 'function' ) {
+			callback();
+		}
+	});
+};
+
+$.confirm = function ( msg, callback ) {
+	$.alert(msg, callback);
+	//$('body').find('> .alert a.ok').off('click');
+	$('body').find('> .alert .btns').prepend('<a class="cancel" href="javscrip:;"><span>취소</span></a>');
+	$('body').find('> .alert a.cancel').on('click', function(){
+		$('body').find('.dimm').remove();
+		$('body').find('.alert').remove();
+	});
+};
+
+var nullEvent = function(event) {
+	var e = event || window.event;
+	e.preventDefault && e.preventDefault();
+	e.stopPropagation && e.stopPropagation();
+	e.cancelBubble = true;
+	e.returnValue = false;
+	return false;
+};
+
+
+// jquery start
 $(function( event ){
 
 	// 이미지로드 jquery prototype
@@ -89,6 +157,7 @@ $(function( event ){
 	};
 
 	window.imgSetting = function( index ){
+		if ( $('#gnbWrap').length <= 0 ) pageIdxStr = '';
 		switch ( index ) {
 			case 1: 
 				$(pageIdxStr + ' .scroller.type01 .thumb').css({
@@ -153,6 +222,7 @@ $(function( event ){
 	};
 
 	window.setSlideHeight = function(  ) {
+		if ( $('#gnbWrap').length <= 0 ) return ;
 		var swiperWrapper = '.swiper-container.tabs > .swiper-wrapper',
 			activeSlideStr = swiperWrapper + ' > .swiper-slide-active > .container';
 		$( activeSlideStr ).imagesLoaded().then(function(){
@@ -173,6 +243,11 @@ $(function( event ){
 			$('.floating_util .sort').removeClass('active');
 			$('.fu_select').removeClass('current');
 		} else {
+			if ( index == 5 ) {
+				$('.floating_util .sort [data-select-type=type]').css({ display: 'none' });
+			} else {
+				$('.floating_util .sort [data-select-type=type]').css({ display: 'inherit' });
+			}
 			$('.floating_util .mode_change').removeClass('active');
 			$('.floating_util .sort').addClass('active');
 			$('.fu_select').removeClass('current');
@@ -410,8 +485,10 @@ $(function( event ){
 				initialSlide: 0,
 				threshold: 25,
 				touchAngle: 20,
+				hashnav: true,
 				onSlideNextEnd: function(swiper) {
 					console.log('onSlideNextEnd');
+					console.log(swiper);
 				},
 				onTouchEnd: function (swiper, event) {
 					var idx = swiper.activeIndex,
@@ -788,7 +865,7 @@ $(function( event ){
 				selectorStr = '.fu_select[data-select-index=' + tabSlideIdx + '][data-select-type=' + type + ']',
 				floatingUtil = '.floating_util',
 				wrap = '#wrap',
-				dimm = wrap + '> .dimm',
+				dimm = '.dimm',
 				currentText = $.trim( $(selectorStr).attr('data-selected-item') );
 				console.log($(selectorStr));
 				console.log('current selected item : '+currentText);
@@ -797,6 +874,7 @@ $(function( event ){
 			$('.floating_util').hide();
 			
 			//dimm 삽입
+			if ( $('#wrap').length <= 0 ) wrap = 'body';
 			$( wrap ).append( '<div class="dimm" />' ).find(' > .dimm').height( doc.documentElement.clientHeight );
 
 			// 선택되었던 셀렉트 li 활성화
@@ -826,7 +904,7 @@ $(function( event ){
 			});
 
 			//dimm을 클릭할 경우
-			$( selectorStr ).find('.cancel').on('click', function(){
+			$( selectorStr ).find('.cancel').add( $( dimm ) ).on('click', function(){
 				$('.fu_select').hide();
 				$( dimm ).remove();
 				$( floatingUtil ).show();
@@ -849,58 +927,3 @@ $(function( event ){
 	//}); // window load : E
 
 }); // jquery functiuon
-
-
-// 앱 알림창 기본
-$.alert = function ( msg, callback ) {
-
-	if ( $('body > .alert').length > 0 ) {
-		return false;
-	}
-
-	//dimm
-	$('body').append('<div class="dimm"></div>');
-	$('body').find('> .dimm').css({
-		height: window.innerHeight
-	});
-
-	// 알림창
-	var alertStr = '<div class="alert">';
-		alertStr += 	'<div class="content">';
-		alertStr +=			msg;
-		alertStr += 	'</div>';
-		alertStr +=		'<div class="btns">';
-		alertStr +=			'<a class="ok" href="javscrip:;"><span>확인</span></a>';
-		alertStr +=		'</div>';
-		alertStr += '</div>';
-
-	$('body').append( alertStr );
-
-	var contentHeight = parseInt($('body').find('> .alert .content').css('font-size')) * 1.5 * 3;
-
-	if ( $('body').find('> .alert .content').height() <= contentHeight ) {
-		$('body').find('> .alert .content').addClass('single_line');
-	}
-
-	$('body').find('> .alert').css({
-		marginTop: -1 * $('body').find('> .alert').height() / 2
-	});
-
-	$('body').find('> .alert a.ok').on('click', function(){
-		$('body').find('.dimm').remove();
-		$('body').find('.alert').remove();
-		if ( callback && typeof callback === 'function' ) {
-			callback();
-		}
-	});
-};
-
-$.confirm = function ( msg, callback ) {
-	$.alert(msg, callback);
-	//$('body').find('> .alert a.ok').off('click');
-	$('body').find('> .alert .btns').prepend('<a class="cancel" href="javscrip:;"><span>취소</span></a>');
-	$('body').find('> .alert a.cancel').on('click', function(){
-		$('body').find('.dimm').remove();
-		$('body').find('.alert').remove();
-	});
-};
