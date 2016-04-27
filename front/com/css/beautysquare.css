@@ -94,7 +94,7 @@ img {
 #wrap {
     width: 100%;
     position: relative;
-    padding-top: 32px;
+    padding-top: 40px;
     margin-bottom: 3.429em;
     opacity: 0;
 }
@@ -830,6 +830,7 @@ p.normal_txt.r {
 /* NAVIGATION - gnb */
 #gnbWrap {
     width: 100%;
+    height: 40px;
     overflow: hidden;
     background: #677caf;
     position: fixed;
@@ -877,7 +878,7 @@ p.normal_txt.r {
 #gnb ul li a {
     display: block;
     padding: 9px 5px 7px;
-    font-size: 1em;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -2597,7 +2598,6 @@ body.reply_write .reply_list {
 
 .sub .font_sizing {
     margin-left: 0;
-    margin-top: 15px;
 }
 
 .sub .font_sizing a {

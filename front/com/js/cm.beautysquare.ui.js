@@ -413,20 +413,17 @@ $(function( event ){
 		// 네비게이션(gnb) iScroll 적용
 		if ( $('#gnbWrap').length > 0 ) {
 			var gnbScroll = null;
-			$(window).on('load', function(){
-				var gnbWidth = 0;
-				for ( var i=0; i<=$('#gnb li').length; i++ )
-					gnbWidth += $('#gnb li').eq(i).outerWidth(true) + 1;
+			var gnbWidth = 0;
+			for ( var i=0; i<=$('#gnb li').length; i++ )
+				gnbWidth += $('#gnb li').eq(i).outerWidth(true) + 1;
 
-				$('#gnb').width( gnbWidth + 1 );
-				$('#gnb li').eq(0).find('a').addClass('active');
-				$('#gnb .move_bar').css({
-					width: $('#gnb li').eq(0).outerWidth()
-				});
-				gnbScroll = new IScroll('#gnbWrap', {
-					tap: true, scrollX: true, scrollY: false, mouseWheel: true, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
-				});
-				$('#gnb').css({width: $('#gnb').outerWidth() + 1});
+			$('#gnb').width( gnbWidth + 1 );
+			$('#gnb li').eq(0).find('a').addClass('active');
+			$('#gnb .move_bar').css({
+				width: $('#gnb li').eq(0).outerWidth()
+			});
+			gnbScroll = new IScroll('#gnbWrap', {
+				tap: true, scrollX: true, scrollY: false, mouseWheel: true, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
 			});
 		}
 
