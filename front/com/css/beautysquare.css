@@ -858,13 +858,14 @@ p.normal_txt.r {
 
 #gnb ul {
     width: 100%;
+    white-space: nowrap;
+    font-size: 0;
 }
 
 #gnb ul li {
-    display: block;
+    display: inline-block;
     position: relative;
     margin-left: 14px;
-    float: left;
 }
 
 #gnb ul li:first-child {
@@ -1465,6 +1466,16 @@ body.gingerbread .main_visual img {
     color: #000;
     font-size: 1em;
     line-height: 1.2;
+    display: block;
+    font-size: 1em;
+    display: -webkit-box;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .img_list ul li a .etc, .img_list ul li a .term {

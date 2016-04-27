@@ -415,13 +415,14 @@ $(function( event ){
 			var gnbScroll = null;
 			var gnbWidth = 0;
 			for ( var i=0; i<=$('#gnb li').length; i++ )
-				gnbWidth += $('#gnb li').eq(i).outerWidth(true) + 1;
-
-			$('#gnb').width( gnbWidth + 1 );
+				gnbWidth += $('#gnb li').eq(i).outerWidth(true) + 10;
+			// console.log(gnbWidth);
+			$('#gnb, #gnb ul').width( gnbWidth );
 			$('#gnb li').eq(0).find('a').addClass('active');
 			$('#gnb .move_bar').css({
 				width: $('#gnb li').eq(0).outerWidth()
 			});
+			// console.log(doc.documentElement.clientWidth, gnbWidth);
 			gnbScroll = new IScroll('#gnbWrap', {
 				tap: true, scrollX: true, scrollY: false, mouseWheel: true, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
 			});
@@ -488,6 +489,9 @@ $(function( event ){
 				initialSlide: 0,
 				threshold: 15,
 				// touchAngle: 23,
+				onSliderMove: function(swiper, event) {
+					console.log(event.type);
+				},
 				onSlideNextEnd: function(swiper) {
 					console.log('onSlideNextEnd');
 					console.log(swiper);
@@ -520,15 +524,15 @@ $(function( event ){
 
 					window.tabSlideIdx = idx;
 					
-					gnbScroll.scrollToElement( _qs( '#gnb li:nth-child(' + idx + ')'), speedAll, true, null );
-					moveBarAni( idx );
-
-					imgSetting( idx );
-
 					//로딩 노출
 					if ( loadingCheck ) {
 						loadingVisible(true);
 					}
+
+					gnbScroll.scrollToElement( _qs( '#gnb li:nth-child(' + idx + ')'), speedAll, true, null );
+					moveBarAni( idx );
+
+					imgSetting( idx );
 
 					if ( (idx-1) !== 0 && loadingCheck ) {
 
