@@ -525,9 +525,9 @@ $(function( event ){
 					window.tabSlideIdx = idx;
 					
 					//로딩 노출
-					if ( loadingCheck ) {
-						loadingVisible(true);
-					}
+					// if ( loadingCheck ) {
+					// 	loadingVisible(true);
+					// }
 
 					gnbScroll.scrollToElement( _qs( '#gnb li:nth-child(' + idx + ')'), speedAll, true, null );
 					moveBarAni( idx );
@@ -578,8 +578,8 @@ $(function( event ){
 								//이미지 error시 엑박 방지
 								imgError();
 
-								//로딩 노출 삭제
-								loadingVisible(false);
+								// //로딩 노출 삭제
+								// loadingVisible(false);
 
 							},
 							async: false,
