@@ -719,30 +719,10 @@
         <script type="text/javascript" src="/bangpan/front/com/js/plugins/iscroll.js"></script>
         <script type="text/javascript" src="/bangpan/front/com/js/cm.beautysquare.ui.js"></script>
         <script type="text/javascript">
-            //상품 더보기 - 테스트 용(개발 진행 시 삭제 요망)
-            $('.btn_more').on('click', function()
+            $('body').on('mousemove touchmove', function(event)
             {
-                var loader = "<li class='loader'><div class='item'></div></li>";
-                $('.img_list ul').append(loader);
-                $.ajax(
-                {
-                    url: '/bangpan/front/html/02/product_info_list_add.html',
-                    success: function(data)
-                    {
-                        var $data = $(data);
-                        var timer = setTimeout(function()
-                        {
-                            $('.img_list ul').find('li.loader').remove();
-                            if ($('.img_list ul li').length > 15) alert('더 이상 상품이 없습니다.');
-                            else $('.img_list ul').append($data);
-                        }, 1000);
-                    },
-                    error: function()
-                    {
-                        $('.img_list ul').find('li.loader').remove();
-                        alert('상품 로드에 실패 하였습니다.');
-                    }
-                });
+                var event = event || window.event;
+                console.log(event);
             });
         </script>
     </body>
