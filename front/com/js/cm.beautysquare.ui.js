@@ -4,11 +4,9 @@ var pageIdxStr = '.swiper-container.tabs > .swiper-wrapper .swiper-slide-active'
 
 
 // 앱 알림창 기본
-$.alert = function ( msg, callback ) {
+$.alert = function ( msg, callback, event, point ) {
 
-	if ( $('body > .alert').length > 0 ) {
-		return false;
-	}
+	if ( $('body > .alert').length > 0 ) return false;
 
 	//dimm
 	$('body').append('<div class="dimm"></div>');
@@ -19,31 +17,54 @@ $.alert = function ( msg, callback ) {
 	// 알림창
 	var alertStr = '<div class="alert">';
 		alertStr += 	'<div class="content">';
-		alertStr +=			msg;
+		if ( event == 'event' ) {
+			alertStr += '<h2 class="event_title">축하합니다!</h2>';
+			alertStr += '<p class="txt">깜짝 이벤트에 당첨되었습니다.</p>';
+			alertStr += '<p class="point_txt">';
+			alertStr += '<span class="point">';
+			alertStr += '<em>' + point + 'Point</em>가';
+			alertStr += '<br>지급되었습니다.</span>';
+			alertStr += '</p>';
+		} else {
+			alertStr +=			msg;
+		}
 		alertStr += 	'</div>';
 		alertStr +=		'<div class="btns">';
 		alertStr +=			'<a class="ok" href="javscrip:;"><span>확인</span></a>';
 		alertStr +=		'</div>';
 		alertStr += '</div>';
 
+	console.log(alertStr);
+
 	$('body').append( alertStr );
 
-	var contentHeight = parseInt($('body').find('> .alert .content').css('font-size')) * 1.5 * 3;
-
-	if ( $('body').find('> .alert .content').height() <= contentHeight ) {
-		$('body').find('> .alert .content').addClass('single_line');
+	var contentHeight = 0;
+	if ( event == 'event' ) {
+		contentHeight = 0;
+	} else {
+		contentHeight = parseInt($('body').find('> .alert .content').css('font-size')) * 1.5 * 3;
 	}
+
+	if ( $('body').find('> .alert .content').height() <= contentHeight && !$('body').find('> .alert').hasClass('event') ) {
+		$('body').find('> .alert .content').addClass('single_line');
+	} else if ( $('body').find('> .alert').hasClass('event') ) {
+		$('body').find('> .alert').addClass('event');
+	}
+
+	if ( event == 'event' ) {
+		$('body').find('> .alert').addClass('event');
+	}
+
 
 	$('body').find('> .alert').css({
 		marginTop: -1 * $('body').find('> .alert').height() / 2
 	});
 
+
 	$('body').find('> .alert a.ok').on('click', function(){
 		$('body').find('.dimm').remove();
 		$('body').find('.alert').remove();
-		if ( callback && typeof callback === 'function' ) {
-			callback();
-		}
+		if ( callback && typeof callback === 'function' ) callback();
 	});
 };
 

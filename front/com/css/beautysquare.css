@@ -3762,6 +3762,46 @@ table.grade_guide td p strong {
     overflow: hidden;
 }
 
+.alert.event {
+    width: 89.6%;
+    margin-left: -44.8%;
+}
+
+.alert.event .content {
+    padding-top: 25px;
+    padding-bottom: 18px;
+}
+
+.alert.event .content h2.event_title {
+    font-size: 1.714em;
+    color: #333;
+}
+
+.alert.event .content .txt {
+    font-size: 1.214em;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.alert.event .content .point_txt {
+    font-size: 1.286em;
+    color: #333;
+    padding-top: 109px;
+    background-image: url("/bangpan/front/img/ico/ico_gift.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: transparent;
+    -webkit-background-size: 95px 95px;
+    -moz-background-size: 95px 95px;
+    -o-background-size: 95px 95px;
+    background-size: 95px 95px;
+}
+
+.alert.event .content .point_txt em {
+    color: #f96365;
+    font-weight: bold;
+}
+
 .alert .content {
     padding: 15px;
     text-align: center;
