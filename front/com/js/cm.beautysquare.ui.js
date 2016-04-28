@@ -167,34 +167,37 @@ $(function( event ){
 	window.imgSetting = function( index ){
 		if ( $('#gnbWrap').length <= 0 ) pageIdxStr = '';
 		switch ( index ) {
-			case 1: 
+			case 1:
+				$(pageIdxStr + ' .video_area .thumb').css({
+					height: pixelRatio( '900:420', $(pageIdxStr + ' .video_area .thumb').width(), 'y' )
+				}),
 				$(pageIdxStr + ' .scroller.type01 .thumb').css({
-					maxHeight: pixelRatio( '540:540', $(pageIdxStr + ' .scroller.type01 .thumb').width(), 'y' )
+					height: pixelRatio( '540:540', $(pageIdxStr + ' .scroller.type01 .thumb').width(), 'y' )
 				}),
 				$(pageIdxStr + ' .scroller.type02 .thumb').css({
-					maxHeight: pixelRatio( '540:390', $(pageIdxStr + ' .scroller.type02 .thumb').width(), 'y' )
+					height: pixelRatio( '540:390', $(pageIdxStr + ' .scroller.type02 .thumb').width(), 'y' )
 				}),
 				$(pageIdxStr + ' .scroller.type03 .thumb').css({
-					maxHeight: pixelRatio( '540:390', $(pageIdxStr + ' .scroller.type03 .thumb').width(), 'y' )
+					height: pixelRatio( '540:390', $(pageIdxStr + ' .scroller.type03 .thumb').width(), 'y' )
 				});
 			case 2:
 				$(pageIdxStr + ' .photo_list .thumb').css({
-					maxHeight: pixelRatio( '900:420', $(pageIdxStr + ' .photo_list .thumb').width(), 'y' )
+					height: pixelRatio( '900:420', $(pageIdxStr + ' .photo_list .thumb').width(), 'y' )
 				}),
 				photoListImgAlgin();
 			break;
 			case 3:
 				$(pageIdxStr + ' .img_list .thumb').css({
-					maxHeight: pixelRatio( '290:290', $(pageIdxStr + ' .img_list .thumb').width(), 'y' )
+					height: pixelRatio( '290:290', $(pageIdxStr + ' .img_list .thumb').width(), 'y' )
 				});
 			break;
 			case 4: 
 				$(pageIdxStr + ' .img_list.type02 .thumb').css({
-					maxHeight: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
+					height: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
 				});
 			case 6: 
 				$(pageIdxStr + ' .img_list.type02 .thumb').css({
-					maxHeight: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
+					height: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
 				});
 			break;
 		}
@@ -358,7 +361,7 @@ $(function( event ){
 	// $(window).on('load', function(){
 
 		// //메인 비주얼 이미지 높이 부여
-		$('.swiper-container.main_visual img').css({
+		$('.swiper-container.main_visual .img').css({
 			height: pixelRatio( '960:510', document.documentElement.clientWidth, 'y' )
 		});
 
@@ -470,8 +473,8 @@ $(function( event ){
 				'product_info_list.html',
 				'sales_tip_list_bestknowhow.html',
 				// 'sales_tip_list_knowhowshare.html',
-				'praise_list.html',
-				// 'wonder_list.html',
+				// 'praise_list.html',
+				'wonder_list.html',
 				'life_list.html'
 			];
 
@@ -624,7 +627,8 @@ $(function( event ){
 			mainVisual: {
 				speed: 300,
 				pagination: '.swiper-pagination',
-				autoHeight: true,
+				// autoHeight: true,
+				height: pixelRatio( '960:510', document.documentElement.clientWidth, 'y' ),
 				autoplay: 4000,
 				loop: true,
 				nested: true,

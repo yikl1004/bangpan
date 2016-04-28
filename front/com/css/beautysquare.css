@@ -894,6 +894,17 @@ p.normal_txt.r {
     margin-right: -3.335%;
 }
 
+.main_visual.swiper-container .swiper-wrapper .img {
+    display: block;
+    width: 100%;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
 .main_visual .swiper-pagination {
     bottom: 17px;
     text-align: center;
