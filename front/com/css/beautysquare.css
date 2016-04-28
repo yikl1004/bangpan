@@ -3821,6 +3821,7 @@ table.grade_guide td p strong {
 }
 
 .alert .btns a {
+    display: inherit;
     width: 100%;
     padding: 10px 0 8px;
     text-align: center;

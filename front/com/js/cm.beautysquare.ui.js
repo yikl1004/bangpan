@@ -4,8 +4,7 @@ var pageIdxStr = '.swiper-container.tabs > .swiper-wrapper .swiper-slide-active'
 
 
 // 앱 알림창 기본
-$.alert = function ( msg, callback, event, point ) {
-
+$.alert = function ( msg, callback, evt, point, event ) {
 	if ( $('body > .alert').length > 0 ) return false;
 
 	//dimm
@@ -17,7 +16,7 @@ $.alert = function ( msg, callback, event, point ) {
 	// 알림창
 	var alertStr = '<div class="alert">';
 		alertStr += 	'<div class="content">';
-		if ( event == 'event' ) {
+		if ( evt == 'event' ) {
 			alertStr += '<h2 class="event_title">축하합니다!</h2>';
 			alertStr += '<p class="txt">깜짝 이벤트에 당첨되었습니다.</p>';
 			alertStr += '<p class="point_txt">';
@@ -30,7 +29,7 @@ $.alert = function ( msg, callback, event, point ) {
 		}
 		alertStr += 	'</div>';
 		alertStr +=		'<div class="btns">';
-		alertStr +=			'<a class="ok" href="javscrip:;"><span>확인</span></a>';
+		alertStr +=			'<a class="ok" href="#;"><span>확인</span></a>';
 		alertStr +=		'</div>';
 		alertStr += '</div>';
 
@@ -39,7 +38,7 @@ $.alert = function ( msg, callback, event, point ) {
 	$('body').append( alertStr );
 
 	var contentHeight = 0;
-	if ( event == 'event' ) {
+	if ( evt == 'event' ) {
 		contentHeight = 0;
 	} else {
 		contentHeight = parseInt($('body').find('> .alert .content').css('font-size')) * 1.5 * 3;
@@ -51,7 +50,7 @@ $.alert = function ( msg, callback, event, point ) {
 		$('body').find('> .alert').addClass('event');
 	}
 
-	if ( event == 'event' ) {
+	if ( evt == 'event' ) {
 		$('body').find('> .alert').addClass('event');
 	}
 
@@ -61,7 +60,9 @@ $.alert = function ( msg, callback, event, point ) {
 	});
 
 
-	$('body').find('> .alert a.ok').on('click', function(){
+	$('body').find('> .alert a.ok').on('click', function( e ){
+		var e = event || window.event;
+		e.preventDefault();
 		$('body').find('.dimm').remove();
 		$('body').find('.alert').remove();
 		if ( callback && typeof callback === 'function' ) callback();
