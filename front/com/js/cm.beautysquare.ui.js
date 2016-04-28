@@ -258,6 +258,7 @@ $(function( event ){
 		$( activeSlideStr ).imagesLoaded().then(function(){
 			$( swiperWrapper ).height( $( activeSlideStr ).outerHeight() );
 		});
+		console.log($( swiperWrapper ).height( $( activeSlideStr ).outerHeight() ));
 	};
 
 	window.tabActive = function(){
@@ -399,7 +400,7 @@ $(function( event ){
 		for ( var i=1; i<$tabsSlide.length; i++ ) {//data-swiper-slide-index
 			if( $tabsSlide.eq(i).attr('data-swiper-slide-index') !== 0 ) {
 				$('.swiper-container.tabs > .swiper-wrapper').css({
-					height: tabSlideHeight
+					// height: tabSlideHeight
 				});
 				$('.tabs > .swiper-wrapper').find('>.swiper-slide').eq(i).css({
 					// height: tabSlideHeight
@@ -571,7 +572,7 @@ $(function( event ){
 						// 퍼블리싱 테스트 용 : E
 
 						//로딩 노출
-						if ( loadingCheck && homeLoadingCheck ) {
+						if ( homeLoadingCheck ) {
 							loadingVisible(true);
 						}
 
@@ -596,6 +597,16 @@ $(function( event ){
 									//이미지 높이값 부여
 									imgSetting( idx );
 								});
+
+								var slideHightTimer = setTimeout(function(){
+									//tabsSwiper 높이 맞추기
+									setSlideHeight();
+								}, 50);
+
+								//스와이프 차단 해체
+								tabsSwiperCtrl.unlock();
+								//이미지 높이값 부여
+								imgSetting( idx );
 
 								//이미지 error시 엑박 방지
 								imgError();
