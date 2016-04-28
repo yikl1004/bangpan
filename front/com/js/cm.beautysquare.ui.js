@@ -282,10 +282,8 @@ $(function( event ){
 		var isMain = 'body',
 			gnbHeight = 0;
 
-		if ( bool ) {
-			if ( $( isMain ).find('> .loading').length > 0 ) return false;
+		if ( bool && $( isMain ).find('> .loading').length <= 0) {
 			tabsSwiperCtrl.lock();
-			
 			$( isMain ).prepend( "<div class='loading' />" );
 			$( isMain ).find('> .loading').css({
 				height: doc.documentElement.clientHeight - gnbHeight
@@ -293,7 +291,7 @@ $(function( event ){
 		} else {
 			$( isMain ).find('> .loading').addClass('end')
 			.on('transitionend', function(){
-				$(this).remove();
+				$( isMain ).find('> .loading').remove();
 				tabsSwiperCtrl.unlock();
 			});
 		}
@@ -360,9 +358,9 @@ $(function( event ){
 	// $(window).on('load', function(){
 
 		// //메인 비주얼 이미지 높이 부여
-		// $('.swiper-container.main_visual img').css({
-		// 	height: pixelRatio({xLength: document.documentElement.clientWidth, direction: 'height', ratio: '960:510' })
-		// });
+		$('.swiper-container.main_visual img').css({
+			height: pixelRatio( '960:510', document.documentElement.clientWidth, 'y' )
+		});
 
 		// //scroller.type01 높이 부여
 		// $('.scroller.type01 img').css({
@@ -373,7 +371,7 @@ $(function( event ){
 
 		// document 높이 부여 - 메인
 		var $tabsSlide = $('.tabs > .swiper-wrapper').find('>.swiper-slide'),
-			tabSlideHeight = document.documentElement.clientHeight;
+			tabSlideHeight = doc.documentElement.clientHeight - $('#gnbWrap').height() - $('.floating_util').height();
 		for ( var i=1; i<$tabsSlide.length; i++ ) {//data-swiper-slide-index
 			if( $tabsSlide.eq(i).attr('data-swiper-slide-index') !== 0 ) {
 				$('.swiper-container.tabs > .swiper-wrapper').css({
@@ -383,7 +381,7 @@ $(function( event ){
 					// height: tabSlideHeight
 				});
 				$('.tabs > .swiper-wrapper').find('>.swiper-slide > .container').css({
-					// minHeight: tabSlideHeight
+					minHeight: tabSlideHeight
 				});
 			}
 		}
@@ -391,8 +389,6 @@ $(function( event ){
 		if (_qs('body.sub #container'))
 			_qs('body.sub #container').style.minHeight = document.documentElement.clientHeight+'px';
 
-		//컨텐츠 로드 완료
-		$('#wrap').addClass('loaded');
 
 		//transition 완료 후 로딩 제거
 		$('.loading').addClass('end').on('transitionend', function(){
@@ -488,7 +484,8 @@ $(function( event ){
 				speed: speedAll,
 				initialSlide: 0,
 				threshold: 15,
-				// touchAngle: 23,
+				touchAngle: 23,
+				hashnav: true,
 				onSliderMove: function(swiper, event) {
 					console.log(event.type);
 				},
@@ -513,7 +510,8 @@ $(function( event ){
 					console.log('onTransitionEnd');
 					
 					var idx = swiper.activeIndex,
-						loadingCheck = !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded');
+						loadingCheck = !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('loaded'),
+						homeLoadingCheck = !$('.swiper-container.tabs > .swiper-wrapper').find('[data-swiper-slide-index=' + (idx-1) + ']' + ' .container').hasClass('home');
 
 					if ( idx > menuLength ) idx = 1;
 					if ( idx <= 0 ) idx = menuLength;
@@ -523,11 +521,6 @@ $(function( event ){
 					}
 
 					window.tabSlideIdx = idx;
-					
-					//로딩 노출
-					// if ( loadingCheck ) {
-					// 	loadingVisible(true);
-					// }
 
 					gnbScroll.scrollToElement( _qs( '#gnb li:nth-child(' + idx + ')'), speedAll, true, null );
 					moveBarAni( idx );
@@ -552,6 +545,11 @@ $(function( event ){
 							};
 							//console.log(_url());
 						// 퍼블리싱 테스트 용 : E
+
+						//로딩 노출
+						if ( loadingCheck && homeLoadingCheck ) {
+							loadingVisible(true);
+						}
 
 						//tabs 스와이프 차단
 						tabsSwiperCtrl.lock();
@@ -578,8 +576,8 @@ $(function( event ){
 								//이미지 error시 엑박 방지
 								imgError();
 
-								// //로딩 노출 삭제
-								// loadingVisible(false);
+								//로딩 노출 삭제
+								loadingVisible(false);
 
 							},
 							async: false,
@@ -694,9 +692,9 @@ $(function( event ){
 		//메인 비주얼
 		// $(window).on('load', function(){
 			if ( $('.main_visual').length >= 1 ) {
-				$('.main_visual').imagesLoaded().then(function(){
+				// $('.main_visual').imagesLoaded().then(function(){
 					mainVisual = new Swiper('.main_visual', swiperOptions.mainVisual);
-				});
+				// });
 			}
 		// });
 
@@ -751,6 +749,13 @@ $(function( event ){
 			});
 		});
 
+		//컨텐츠 로드 완료후 class 추가
+		$(window).on('load', function(){
+			$('#wrap').addClass('loaded');
+			console.log($(pageIdxStr + pageContent));
+			$(pageIdxStr + ' .container.home').addClass('loaded');
+		});
+
 
 		// 스크롤 차단 여부
 		var scrollEnable = function( bool ){
@@ -779,9 +784,9 @@ $(function( event ){
 		// }
 
 		//버튼 활성화
-		$('a.bookmark').on('click', function(){
-			$(this).addClass('active');
-		});
+		// $('a.bookmark').on('click', function(){
+		// 	$(this).addClass('active');
+		// });
 
 		//폰트사이즈 조정
 		$('.font_sizing a').on('click', function( event ){

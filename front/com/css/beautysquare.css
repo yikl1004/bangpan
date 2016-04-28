@@ -96,7 +96,7 @@ img {
     position: relative;
     padding-top: 40px;
     margin-bottom: 3.429em;
-    opacity: 0;
+    opacity: 1;
 }
 
 #wrap.loaded {
@@ -465,8 +465,9 @@ h2.tit {
 }
 
 .tag.recommand {
-    /* 이달의 추천상품 */
-    background: #677caf;
+    /* 기획상품 */
+    font-weight: bold;
+    background: #669bf9;
 }
 
 .tag.win {
@@ -1398,8 +1399,20 @@ body.gingerbread .main_visual img {
 }
 
 .img_list ul li.recommand a {
-    background: #eff4ff;
-    border: 1px solid #ceddff;
+    background: #d2e0ff;
+    border: 1px solid #b6c2dd;
+}
+
+.img_list ul li.recommand a .info .etc .read_cnt {
+    background-image: url(/bangpan/front/img/ico/ico_eye_recommand.png);
+}
+
+.img_list ul li.recommand a .info .etc .like_cnt {
+    background-image: url(/bangpan/front/img/ico/ico_heart_recommand.png);
+}
+
+.img_list ul li.recommand a .info .etc .reply_cnt {
+    background-image: url(/bangpan/front/img/ico/ico_speach_balloon_recommand.png);
 }
 
 .img_list ul li:first-child {
@@ -1437,6 +1450,7 @@ body.gingerbread .main_visual img {
     width: 32.335%;
     min-width: 97px;
     display: block;
+    overflow: hidden;
 }
 
 .img_list ul li a .thumb img {
@@ -1870,7 +1884,7 @@ body.gingerbread .main_visual img {
 
 .view_page .view_content .cnt_bookmark_area .like_cnt.active {
     color: #f96365;
-    background-image: url("/bangpan/front/img/ico//ico_heart_view_active.png");
+    background-image: url("/bangpan/front/img/ico/ico_heart_view_active.png");
 }
 
 .view_page .view_content .cnt_bookmark_area .bookmark {
@@ -1886,7 +1900,7 @@ body.gingerbread .main_visual img {
 }
 
 .view_page .view_content .cnt_bookmark_area .bookmark.active {
-    background-image: url("/bangpan/front/img/ico//ico_star_view_active.png");
+    background-image: url("/bangpan/front/img/ico/ico_star_view_active.png");
 }
 
 .view_page .util_btns {
@@ -2127,7 +2141,7 @@ body.reply_write .reply_list {
     padding-right: 22px;
     font-size: 0.786em;
     line-height: 1.364em;
-    color: #f96365;
+    color: #b1b1b1;
     position: absolute;
     top: 0;
     right: 0;
@@ -2140,6 +2154,11 @@ body.reply_write .reply_list {
     -moz-background-size: 17px 15px;
     -o-background-size: 17px 15px;
     background-size: 17px 15px;
+}
+
+.reply_list li .user_info .like_cnt.active {
+    color: #f96365;
+    background-image: url("/bangpan/front/img/ico/ico_heart_view_active.png");
 }
 
 .reply_list li .user_info .update_time {
@@ -2161,6 +2180,18 @@ body.reply_write .reply_list {
 
 .reply_list li .txt .answer .title {
     color: #677caf;
+}
+
+.reply_list li a.delete {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #e5e5e5;
+    background: #f7f7f7;
+    color: #999;
+    text-align: center;
+    font-size: 0.857em;
+    line-height: 1.917em;
 }
 
 .reply_more {
