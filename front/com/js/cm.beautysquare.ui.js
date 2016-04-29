@@ -72,6 +72,7 @@ $.alert = function ( msg, callback, evt, point, event ) {
 $.confirm = function ( msg, callback ) {
 	$.alert(msg, callback);
 	//$('body').find('> .alert a.ok').off('click');
+	$('body').find('> .alert').addClass('confirm');
 	$('body').find('> .alert .btns').prepend('<a class="cancel" href="javscrip:;"><span>취소</span></a>');
 	$('body').find('> .alert a.cancel').on('click', function(){
 		$('body').find('.dimm').remove();
@@ -322,54 +323,54 @@ $(function( event ){
 	};
 
 	// long tap contextmenu 방지
-	// (function(){
-	// 	var cancel=function(e){
-	// 		if (window.event) {
-	// 			window.event.cancelBubble = true;
-	// 			window.event.returnValue = false;
-	// 		}
-	// 		if (e && e.stopPropagation && e.preventDefault) {
-	// 			e.stopPropagation();
-	// 			e.preventDefault();
-	// 		}
-	// 		return false;
-	// 	};
-	// 	var block=function(e){
-	// 		e = e || window.event;
-	// 		var t=e.srcElement || e.target;
-	// 		var tag=t.tagName;
-	// 		if (e && tag==='HTML' || tag==='INPUT' || tag==='TEXTAREA' || tag==='BUTTON' || tag==='SELECT' || tag==='OPTION' || tag==='EMBED' || tag==='OBJECT') { return; }
-	// 		if (e.type==='keydown' || e.type=='keyup') {
-	// 			// keyboard event : only block ctrl-A, ctrl-a, ctrl-C, ctrl-c, meta-A, meta-a, meta-C, meta-c
-	// 			if ((e.ctrlKey || e.metaKey) && (e.keyCode == 65 || e.keyCode == 97 || e.keyCode == 67 || e.keyCode == 99)) { return cancel(e); }
-	// 		} else if(e.type == "contextmenu"){
-	// 			console.log('무단복사를 막기 위해 마우스 드래그 금지가 설정되어 있습니다');
-	// 			return cancel(e);
-	// 		} else {
-	// 			return cancel(e);
-	// 		}
-	// 	}
-	// 	var addEvent = function(el, type, fn){
-	// 		if (window.addEventListener) {
- // 				el.addEventListener(type, fn, false);
-	// 		} else if (window.attachEvent) {
-	// 			el.attachEvent('on' + type, fn);
-	// 		} else {
-	// 			el['on' + type] = fn;
-	// 		}
-	// 	}
-	// 	var addBlockEvent = function(){
-	// 		addEvent(document.body,'keydown',block);
-	// 		addEvent(document.body,'keyup',block);
-	// 		addEvent(document.body,'mouseup',block);
-	// 		addEvent(document.body,'mousedown',block);
-	// 		addEvent(document.body,'dragstart',block);
-	// 		addEvent(document.body,'selectstart',block);
-	// 		addEvent(document.body,'copy',block);
-	// 		addEvent(document.body,'contextmenu', block);
-	// 	};
-	// 	addEvent(window,'load',addBlockEvent);
-	// })();
+	(function(){
+		var cancel=function(e){
+			if (window.event) {
+				window.event.cancelBubble = true;
+				window.event.returnValue = false;
+			}
+			if (e && e.stopPropagation && e.preventDefault) {
+				e.stopPropagation();
+				e.preventDefault();
+			}
+			return false;
+		};
+		var block=function(e){
+			e = e || window.event;
+			var t=e.srcElement || e.target;
+			var tag=t.tagName;
+			if (e && tag==='HTML' || tag==='INPUT' || tag==='TEXTAREA' || tag==='BUTTON' || tag==='SELECT' || tag==='OPTION' || tag==='EMBED' || tag==='OBJECT') { return; }
+			if (e.type==='keydown' || e.type=='keyup') {
+				// keyboard event : only block ctrl-A, ctrl-a, ctrl-C, ctrl-c, meta-A, meta-a, meta-C, meta-c
+				if ((e.ctrlKey || e.metaKey) && (e.keyCode == 65 || e.keyCode == 97 || e.keyCode == 67 || e.keyCode == 99)) { return cancel(e); }
+			} else if(e.type == "contextmenu"){
+				console.log('무단복사를 막기 위해 마우스 드래그 금지가 설정되어 있습니다');
+				return cancel(e);
+			} else {
+				return cancel(e);
+			}
+		}
+		var addEvent = function(el, type, fn){
+			if (window.addEventListener) {
+ 				el.addEventListener(type, fn, false);
+			} else if (window.attachEvent) {
+				el.attachEvent('on' + type, fn);
+			} else {
+				el['on' + type] = fn;
+			}
+		}
+		var addBlockEvent = function(){
+			addEvent(document.body,'keydown',block);
+			addEvent(document.body,'keyup',block);
+			addEvent(document.body,'mouseup',block);
+			addEvent(document.body,'mousedown',block);
+			addEvent(document.body,'dragstart',block);
+			addEvent(document.body,'selectstart',block);
+			addEvent(document.body,'copy',block);
+			addEvent(document.body,'contextmenu', block);
+		};
+		addEvent(window,'load',addBlockEvent);
+	})();
 
 
 
@@ -552,77 +553,77 @@ $(function( event ){
 
 					imgSetting( idx );
 
-					// if ( (idx-1) !== 0 && loadingCheck ) {
+					if ( (idx-1) !== 0 && loadingCheck ) {
 
 					// 	// 퍼블리싱 테스트 용 : S
-					// 	var	_hashURLs = location.hash.split('/');
-					// 		 _url = function() {
-					// 			if ( _hashURLs[1] == 3 ) {
-					// 				if ( _hashURLs[2] == 2 ) {
-					// 					return '/front/html/0' + (idx-1) + '/sales_tip_list_knowhowshare.html';
-					// 				}
-					// 			} else if ( _hashURLs[1] == 4 ) {
-					// 				if ( _hashURLs[2] == 2 ) {
-					// 					return '/front/html/0' + (idx-1) + '/wonder_list.html';
-					// 				}
-					// 			}
-					// 			return '/front/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2];
-					// 		};
-					// 		//console.log(_url());
+						var	_hashURLs = location.hash.split('/');
+							 _url = function() {
+								if ( _hashURLs[1] == 3 ) {
+									if ( _hashURLs[2] == 2 ) {
+										return '/front/html/0' + (idx-1) + '/sales_tip_list_knowhowshare.html';
+									}
+								} else if ( _hashURLs[1] == 4 ) {
+									if ( _hashURLs[2] == 2 ) {
+										return '/front/html/0' + (idx-1) + '/wonder_list.html';
+									}
+								}
+								return '/front/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2];
+							};
+							//console.log(_url());
 					// 	// 퍼블리싱 테스트 용 : E
 
-					// 	//로딩 노출
-					// 	if ( homeLoadingCheck ) {
-					// 		loadingVisible(true);
-					// 	}
+						//로딩 노출
+						if ( homeLoadingCheck ) {
+							loadingVisible(true);
+						}
 
-					// 	//tabs 스와이프 차단
-					// 	tabsSwiperCtrl.lock();
+						//tabs 스와이프 차단
+						tabsSwiperCtrl.lock();
 
-					// 	$.ajax({
-					// 		// url: devDir + '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
-					// 		url: devDir + _url(),
-					// 		success: function(data) {
-					// 			var _data = $(data),
-					// 				$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
-					// 				dataSlideIndexStr = '[data-swiper-slide-index=' + (idx-1) + ']';
+						$.ajax({
+							// url: devDir + '/publish/html/0' + (idx-1) + '/' + swiperLoadPages[idx-2],
+							url: devDir + _url(),
+							success: function(data) {
+								var _data = $(data),
+									$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
+									dataSlideIndexStr = '[data-swiper-slide-index=' + (idx-1) + ']';
 
-					// 			$wrapper.find( dataSlideIndexStr + ' .container').html( _data ).imagesLoaded().then(function(){
-					// 				$wrapper.find( dataSlideIndexStr + ' .container').addClass('loaded');
+								$wrapper.find( dataSlideIndexStr + ' .container').html( _data ).imagesLoaded().then(function(){
+									$wrapper.find( dataSlideIndexStr + ' .container').addClass('loaded');
 
-					// 				//tabsSwiper 높이 맞추기
-					// 				setSlideHeight();
-					// 				//스와이프 차단 해체
-					// 				tabsSwiperCtrl.unlock();
-					// 				//이미지 높이값 부여
-					// 				imgSetting( idx );
-					// 			});
+									//tabsSwiper 높이 맞추기
+									setSlideHeight();
+									//스와이프 차단 해체
+									tabsSwiperCtrl.unlock();
+									//이미지 높이값 부여
+									imgSetting( idx );
+								});
 
-					// 			var slideHightTimer = setTimeout(function(){
-					// 				//tabsSwiper 높이 맞추기
-					// 				setSlideHeight();
-					// 			}, 50);
+								var slideHightTimer = setTimeout(function(){
+									//tabsSwiper 높이 맞추기
+									setSlideHeight();
+								}, 50);
 
-					// 			//스와이프 차단 해체
-					// 			tabsSwiperCtrl.unlock();
-					// 			//이미지 높이값 부여
-					// 			imgSetting( idx );
+								//스와이프 차단 해체
+								tabsSwiperCtrl.unlock();
+								//이미지 높이값 부여
+								imgSetting( idx );
 
-					// 			//이미지 error시 엑박 방지
-					// 			imgError();
+								//이미지 error시 엑박 방지
+								imgError();
 
-					// 			//로딩 노출 삭제
-					// 			loadingVisible(false);
+								//로딩 노출 삭제
+								loadingVisible(false);
 
-					// 		},
-					// 		async: false,
-					// 		error: function(xhr, status, error){
-					// 			alert( status );
-					// 			console.log(xhr, status, error);
-					// 		}
-					// 	});
+							},
+							async: false,
+							error: function(xhr, status, error){
+								alert( status );
+								console.log(xhr, status, error);
+							}
+						});
 
-					// }
+					}
 
 					//tabsSwiper 높이 맞추기
 					setSlideHeight();
