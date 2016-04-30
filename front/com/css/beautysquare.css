@@ -2431,21 +2431,7 @@ body.reply_write .reply_list {
 }
 
 .fb_type .etc_btns a {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    display: inherit;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -ms-grid-row-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    display: block;
     height: 31px;
     width: 34%;
     border-left: 1px solid #ececec;
@@ -2456,14 +2442,6 @@ body.reply_write .reply_list {
 
 .fb_type .etc_btns a:first-child {
     border-left: 0;
-}
-
-.fb_type .etc_btns a:before {
-    content: '';
-    display: inline-block;
-    height: 17px;
-    vertical-align: middle;
-    margin-right: 7px;
 }
 
 .fb_type .etc_btns a span {
