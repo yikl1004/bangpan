@@ -2450,6 +2450,50 @@ body.reply_write .reply_list {
     line-height: 31px;
 }
 
+.fb_type .etc_btns a.reply span {
+    padding-left: 21px;
+    background-image: url("/bangpan/front/img/ico/ico_reply_big.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-color: transparent;
+    -webkit-background-size: 14px 17px;
+    -moz-background-size: 14px 17px;
+    -o-background-size: 14px 17px;
+    background-size: 14px 17px;
+}
+
+.fb_type .etc_btns a.bookmark span {
+    padding-left: 23px;
+    background-image: url("/bangpan/front/img/ico/ico_star_big.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-color: transparent;
+    -webkit-background-size: 18px 17px;
+    -moz-background-size: 18px 17px;
+    -o-background-size: 18px 17px;
+    background-size: 18px 17px;
+}
+
+.fb_type .etc_btns a.bookmark.active:before {
+    background-image: url("/bangpan/front/img/ico/ico_star_big_active.png");
+}
+
+.fb_type .etc_btns a.like span {
+    padding-left: 25px;
+    background-image: url("/bangpan/front/img/ico/ico_heart_big.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-color: transparent;
+    -webkit-background-size: 16px 17px;
+    -moz-background-size: 16px 17px;
+    -o-background-size: 16px 17px;
+    background-size: 16px 17px;
+}
+
+.fb_type .etc_btns a.like.active:before {
+    background-image: url("/bangpan/front/img/ico/ico_heart_big_active.png");
+}
+
 /* 플로팅 버튼 */
 .floating_util {
     position: fixed;
