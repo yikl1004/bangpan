@@ -2447,7 +2447,7 @@ body.reply_write .reply_list {
 .fb_type .etc_btns a span {
     display: inline-block;
     vertical-align: middle;
-    line-height: 1em;
+    line-height: 31px;
 }
 
 /* 플로팅 버튼 */
