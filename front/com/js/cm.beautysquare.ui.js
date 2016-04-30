@@ -419,8 +419,8 @@ $(function( event ){
 
 		// 네비게이션(gnb) iScroll 적용
 		if ( $('#gnbWrap').length > 0 ) {
-			var gnbScroll = null;
-			var gnbWidth = 0;
+			var gnbScroll = null,
+				gnbWidth = 0;
 			for ( var i=0; i<=$('#gnb li').length; i++ )
 				gnbWidth += $('#gnb li').eq(i).outerWidth(true) + 10;
 			$('#gnb, #gnb ul').width( gnbWidth );
@@ -431,6 +431,8 @@ $(function( event ){
 			gnbScroll = new IScroll('#gnbWrap', {
 				tap: true, scrollX: true, scrollY: false, mouseWheel: true, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
 			});
+			console.log('gnbScroll : ', doc.documentElement.clientWidth - gnbWidth);
+			console.log(doc.documentElement.clientWidth, gnbWidth);
 		}
 
 		var moveBarAni = function( num ) {
@@ -824,12 +826,31 @@ $(function( event ){
 					cond = $this.hasClass('up') ? (re_cl <= 5) : (re_cl >= 1);
 					if ( cond ) {
 						$('body').removeClass(cl[i]).addClass('font_size_' + re_cl);
+						location.hash = 'font_size_' + re_cl;
 					}
 					break;
 				}
 			}
 			setSlideHeight();
 		});
+		// function subFontSizing() {
+		// 	if ( $('body').hasClass('sub') ) {
+		// 		if( location.hash.indexOf('font_size_') > -1 ) {
+		// 			var cl = $('body').get(0).classList;
+		// 			var re_cl = null;
+		// 			for ( var i=0; i<cl.length; i++ ) {
+		// 				if ( cl[i].match('font_size_') ) {
+		// 					$('body').removeClass(cl[i]);
+		// 				}
+		// 			}
+		// 			var fontSizeHash = location.hash.replace('#', '');
+		// 			if (parseInt( fontSizeHash.replace('font_size_', '') ) <= 5 ) {
+		// 				$('body').addClass( fontSizeHash );
+		// 			}
+		// 		}
+		// 	}
+		// }
+		// subFontSizing();
 
 		//홈화면 슬라이드탭 이동( 추후 삭제 요망 )
 		if ( location.hash.match('tab') ) {

@@ -31,7 +31,7 @@
     -moz-transition: opacity 100ms linear;
     -o-transition: opacity 100ms linear;
     transition: opacity 100ms linear;
-    background-image: url("/bangpan/front/img/com/loading_android.gif");
+    background-image: url("/front/img/com/loading_android.gif");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: rgba(0, 0, 0, 0.6);
@@ -49,7 +49,7 @@
     transition: opacity 100ms linear;
 }
 
-.clear, .tit:after, #gnb ul:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .archive .total:after, .archive .archive_list li .action:after {
+.clear, .tit:after, #gnb ul:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .mypage .point_list li a .subject .point:after, .archive .total:after, .archive .archive_list li .action:after {
     content: '';
     display: block;
     clear: both;
@@ -83,7 +83,7 @@ body:after {
     height: 0;
     overflow: hidden;
     z-index: -1;
-    content: url("/bangpan/front/img/com/loading_android.gif");
+    content: url("/front/img/com/loading_android.gif");
 }
 
 img {
@@ -202,7 +202,7 @@ img {
 
 .etc .read_cnt {
     padding-left: 21px;
-    background-image: url("/bangpan/front/img/ico/ico_eye.png");
+    background-image: url("/front/img/ico/ico_eye.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -214,7 +214,7 @@ img {
 
 .etc .like_cnt {
     padding-left: 17px;
-    background-image: url("/bangpan/front/img/ico/ico_heart.png");
+    background-image: url("/front/img/ico/ico_heart.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -225,12 +225,12 @@ img {
 }
 
 .etc .like_cnt.active {
-    background-image: url("/bangpan/front/img/ico/ico_heart_red.png");
+    background-image: url("/front/img/ico/ico_heart_red.png");
 }
 
 .etc .reply_cnt {
     padding-left: 17px;
-    background-image: url("/bangpan/front/img/ico/ico_speach_balloon.png");
+    background-image: url("/front/img/ico/ico_speach_balloon.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -281,7 +281,7 @@ ul.hori_btns li a .count {
     width: 100%;
     height: 3px;
     display: block;
-    background-image: url("/bangpan/front/img/com/webview_shadow.png");
+    background-image: url("/front/img/com/webview_shadow.png");
     background-repeat: repeat-x;
     background-position: 0 0;
     background-color: transparent;
@@ -308,6 +308,10 @@ ul.hori_btns li a .count {
 
 .container.home {
     padding-top: 0;
+}
+
+.container.no_padding {
+    padding: 0;
 }
 
 #container.reply_write {
@@ -411,7 +415,7 @@ body.sub .section h2.tit .all_view {
     height: 0.857em;
     vertical-align: middle;
     margin-left: 4px;
-    background-image: url("/bangpan/front/img/ico/ico_arrow_r.png");
+    background-image: url("/front/img/ico/ico_arrow_r.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -622,7 +626,7 @@ h2.tit {
 
 .grade.g1 {
     /* 쌩얼 */
-    background-image: url("/bangpan/front/img/com/grade_01.png");
+    background-image: url("/front/img/com/grade_01.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #ccc;
@@ -634,7 +638,7 @@ h2.tit {
 
 .grade.g2 {
     /* 미녀 */
-    background-image: url("/bangpan/front/img/com/grade_02.png");
+    background-image: url("/front/img/com/grade_02.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #b7cd5b;
@@ -646,7 +650,7 @@ h2.tit {
 
 .grade.g3 {
     /* 공주 */
-    background-image: url("/bangpan/front/img/com/grade_03.png");
+    background-image: url("/front/img/com/grade_03.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #52c1db;
@@ -658,7 +662,7 @@ h2.tit {
 
 .grade.g4 {
     /* 여왕 */
-    background-image: url("/bangpan/front/img/com/grade_04.png");
+    background-image: url("/front/img/com/grade_04.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #9669ae;
@@ -670,7 +674,7 @@ h2.tit {
 
 .grade.g5 {
     /* 여신 */
-    background-image: url("/bangpan/front/img/com/grade_05.png");
+    background-image: url("/front/img/com/grade_05.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #eb6ca7;
@@ -682,7 +686,7 @@ h2.tit {
 
 .grade.g6 {
     /* 뷰티스타 */
-    background-image: url("/bangpan/front/img/com/grade_06.png");
+    background-image: url("/front/img/com/grade_06.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: #ffbe21;
@@ -713,7 +717,7 @@ h2.tit {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("/bangpan/front/img/com/user_thumb_mask.png");
+    background-image: url("/front/img/com/user_thumb_mask.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
@@ -751,7 +755,7 @@ h2.tit {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("/bangpan/front/img/com/default_img.png");
+    background-image: url("/front/img/com/default_img.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: #e2e8f8;
@@ -767,7 +771,7 @@ h2.tit {
 
 /* 유저 프로필일 경우 */
 .user_info .thumb:before {
-    background-image: url(/bangpan/front/img/com/profile_default_img.png);
+    background-image: url(/front/img/com/profile_default_img.png);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -784,7 +788,7 @@ h2.tit {
 
 .update_time.today {
     padding-left: 18px;
-    background-image: url("/bangpan/front/img/ico/ico_clock.png");
+    background-image: url("/front/img/ico/ico_clock.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -948,7 +952,7 @@ body.gingerbread .main_visual img {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("/bangpan/front/img/ico/ico_play.png");
+    background-image: url("/front/img/ico/ico_play.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: rgba(0, 0, 0, 0.6);
@@ -1247,7 +1251,7 @@ body.gingerbread .main_visual img {
 }
 
 .thumb_txt_list li .thumb:before {
-    background-image: url(/bangpan/front/img/com/profile_default_img.png);
+    background-image: url(/front/img/com/profile_default_img.png);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1270,6 +1274,8 @@ body.gingerbread .main_visual img {
 
 .tab li {
     float: left;
+    width: 100%;
+    /* 탭이 1개 일경우 */;
 }
 
 .tab li a {
@@ -1346,7 +1352,7 @@ body.gingerbread .main_visual img {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    background-image: url("/bangpan/front/img/com/select_arrow.png");
+    background-image: url("/front/img/com/select_arrow.png");
     background-repeat: no-repeat;
     background-position: 96% 50%;
     background-color: #fff;
@@ -1415,15 +1421,15 @@ body.gingerbread .main_visual img {
 }
 
 .img_list ul li.recommand a .info .etc .read_cnt {
-    background-image: url(/bangpan/front/img/ico/ico_eye_recommand.png);
+    background-image: url(/front/img/ico/ico_eye_recommand.png);
 }
 
 .img_list ul li.recommand a .info .etc .like_cnt {
-    background-image: url(/bangpan/front/img/ico/ico_heart_recommand.png);
+    background-image: url(/front/img/ico/ico_heart_recommand.png);
 }
 
 .img_list ul li.recommand a .info .etc .reply_cnt {
-    background-image: url(/bangpan/front/img/ico/ico_speach_balloon_recommand.png);
+    background-image: url(/front/img/ico/ico_speach_balloon_recommand.png);
 }
 
 .img_list ul li:first-child {
@@ -1592,7 +1598,7 @@ body.gingerbread .main_visual img {
     width: 12px;
     height: 7px;
     margin-top: -1px;
-    background-image: url("/bangpan/front/img/ico/ico_dir_down.png");
+    background-image: url("/front/img/ico/ico_dir_down.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
@@ -1613,7 +1619,7 @@ body.gingerbread .main_visual img {
     width: 10px;
     height: 13px;
     margin-top: -3px;
-    background-image: url("/bangpan/front/img/ico/ico_arrow_up.png");
+    background-image: url("/front/img/ico/ico_arrow_up.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-color: transparent;
@@ -1657,35 +1663,35 @@ body.gingerbread .main_visual img {
 }
 
 .view_page .view_head.brand.sulwhasoo {
-    background-image: url("/bangpan/front/img/com/brand/brand_sulwhasoo.png");
+    background-image: url("/front/img/com/brand/brand_sulwhasoo.png");
 }
 
 .view_page .view_head.brand.primera {
-    background-image: url("/bangpan/front/img/com/brand/brand_primera.png");
+    background-image: url("/front/img/com/brand/brand_primera.png");
 }
 
 .view_page .view_head.brand.vb {
-    background-image: url("/bangpan/front/img/com/brand/brand_vb.png");
+    background-image: url("/front/img/com/brand/brand_vb.png");
 }
 
 .view_page .view_head.brand.illi {
-    background-image: url("/bangpan/front/img/com/brand/brand_illi.png");
+    background-image: url("/front/img/com/brand/brand_illi.png");
 }
 
 .view_page .view_head.brand.boncho {
-    background-image: url("/bangpan/front/img/com/brand/brand_boncho.png");
+    background-image: url("/front/img/com/brand/brand_boncho.png");
 }
 
 .view_page .view_head.brand.hera {
-    background-image: url("/bangpan/front/img/com/brand/brand_hera.png");
+    background-image: url("/front/img/com/brand/brand_hera.png");
 }
 
 .view_page .view_head.brand.ryo {
-    background-image: url("/bangpan/front/img/com/brand/brand_ryo.png");
+    background-image: url("/front/img/com/brand/brand_ryo.png");
 }
 
 .view_page .view_head.brand.lolitalempika {
-    background-image: url("/bangpan/front/img/com/brand/brand_lolitalempika.png");
+    background-image: url("/front/img/com/brand/brand_lolitalempika.png");
 }
 
 .view_page .view_head.brand.etc {
@@ -1753,7 +1759,7 @@ body.gingerbread .main_visual img {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("/bangpan/front/img/com/loading_android.gif");
+    background-image: url("/front/img/com/loading_android.gif");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: rgba(0, 0, 0, 0.6);
@@ -1871,7 +1877,7 @@ body.gingerbread .main_visual img {
 
 .view_page .view_content .cnt_bookmark_area .read_cnt {
     padding-left: 30px;
-    background-image: url("/bangpan/front/img/ico//ico_eye_view.png");
+    background-image: url("/front/img/ico//ico_eye_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1883,7 +1889,7 @@ body.gingerbread .main_visual img {
 
 .view_page .view_content .cnt_bookmark_area .like_cnt {
     padding-left: 23px;
-    background-image: url("/bangpan/front/img/ico//ico_heart_view.png");
+    background-image: url("/front/img/ico//ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1895,12 +1901,12 @@ body.gingerbread .main_visual img {
 
 .view_page .view_content .cnt_bookmark_area .like_cnt.active {
     color: #f96365;
-    background-image: url("/bangpan/front/img/ico/ico_heart_view_active.png");
+    background-image: url("/front/img/ico/ico_heart_view_active.png");
 }
 
 .view_page .view_content .cnt_bookmark_area .bookmark {
     padding-left: 26px;
-    background-image: url("/bangpan/front/img/ico//ico_star_view.png");
+    background-image: url("/front/img/ico//ico_star_view.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1911,7 +1917,7 @@ body.gingerbread .main_visual img {
 }
 
 .view_page .view_content .cnt_bookmark_area .bookmark.active {
-    background-image: url("/bangpan/front/img/ico/ico_star_view_active.png");
+    background-image: url("/front/img/ico/ico_star_view_active.png");
 }
 
 .view_page .util_btns {
@@ -1979,7 +1985,7 @@ body.gingerbread .main_visual img {
 
 .view_page .util_btns .talk span {
     padding-left: 28px;
-    background-image: url("/bangpan/front/img/ico/ico_kakaotalk.png");
+    background-image: url("/front/img/ico/ico_kakaotalk.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -1991,7 +1997,7 @@ body.gingerbread .main_visual img {
 
 .view_page .util_btns .story span {
     padding-left: 28px;
-    background-image: url("/bangpan/front/img/ico/ico_kakaostory.png");
+    background-image: url("/front/img/ico/ico_kakaostory.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -2003,7 +2009,7 @@ body.gingerbread .main_visual img {
 
 .view_page .util_btns .delete span {
     padding-left: 28px;
-    background-image: url("/bangpan/front/img/ico/ico_trashcan.png");
+    background-image: url("/front/img/ico/ico_trashcan.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -2015,7 +2021,7 @@ body.gingerbread .main_visual img {
 
 .view_page .util_btns .modify span {
     padding-left: 28px;
-    background-image: url("/bangpan/front/img/ico/ico_pencil.png");
+    background-image: url("/front/img/ico/ico_pencil.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -2157,7 +2163,7 @@ body.reply_write .reply_list {
     top: 0;
     right: 0;
     z-index: 10;
-    background-image: url("/bangpan/front/img/ico/ico_heart_view.png");
+    background-image: url("/front/img/ico/ico_heart_view.png");
     background-repeat: no-repeat;
     background-position: right top;
     background-color: transparent;
@@ -2169,7 +2175,7 @@ body.reply_write .reply_list {
 
 .reply_list li .user_info .like_cnt.active {
     color: #f96365;
-    background-image: url("/bangpan/front/img/ico/ico_heart_view_active.png");
+    background-image: url("/front/img/ico/ico_heart_view_active.png");
 }
 
 .reply_list li .user_info .update_time {
@@ -2468,7 +2474,7 @@ body.reply_write .reply_list {
 
 .fb_type .etc_btns a.reply:before {
     width: 14px;
-    background-image: url("/bangpan/front/img/ico/ico_reply_big.png");
+    background-image: url("/front/img/ico/ico_reply_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2480,7 +2486,7 @@ body.reply_write .reply_list {
 
 .fb_type .etc_btns a.bookmark:before {
     width: 18px;
-    background-image: url("/bangpan/front/img/ico/ico_star_big.png");
+    background-image: url("/front/img/ico/ico_star_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2491,12 +2497,12 @@ body.reply_write .reply_list {
 }
 
 .fb_type .etc_btns a.bookmark.active:before {
-    background-image: url("/bangpan/front/img/ico/ico_star_big_active.png");
+    background-image: url("/front/img/ico/ico_star_big_active.png");
 }
 
 .fb_type .etc_btns a.like:before {
     width: 16px;
-    background-image: url("/bangpan/front/img/ico/ico_heart_big.png");
+    background-image: url("/front/img/ico/ico_heart_big.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -2507,7 +2513,7 @@ body.reply_write .reply_list {
 }
 
 .fb_type .etc_btns a.like.active:before {
-    background-image: url("/bangpan/front/img/ico/ico_heart_big_active.png");
+    background-image: url("/front/img/ico/ico_heart_big_active.png");
 }
 
 /* 플로팅 버튼 */
@@ -2570,7 +2576,7 @@ body.reply_write .reply_list {
 .floating_util .sort .fu_sort:nth-of-type(1) {
     padding-right: 16px;
     margin-left: 0;
-    background-image: url("/bangpan/front/img/ico/ico_funnel.png");
+    background-image: url("/front/img/ico/ico_funnel.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -2582,7 +2588,7 @@ body.reply_write .reply_list {
 
 .floating_util .sort .fu_sort:nth-of-type(2) {
     padding-right: 19px;
-    background-image: url("/bangpan/front/img/ico/ico_sort.png");
+    background-image: url("/front/img/ico/ico_sort.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -2616,7 +2622,7 @@ body.reply_write .reply_list {
     width: 13px;
     height: 14px;
     margin-left: 0.286em;
-    background-image: url("/bangpan/front/img/ico//ico_change.png");
+    background-image: url("/front/img/ico//ico_change.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
@@ -2870,7 +2876,7 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
     -webkit-border-radius: 13px;
     -moz-border-radius: 13px;
     border-radius: 13px;
-    background-image: url("/bangpan/front/img/ico/ico_edit.png");
+    background-image: url("/front/img/ico/ico_edit.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: #f96365;
@@ -2897,7 +2903,7 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
 }
 
 .mypage .my_info .my_photo:before {
-    background-image: url("/bangpan/front/img/com/profile_default_img.png");
+    background-image: url("/front/img/com/profile_default_img.png");
     background-color: #b2c1ea;
     position: absolute;
     left: 0;
@@ -2906,7 +2912,7 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
 }
 
 .mypage .my_info .my_photo:after {
-    background-image: url("/bangpan/front/img/com/myphoto_mask.png");
+    background-image: url("/front/img/com/myphoto_mask.png");
     background-color: transparent;
     position: absolute;
     left: 0;
@@ -2931,11 +2937,20 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
     color: #828282;
 }
 
-.mypage .my_info .info .branch:before {
+.mypage .my_info .info span.position {
+    color: #748abc;
+}
+
+.mypage .my_info .info span:first-child::before {
+    content: none;
+}
+
+.mypage .my_info .info span:before {
     content: '|';
     display: inline;
     margin-left: 5px;
     margin-right: 7px;
+    color: #828282;
 }
 
 .mypage .point_list li {
@@ -2972,6 +2987,12 @@ table.wins_list tbody tr td:nth-of-type(2):before, table.wins_list tbody tr td:n
     z-index: 10;
     color: #f96365;
     font-size: 1.133em;
+}
+
+.mypage .point_list li a .subject .point.no {
+    position: static;
+    float: right;
+    font-size: 0.929em;
 }
 
 .mypage .point_list li a .cont {
@@ -3050,7 +3071,7 @@ table.grade_guide th .grade {
 }
 
 table.grade_guide th .grade.g1 {
-    background-image: url("/bangpan/front/img/com/gradeGuide_g1.png");
+    background-image: url("/front/img/com/gradeGuide_g1.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -3061,7 +3082,7 @@ table.grade_guide th .grade.g1 {
 }
 
 table.grade_guide th .grade.g2 {
-    background-image: url("/bangpan/front/img/com/gradeGuide_g2.png");
+    background-image: url("/front/img/com/gradeGuide_g2.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -3072,7 +3093,7 @@ table.grade_guide th .grade.g2 {
 }
 
 table.grade_guide th .grade.g3 {
-    background-image: url("/bangpan/front/img/com/gradeGuide_g3.png");
+    background-image: url("/front/img/com/gradeGuide_g3.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -3083,7 +3104,7 @@ table.grade_guide th .grade.g3 {
 }
 
 table.grade_guide th .grade.g4 {
-    background-image: url("/bangpan/front/img/com/gradeGuide_g4.png");
+    background-image: url("/front/img/com/gradeGuide_g4.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -3094,7 +3115,7 @@ table.grade_guide th .grade.g4 {
 }
 
 table.grade_guide th .grade.g5 {
-    background-image: url("/bangpan/front/img/com/gradeGuide_g5.png");
+    background-image: url("/front/img/com/gradeGuide_g5.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -3105,7 +3126,7 @@ table.grade_guide th .grade.g5 {
 }
 
 table.grade_guide th .grade.g6 {
-    background-image: url("/bangpan/front/img/com/gradeGuide_g6.png");
+    background-image: url("/front/img/com/gradeGuide_g6.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-color: transparent;
@@ -3251,7 +3272,7 @@ table.grade_guide td p strong {
 }
 
 .archive input[type=checkbox]:checked + label {
-    background-image: url("/bangpan/front/img/ico/ico_checked.png");
+    background-image: url("/front/img/ico/ico_checked.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: #677caf;
@@ -3522,7 +3543,7 @@ table.grade_guide td p strong {
 }
 
 .app_download .accordian.active .acc_toggle:after {
-    background-image: url("/bangpan/front/img/ico/ico_arrow_stick_up.png");
+    background-image: url("/front/img/ico/ico_arrow_stick_up.png");
 }
 
 .app_download .accordian .acc_toggle {
@@ -3557,7 +3578,7 @@ table.grade_guide td p strong {
     display: block;
     width: 16px;
     height: 10px;
-    background-image: url("/bangpan/front/img/ico/ico_arrow_stick_down.png");
+    background-image: url("/front/img/ico/ico_arrow_stick_down.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-color: transparent;
@@ -3608,7 +3629,7 @@ table.grade_guide td p strong {
 .app_download .cs {
     margin: 15px 20px;
     line-height: 1;
-    background-image: url("/bangpan/front/img/com/ico_call.png");
+    background-image: url("/front/img/com/ico_call.png");
     background-repeat: no-repeat;
     background-position: right 5px;
     background-color: transparent;
@@ -3678,11 +3699,11 @@ table.grade_guide td p strong {
 }
 
 .swiper-container.app_guide .swiper-button-prev {
-    background-image: url("/bangpan/front/img/com/swiper_arrow_l.png");
+    background-image: url("/front/img/com/swiper_arrow_l.png");
 }
 
 .swiper-container.app_guide .swiper-button-next {
-    background-image: url("/bangpan/front/img/com/swiper_arrow_r.png");
+    background-image: url("/front/img/com/swiper_arrow_r.png");
 }
 
 .swiper-container.app_guide .swiper-pagination-bullets {
@@ -3733,19 +3754,19 @@ table.grade_guide td p strong {
     display: block;
     background-position: center 0.7em;
     background-color: rgba(249, 99, 101, 0.9);
-    background-image: url("/bangpan/front/img/ico/ico_heart_alert.png");
+    background-image: url("/front/img/ico/ico_heart_alert.png");
 }
 
 .custom_alert.bookmark_success {
     display: block;
     background-color: rgba(248, 183, 63, 0.9);
-    background-image: url("/bangpan/front/img/ico/ico_star_alert.png");
+    background-image: url("/front/img/ico/ico_star_alert.png");
 }
 
 .custom_alert.bookmark_cancel {
     display: block;
     background-color: rgba(134, 134, 134, 0.9);
-    background-image: url("/bangpan/front/img/ico/ico_star_alert.png");
+    background-image: url("/front/img/ico/ico_star_alert.png");
 }
 
 /* 알림창 ( alert, confirm ) */
@@ -3788,7 +3809,7 @@ table.grade_guide td p strong {
     font-size: 1.286em;
     color: #333;
     padding-top: 109px;
-    background-image: url("/bangpan/front/img/ico/ico_gift.png");
+    background-image: url("/front/img/ico/ico_gift.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-color: transparent;
@@ -3883,7 +3904,7 @@ table.grade_guide td p strong {
     text-align: center;
     color: #999;
     font-size: 0.929em;
-    background-image: url("/bangpan/front/img/ico/ico_fillmark.png");
+    background-image: url("/front/img/ico/ico_fillmark.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-color: transparent;
@@ -3901,7 +3922,7 @@ table.grade_guide td p strong {
     text-align: center;
     color: #999;
     font-size: 0.929em;
-    background-image: url("/bangpan/front/img/ico/ico_error.png");
+    background-image: url("/front/img/ico/ico_error.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-color: transparent;
