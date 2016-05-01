@@ -1810,10 +1810,30 @@ body.gingerbread .main_visual img {
 }
 
 .view_page .view_content {
+    position: relative;
     padding: 14px 20px 0 20px;
     line-height: 1.4;
     font-size: 14px !important;
     letter-spacing: normal;
+}
+
+.view_page .view_content .report {
+      /* 신고하기 */
+    display: block;
+    width: 18px;
+    height: 27px;
+    background-image: url("/bangpan/front/img/ico/ico_report.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    -webkit-background-size: 18px 27px;
+    -moz-background-size: 18px 27px;
+    -o-background-size: 18px 27px;
+    background-size: 18px 27px;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    z-index: 30;
 }
 
 .view_page .view_content .in_title {
@@ -2563,7 +2583,7 @@ body.reply_write .reply_list {
     outline: none;
 }
 
-.floating_util .sort .fu_sort:nth-of-type(1) {
+.floating_util .sort .fu_sort[data-select-type=type] {
     padding-right: 16px;
     margin-left: 0;
     background-image: url("/bangpan/front/img/ico/ico_funnel.png");
@@ -2576,7 +2596,7 @@ body.reply_write .reply_list {
     background-size: 11px 12px;
 }
 
-.floating_util .sort .fu_sort:nth-of-type(2) {
+.floating_util .sort .fu_sort[data-select-type=sort] {
     padding-right: 19px;
     background-image: url("/bangpan/front/img/ico/ico_sort.png");
     background-repeat: no-repeat;
@@ -3902,6 +3922,10 @@ table.grade_guide td p strong {
     -moz-background-size: 40px 40px;
     -o-background-size: 40px 40px;
     background-size: 40px 40px;
+}
+
+.tit.small + .no_data {
+    margin-top: 0;
 }
 
 /* 에러페이지 */
