@@ -49,7 +49,7 @@
     transition: opacity 100ms linear;
 }
 
-.clear, .tit:after, #gnb ul:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .mypage .point_list li a .subject .point:after, .archive .total:after, .archive .archive_list li .action:after {
+.clear, .tit:after, #gnb ul:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .mypage .point_list li a .subject .point:after, .archive .total:after, .archive .archive_list li .action:after, .app_download .app_info:after {
     content: '';
     display: block;
     clear: both;
@@ -3469,19 +3469,6 @@ table.grade_guide td p strong {
 }
 
 .app_download .app_info {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
     background: #e9e9e9;
     padding: 22px 1.429em 20px;
 }
@@ -3490,6 +3477,7 @@ table.grade_guide td p strong {
     display: block;
     width: 5.357em;
     height: 5.357em;
+    float: left;
 }
 
 .app_download .app_info .icon img {
@@ -3498,12 +3486,9 @@ table.grade_guide td p strong {
 
 .app_download .app_info .txt {
     display: block;
+    float: left;
     margin-left: 0.929em;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -moz-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    margin-top: 1.45em;
 }
 
 .app_download .app_info .txt .name {
@@ -3522,6 +3507,7 @@ table.grade_guide td p strong {
 
 .app_download .app_info .btn_app_download {
     display: block;
+    float: left;
     width: 100%;
     height: 2.059em;
     margin-top: 0.882em;
