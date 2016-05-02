@@ -605,6 +605,7 @@ $(function( event ){
 										loadingVisible(false);
 										if ( $('.loading').length > 0 ) {
 											loadingRemove();
+											alert('로딩있음');
 										}
 									}, 50);
 								};
