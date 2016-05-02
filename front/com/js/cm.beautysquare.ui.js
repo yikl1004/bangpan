@@ -600,7 +600,14 @@ $(function( event ){
 								imgError();
 
 								//로딩 노출 삭제
-								loadingVisible(false);
+								var loadingRemove = function(){
+									var timer = setTimeout(function(){
+										loadingVisible(false);
+										if ( $('.loading').length > 0 ) {
+											loadingRemove();
+										}
+									}, 50);
+								};
 
 							},
 							async: true,
