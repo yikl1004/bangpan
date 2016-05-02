@@ -601,14 +601,13 @@ $(function( event ){
 
 								//로딩 노출 삭제
 								var loadingRemove = function(){
-									var timer = setTimeout(function(){
-										loadingVisible(false);
-										if ( $('.loading').length > 0 ) {
-											loadingRemove();
-											alert('로딩있음');
-										}
-									}, 50);
+									loadingVisible(false);
+									if ( $('.loading').length > 0 ) {
+										loadingRemove();
+										alert('로딩있음');
+									}
 								};
+								loadingRemove();
 
 							},
 							async: true,
