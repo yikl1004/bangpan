@@ -1485,7 +1485,7 @@ body.gingerbread .main_visual img {
 
 .img_list ul li a .info {
     position: relative;
-    padding: 12px 15px 11px;
+    padding: 10px 15px 9px;
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
