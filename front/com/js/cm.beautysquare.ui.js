@@ -481,23 +481,23 @@ $(function( event ){
 			tabsMoveCtrl = true,
 			tabsSlideStr = '.swiper-container.tabs > .swiper-wrapper > ',
 			//퍼블리싱
-			// swiperLoadPages = [
-			// 	'beautynews_list.html',
-			// 	'product_info_list.html',
-			// 	// 'sales_tip_list_bestknowhow.html',
-			// 	'sales_tip_list_knowhowshare.html',
-			// 	'praise_list.html',
-			// 	// 'wonder_list.html',
-			// 	'life_list.html'
-			// ];
-			//개발
 			swiperLoadPages = [
-				'/front/front/beautyNews/main.do',
-				'/front/front/productInfo/main.do',
-				'/front/front/salestip/bestknowhow/main.do',
-				'/front/front/counsellortalk/compliment/main.do',
-				'/front/front/life/main.do'
+				'beautynews_list.html',
+				'product_info_list.html',
+				// 'sales_tip_list_bestknowhow.html',
+				'sales_tip_list_knowhowshare.html',
+				'praise_list.html',
+				// 'wonder_list.html',
+				'life_list.html'
 			];
+			//개발
+			// swiperLoadPages = [
+			// 	'/front/front/beautyNews/main.do',
+			// 	'/front/front/productInfo/main.do',
+			// 	'/front/front/salestip/bestknowhow/main.do',
+			// 	'/front/front/counsellortalk/compliment/main.do',
+			// 	'/front/front/life/main.do'
+			// ];
 
 
 		//swiper 플러그인 옵션 ( 메인비주얼, 라이프스퀘어, 최신제품정보, 카운셀러 세일즈노트 )
@@ -578,8 +578,8 @@ $(function( event ){
 						loadingVisible(true);
 
 						$.ajax({
-							url: swiperLoadPages[idx-2],	//개발
-							// url: devDir + _url(),			//퍼블리싱 테스트 용
+							// url: swiperLoadPages[idx-2],	//개발
+							url: devDir + _url(),			//퍼블리싱 테스트 용
 							success: function(data) {
 								var _data = $(data),
 									$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
