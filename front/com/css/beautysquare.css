@@ -1502,7 +1502,7 @@ body.gingerbread .main_visual img {
 }
 
 .img_list ul li a .title {
-    margin-top: 9px;
+    margin-top: 0.643em;
     margin-bottom: 1.358em;
     color: #000;
     font-size: 1em;
