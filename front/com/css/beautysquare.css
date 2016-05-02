@@ -49,7 +49,7 @@
     transition: opacity 100ms linear;
 }
 
-.clear, .tit:after, #gnb ul:after, .thumb_txt_list li:after, .tab:after, .fb_type .user_info:after, .mypage .point_list li a .subject .point:after, .archive .total:after, .archive .archive_list li .action:after, .app_download .app_info:after {
+.clear, .tit:after, #gnb ul:after, .thumb_txt_list li:after, .tab:after, .view_page > .user_info:after, .fb_type .user_info:after, .mypage .point_list li a .subject .point:after, .archive .total:after, .archive .archive_list li .action:after, .app_download .app_info:after {
     content: '';
     display: block;
     clear: both;
@@ -451,14 +451,8 @@ h2.tit {
     margin-left: 0;
 }
 
-.tag.new, .tag.best {
-    padding-top: 0;
-}
-
 .tag.new {
     /* 새글 */
-    font-size: 0.786em;
-    line-height: 1.273em;
     font-weight: bold;
     background: #f96365;
 }
@@ -3847,6 +3841,10 @@ table.grade_guide td p strong {
 .alert.event .content .point_txt em {
     color: #f96365;
     font-weight: bold;
+}
+
+.alert.event .btns .ok {
+    display: block;
 }
 
 .alert.confirm .btns a:first-child {
