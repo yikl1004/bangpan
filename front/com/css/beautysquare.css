@@ -433,7 +433,7 @@ h2.tit {
 /* TAG */
 .tag {
     display: inline-block;
-    padding: 0.07em 5px 0.2em;
+    padding: 0.1em 5px 0.2em;
     margin-left: 3px;
     line-height: 1.2em;
     -webkit-border-radius: 9px;
@@ -449,6 +449,10 @@ h2.tit {
 
 .tag:first-child {
     margin-left: 0;
+}
+
+.tag.new, .tag.best {
+    padding: 0.07em 5px 0.2em;
 }
 
 .tag.new {
