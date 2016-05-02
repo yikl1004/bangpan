@@ -1493,11 +1493,8 @@ body.gingerbread .main_visual img {
 }
 
 .img_list ul li a .info .tags {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
+    line-height: 0;
 }
 
 .img_list ul li a .title {
