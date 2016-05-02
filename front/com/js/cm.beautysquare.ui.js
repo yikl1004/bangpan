@@ -312,6 +312,7 @@ $(function( event ){
 			});
 		} else {
 			$( isMain ).find('> .loading').addClass('end')
+			.delay(50)
 			.on('transitionend', function(){
 				$( isMain ).find('> .loading').remove();
 				tabsSwiperCtrl.unlock();
