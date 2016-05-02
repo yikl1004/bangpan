@@ -621,7 +621,7 @@ $(function( event ){
 									}, 100);
 								};
 								loadingRemove();
-								gnbCtrl = false;
+								gnbCtrl = true;
 
 							},
 							async: true,
@@ -645,7 +645,7 @@ $(function( event ){
 					//로딩 노출 삭제
 					loadingVisible(false);
 
-					gnbCtrl = false;
+					gnbCtrl = true;
 				},
 				onTouchMove : function( swiper ) {
 					if ( tabsDiff !== swiper.touches.diff && tabsMoveCtrl ) {
