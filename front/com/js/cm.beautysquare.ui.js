@@ -311,12 +311,16 @@ $(function( event ){
 				height: doc.documentElement.clientHeight - gnbHeight
 			});
 		} else {
-			$( isMain ).find('> .loading').addClass('end')
-			.delay(50)
-			.on('transitionend', function(){
+			$( isMain ).find('> .loading')
+			.animate({ opacity: 0 }, 200, function(){
 				$( isMain ).find('> .loading').remove();
 				tabsSwiperCtrl.unlock();
 			});
+			// .addClass('end').delay(50)
+			// .on('transitionend', function(){
+			// 	$( isMain ).find('> .loading').remove();
+			// 	tabsSwiperCtrl.unlock();
+			// });
 		}
 	};
 
