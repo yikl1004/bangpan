@@ -477,6 +477,7 @@ $(function( event ){
 		var tabsDiff = null,						// 페이지를 swipe한 거리
 			menuLength = $('#gnb ul li').length,	// 매뉴 갯수
 			speedAll = 100,							// 스와이프 관련 스피드 (전체)
+			gnbCtrl = true,
 			tabsMoveCtrl = true,
 			tabsSlideStr = '.swiper-container.tabs > .swiper-wrapper > ',
 			//퍼블리싱
@@ -525,6 +526,10 @@ $(function( event ){
 				onSlideChangeEnd: function(swiper) {
 					// ajax 로드 전 높이
 					setSlideHeight();
+					gnbCtrl = true;
+				},
+				onTransitionStart: function(swiper) {
+					gnbCtrl = false;
 				},
 				onTransitionEnd: function( swiper ){
 
@@ -610,13 +615,13 @@ $(function( event ){
 									var timer = setInterval(function(){
 										if ( $('.loading').length > 0 ) {
 											loadingRemove();
-											alert('로딩있음');
 										} else {
 											clearInterval(timer);
 										}
 									}, 100);
 								};
 								loadingRemove();
+								gnbCtrl = false;
 
 							},
 							async: true,
@@ -639,6 +644,8 @@ $(function( event ){
 
 					//로딩 노출 삭제
 					loadingVisible(false);
+
+					gnbCtrl = false;
 				},
 				onTouchMove : function( swiper ) {
 					if ( tabsDiff !== swiper.touches.diff && tabsMoveCtrl ) {
@@ -775,16 +782,16 @@ $(function( event ){
 				width = target.outerWidth(),
 				idx = $this.parent().index() + 1;
 
-			gnbScroll.scrollToElement( _qs( '#gnb li:nth-child(' + idx + ')'), 100, true, null );
+			if ( gnbCtrl ) {
+				gnbScroll.scrollToElement( _qs( '#gnb li:nth-child(' + idx + ')'), 100, true, null );
+				tabsSwiper.slideTo( $(this).parent().index()+1 );
+				targetMarginLeft = parseFloat(target.css('margin-left'));
+				$('#gnb .move_bar').css({
+					width: target.outerWidth(),
+					transform: 'translateX(' + (target.position().left + targetMarginLeft) + 'px)'
+				});
+			}
 
-			tabsSwiper.slideTo( $(this).parent().index()+1 );
-
-			targetMarginLeft = parseFloat(target.css('margin-left'));
-
-			$('#gnb .move_bar').css({
-				width: target.outerWidth(),
-				transform: 'translateX(' + (target.position().left + targetMarginLeft) + 'px)'
-			});
 		});
 
 		//컨텐츠 로드 완료후 class 추가
