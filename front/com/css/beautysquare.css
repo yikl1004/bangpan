@@ -3514,6 +3514,7 @@ table.grade_guide td p strong {
 }
 
 .app_download .app_info .txt .company {
+    display: block;
     font-size: 0.857em;
     opacity: 0.7;
     color: #333;
