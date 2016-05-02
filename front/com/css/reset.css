@@ -145,6 +145,7 @@ input {
     height: 37px;
     line-height: 37px;
     padding-left: 10px;
+    -webkit-user-select: initial;
 }
 
 input[type="checkbox"], input[type="radio"] {

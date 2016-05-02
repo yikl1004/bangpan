@@ -832,6 +832,7 @@ p.normal_txt.r {
 /***********************
 	기본모드 - 메인
 ************************/
+/* gnb 테스트 */
 /* NAVIGATION - gnb */
 #gnbWrap {
     width: 100%;
@@ -1011,7 +1012,7 @@ body.gingerbread .main_visual img {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 20;
+    z-index: 30;
     color: #fff;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -2468,6 +2469,7 @@ body.reply_write .reply_list {
     display: inline-block;
     vertical-align: middle;
     line-height: 31px;
+    height: 100%;
 }
 
 .fb_type .etc_btns a.reply span {
@@ -2487,7 +2489,7 @@ body.reply_write .reply_list {
 }
 
 .fb_type .etc_btns a.bookmark span {
-    padding-left: 23px;
+    padding-left: 18px;
     background-image: url("/bangpan/front/img/ico/ico_star_big.png");
     background-repeat: no-repeat;
     background-position: left center;
@@ -2502,7 +2504,7 @@ body.reply_write .reply_list {
     padding: 0;
 }
 
-.fb_type .etc_btns a.bookmark.active:before {
+.fb_type .etc_btns a.bookmark.active span {
     background-image: url("/bangpan/front/img/ico/ico_star_big_active.png");
 }
 
@@ -2512,17 +2514,17 @@ body.reply_write .reply_list {
     background-repeat: no-repeat;
     background-position: left center;
     background-color: transparent;
-    -webkit-background-size: 16px 17px;
-    -moz-background-size: 16px 17px;
-    -o-background-size: 16px 17px;
-    background-size: 16px 17px;
+    -webkit-background-size: 16px 15px;
+    -moz-background-size: 16px 15px;
+    -o-background-size: 16px 15px;
+    background-size: 16px 15px;
 }
 
 .fb_type .etc_btns a.like span.ir {
     padding: 0;
 }
 
-.fb_type .etc_btns a.like.active:before {
+.fb_type .etc_btns a.like.active span {
     background-image: url("/bangpan/front/img/ico/ico_heart_big_active.png");
 }
 
@@ -2679,7 +2681,6 @@ body.reply_write .reply_list {
 
 .sub .font_sizing {
     margin-left: 0;
-    margin-top: 15px;
 }
 
 .sub .font_sizing a {
@@ -3486,6 +3487,7 @@ table.grade_guide td p strong {
 }
 
 .app_download .app_info .icon {
+    display: inherit;
     width: 5.357em;
     height: 5.357em;
 }
