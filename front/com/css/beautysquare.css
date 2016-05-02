@@ -1457,11 +1457,11 @@ body.gingerbread .main_visual img {
     -moz-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-    -moz-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .img_list ul li a .thumb {
@@ -1469,6 +1469,9 @@ body.gingerbread .main_visual img {
     min-width: 97px;
     display: block;
     overflow: hidden;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
 }
 
 .img_list ul li a .thumb img {
@@ -1476,8 +1479,18 @@ body.gingerbread .main_visual img {
     height: 100%;
 }
 
+.img_list ul li a .thumb .img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 .img_list ul li a .info {
+    position: relative;
     padding: 12px 15px 11px;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -moz-box-flex: 1;
@@ -1517,6 +1530,9 @@ body.gingerbread .main_visual img {
 
 .img_list ul li a .etc {
     color: #b1b1b1;
+    position: absolute;
+    bottom: 11px;
+    left: 15px;
     line-height: 0;
 }
 
@@ -1545,11 +1561,17 @@ body.gingerbread .main_visual img {
 }
 
 .img_list.type02 ul li a .info {
+    min-height: 6em;
     padding: 5px 10px 5px 12px;
 }
 
 .img_list.type02 ul li a .info.no_tag .title {
     margin-top: 10px;
+}
+
+.img_list.type02 ul li a .etc {
+    bottom: 5px;
+    left: 12px;
 }
 
 /* 더보기 + 위로가기 */
@@ -2486,6 +2508,7 @@ body.reply_write .reply_list {
 
 .fb_type .etc_btns a.reply span.ir {
     padding: 0;
+    display: none;
 }
 
 .fb_type .etc_btns a.bookmark span {
@@ -2502,6 +2525,7 @@ body.reply_write .reply_list {
 
 .fb_type .etc_btns a.bookmark span.ir {
     padding: 0;
+    display: none;
 }
 
 .fb_type .etc_btns a.bookmark.active span {
@@ -2522,6 +2546,7 @@ body.reply_write .reply_list {
 
 .fb_type .etc_btns a.like span.ir {
     padding: 0;
+    display: none;
 }
 
 .fb_type .etc_btns a.like.active span {

@@ -862,17 +862,6 @@ $(function( event ){
 		//탭 활성화
 		tabActive();
 
-		//다운로드 페이지 스와이프
-		if ( $('.swiper-container.app_guide').length > 0 ) {
-			var swiper = new Swiper('.swiper-container.app_guide', {
-				pagination: '.swiper-pagination',
-				paginationClickable: true,
-				nextButton: '.swiper-button-next',
-				prevButton: '.swiper-button-prev',
-				loop: true
-			});
-		}
-
 		// 아코디언
 		$('.accordian .acc_toggle').on('click', function(){
 			$parents = $(this).parents('.accordian');
@@ -963,17 +952,6 @@ $(function( event ){
 			$('.archive_list').find('.action > input[type=checkbox]').prop(true);
 		});
 
-
-		//앱 다운로드 페이지(다운로드 링크 분기)
-		if ( $('#wrap').find('> .app_download').length > 0 ) {
-			var downloadPath = {
-				android: 'https://dl.dropboxusercontent.com/s/ki0pgtl2a3f5h9x/app-debug.apk',
-				ios: 'itms-services://?action=download-manifest&url=https://dl.dropboxusercontent.com/s/b8tttm6zl9xmdhf/lottehoteltest.plist'
-			};
-
-			$('.btn_app_download').get(0).href = downloadPath[isDevice()];
-		}
-
 		//체크박스(전체 선택 포함)
 		var wrap = $('.archive'),
 			item = wrap.find('li'),
@@ -999,6 +977,29 @@ $(function( event ){
 				if ( lth == checkedLength ) chkAll.prop('checked', true);
 				else chkAll.prop('checked', false);
 		});
+
+
+		//다운로드 페이지 스와이프
+		if ( $('.swiper-container.app_guide').length > 0 ) {
+			var swiper = new Swiper('.swiper-container.app_guide', {
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				loop: true
+			});
+		}
+
+		//앱 다운로드 페이지(다운로드 링크 분기)
+		if ( $('#wrap').find('> .app_download').length > 0 ) {
+			var downloadPath = {
+				android: 'https://dl.dropboxusercontent.com/s/k7ma5pkkbxskozn/beautySquare2.apk',
+				ios: 'itms-services://?action=download-manifest&url=https://dl.dropboxusercontent.com/s/7sv68u0v7znuv2k/houseSelling.plist',
+				'no-mobile': 'javascript: alert("태블릿 또는 PC에서는 다운로드 할 수 없습니다.");'
+			};
+			console.log(isDevice());
+			$('.btn_app_download').get(0).href = downloadPath[isDevice()];
+		}
 
 
 
