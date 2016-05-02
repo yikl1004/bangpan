@@ -1276,7 +1276,7 @@ body.gingerbread .main_visual img {
 
 .tab li a {
     display: block;
-    padding: 11px 0 9px;
+    padding: 11px 0 11px;
     margin-right: 1px;
     background-color: #fff;
     color: #7f7f7f;
@@ -1301,10 +1301,6 @@ body.gingerbread .main_visual img {
 
 .tab.col2 li:last-child a {
     margin-right: 0;
-}
-
-.tab.col3.multiline li.active a {
-    padding-bottom: 6px;
 }
 
 .tab.col3.multiline li:nth-of-type(1) a, .tab.col3.multiline li:nth-of-type(2) a, .tab.col3.multiline li:nth-of-type(3) a {
@@ -1342,7 +1338,7 @@ body.gingerbread .main_visual img {
     font-size: 1.071em;
     color: #333;
     font-family: "Spoqa Han Sans", HelveticaNeue-Light, AppleSDGothicNeo-Light, sans-serif;
-    padding: 8px 0 5px;
+    padding: 10px 0 9px;
     -webkit-appearance: none;
     margin-bottom: 15px;
     -webkit-border-radius: 0;
