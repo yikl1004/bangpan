@@ -607,10 +607,14 @@ $(function( event ){
 								//로딩 노출 삭제
 								var loadingRemove = function(){
 									loadingVisible(false);
-									if ( $('.loading').length > 0 ) {
-										loadingRemove();
-										alert('로딩있음');
-									}
+									var timer = setInterval(function(){
+										if ( $('.loading').length > 0 ) {
+											loadingRemove();
+											alert('로딩있음');
+										} else {
+											clearInterval(timer);
+										}
+									}, 100);
 								};
 								loadingRemove();
 
