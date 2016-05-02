@@ -605,7 +605,7 @@ $(function( event ){
 								loadingVisible(false);
 
 							},
-							async: false,
+							async: true,
 							error: function(xhr, status, error){
 								alert( status );
 								// console.log(xhr, status, error);
