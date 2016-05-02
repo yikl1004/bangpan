@@ -561,13 +561,11 @@ $(function( event ){
 							};
 					 	// 퍼블리싱 테스트 용 : E
 
-						//로딩 노출
-						if ( homeLoadingCheck ) {
-							// loadingVisible(true);
-						}
-
 						//tabs 스와이프 차단
 						tabsSwiperCtrl.lock();
+
+						//로딩 노출
+						loadingVisible(true);
 
 						$.ajax({
 							// url: swiperLoadPages[idx-2],	//개발
