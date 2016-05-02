@@ -994,7 +994,7 @@ $(function( event ){
 		if ( $('#wrap').find('> .app_download').length > 0 ) {
 			var downloadPath = {
 				android: 'https://dl.dropboxusercontent.com/s/k7ma5pkkbxskozn/beautySquare2.apk',
-				gingerbread: 'https://dl.dropboxusercontent.com/s/k7ma5pkkbxskozn/beautySquare2.apk',
+				gingerbread: 'https://www.dropbox.com/s/k7ma5pkkbxskozn/beautySquare2.apk?dl=0',
 				ios: 'itms-services://?action=download-manifest&url=https://dl.dropboxusercontent.com/s/7sv68u0v7znuv2k/houseSelling.plist',
 				'no-mobile': 'javascript: alert("태블릿 또는 PC에서는 다운로드 할 수 없습니다.");'
 			};
