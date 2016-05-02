@@ -433,7 +433,7 @@ h2.tit {
 /* TAG */
 .tag {
     display: inline-block;
-    padding: 0.2em 5px 0;
+    padding: 5px 0 0.2em;
     margin-left: 3px;
     line-height: 1.2em;
     -webkit-border-radius: 9px;
