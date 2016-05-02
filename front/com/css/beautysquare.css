@@ -3497,6 +3497,7 @@ table.grade_guide td p strong {
 }
 
 .app_download .app_info .txt {
+    display: block;
     margin-left: 0.929em;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
