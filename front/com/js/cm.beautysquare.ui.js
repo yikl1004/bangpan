@@ -434,7 +434,7 @@ $(function( event ){
 				width: $('#gnb li').eq(0).outerWidth()
 			});
 			gnbScroll = new IScroll('#gnbWrap', {
-				tap: true, scrollX: true, scrollY: false, mouseWheel: true, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
+				tap: false, scrollX: true, scrollY: false, mouseWheel: false, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
 			});
 			console.log('gnbScroll : ', doc.documentElement.clientWidth - gnbWidth);
 			console.log(doc.documentElement.clientWidth, gnbWidth);
@@ -481,23 +481,23 @@ $(function( event ){
 			tabsMoveCtrl = true,
 			tabsSlideStr = '.swiper-container.tabs > .swiper-wrapper > ',
 			//퍼블리싱
-			swiperLoadPages = [
-				'beautynews_list.html',
-				'product_info_list.html',
-				// 'sales_tip_list_bestknowhow.html',
-				'sales_tip_list_knowhowshare.html',
-				'praise_list.html',
-				// 'wonder_list.html',
-				'life_list.html'
-			];
-			//개발
 			// swiperLoadPages = [
-			// 	'/front/front/beautyNews/main.do',
-			// 	'/front/front/productInfo/main.do',
-			// 	'/front/front/salestip/bestknowhow/main.do',
-			// 	'/front/front/counsellortalk/compliment/main.do',
-			// 	'/front/front/life/main.do'
+			// 	'beautynews_list.html',
+			// 	'product_info_list.html',
+			// 	// 'sales_tip_list_bestknowhow.html',
+			// 	'sales_tip_list_knowhowshare.html',
+			// 	'praise_list.html',
+			// 	// 'wonder_list.html',
+			// 	'life_list.html'
 			// ];
+			//개발
+			swiperLoadPages = [
+				'/front/front/beautyNews/main.do',
+				'/front/front/productInfo/main.do',
+				'/front/front/salestip/bestknowhow/main.do',
+				'/front/front/counsellortalk/compliment/main.do',
+				'/front/front/life/main.do'
+			];
 
 
 		//swiper 플러그인 옵션 ( 메인비주얼, 라이프스퀘어, 최신제품정보, 카운셀러 세일즈노트 )
@@ -578,8 +578,8 @@ $(function( event ){
 						loadingVisible(true);
 
 						$.ajax({
-							// url: swiperLoadPages[idx-2],	//개발
-							url: devDir + _url(),			//퍼블리싱 테스트 용
+							url: swiperLoadPages[idx-2],	//개발
+							// url: devDir + _url(),			//퍼블리싱 테스트 용
 							success: function(data) {
 								var _data = $(data),
 									$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
@@ -969,35 +969,39 @@ $(function( event ){
 		});
 
 		//체크박스 (전체 선택 포함, 나의 보관함)
-		$('input#chkAll').on('click', function(){
-			$('.archive_list').find('.action > input[type=checkbox]').prop(true);
-		});
+		$.checkbox = function() {
 
-		//체크박스(전체 선택 포함)
-		var wrap = $('.archive'),
-			item = wrap.find('li'),
-			parent = item.find('.action'),
-			chk = parent.find('input:checkbox');
-			chkAll = wrap.find('.total input#chkAll');
-
-		chkAll.on('click', function(){ 
-			var $this = $(this);
-			chk.each(function(){
-				$(this).prop('checked', $this.prop('checked') );
+			$('input#chkAll').on('click', function(){
+				$('.archive_list').find('.action > input[type=checkbox]').prop(true);
 			});
-		});
 
-		chk.on('click', function(){
-			var lth = chk.length,
-				checkedLength = (function(){
-					var num = 0;
-					for ( var i=0; i<lth; i++ ) 
-						if ( chk.eq(i).prop('checked') ) num++;
-					return num;
-				})();
-				if ( lth == checkedLength ) chkAll.prop('checked', true);
-				else chkAll.prop('checked', false);
-		});
+			//체크박스(전체 선택 포함)
+			var wrap = $('.archive'),
+				item = wrap.find('li'),
+				parent = item.find('.action'),
+				chk = parent.find('input:checkbox');
+				chkAll = wrap.find('.total input#chkAll');
+
+			chkAll.on('click', function(){ 
+				var $this = $(this);
+				chk.each(function(){
+					$(this).prop('checked', $this.prop('checked') );
+				});
+			});
+
+			chk.on('click', function(){
+				var lth = chk.length,
+					checkedLength = (function(){
+						var num = 0;
+						for ( var i=0; i<lth; i++ ) 
+							if ( chk.eq(i).prop('checked') ) num++;
+						return num;
+					})();
+					if ( lth == checkedLength ) chkAll.prop('checked', true);
+					else chkAll.prop('checked', false);
+			});
+		};
+		$.checkbox();
 
 
 		//다운로드 페이지 스와이프
@@ -1015,7 +1019,7 @@ $(function( event ){
 		if ( $('#wrap').find('> .app_download').length > 0 ) {
 			var downloadPath = {
 				android: 'https://dl.dropboxusercontent.com/s/k7ma5pkkbxskozn/beautySquare2.apk',
-				gingerbread: 'https://www.dropbox.com/s/k7ma5pkkbxskozn/beautySquare2.apk?dl=0',
+				gingerbread: 'http://bs.amorepacific.com/UPLOAD/apk/beautySquare2.apk',
 				ios: 'itms-services://?action=download-manifest&url=https://dl.dropboxusercontent.com/s/7sv68u0v7znuv2k/houseSelling.plist',
 				'no-mobile': 'javascript: alert("태블릿 또는 PC에서는 다운로드 할 수 없습니다.");'
 			};
