@@ -563,7 +563,7 @@ $(function( event ){
 
 						//로딩 노출
 						if ( homeLoadingCheck ) {
-							loadingVisible(true);
+							// loadingVisible(true);
 						}
 
 						//tabs 스와이프 차단
