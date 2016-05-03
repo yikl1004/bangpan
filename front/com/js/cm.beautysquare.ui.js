@@ -67,6 +67,7 @@ $.alert = function ( msg, callback, evt, point, event ) {
 	});
 };
 
+// 컨펌창
 $.confirm = function ( msg, callback ) {
 	$.alert(msg, callback);
 	//$('body').find('> .alert a.ok').off('click');
@@ -221,6 +222,10 @@ $(function( event ){
 					height: pixelRatio( '339:245', $(pageIdxStr + ' .img_list.type02 .thumb').width(), 'y' )
 				});
 			break;
+			case 'archive': 
+				$('.archive_list .item .thumb').css({
+					height: pixelRatio( '339:245', $('.archive_list .item .thumb').width(), 'y' )
+				});
 		}
 	};
 
@@ -434,10 +439,10 @@ $(function( event ){
 				width: $('#gnb li').eq(0).outerWidth()
 			});
 			gnbScroll = new IScroll('#gnbWrap', {
-				tap: false, scrollX: true, scrollY: false, mouseWheel: false, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
+				tap: true, scrollX: true, scrollY: false, mouseWheel: false, click: true, maxScrollX: doc.documentElement.clientWidth - gnbWidth
 			});
-			console.log('gnbScroll : ', doc.documentElement.clientWidth - gnbWidth);
-			console.log(doc.documentElement.clientWidth, gnbWidth);
+			// console.log('gnbScroll : ', doc.documentElement.clientWidth - gnbWidth);
+			// console.log(doc.documentElement.clientWidth, gnbWidth);
 		}
 
 		var moveBarAni = function( num ) {
@@ -481,23 +486,23 @@ $(function( event ){
 			tabsMoveCtrl = true,
 			tabsSlideStr = '.swiper-container.tabs > .swiper-wrapper > ',
 			//퍼블리싱
-			swiperLoadPages = [
-				'beautynews_list.html',
-				'product_info_list.html',
-				// 'sales_tip_list_bestknowhow.html',
-				'sales_tip_list_knowhowshare.html',
-				'praise_list.html',
-				// 'wonder_list.html',
-				'life_list.html'
-			];
-			//개발
 			// swiperLoadPages = [
-			// 	'/front/front/beautyNews/main.do',
-			// 	'/front/front/productInfo/main.do',
-			// 	'/front/front/salestip/bestknowhow/main.do',
-			// 	'/front/front/counsellortalk/compliment/main.do',
-			// 	'/front/front/life/main.do'
+			// 	'beautynews_list.html',
+			// 	'product_info_list.html',
+			// 	// 'sales_tip_list_bestknowhow.html',
+			// 	'sales_tip_list_knowhowshare.html',
+			// 	// 'praise_list.html',
+			// 	'wonder_list.html',
+			// 	'life_list.html'
 			// ];
+			//개발
+			swiperLoadPages = [
+				'/front/front/beautyNews/main.do',
+				'/front/front/productInfo/main.do',
+				'/front/front/salestip/bestknowhow/main.do',
+				'/front/front/counsellortalk/compliment/main.do',
+				'/front/front/life/main.do'
+			];
 
 
 		//swiper 플러그인 옵션 ( 메인비주얼, 라이프스퀘어, 최신제품정보, 카운셀러 세일즈노트 )
@@ -509,7 +514,7 @@ $(function( event ){
 				speed: speedAll,
 				initialSlide: 0,
 				threshold: 15,
-				touchAngle: 23,
+				touchAngle: 25,
 				hashnav: true,
 				onSliderMove: function(swiper, event) {
 					// console.log(event.type);
@@ -578,8 +583,8 @@ $(function( event ){
 						loadingVisible(true);
 
 						$.ajax({
-							// url: swiperLoadPages[idx-2],	//개발
-							url: devDir + _url(),			//퍼블리싱 테스트 용
+							url: swiperLoadPages[idx-2],	//개발
+							// url: devDir + _url(),			//퍼블리싱 테스트 용
 							success: function(data) {
 								var _data = $(data),
 									$wrapper = $('.swiper-container.tabs > .swiper-wrapper'),
@@ -952,7 +957,7 @@ $(function( event ){
 			});
 
 			//셀렉트 버튼 클릭할 경우
-			$( selectorStr ).find(' li > a').on('click', function(){
+			$( selectorStr ).find(' li > a').off('click').on('click', function(){
 				var text = $.trim( $(this).text() );
 				$(this).parents('.fu_select').hide();
 				$( dimm ).remove();
@@ -1018,12 +1023,13 @@ $(function( event ){
 		//앱 다운로드 페이지(다운로드 링크 분기)
 		if ( $('#wrap').find('> .app_download').length > 0 ) {
 			var downloadPath = {
+				안드로이드 : 
+				ios: 'itms-services://?action=download-manifest&url=https://dl.dropboxusercontent.com/s/7sv68u0v7znuv2k/houseSelling.plist',
 				android: 'https://dl.dropboxusercontent.com/s/k7ma5pkkbxskozn/beautySquare2.apk',
 				gingerbread: 'http://bs.amorepacific.com/UPLOAD/apk/beautySquare2.apk',
-				ios: 'itms-services://?action=download-manifest&url=https://dl.dropboxusercontent.com/s/7sv68u0v7znuv2k/houseSelling.plist',
 				'no-mobile': 'javascript: alert("태블릿 또는 PC에서는 다운로드 할 수 없습니다.");'
 			};
-			console.log(isDevice());
+			// console.log(isDevice());
 			$('.btn_app_download').get(0).href = downloadPath[isDevice()];
 		}
 
