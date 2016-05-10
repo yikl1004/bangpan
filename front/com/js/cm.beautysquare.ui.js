@@ -1023,7 +1023,6 @@ $(function( event ){
 		//앱 다운로드 페이지(다운로드 링크 분기)
 		if ( $('#wrap').find('> .app_download').length > 0 ) {
 			var downloadPath = {
-				안드로이드 : 
 				ios: 'itms-services://?action=download-manifest&url=https://dl.dropboxusercontent.com/s/7sv68u0v7znuv2k/houseSelling.plist',
 				android: 'https://dl.dropboxusercontent.com/s/k7ma5pkkbxskozn/beautySquare2.apk',
 				gingerbread: 'http://bs.amorepacific.com/UPLOAD/apk/beautySquare2.apk',
