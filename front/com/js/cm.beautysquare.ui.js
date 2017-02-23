@@ -495,7 +495,7 @@ $(function( event ){
 				'wonder_list.html',
 				'life_list.html'
 			];
-			개발
+			//개발
 // 			swiperLoadPages = [
 // 				'/front/front/beautyNews/main.do',
 // 				'/front/front/productInfo/main.do',
